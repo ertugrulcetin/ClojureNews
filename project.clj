@@ -15,4 +15,7 @@
             [lein-cljsbuild "1.1.3"]]
 
   :main clj.core
+
+  :ring {:handler clj.core/handler}
+
   )

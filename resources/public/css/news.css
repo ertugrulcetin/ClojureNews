@@ -43,6 +43,16 @@ a:link {
     text-decoration: none;
 }
 
+a.pagetopwhite:link {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+a.pagebottomgray:link {
+    color: #828282;
+    text-decoration: none;
+}
+
 a:visited {
     color: #828282;
     text-decoration: none;
@@ -87,7 +97,7 @@ a:visited {
 .pagetop {
     font-family: Verdana, Geneva, sans-serif;
     font-size: 10pt;
-    color: #F6F6EF;
+    color: #FFFFFF;
 }
 
 .comhead {
@@ -150,7 +160,7 @@ a:visited {
 }
 
 .pagetop a:visited {
-    color: #F6F6EF;
+    color: #FFFFFF;
 }
 
 .topsel a:link, .topsel a:visited {
@@ -222,7 +232,7 @@ pre:hover {
 @media only screen
 and (min-width: 300px)
 and (max-width: 750px) {
-    #hnmain {
+    #cnmain {
         width: 100%;
     }
 
