@@ -345,3 +345,16 @@ WARNING: No such namespace: goog.History.EventType, could not locate goog/Histor
 WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 54 src/cljs/ertus.cljs
 notifying browser that file changed:  out/cljs/ertus.js
 [32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.256 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 54 src/cljs/ertus.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 54 src/cljs/ertus.cljs
+[31mCompiling "resources/public/js/clojure-news.js" failed.
+[0mANALYSIS ERROR: Unknown dot form of (. nil -token nil) with classification [:cljs.analyzer/error :cljs.analyzer/property ()] at line 59 src/cljs/ertus.cljs on file src/cljs/ertus.cljs, line 59, column 16
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.243 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 54 src/cljs/ertus.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 54 src/cljs/ertus.cljs
+notifying browser that file changed:  resources/public/js/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  out/cljs/ertus.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.425 seconds.[0m
