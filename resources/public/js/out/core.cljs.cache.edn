@@ -1,0 +1,2 @@
+;; Analyzed by ClojureScript 1.8.40
+{:name core, :doc nil, :excludes #{}, :use-macros nil, :require-macros nil, :uses nil, :requires {events goog.events, goog.events goog.events, dom goog.dom, goog.dom goog.dom, History goog.History, EventType goog.History.EventType}, :imports {History goog.History, EventType goog.History.EventType}}

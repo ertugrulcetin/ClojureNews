@@ -1,26 +1,19 @@
 (ns clj.route.user
   (:require [compojure.core :refer [defroutes GET POST PUT]]
+            [compojure.route :refer [not-found]]
             [liberator.core :refer [resource defresource]]
             [liberator.representation :as rep]
             [ring.util.response :as response]
             [clj.util.resource :as resource-util]
             [clj.dao.user :as user-dao]
-            [clojure.data.json :as json]))
+            [clojure.data.json :as json]
+            [clojure.java.io :as io]))
 
 
 (defroutes route
 
            (GET "/" []
-             (resource :allowed-methods [:get]
-                       :available-media-types ["application/json text/html"]
-                       :known-content-type? #(resource-util/check-content-type % ["application/json" "text/html"])
-                       ;:as-response (fn [d ctx]
-                       ;               (-> (rep/as-response d ctx) ;; default implementation
-                       ;                   (assoc :cookie "cookie1=test; expires=Fri, 3 Aug 2021 20:47:11 UTC; path=/")))
-                       :as-response (fn [d ctx]
-                                      (-> (rep/as-response d ctx) ;; default implementation
-                                          (assoc-in [:headers "Set-Cookie"] "username=Ertus Ye; expires=Thu, 20 Dec 2016 12:00:00 UTC; path=/; HttpOnly")))
-                       :handle-ok (fn [ctx] "<h1>Deneme</h1>")))
+             (io/resource "index.html"))
 
            (GET "/ex" []
              (resource :allowed-methods [:get]
@@ -58,4 +51,6 @@
                                       (-> (rep/as-response d ctx) ;; default implementation
                                           (assoc-in [:headers "Set-Cookie"] "username=Ertus Ye; expires=Thu, 20 Dec 2016 12:00:00 UTC; path=/; HttpOnly")))
                        :handle-created (fn [ctx]
-                                         (::data ctx)))))
+                                         (::data ctx))))
+
+           (not-found "Unknown."))

@@ -12,12 +12,27 @@
                  [kezban "0.1.1-SNAPSHOT"]
                  [liberator "0.14.1"]
                  [com.novemberain/monger "3.0.2"]
-                 [buddy/buddy-hashers "0.14.0"]]
+                 [buddy/buddy-hashers "0.14.0"]
+                 [reagent "0.6.0-alpha2"]
+                 [secretary "1.2.3"]]
   :plugins [[lein-ring "0.9.7"]
-            [lein-cljsbuild "1.1.3"]]
+            [lein-cljsbuild "1.1.3"]
+            [lein-figwheel "0.5.3-1"]]
 
   :main clj.core
 
   :ring {:handler clj.core/handler}
 
-  )
+  :cljsbuild {
+              :builds [{:id           "clojure-news"
+                        :source-paths ["src/cljs"]
+                        :figwheel     true
+                        :compiler     {:main       "cljs.ertus"
+                                       :asset-path "js/out"
+                                       :output-dir "resources/public/js/out"
+                                       :output-to  "resources/public/js/clojure-news.js"}}]}
+  :figwheel {
+             :http-server-root "public"
+             :server-port 8080
+             :css-dirs         ["resources/public/css"]
+             :ring-handler     clj.core/handler})
