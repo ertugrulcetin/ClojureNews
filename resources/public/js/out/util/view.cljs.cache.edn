@@ -1,0 +1,2 @@
+;; Analyzed by ClojureScript 1.8.51
+{:name util.view, :doc nil, :excludes #{}, :use-macros nil, :require-macros nil, :uses nil, :requires {dom goog.dom, goog.dom goog.dom}, :imports nil, :defs {main-container {:name util.view/main-container, :file "/Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/util/view.cljs", :line 4, :column 1, :end-line 4, :end-column 24, :meta {:file "/Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/util/view.cljs", :line 4, :column 10, :end-line 4, :end-column 24}}}}

@@ -51,13 +51,5 @@
 (defroute new "/new" []
           (r/render-component [empty-ex] main-container))
 
-(defn get-bla-bla-route
-  []
-  (combine-routes
-
-
-
-
-
-    (defroute ertu-path "/ertu" []
-              (js/setTimeout (fn [] (secretary/dispatch! "/")) 1000))))
+(defroute ertu-path "/ertu" []
+          (js/setTimeout (fn [] (secretary/dispatch! "/")) 1000))

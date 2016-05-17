@@ -19,15 +19,15 @@
             [lein-cljsbuild "1.1.3"]
             [lein-figwheel "0.5.3-1"]]
 
-  :main clj.core
+  :main clj.main
 
-  :ring {:handler clj.core/handler}
+  :ring {:handler clj.main/handler}
 
   :cljsbuild {
               :builds [{:id           "clojure-news"
                         :source-paths ["src/cljs"]
                         :figwheel     true
-                        :compiler     {:main       "cljs.ertus"
+                        :compiler     {:main       "cljs.main"
                                        :asset-path "js/out"
                                        :output-dir "resources/public/js/out"
                                        :output-to  "resources/public/js/clojure-news.js"}}]}
@@ -36,4 +36,4 @@
              :server-port 8080
              ;:server-ip   "192.168.1.8"
              :css-dirs         ["resources/public/css"]
-             :ring-handler     clj.core/handler})
+             :ring-handler     clj.main/handler})

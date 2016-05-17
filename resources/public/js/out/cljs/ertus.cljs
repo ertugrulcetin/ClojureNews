@@ -4,7 +4,7 @@
             [goog.dom :as dom]
             [secretary.core :as secretary]
             [reagent.core :as r]
-            [dene :as d])
+            [dene])
   (:import goog.History
            goog.History.EventType))
 
@@ -49,10 +49,10 @@
 (defn empty-ex
   [])
 
-(d/get-bla-bla-route)
-
-(defroute new "/new" []
-          (r/render-component [empty-ex] main-container))
+;(d/get-bla-bla-route)
+;
+;(defroute new "/new" []
+;          (r/render-component [empty-ex] main-container))
 
 
 (let [h (History.)]

@@ -1,4 +1,4 @@
-(ns clj.core
+(ns clj.main
   (:require [ring.adapter.jetty :as jetty]
             [compojure.core :refer [defroutes GET ANY]]
             [compojure.route :refer [not-found resources]]
