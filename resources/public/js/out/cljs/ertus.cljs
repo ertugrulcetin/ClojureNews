@@ -46,8 +46,13 @@
   (r/render-component [table-ex] main-container))
 
 
+(defn empty-ex
+  [])
 
 (d/get-bla-bla-route)
+
+(defroute new "/new" []
+          (r/render-component [empty-ex] main-container))
 
 
 (let [h (History.)]

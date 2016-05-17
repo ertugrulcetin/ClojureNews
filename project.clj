@@ -34,5 +34,6 @@
   :figwheel {
              :http-server-root "public"
              :server-port 8080
+             ;:server-ip   "192.168.1.8"
              :css-dirs         ["resources/public/css"]
              :ring-handler     clj.core/handler})

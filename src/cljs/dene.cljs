@@ -34,7 +34,6 @@
       [:button {:id "submitId" :on-click (fn [_] (js/alert "Ertuss!!"))} "Submit"]]]]])
 
 (defn empty-ex
-  []
   [])
 
 (defn ^:export render-simple []
@@ -46,15 +45,19 @@
   `(do
      ~@routes))
 
+(defroute home-path "/" []
+          (render-simple))
+
+(defroute new "/new" []
+          (r/render-component [empty-ex] main-container))
+
 (defn get-bla-bla-route
   []
   (combine-routes
 
-    (defroute home-path "/" []
-              (render-simple))
 
-    (defroute new "/new" []
-              (r/render-component [empty-ex] main-container))
+
+
 
     (defroute ertu-path "/ertu" []
               (js/setTimeout (fn [] (secretary/dispatch! "/")) 1000))))
