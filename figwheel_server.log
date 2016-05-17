@@ -358,3 +358,86 @@ notifying browser that file changed:  resources/public/js/out/goog/deps.js
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
 notifying browser that file changed:  out/cljs/ertus.js
 [32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.425 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs"]...
+[31mCompiling "resources/public/js/clojure-news.js" failed.
+[0mANALYSIS ERROR: No such namespace: clojure.tools.macro, could not locate clojure/tools/macro.cljs, clojure/tools/macro.cljc, or Closure namespace "clojure.tools.macro" in file /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/ertus.cljs on file null, line null, column null
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.153 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs"]...
+[31mCompiling "resources/public/js/clojure-news.js" failed.
+[0mANALYSIS ERROR: No such namespace: clojure.tools.macro, could not locate clojure/tools/macro.cljs, clojure/tools/macro.cljc, or Closure namespace "clojure.tools.macro" in file /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/ertus.cljs on file null, line null, column null
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.176 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 62 src/cljs/ertus.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 62 src/cljs/ertus.cljs
+notifying browser that file changed:  resources/public/js/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  out/cljs/ertus.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 1.081 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs"]...
+WARNING: dene is a single segment namespace at line 1 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/dene.cljs
+WARNING: Use of undeclared Var dene/render-simple at line 14 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/dene.cljs
+WARNING: Use of undeclared Var dene/render-simple at line 14 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/dene.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 54 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/ertus.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 54 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/ertus.cljs
+notifying browser that file changed:  resources/public/js/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  out/dene.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.443 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs"]...
+WARNING: dene is a single segment namespace at line 1 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/dene.cljs
+WARNING: Use of undeclared Var dene/main-container at line 35 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/dene.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 54 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/ertus.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 54 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/ertus.cljs
+notifying browser that file changed:  out/dene.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.245 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs"]...
+WARNING: dene is a single segment namespace at line 1 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/dene.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 54 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/ertus.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 54 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/ertus.cljs
+notifying browser that file changed:  out/dene.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.208 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 54 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/ertus.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 54 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/ertus.cljs
+notifying browser that file changed:  out/cljs/ertus.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.246 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 54 src/cljs/ertus.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 54 src/cljs/ertus.cljs
+notifying browser that file changed:  resources/public/js/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  out/cljs/ertus.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.449 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs"]...
+WARNING: dene is a single segment namespace at line 1 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/dene.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 54 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/ertus.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 54 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/ertus.cljs
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  out/dene.js
+notifying browser that file changed:  out/cljs/ertus.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.309 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 54 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/ertus.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 54 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/ertus.cljs
+notifying browser that file changed:  out/cljs/ertus.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.287 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs"]...
+WARNING: dene is a single segment namespace at line 1 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/dene.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 54 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/ertus.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 54 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/ertus.cljs
+notifying browser that file changed:  resources/public/js/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  out/dene.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.39 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs"]...
+WARNING: dene is a single segment namespace at line 1 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/dene.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 54 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/ertus.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 54 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/ertus.cljs
+notifying browser that file changed:  out/dene.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.246 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs"]...
+WARNING: dene is a single segment namespace at line 1 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/dene.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 54 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/ertus.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 54 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/ertus.cljs
+notifying browser that file changed:  out/dene.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.256 seconds.[0m

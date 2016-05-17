@@ -1,21 +1,12 @@
-(ns cljs.ertus
+(ns dene
   (:require-macros [secretary.core :refer [defroute]])
   (:require [goog.events :as events]
             [goog.dom :as dom]
             [secretary.core :as secretary]
-            [reagent.core :as r]
-            [dene :as d])
-  (:import goog.History
-           goog.History.EventType))
-
-
-(secretary/set-config! :prefix "#")
+            [reagent.core :as r]))
 
 (def main-container
   (js/document.getElementById "mainContainerId"))
-
-(defn set-html! [el content]
-  (set! (.-innerHTML el) content))
 
 (defn simple-component []
   [:div
@@ -42,18 +33,28 @@
      [:td
       [:button {:id "submitId" :on-click (fn [_] (js/alert "Ertuss!!"))} "Submit"]]]]])
 
+(defn empty-ex
+  []
+  [])
+
 (defn ^:export render-simple []
   (r/render-component [table-ex] main-container))
 
 
+(defmacro combine-routes
+  [& routes]
+  `(do
+     ~@routes))
 
-(d/get-bla-bla-route)
+(defn get-bla-bla-route
+  []
+  (combine-routes
 
+    (defroute home-path "/" []
+              (render-simple))
 
-(let [h (History.)]
-  (goog.events/listen h EventType/NAVIGATE
+    (defroute new "/new" []
+              (r/render-component [empty-ex] main-container))
 
-                      #(secretary/dispatch! (.-token %)))
-  (doto h
-    (.setEnabled true)
-    (.setToken (str js/window.location.pathname js/window.location.search))))
+    (defroute ertu-path "/ertu" []
+              (js/setTimeout (fn [] (secretary/dispatch! "/")) 1000))))

@@ -3,7 +3,8 @@
   (:require [goog.events :as events]
             [goog.dom :as dom]
             [secretary.core :as secretary]
-            [reagent.core :as r])
+            [reagent.core :as r]
+            [dene :as d])
   (:import goog.History
            goog.History.EventType))
 
@@ -44,11 +45,10 @@
 (defn ^:export render-simple []
   (r/render-component [table-ex] main-container))
 
-(defroute home-path "/" []
-          (render-simple))
 
-(defroute ertu-path "/ertu" []
-          (js/setTimeout (fn [] (secretary/dispatch! "/")) 1000))
+
+(d/get-bla-bla-route)
+
 
 (let [h (History.)]
   (goog.events/listen h EventType/NAVIGATE

@@ -31,5 +31,6 @@ goog.addDependency("../react-dom.inc.js", ['cljsjs.react.dom'], ['cljsjs.react']
 goog.addDependency("../reagent/dom.js", ['reagent.dom'], ['reagent.impl.util', 'reagent.interop', 'reagent.ratom', 'cljs.core', 'reagent.impl.template', 'cljsjs.react.dom', 'reagent.debug']);
 goog.addDependency("../reagent/core.js", ['reagent.core'], ['reagent.impl.util', 'reagent.dom.server', 'reagent.interop', 'reagent.ratom', 'cljs.core', 'reagent.impl.template', 'reagent.impl.batching', 'reagent.impl.component', 'reagent.debug', 'reagent.dom']);
 goog.addDependency("../secretary/core.js", ['secretary.core'], ['cljs.core', 'clojure.string', 'clojure.walk']);
-goog.addDependency("../cljs/ertus.js", ['cljs.ertus'], ['goog.dom', 'goog.History.EventType', 'reagent.core', 'cljs.core', 'goog.History', 'secretary.core', 'goog.events']);
+goog.addDependency("../dene.js", ['dene'], ['goog.dom', 'reagent.core', 'cljs.core', 'secretary.core', 'goog.events']);
+goog.addDependency("../cljs/ertus.js", ['cljs.ertus'], ['goog.dom', 'goog.History.EventType', 'reagent.core', 'cljs.core', 'dene', 'goog.History', 'secretary.core', 'goog.events']);
 goog.addDependency("../figwheel/connect.js", ['figwheel.connect'], ['cljs.core', 'figwheel.client', 'figwheel.client.utils', 'cljs.ertus']);
