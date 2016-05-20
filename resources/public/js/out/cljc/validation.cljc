@@ -1,4 +1,4 @@
-(ns clj.util.validation
+(ns cljc.validation
   (:require [clojure.string :as str]))
 
 (defn username?

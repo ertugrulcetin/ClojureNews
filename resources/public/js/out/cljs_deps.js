@@ -33,7 +33,8 @@ goog.addDependency("../com/cognitect/transit.js", ['com.cognitect.transit'], ['c
 goog.addDependency("../cognitect/transit.js", ['cognitect.transit'], ['com.cognitect.transit.eq', 'cljs.core', 'com.cognitect.transit.types', 'com.cognitect.transit', 'goog.math.Long']);
 goog.addDependency("../ajax/xhrio.js", ['ajax.xhrio'], ['goog.net.XhrManager', 'goog.net.XhrIo', 'goog.json', 'goog.Uri', 'cljs.core', 'goog.net.EventType', 'ajax.protocols', 'goog.events', 'goog.net.ErrorCode']);
 goog.addDependency("../ajax/core.js", ['ajax.core'], ['goog.net.XhrIo', 'ajax.xml_http_request', 'goog.json', 'goog.Uri.QueryData', 'cljs.core', 'cognitect.transit', 'goog.structs', 'goog.json.Serializer', 'ajax.protocols', 'clojure.string', 'ajax.xhrio']);
-goog.addDependency("../controller/login.js", ['controller.login'], ['ajax.core', 'cljs.core', 'util.view']);
+goog.addDependency("../cljc/validation.js", ['cljc.validation'], ['cljs.core', 'clojure.string']);
+goog.addDependency("../controller/login.js", ['controller.login'], ['ajax.core', 'cljs.core', 'cljc.validation', 'secretary.core', 'util.view']);
 goog.addDependency("../view/login.js", ['view.login'], ['goog.dom', 'cljs.core', 'controller.login']);
 goog.addDependency("../route/login.js", ['route.login'], ['reagent.core', 'cljs.core', 'secretary.core', 'util.view', 'view.login']);
 goog.addDependency("../view/forgot_password.js", ['view.forgot_password'], ['cljs.core']);

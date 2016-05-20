@@ -26,7 +26,7 @@
 
   :cljsbuild {
               :builds [{:id           "clojure-news"
-                        :source-paths ["src/cljs"]
+                        :source-paths ["src/cljs" "src/cljc"]
                         :figwheel     true
                         :compiler     {:main       "cljs.main"
                                        :asset-path "js/out"
@@ -34,7 +34,7 @@
                                        :output-to  "resources/public/js/clojure-news.js"}}]}
   :figwheel {
              :http-server-root "public"
-             :server-port 8080
+             :server-port      8080
              ;:server-ip   "192.168.1.8"
              :css-dirs         ["resources/public/css"]
              :ring-handler     clj.main/handler})

@@ -1,11 +1,13 @@
 (ns controller.login
   (:require [util.view]
-            [ajax.core :as ajax :refer [GET POST PUT]]))
+            [ajax.core :as ajax :refer [GET POST PUT]]
+            [secretary.core :as secretary]
+            [cljc.validation :as validation]))
 
 (enable-console-print!)
 
 (defn handler [response]
-  (.log js/console (str response )))
+  (.log js/console (str response)))
 
 (defn error-handler [{:keys [status status-text]}]
   (.log js/console (str "something bad happened: " status " " status-text)))

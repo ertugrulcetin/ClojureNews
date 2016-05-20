@@ -5,7 +5,8 @@
             [ring.middleware.params :refer [wrap-params]]
             [ring.middleware.resource :as resource]
             [clj.route.user :as route-user]
-            [clj.route.login :as route-login])
+            [clj.route.login :as route-login]
+            [cljc.validation :as validation])
   (:gen-class))
 
 (defn log-middleware
@@ -22,6 +23,7 @@
                  log-middleware
                  (resource/wrap-resource "/public")
                  wrap-params))
+
 
 (defn -main
   []
