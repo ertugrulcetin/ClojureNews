@@ -14,9 +14,7 @@
 
 
 (let [h (History.)]
-  (goog.events/listen h EventType/NAVIGATE
-
-                      #(secretary/dispatch! (.-token %)))
+  (goog.events/listen h EventType/NAVIGATE #(secretary/dispatch! (.-token %)))
   (doto h
     (.setEnabled true)
     ;(.setToken (str js/window.location.pathname js/window.location.search))

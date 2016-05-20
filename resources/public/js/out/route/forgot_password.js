@@ -5,56 +5,56 @@ goog.require('reagent.core');
 goog.require('secretary.core');
 goog.require('view.forgot_password');
 goog.require('util.view');
-var action__22530__auto___23660 = (function (params__22531__auto__){
-if(cljs.core.map_QMARK_.call(null,params__22531__auto__)){
-var map__23656 = params__22531__auto__;
-var map__23656__$1 = ((((!((map__23656 == null)))?((((map__23656.cljs$lang$protocol_mask$partition0$ & (64))) || (map__23656.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__23656):map__23656);
+var action__23459__auto___25285 = (function (params__23460__auto__){
+if(cljs.core.map_QMARK_.call(null,params__23460__auto__)){
+var map__25281 = params__23460__auto__;
+var map__25281__$1 = ((((!((map__25281 == null)))?((((map__25281.cljs$lang$protocol_mask$partition0$ & (64))) || (map__25281.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__25281):map__25281);
 return reagent.core.render_component.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [view.forgot_password.component], null),util.view.main_container);
 } else {
-if(cljs.core.vector_QMARK_.call(null,params__22531__auto__)){
-var vec__23658 = params__22531__auto__;
+if(cljs.core.vector_QMARK_.call(null,params__23460__auto__)){
+var vec__25283 = params__23460__auto__;
 return reagent.core.render_component.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [view.forgot_password.component], null),util.view.main_container);
 } else {
 return null;
 }
 }
 });
-secretary.core.add_route_BANG_.call(null,"/forgotpassword",action__22530__auto___23660);
+secretary.core.add_route_BANG_.call(null,"/forgotpassword",action__23459__auto___25285);
 
-route.forgot_password.forgot_password = ((function (action__22530__auto___23660){
+route.forgot_password.forgot_password = ((function (action__23459__auto___25285){
 return (function route$forgot_password$forgot_password(var_args){
-var args__22327__auto__ = [];
-var len__22320__auto___23661 = arguments.length;
-var i__22321__auto___23662 = (0);
+var args__23255__auto__ = [];
+var len__23248__auto___25286 = arguments.length;
+var i__23249__auto___25287 = (0);
 while(true){
-if((i__22321__auto___23662 < len__22320__auto___23661)){
-args__22327__auto__.push((arguments[i__22321__auto___23662]));
+if((i__23249__auto___25287 < len__23248__auto___25286)){
+args__23255__auto__.push((arguments[i__23249__auto___25287]));
 
-var G__23663 = (i__22321__auto___23662 + (1));
-i__22321__auto___23662 = G__23663;
+var G__25288 = (i__23249__auto___25287 + (1));
+i__23249__auto___25287 = G__25288;
 continue;
 } else {
 }
 break;
 }
 
-var argseq__22328__auto__ = ((((0) < args__22327__auto__.length))?(new cljs.core.IndexedSeq(args__22327__auto__.slice((0)),(0),null)):null);
-return route.forgot_password.forgot_password.cljs$core$IFn$_invoke$arity$variadic(argseq__22328__auto__);
-});})(action__22530__auto___23660))
+var argseq__23256__auto__ = ((((0) < args__23255__auto__.length))?(new cljs.core.IndexedSeq(args__23255__auto__.slice((0)),(0),null)):null);
+return route.forgot_password.forgot_password.cljs$core$IFn$_invoke$arity$variadic(argseq__23256__auto__);
+});})(action__23459__auto___25285))
 ;
 
-route.forgot_password.forgot_password.cljs$core$IFn$_invoke$arity$variadic = ((function (action__22530__auto___23660){
-return (function (args__22529__auto__){
-return cljs.core.apply.call(null,secretary.core.render_route_STAR_,"/forgotpassword",args__22529__auto__);
-});})(action__22530__auto___23660))
+route.forgot_password.forgot_password.cljs$core$IFn$_invoke$arity$variadic = ((function (action__23459__auto___25285){
+return (function (args__23458__auto__){
+return cljs.core.apply.call(null,secretary.core.render_route_STAR_,"/forgotpassword",args__23458__auto__);
+});})(action__23459__auto___25285))
 ;
 
 route.forgot_password.forgot_password.cljs$lang$maxFixedArity = (0);
 
-route.forgot_password.forgot_password.cljs$lang$applyTo = ((function (action__22530__auto___23660){
-return (function (seq23659){
-return route.forgot_password.forgot_password.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq23659));
-});})(action__22530__auto___23660))
+route.forgot_password.forgot_password.cljs$lang$applyTo = ((function (action__23459__auto___25285){
+return (function (seq25284){
+return route.forgot_password.forgot_password.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq25284));
+});})(action__23459__auto___25285))
 ;
 
 //# sourceMappingURL=forgot_password.js.map
