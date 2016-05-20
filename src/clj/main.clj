@@ -4,10 +4,8 @@
             [compojure.route :refer [not-found resources]]
             [ring.middleware.params :refer [wrap-params]]
             [ring.middleware.resource :as resource]
-            [clojure.java.io :as io]
-            [clj.dao.db :as db]
             [clj.route.user :as route-user]
-            )
+            [clj.route.login :as route-login])
   (:gen-class))
 
 (defn log-middleware
@@ -16,7 +14,11 @@
     (println "Request path: " (:uri request))
     (handler request)))
 
-(def handler (-> #'route-user/route
+(def routes (compojure.core/routes
+              #'route-user/route
+              #'route-login/route))
+
+(def handler (-> routes
                  log-middleware
                  (resource/wrap-resource "/public")
                  wrap-params))

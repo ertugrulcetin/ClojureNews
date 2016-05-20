@@ -1,6 +1,7 @@
 (ns clj.util.resource
   (:require [clojure.data.json :as json]
-            [clojure.java.io :as io]))
+            [clojure.java.io :as io])
+  (:import (java.util Date)))
 
 (defonce avaliable-media-types ["application/json" "application/json; charset=UTF-8"])
 
@@ -28,3 +29,17 @@
       (catch Exception e
         (.printStackTrace e)
         {:message (format "IOException: %s" (.getMessage e))}))))
+
+
+(defn create-cookie
+  [cookie]
+  (str "user=" cookie "; expires=" (.toString (Date. (+ (.getTime (Date.)) (* 1000 60 60 24 365 10)))) "; path=/; HttpOnly"))
+
+(defn delete-cookie
+  [cookie]
+  (str "user=" cookie "; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; HttpOnly"))
+
+(defn convert-data-map
+  "Converts clojure map's string keywords to keyword functions"
+  [json-clojure-map]
+  (reduce #(assoc %1 (keyword (first %2)) (second %2)) {} json-clojure-map))
