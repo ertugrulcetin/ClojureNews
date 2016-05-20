@@ -7,6 +7,7 @@
                  [org.clojure/core.async "0.2.374"]
                  [org.clojure/clojurescript "1.8.51"]
                  [org.clojure/data.json "0.2.6"]
+                 [cljs-ajax "0.5.4"]
                  [ring "1.4.0"]
                  [compojure "1.5.0"]
                  [kezban "0.1.1-SNAPSHOT"]

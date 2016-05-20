@@ -2,6 +2,8 @@
   (:require [clojure.data.json :as json]
             [clojure.java.io :as io]))
 
+(defonce avaliable-media-types ["application/json" "application/json; charset=UTF-8"])
+
 (defn- body-as-string [ctx]
   (if-let [body (get-in ctx [:request :body])]
     (condp instance? body

@@ -4,7 +4,8 @@
             [goog.dom :as dom]
             [secretary.core :as secretary]
             [reagent.core :as r]
-            [route.login])
+            [route.login]
+            [route.forgot-password])
   (:import goog.History
            goog.History.EventType))
 
@@ -18,4 +19,5 @@
                       #(secretary/dispatch! (.-token %)))
   (doto h
     (.setEnabled true)
-    (.setToken (str js/window.location.pathname js/window.location.search))))
+    ;(.setToken (str js/window.location.pathname js/window.location.search))
+    ))

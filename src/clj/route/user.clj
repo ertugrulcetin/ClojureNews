@@ -39,18 +39,22 @@
 
            (PUT "/user/signup" []
              (resource :allowed-methods [:put]
-                       :available-media-types ["application/json"]
-                       :known-content-type? #(resource-util/check-content-type % ["application/json"])
+                       :available-media-types resource-util/avaliable-media-types
+                       :known-content-type? #(resource-util/check-content-type % resource-util/avaliable-media-types)
                        :malformed? #(resource-util/parse-json % ::data)
                        :put! (fn [ctx]
+                               (println "Geldi PUT ")
                                (let [m (map #(second %) (::data ctx))
                                      username (first m)
                                      password (second m)]
-                                 {:ertu (user-dao/create-user username password)}))
+                                 (user-dao/create-user username password)))
                        :as-response (fn [d ctx]
                                       (-> (rep/as-response d ctx) ;; default implementation
-                                          (assoc-in [:headers "Set-Cookie"] "username=Ertus Ye; expires=Thu, 20 Dec 2016 12:00:00 UTC; path=/; HttpOnly")))
+                                          (assoc-in [:headers "Set-Cookie"] "username=Ertusss; expires=Thu, 20 Dec 2017 12:00:00 UTC; path=/; HttpOnly")))
                        :handle-created (fn [ctx]
-                                         (::data ctx))))
+                                         (::data ctx))
+                       :handle-unsupported-media-type (fn [ctx]
+                                                        (println "Aga data hatalı !")
+                                                        (println "Data: " (::data ctx)))))
 
            (not-found "Unknown."))
