@@ -15,7 +15,13 @@
                  [com.novemberain/monger "3.0.2"]
                  [buddy/buddy-hashers "0.14.0"]
                  [reagent "0.6.0-alpha2"]
-                 [secretary "1.2.3"]]
+                 [secretary "1.2.3"]
+                 [org.clojure/tools.logging "0.3.1"]
+                 [org.slf4j/slf4j-log4j12 "1.7.21"]
+                 [log4j/log4j "1.2.17" :exclusions [javax.mail/mail
+                                                    javax.jms/jms
+                                                    com.sun.jmdk/jmxtools
+                                                    com.sun.jmx/jmxri]]]
   :plugins [[lein-ring "0.9.7"]
             [lein-cljsbuild "1.1.3"]
             [lein-figwheel "0.5.3-1"]]

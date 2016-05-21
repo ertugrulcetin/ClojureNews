@@ -37,7 +37,7 @@
    :upvote            1
    :number-of-comment 0})
 
-(defn comment
+(defn comment-entry
   [entry-id parent-comment-id content type]
   {:_id               (ObjectId.)
    :created-date      (Date.)

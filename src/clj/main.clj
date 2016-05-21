@@ -6,7 +6,7 @@
             [ring.middleware.resource :as resource]
             [clj.route.user :as route-user]
             [clj.route.login :as route-login]
-            [cljc.validation :as validation])
+            [clojure.tools.logging :as log])
   (:gen-class))
 
 (defn log-middleware
