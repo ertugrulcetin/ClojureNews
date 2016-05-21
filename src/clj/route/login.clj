@@ -32,11 +32,18 @@
                                (let [data-as-map (resource-util/convert-data-map (::data ctx))
                                      username (:username data-as-map)
                                      password (:password data-as-map)]
+
+                                 (if (user-dao/find-by-username username)
+                                   (throw (RuntimeException. "That username is taken. Please choose another.")))
+
                                  {:user-obj (user-dao/create-user username password)}))
 
                        :as-response (fn [d ctx]
                                       (-> (rep/as-response d ctx)
                                           (assoc-in [:headers "Set-Cookie"] (resource-util/create-cookie (kez/->>> :cookie :user-obj ctx)))))
 
-                       :handle-created (fn [ctx]
-                                         (::data ctx)))))
+                       :handle-created (fn [_]
+                                         {:success? true})
+
+                       :handle-exception (fn [ctx]
+                                           {:error (.getMessage (:exception ctx))}))))

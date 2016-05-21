@@ -17,7 +17,7 @@ goog.addDependency("../react-dom.inc.js", ['cljsjs.react.dom'], ['cljsjs.react']
 goog.addDependency("../reagent/dom.js", ['reagent.dom'], ['reagent.impl.util', 'reagent.interop', 'reagent.ratom', 'cljs.core', 'reagent.impl.template', 'cljsjs.react.dom', 'reagent.debug']);
 goog.addDependency("../reagent/core.js", ['reagent.core'], ['reagent.impl.util', 'reagent.dom.server', 'reagent.interop', 'reagent.ratom', 'cljs.core', 'reagent.impl.template', 'reagent.impl.batching', 'reagent.impl.component', 'reagent.debug', 'reagent.dom']);
 goog.addDependency("../secretary/core.js", ['secretary.core'], ['cljs.core', 'clojure.string', 'clojure.walk']);
-goog.addDependency("../util/view.js", ['util.view'], ['goog.dom', 'reagent.core', 'cljs.core']);
+goog.addDependency("../util/view.js", ['util.view'], ['goog.dom', 'reagent.core', 'cljs.core', 'secretary.core']);
 goog.addDependency("../ajax/protocols.js", ['ajax.protocols'], ['cljs.core']);
 goog.addDependency("../ajax/xml_http_request.js", ['ajax.xml_http_request'], ['cljs.core', 'ajax.protocols']);
 goog.addDependency("../com/cognitect/transit/util.js", ['com.cognitect.transit.util'], ['goog.object']);

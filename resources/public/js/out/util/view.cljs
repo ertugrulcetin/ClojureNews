@@ -1,6 +1,7 @@
 (ns util.view
   (:require [goog.dom :as dom]
-            [reagent.core :as r]))
+            [reagent.core :as r]
+            [secretary.core :as secretary]))
 
 (defonce main-container (dom/getElement "mainContainerId"))
 
@@ -13,3 +14,9 @@
 (defn render-error-message
   [message]
   (r/render-component [(fn [] [:p {:style {:color "red"}} message])] util.view/error-container))
+
+(defn dispatch-and-change-url
+  [route]
+  (let [path (str "/" route)]
+    (set! (.-hash window/location) path)
+    (secretary/dispatch! path)))

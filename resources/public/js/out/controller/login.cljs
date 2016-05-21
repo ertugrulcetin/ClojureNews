@@ -7,17 +7,18 @@
 
 (enable-console-print!)
 
+;;TODO route will be changed
 (defn handler [response]
-  (.log js/console (str response)))
+  (util.view/dispatch-and-change-url "forgotpassword"))
 
-(defn error-handler [{:keys [status status-text]}]
-  (.log js/console (str "something bad happened: " status " " status-text)))
+(defn error-handler [{:keys [response]}]
+  (util.view/render-error-message (:error response)))
 
 (defn sign-up
   [field-ids]
-  (let [m (util.view/create-field-val-map field-ids)
-        username (:username m)
-        password (:password m)]
+  (let [data (util.view/create-field-val-map field-ids)
+        username (:username data)
+        password (:password data)]
 
     (cond
       (not (validation/username? username))
@@ -28,7 +29,7 @@
 
       :else
       (PUT "/signup"
-           {:params          m
+           {:params          data
             :handler         handler
             :error-handler   error-handler
             :format          (ajax/json-request-format)

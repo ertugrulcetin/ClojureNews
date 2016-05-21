@@ -14,7 +14,10 @@
 
 
 (let [h (History.)]
-  (goog.events/listen h EventType/NAVIGATE #(secretary/dispatch! (.-token %)))
+  (goog.events/listen h EventType/NAVIGATE #(do
+                                             ;;removes error message every route change
+                                             (r/render-component [(fn [])] util.view/error-container)
+                                             (secretary/dispatch! (.-token %))))
   (doto h
     (.setEnabled true)
     ;(.setToken (str js/window.location.pathname js/window.location.search))
