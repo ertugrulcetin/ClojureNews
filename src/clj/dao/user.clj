@@ -1,5 +1,6 @@
 (ns clj.dao.user
   (:require [monger.collection :as mc]
+            [monger.operators :refer :all]
             [clj.dao.db :as db]
             [clj.util.entity :as entity-util])
   (:import (org.bson.types ObjectId)))
@@ -18,3 +19,7 @@
 (defn find-by-username
   [^String username]
   (mc/find-one-as-map db/clojure-news coll {:username username}))
+
+(defn update-cookie-by-username
+  [username cookie]
+  (mc/update db/clojure-news coll {:username username} {$set {"cookie" cookie}}))

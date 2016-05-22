@@ -13,7 +13,7 @@
                  [kezban "0.1.1-SNAPSHOT"]
                  [liberator "0.14.1"]
                  [com.novemberain/monger "3.0.2"]
-                 [buddy/buddy-hashers "0.14.0"]
+                 [pandect "0.6.0"]
                  [reagent "0.6.0-alpha2"]
                  [secretary "1.2.3"]
                  [org.clojure/tools.logging "0.3.1"]

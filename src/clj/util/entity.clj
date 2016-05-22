@@ -1,11 +1,11 @@
 (ns clj.util.entity
-  (:require [buddy.hashers :as hashers])
+  (:require [pandect.algo.sha256 :as hash])
   (:import (java.util Date UUID)
            (org.bson.types ObjectId)))
 
-(defn generate-uuid
-  []
-  (.replace (.toString (UUID/randomUUID)) "-" ""))
+(defn generate-cookie
+  [username]
+  (str username "&" (.replace (.toString (UUID/randomUUID)) "-" "")))
 
 (defn user
   [username password]
@@ -14,7 +14,7 @@
    :active?      true
    :email        nil
    :username     username
-   :password     (hashers/derive password {:alg :pbkdf2+sha256})
+   :password     (hash/sha256 password)
    :last-login   (Date.)
    :role         ::user
    :karma        1
@@ -22,18 +22,18 @@
    :github       nil
    :twitter      nil
    :bio          nil
-   :cookie       (str username "&" (generate-uuid))})
+   :cookie       (generate-cookie username)})
 
 (defn entry
   [title url pure-url type content created-by-id]
   {:_id               (ObjectId.)
    :created-date      (Date.)
+   :created-by-id     created-by-id
    :title             title
    :url               url
    :pure-url          pure-url
    :type              type
    :content           content
-   :created-by-id     created-by-id
    :upvote            1
    :number-of-comment 0})
 

@@ -15,10 +15,13 @@
     [:tr
      [:td "password:"]
      [:td
-      [:input {:id "loginPasswordId" :name "password" :type "password"}]]]
+      [:input {:id "loginPasswordId" :name "password" :type "password" :on-key-down (fn [e]
+                                                                                      (if (= 13 (.-keyCode e))
+                                                                                        (controller.login/log-in ["loginUsernameId" "loginPasswordId"])))}]]]
     [:tr
      [:td
-      [:button {:id "loginButtonId" :on-click (fn [_] (js/alert "Ertuss!!"))} "login"]]]
+      [:button {:id "loginButtonId" :on-click (fn [_]
+                                                (controller.login/log-in ["loginUsernameId" "loginPasswordId"]))} "login"]]]
 
     [:tr
      [:td]
@@ -36,7 +39,9 @@
     [:tr
      [:td "password:"]
      [:td
-      [:input {:id "signUpPasswordId" :name "password" :type "password"}]]]
+      [:input {:id "signUpPasswordId" :name "password" :type "password" :on-key-down (fn [e]
+                                                                                       (if (= 13 (.-keyCode e))
+                                                                                         (controller.login/sign-up ["signUpUsernameId" "signUpPasswordId"])))}]]]
     [:tr
      [:td
       [:button {:id "signUpButtonId" :on-click (fn [_]

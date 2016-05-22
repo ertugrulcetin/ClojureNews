@@ -4,6 +4,7 @@
             [goog.dom :as dom]
             [secretary.core :as secretary]
             [reagent.core :as r]
+            [route.entry]
             [route.login]
             [route.forgot-password])
   (:import goog.History

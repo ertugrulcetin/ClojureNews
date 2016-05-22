@@ -5,8 +5,7 @@
             [ring.middleware.params :refer [wrap-params]]
             [ring.middleware.resource :as resource]
             [clj.route.user :as route-user]
-            [clj.route.login :as route-login]
-            [clojure.tools.logging :as log])
+            [clj.route.login :as route-login])
   (:gen-class))
 
 (defn log-middleware
