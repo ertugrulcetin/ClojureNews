@@ -4,6 +4,7 @@
             [compojure.route :refer [not-found resources]]
             [ring.middleware.params :refer [wrap-params]]
             [ring.middleware.resource :as resource]
+            [ring.middleware.cookies :as cookies]
             [clj.route.user :as route-user]
             [clj.route.login :as route-login])
   (:gen-class))
@@ -21,6 +22,7 @@
 (def handler (-> routes
                  log-middleware
                  (resource/wrap-resource "/public")
+                 cookies/wrap-cookies
                  wrap-params))
 
 

@@ -1,5 +1,6 @@
 (ns clj.route.login
-  (:require [compojure.core :refer [defroutes GET POST PUT]]
+  (:require [clojure.string :as str]
+            [compojure.core :refer [defroutes GET POST PUT]]
             [compojure.route :refer [not-found]]
             [liberator.core :refer [resource defresource]]
             [liberator.representation :as rep]
@@ -15,7 +16,9 @@
          check-user-exists
          check-user-does-not-exist
          check-password-match
-         check-auth-before)
+         check-auth-before
+         check-not-auth
+         get-username-from-cookie)
 
 (defroutes route
 
@@ -49,6 +52,12 @@
                                                   :cookie   cookie
                                                   :karma    (:karma user)}}))))
 
+                       :new? (fn [_]
+                               false)
+
+                       :respond-with-entity? (fn [_]
+                                               true)
+
                        :as-response (fn [d ctx]
                                       (-> (rep/as-response d ctx)
                                           (assoc-in [:headers "Set-Cookie"] (resource-util/create-cookie (kez/->>> :cookie :user-obj ctx)))))
@@ -62,7 +71,38 @@
              )
 
            (POST "/logout" []
+             (resource :allowed-methods [:post]
 
+                       :available-media-types resource-util/avaliable-media-types
+
+                       :known-content-type? #(resource-util/check-content-type % resource-util/avaliable-media-types)
+
+                       :malformed? #(resource-util/parse-json % ::data)
+
+                       :post! (fn [ctx]
+                                (check-not-auth ctx)
+
+                                (if-let [user user-dao/find-by-username (get-username-from-cookie ctx)]
+                                  (user-dao/update-cookie-by-username (:username user) nil)
+                                  (throw (RuntimeException. "Could not find user!")))
+
+                                {:old-cookie (get-username-from-cookie ctx)})
+
+                       :new? (fn [_]
+                               false)
+
+                       :respond-with-entity? (fn [_]
+                                               true)
+
+                       :as-response (fn [d ctx]
+                                      (-> (rep/as-response d ctx)
+                                          (assoc-in [:headers "Set-Cookie"] (resource-util/delete-cookie (:old-cookie ctx)))))
+
+                       :handle-ok (fn [ctx]
+                                    {:logout? true})
+
+                       :handle-exception (fn [ctx]
+                                           {:error (.getMessage (:exception ctx))}))
              )
 
            (PUT "/signup" []
@@ -119,10 +159,21 @@
 
 (defn check-auth-before
   [ctx user]
-  (if (= (:cookie ctx) (:cookie user))
+  (if (= (-> ctx :request :cookies (get "user") :value) (:cookie user))
     (throw (RuntimeException. "You have already logged-in!"))))
 
 (defn check-password-match
   [user password]
   (if-not (= (:password user) (hash/sha256 password))
     (throw (RuntimeException. "Bad Login."))))
+
+(defn check-not-auth
+  [ctx]
+  (let [cookie (-> ctx :request :cookies (get "user") :value)]
+    (if-not (and cookie (get-username-from-cookie cookie))
+      (throw (RuntimeException. "You must login first")))))
+
+(defn get-username-from-cookie
+  [ctx]
+  (let [cookie (-> ctx :request :cookies (get "user") :value)]
+    (.substring cookie 0 (str/index-of cookie "&"))))
