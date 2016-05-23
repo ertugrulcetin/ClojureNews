@@ -6,7 +6,8 @@
             [ring.middleware.resource :as resource]
             [ring.middleware.cookies :as cookies]
             [clj.route.user :as route-user]
-            [clj.route.login :as route-login])
+            [clj.route.login :as route-login]
+            [clj.route.entry :as route-entry])
   (:gen-class))
 
 (defn log-middleware
@@ -17,7 +18,8 @@
 
 (def routes (compojure.core/routes
               #'route-user/route
-              #'route-login/route))
+              #'route-login/route
+              #'route-entry/route))
 
 (def handler (-> routes
                  log-middleware

@@ -13,12 +13,11 @@
 
 (declare check-username
          check-password
-         check-user-exists
+         check-user-duplicate
          check-user-does-not-exist
          check-password-match
          check-auth-before
-         check-not-auth
-         get-username-from-cookie)
+         check-not-auth)
 
 (defroutes route
 
@@ -75,18 +74,14 @@
 
                        :available-media-types resource-util/avaliable-media-types
 
-                       :known-content-type? #(resource-util/check-content-type % resource-util/avaliable-media-types)
-
-                       :malformed? #(resource-util/parse-json % ::data)
-
                        :post! (fn [ctx]
                                 (check-not-auth ctx)
 
-                                (if-let [user user-dao/find-by-username (get-username-from-cookie ctx)]
+                                (if-let [user (user-dao/find-by-username (resource-util/get-username-from-cookie ctx))]
                                   (user-dao/update-cookie-by-username (:username user) nil)
                                   (throw (RuntimeException. "Could not find user!")))
 
-                                {:old-cookie (get-username-from-cookie ctx)})
+                                {:old-cookie (resource-util/get-username-from-cookie ctx)})
 
                        :new? (fn [_]
                                false)
@@ -123,7 +118,7 @@
 
                                  (check-password password)
 
-                                 (check-user-exists username)
+                                 (check-user-duplicate username)
 
                                  {:user-obj (user-dao/create-user username password)}))
 
@@ -147,7 +142,7 @@
   (if-not (validation/password? password)
     (throw (RuntimeException. "Passwords should be between 8 and 20 characters long. Please choose another."))))
 
-(defn check-user-exists
+(defn check-user-duplicate
   [username]
   (if (user-dao/find-by-username username)
     (throw (RuntimeException. "That username is taken. Please choose another."))))
@@ -159,8 +154,9 @@
 
 (defn check-auth-before
   [ctx user]
-  (if (= (-> ctx :request :cookies (get "user") :value) (:cookie user))
-    (throw (RuntimeException. "You have already logged-in!"))))
+  (if (and (resource-util/get-cookie ctx) (:cookie user))
+    (if (= (resource-util/get-cookie ctx) (:cookie user))
+      (throw (RuntimeException. "You have already logged-in!")))))
 
 (defn check-password-match
   [user password]
@@ -169,11 +165,6 @@
 
 (defn check-not-auth
   [ctx]
-  (let [cookie (-> ctx :request :cookies (get "user") :value)]
-    (if-not (and cookie (get-username-from-cookie cookie))
+  (let [cookie (resource-util/get-cookie ctx)]
+    (if-not (and cookie (resource-util/get-username-from-cookie ctx))
       (throw (RuntimeException. "You must login first")))))
-
-(defn get-username-from-cookie
-  [ctx]
-  (let [cookie (-> ctx :request :cookies (get "user") :value)]
-    (.substring cookie 0 (str/index-of cookie "&"))))

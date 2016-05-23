@@ -1,6 +1,7 @@
 (ns clj.util.resource
   (:require [clojure.data.json :as json]
-            [clojure.java.io :as io])
+            [clojure.java.io :as io]
+            [clojure.string :as str])
   (:import (java.util Date)))
 
 (defonce avaliable-media-types ["application/json" "application/json; charset=UTF-8"])
@@ -43,3 +44,12 @@
   "Converts clojure map's string keywords to keyword functions"
   [json-clojure-map]
   (reduce #(assoc %1 (keyword (first %2)) (second %2)) {} json-clojure-map))
+
+(defn get-cookie
+  [ctx]
+  (-> ctx :request :cookies (get "user") :value))
+
+(defn get-username-from-cookie
+  [ctx]
+  (if-let [cookie (get-cookie ctx)]
+    (.substring cookie 0 (str/index-of cookie "&"))))

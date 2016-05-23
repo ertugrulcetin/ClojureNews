@@ -54,3 +54,11 @@
              :error-handler   error-handler
              :format          (ajax/json-request-format)
              :response-format (ajax/json-response-format {:keywords? true})}))))
+
+(defn log-out
+  []
+  (POST "/logout"
+        {:handler         handler
+         :error-handler   error-handler
+         :format          (ajax/json-request-format)
+         :response-format (ajax/json-response-format {:keywords? true})}))
