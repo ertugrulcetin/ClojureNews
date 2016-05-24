@@ -6,8 +6,7 @@
    [:tbody
 
     [:tr
-     [:td
-      [:br]]]
+     [:td]]
 
     [:tr
      [:td "username:"]

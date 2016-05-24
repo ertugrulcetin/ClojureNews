@@ -163,6 +163,7 @@
   (if-not (= (:password user) (hash/sha256 password))
     (throw (RuntimeException. "Bad Login."))))
 
+;;TODO check db cookie!
 (defn check-not-auth
   [ctx]
   (let [cookie (resource-util/get-cookie ctx)]

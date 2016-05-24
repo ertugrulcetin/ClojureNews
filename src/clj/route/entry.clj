@@ -19,8 +19,10 @@
                                     ;;TODO check cookie nil control, may fetch user whose cookie nil !!!
                                     (if-let [cookie (resource-util/get-cookie ctx)]
                                       (if-let [user (user-dao/find-by-username (resource-util/get-username-from-cookie ctx))]
-                                        {:user-obj {:username (:username user)
-                                                    :karma    (:karma user)}}
+                                        (if (= cookie (:cookie user))
+                                          {:user-obj {:username (:username user)
+                                                      :karma    (:karma user)}}
+                                          {:user-obj nil})
                                         {:user-obj nil})
                                       {:user-obj nil}))
 
