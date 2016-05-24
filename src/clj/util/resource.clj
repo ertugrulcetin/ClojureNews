@@ -53,3 +53,8 @@
   [ctx]
   (if-let [cookie (get-cookie ctx)]
     (.substring cookie 0 (str/index-of cookie "&"))))
+
+(defn deneme
+  []
+  {:user-obj {:username "canavar"
+              :karma    218}})

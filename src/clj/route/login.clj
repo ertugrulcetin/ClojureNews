@@ -17,7 +17,9 @@
          check-user-does-not-exist
          check-password-match
          check-auth-before
-         check-not-auth)
+         check-not-auth
+         create-cookie-if-no-exception
+         delete-cookie-if-no-exception)
 
 (defroutes route
 
@@ -58,8 +60,7 @@
                                                true)
 
                        :as-response (fn [d ctx]
-                                      (-> (rep/as-response d ctx)
-                                          (assoc-in [:headers "Set-Cookie"] (resource-util/create-cookie (kez/->>> :cookie :user-obj ctx)))))
+                                      (create-cookie-if-no-exception d ctx))
 
                        :handle-ok (fn [ctx]
                                     {:username (kez/->>> :username :user-obj ctx)
@@ -90,8 +91,7 @@
                                                true)
 
                        :as-response (fn [d ctx]
-                                      (-> (rep/as-response d ctx)
-                                          (assoc-in [:headers "Set-Cookie"] (resource-util/delete-cookie (:old-cookie ctx)))))
+                                      (delete-cookie-if-no-exception d ctx))
 
                        :handle-ok (fn [ctx]
                                     {:logout? true})
@@ -123,8 +123,7 @@
                                  {:user-obj (user-dao/create-user username password)}))
 
                        :as-response (fn [d ctx]
-                                      (-> (rep/as-response d ctx)
-                                          (assoc-in [:headers "Set-Cookie"] (resource-util/create-cookie (kez/->>> :cookie :user-obj ctx)))))
+                                      (create-cookie-if-no-exception d ctx))
 
                        :handle-created (fn [_]
                                          {:success? true})
@@ -169,3 +168,17 @@
   (let [cookie (resource-util/get-cookie ctx)]
     (if-not (and cookie (resource-util/get-username-from-cookie ctx))
       (throw (RuntimeException. "You must login first")))))
+
+(defn create-cookie-if-no-exception
+  [d ctx]
+  (if-not (:exception ctx)
+    (-> (rep/as-response d ctx)
+        (assoc-in [:headers "Set-Cookie"] (resource-util/create-cookie (kez/->>> :cookie :user-obj ctx))))
+    (rep/as-response d ctx)))
+
+(defn delete-cookie-if-no-exception
+  [d ctx]
+  (if-not (:exception ctx)
+    (-> (rep/as-response d ctx)
+        (assoc-in [:headers "Set-Cookie"] (resource-util/delete-cookie (:old-cookie ctx))))
+    (rep/as-response d ctx)))
