@@ -7,9 +7,6 @@
 
 (defroutes route
 
-           (GET "/" []
-             (io/resource "index.html"))
-
 
            (GET "/user/:username" [username]
              )
