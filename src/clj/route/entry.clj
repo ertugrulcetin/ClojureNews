@@ -4,13 +4,16 @@
             [liberator.core :refer [resource defresource]]
             [clj.dao.user :as user-dao]
             [clj.util.resource :as resource-util]
-            [hiccup.core :as hiccup]))
+            [hiccup.core :as hiccup])
+  (:import [java.net InetAddress]))
 
 (declare get-user)
 
 (defroutes route
 
            (GET "/" []
+
+             (println "My Ip: " (InetAddress/getLocalHost))
 
              (resource :allowed-methods [:get]
 
@@ -96,14 +99,7 @@
                        :available-media-types resource-util/avaliable-media-types
 
                        :handle-ok (fn [ctx]
-
-                                    (let [result (if-let [cookie (resource-util/get-cookie ctx)]
-                                                   (if-let [user (user-dao/find-by-username (resource-util/get-username-from-cookie ctx))]
-                                                     (if (= cookie (:cookie user))
-                                                       {:user-obj {:username (:username user)
-                                                                   :karma    (:karma user)}})))]
-
-                                      (or result {:user-obj nil})))
+                                    {:entry? true})
 
                        :handle-exception (fn [ctx]
                                            {:error (.getMessage (:exception ctx))}))))

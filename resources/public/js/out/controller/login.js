@@ -8,12 +8,12 @@ goog.require('cljc.validation');
 goog.require('reagent.core');
 cljs.core.enable_console_print_BANG_.call(null);
 controller.login.handler = (function controller$login$handler(response){
-return util.view.change_url.call(null,"");
+return window.location = [cljs.core.str("http://"),cljs.core.str(window.location.host)].join('');
 });
-controller.login.error_handler = (function controller$login$error_handler(p__25009){
-var map__25012 = p__25009;
-var map__25012__$1 = ((((!((map__25012 == null)))?((((map__25012.cljs$lang$protocol_mask$partition0$ & (64))) || (map__25012.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__25012):map__25012);
-var response = cljs.core.get.call(null,map__25012__$1,new cljs.core.Keyword(null,"response","response",-1068424192));
+controller.login.error_handler = (function controller$login$error_handler(p__25712){
+var map__25715 = p__25712;
+var map__25715__$1 = ((((!((map__25715 == null)))?((((map__25715.cljs$lang$protocol_mask$partition0$ & (64))) || (map__25715.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__25715):map__25715);
+var response = cljs.core.get.call(null,map__25715__$1,new cljs.core.Keyword(null,"response","response",-1068424192));
 return util.view.render_error_message.call(null,new cljs.core.Keyword(null,"error","error",-978969032).cljs$core$IFn$_invoke$arity$1(response));
 });
 controller.login.sign_up = (function controller$login$sign_up(field_ids){
@@ -47,9 +47,7 @@ return ajax.core.POST.call(null,"/login",new cljs.core.PersistentArrayMap(null, 
 }
 });
 controller.login.log_out = (function controller$login$log_out(){
-return ajax.core.POST.call(null,"/logout",new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"handler","handler",-195596612),(function (_){
-return null;
-}),new cljs.core.Keyword(null,"error-handler","error-handler",-484945776),controller.login.error_handler,new cljs.core.Keyword(null,"format","format",-1306924766),ajax.core.json_request_format.call(null),new cljs.core.Keyword(null,"response-format","response-format",1664465322),ajax.core.json_response_format.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"keywords?","keywords?",764949733),true], null))], null));
+return ajax.core.POST.call(null,"/logout",new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"handler","handler",-195596612),controller.login.handler,new cljs.core.Keyword(null,"error-handler","error-handler",-484945776),controller.login.error_handler,new cljs.core.Keyword(null,"format","format",-1306924766),ajax.core.json_request_format.call(null),new cljs.core.Keyword(null,"response-format","response-format",1664465322),ajax.core.json_response_format.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"keywords?","keywords?",764949733),true], null))], null));
 });
 
 //# sourceMappingURL=login.js.map

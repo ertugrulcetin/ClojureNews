@@ -9,11 +9,7 @@
 (enable-console-print!)
 
 (defn handler [response]
-
-  (if-let [user (:user-obj response)]
-    (r/render-component [(fn []
-                           (view.page-top/comp-username-log-out (:username user) (:karma user)))] (dom/getElement "pageTopId"))
-    (r/render-component [view.page-top/comp-log-in] (dom/getElement "pageTopId"))))
+  (fn [_]))
 
 (defn error-handler [{:keys [response] :as m}]
   (util.view/render-error-message (:error response)))

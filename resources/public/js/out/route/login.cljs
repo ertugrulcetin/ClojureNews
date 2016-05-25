@@ -7,3 +7,6 @@
 
 (defroute login "/login" []
           (r/render-component [view.login/component] util.view/main-container))
+
+(defroute logout "/logout" []
+          (controller.login/log-out))

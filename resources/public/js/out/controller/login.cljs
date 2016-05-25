@@ -7,8 +7,9 @@
 
 (enable-console-print!)
 
+;;TODO will be changed!!! https.....!
 (defn handler [response]
-  (util.view/change-url ""))
+  (set! window/location (str "http://" window/location.host)))
 
 (defn error-handler [{:keys [response]}]
   (util.view/render-error-message (:error response)))
@@ -58,7 +59,7 @@
 (defn log-out
   []
   (POST "/logout"
-        {:handler         (fn [_] )
+        {:handler         handler
          :error-handler   error-handler
          :format          (ajax/json-request-format)
          :response-format (ajax/json-response-format {:keywords? true})}))
