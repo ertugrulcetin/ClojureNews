@@ -1,8 +1,5 @@
 (ns clj.controller.login
-  (:require [clojure.string :as str]
-            [compojure.core :refer [defroutes GET POST PUT]]
-            [compojure.route :refer [not-found]]
-            [liberator.core :refer [resource defresource]]
+  (:require [liberator.core :refer [resource defresource]]
             [liberator.representation :as rep]
             [clj.util.resource :as resource-util]
             [clj.dao.user :as user-dao]
