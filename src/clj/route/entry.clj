@@ -4,17 +4,13 @@
             [liberator.core :refer [resource defresource]]
             [clj.dao.user :as user-dao]
             [clj.util.resource :as resource-util]
-            [hiccup.core :as hiccup])
-  (:import [java.net InetAddress]))
+            [hiccup.core :as hiccup]))
 
 (declare get-user)
 
 (defroutes route
 
            (GET "/" []
-
-             (println "My Ip: " (InetAddress/getLocalHost))
-
              (resource :allowed-methods [:get]
 
                        :available-media-types ["text/html"]
@@ -102,7 +98,7 @@
                                     {:entry? true})
 
                        :handle-exception (fn [ctx]
-                                           {:error (.getMessage (:exception ctx))}))))
+                                           (resource-util/get-exception-message ctx)))))
 
 (defn get-user
   [ctx]
