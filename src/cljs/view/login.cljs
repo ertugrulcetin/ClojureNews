@@ -1,6 +1,5 @@
 (ns view.login
-  (:require [goog.dom :as dom]
-            [controller.login]))
+  (:require [controller.login]))
 
 
 (defn component

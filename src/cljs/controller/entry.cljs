@@ -1,9 +1,6 @@
 (ns controller.entry
   (:require [util.view]
-            [goog.dom :as dom]
-            [ajax.core :as ajax :refer [GET POST PUT]]
-            [reagent.core :as r]
-            [view.page-top]))
+            [ajax.core :as ajax :refer [GET POST PUT]]))
 
 
 (enable-console-print!)

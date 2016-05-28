@@ -1,7 +1,6 @@
 (ns util.view
   (:require [goog.dom :as dom]
-            [reagent.core :as r]
-            [secretary.core :as secretary]))
+            [reagent.core :as r]))
 
 (defonce main-container (dom/getElement "mainContainerId"))
 

@@ -54,7 +54,7 @@
                                                  [:span {:id "pageTopId", :class "pagetop"}
                                                   (if-let [user (get-user ctx)]
                                                     [:div
-                                                     [:a {:class "pagetopwhite", :id "loginId", :href (str "/#/user" (:username user))} (:username user)]
+                                                     [:a {:class "pagetopwhite", :id "loginId", :href (str "/#/user/" (:username user))} (:username user)]
                                                      (str " (" (:karma user) ") | ")
                                                      [:a {:class "pagetopwhite", :id "loginId", :href "/#/logout"} "logout"]]
                                                     [:a {:class "pagetopwhite", :id "loginId", :href "/#/login"} "login"])

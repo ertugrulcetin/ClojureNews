@@ -6,10 +6,8 @@
 
 (defroutes route
 
-
            (GET "/user/:username" [username]
              )
 
-
-           (POST "/user/info" []
+           (POST "/user/:username" [username]
              ))

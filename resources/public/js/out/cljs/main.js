@@ -9,23 +9,24 @@ goog.require('route.entry');
 goog.require('reagent.core');
 goog.require('goog.History');
 goog.require('goog.events');
+goog.require('route.user');
 goog.require('route.forgot_password');
 secretary.core.set_config_BANG_.call(null,new cljs.core.Keyword(null,"prefix","prefix",-265908465),"#");
-var h_24218 = (new goog.History());
-goog.events.listen(h_24218,goog.History.EventType.NAVIGATE,((function (h_24218){
-return (function (p1__24216_SHARP_){
-reagent.core.render_component.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [((function (h_24218){
+var h_26552 = (new goog.History());
+goog.events.listen(h_26552,goog.History.EventType.NAVIGATE,((function (h_26552){
+return (function (p1__26550_SHARP_){
+reagent.core.render_component.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [((function (h_26552){
 return (function (){
 return null;
-});})(h_24218))
+});})(h_26552))
 ], null),util.view.error_container);
 
-return secretary.core.dispatch_BANG_.call(null,p1__24216_SHARP_.token);
-});})(h_24218))
+return secretary.core.dispatch_BANG_.call(null,p1__26550_SHARP_.token);
+});})(h_26552))
 );
 
-var G__24217_24219 = h_24218;
-G__24217_24219.setEnabled(true);
+var G__26551_26553 = h_26552;
+G__26551_26553.setEnabled(true);
 
 
 //# sourceMappingURL=main.js.map

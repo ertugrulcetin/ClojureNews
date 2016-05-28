@@ -397,5 +397,6 @@ and (max-width: 750px) {
 
     input[type='text'], input[type='number'], textarea {
         font-size: 10pt;
+        width: 90%;
     }
 }

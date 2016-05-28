@@ -6,6 +6,7 @@
             [reagent.core :as r]
             [route.entry]
             [route.login]
+            [route.user]
             [route.forgot-password])
   (:import goog.History
            goog.History.EventType))

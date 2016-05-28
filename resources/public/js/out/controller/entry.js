@@ -2,21 +2,18 @@
 goog.provide('controller.entry');
 goog.require('cljs.core');
 goog.require('util.view');
-goog.require('goog.dom');
 goog.require('ajax.core');
-goog.require('reagent.core');
-goog.require('view.page_top');
 cljs.core.enable_console_print_BANG_.call(null);
 controller.entry.handler = (function controller$entry$handler(response){
 return (function (_){
 return null;
 });
 });
-controller.entry.error_handler = (function controller$entry$error_handler(p__25741){
-var map__25744 = p__25741;
-var map__25744__$1 = ((((!((map__25744 == null)))?((((map__25744.cljs$lang$protocol_mask$partition0$ & (64))) || (map__25744.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__25744):map__25744);
-var m = map__25744__$1;
-var response = cljs.core.get.call(null,map__25744__$1,new cljs.core.Keyword(null,"response","response",-1068424192));
+controller.entry.error_handler = (function controller$entry$error_handler(p__25107){
+var map__25110 = p__25107;
+var map__25110__$1 = ((((!((map__25110 == null)))?((((map__25110.cljs$lang$protocol_mask$partition0$ & (64))) || (map__25110.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__25110):map__25110);
+var m = map__25110__$1;
+var response = cljs.core.get.call(null,map__25110__$1,new cljs.core.Keyword(null,"response","response",-1068424192));
 return util.view.render_error_message.call(null,new cljs.core.Keyword(null,"error","error",-978969032).cljs$core$IFn$_invoke$arity$1(response));
 });
 controller.entry.home_page = (function controller$entry$home_page(){
