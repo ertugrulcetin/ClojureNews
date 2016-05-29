@@ -1,19 +1,19 @@
 // Compiled by ClojureScript 1.8.51 {}
 goog.provide('controller.login');
 goog.require('cljs.core');
-goog.require('util.view');
 goog.require('ajax.core');
 goog.require('secretary.core');
 goog.require('cljc.validation');
+goog.require('util.view');
 goog.require('reagent.core');
 cljs.core.enable_console_print_BANG_.call(null);
 controller.login.handler = (function controller$login$handler(response){
 return window.location = [cljs.core.str("http://"),cljs.core.str(window.location.host)].join('');
 });
-controller.login.error_handler = (function controller$login$error_handler(p__25712){
-var map__25715 = p__25712;
-var map__25715__$1 = ((((!((map__25715 == null)))?((((map__25715.cljs$lang$protocol_mask$partition0$ & (64))) || (map__25715.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__25715):map__25715);
-var response = cljs.core.get.call(null,map__25715__$1,new cljs.core.Keyword(null,"response","response",-1068424192));
+controller.login.error_handler = (function controller$login$error_handler(p__23930){
+var map__23933 = p__23930;
+var map__23933__$1 = ((((!((map__23933 == null)))?((((map__23933.cljs$lang$protocol_mask$partition0$ & (64))) || (map__23933.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__23933):map__23933);
+var response = cljs.core.get.call(null,map__23933__$1,new cljs.core.Keyword(null,"response","response",-1068424192));
 return util.view.render_error_message.call(null,new cljs.core.Keyword(null,"error","error",-978969032).cljs$core$IFn$_invoke$arity$1(response));
 });
 controller.login.sign_up = (function controller$login$sign_up(field_ids){

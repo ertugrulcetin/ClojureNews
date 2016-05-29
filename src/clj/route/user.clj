@@ -1,13 +1,13 @@
 (ns clj.route.user
   (:require [compojure.core :refer [defroutes GET POST PUT]]
             [compojure.route :refer [not-found]]
-            [liberator.core :refer [resource defresource]]))
+            [clj.controller.user :as controller]))
 
 
 (defroutes route
 
            (GET "/user/:username" [username]
-             )
+             (controller/user username))
 
            (POST "/user/:username" [username]
              ))

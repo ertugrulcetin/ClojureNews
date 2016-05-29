@@ -3,8 +3,8 @@
   (:require [reagent.core :as r]
             [secretary.core]
             [view.user]
-            [util.view]))
+            [util.view]
+            [controller.user :as controller]))
 
 (defroute user "/user/:username" [username]
-          (r/render-component [(fn []
-                                 (view.user/component))] util.view/main-container))
+          (controller/user username))

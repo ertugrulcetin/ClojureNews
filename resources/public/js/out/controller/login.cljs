@@ -1,8 +1,8 @@
 (ns controller.login
-  (:require [util.view]
-            [ajax.core :as ajax :refer [GET POST PUT]]
+  (:require [ajax.core :as ajax :refer [GET POST PUT]]
             [secretary.core :as secretary]
             [cljc.validation :as validation]
+            [util.view]
             [reagent.core :as r]))
 
 (enable-console-print!)
