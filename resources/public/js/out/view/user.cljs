@@ -47,7 +47,7 @@
       [:tr
        [:td {:style {:vertical-align "top"}} "website:"]
        [:td
-        [:input {:type "text" :size "40" :defaultValue (:website user)}]]]
+        [:input {:type "text" :size "40" :defaultValue (:website user) :placeholder "ex: https://www.google.com"}]]]
       [:tr
        [:td {:style {:vertical-align "top"}} "website:"]
        [:td

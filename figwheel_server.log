@@ -3768,3 +3768,42 @@ notifying browser that file changed:  resources/public/js/out/goog/deps.js
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
 notifying browser that file changed:  out/view/user.js
 [32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.581 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 19 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 19 src/cljs/main.cljs
+notifying browser that file changed:  out/view/user.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.39 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 19 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 19 src/cljs/main.cljs
+notifying browser that file changed:  out/view/user.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.433 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 19 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 19 src/cljs/main.cljs
+notifying browser that file changed:  out/view/user.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.721 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 19 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 19 src/cljs/main.cljs
+notifying browser that file changed:  out/view/user.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.38 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 19 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 19 src/cljs/main.cljs
+notifying browser that file changed:  out/route/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.374 seconds.[0m
+sending changed CSS file: resources/public/css/news.css
+sending changed CSS file: resources/public/css/news.css
+sending changed CSS file: resources/public/css/news.css
+sending changed CSS file: resources/public/css/news.css
+sending changed CSS file: resources/public/css/news.css
+sending changed CSS file: resources/public/css/news.css
+sending changed CSS file: resources/public/css/news.css
+sending changed CSS file: resources/public/css/news.css
+sending changed CSS file: resources/public/css/news.css
+sending changed CSS file: resources/public/css/news.css
+sending changed CSS file: resources/public/css/news.css
+sending changed CSS file: resources/public/css/news.css
+sending changed CSS file: resources/public/css/news.css
+sending changed CSS file: resources/public/css/news.css

@@ -395,7 +395,7 @@ and (max-width: 750px) {
         margin-bottom: 9px;
     }
 
-    input[type='text'], input[type='number'], textarea {
+    input[type='text'], input[type='number'], input[type='password'], textarea {
         font-size: 10pt;
         width: 90%;
     }
