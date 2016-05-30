@@ -9,16 +9,14 @@ goog.require('util.view');
 goog.require('view.user');
 cljs.core.enable_console_print_BANG_.call(null);
 controller.user.handler = (function controller$user$handler(response){
-cljs.core.println.call(null,"Geldi amk");
-
 return reagent.core.render_component.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [(function (){
 return view.user.component.call(null,response);
 })], null),util.view.main_container);
 });
-controller.user.error_handler = (function controller$user$error_handler(p__26095){
-var map__26098 = p__26095;
-var map__26098__$1 = ((((!((map__26098 == null)))?((((map__26098.cljs$lang$protocol_mask$partition0$ & (64))) || (map__26098.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__26098):map__26098);
-var response = cljs.core.get.call(null,map__26098__$1,new cljs.core.Keyword(null,"response","response",-1068424192));
+controller.user.error_handler = (function controller$user$error_handler(p__25051){
+var map__25054 = p__25051;
+var map__25054__$1 = ((((!((map__25054 == null)))?((((map__25054.cljs$lang$protocol_mask$partition0$ & (64))) || (map__25054.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__25054):map__25054);
+var response = cljs.core.get.call(null,map__25054__$1,new cljs.core.Keyword(null,"response","response",-1068424192));
 return util.view.render_error_message.call(null,new cljs.core.Keyword(null,"error","error",-978969032).cljs$core$IFn$_invoke$arity$1(response));
 });
 controller.user.user = (function controller$user$user(username){

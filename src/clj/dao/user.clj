@@ -20,6 +20,10 @@
   [^String username]
   (mc/find-one-as-map db/clojure-news coll {:username username}))
 
+(defn find-by-email
+  [^String email]
+  (mc/find-one-as-map db/clojure-news coll {:emial email}))
+
 (defn update-cookie-by-username
-  [username cookie]
+  [^String username ^String cookie]
   (mc/update db/clojure-news coll {:username username} {$set {"cookie" cookie}}))

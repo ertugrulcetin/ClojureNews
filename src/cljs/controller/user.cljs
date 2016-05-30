@@ -8,7 +8,6 @@
 
 (enable-console-print!)
 (defn handler [response]
-  (println "Geldi amk")
   (r/render-component [(fn []
                          (view.user/component response))] util.view/main-container))
 

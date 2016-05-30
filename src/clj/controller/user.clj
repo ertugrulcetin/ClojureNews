@@ -24,9 +24,11 @@
                            (throw (RuntimeException. "Not valid username")))
 
                          (if-let [user (user-dao/find-by-username username)]
-                           (if (itself? ctx user)
+                            (if (itself? ctx user)
                              (merge {:auth? true} (get-auth-user user))
-                             (merge {:auth? false} (dissoc (get-auth-user user) :email)))
+                             (if (:show-email? user)
+                               (merge {:auth? false} (get-auth-user user))
+                               (merge {:auth? false} (dissoc (get-auth-user user) :email))))
                            (throw (RuntimeException. "No such user"))))
 
             :handle-exception (fn [ctx]

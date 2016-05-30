@@ -12,6 +12,7 @@
   {:_id          (ObjectId.)
    :created-date (Date.)
    :active?      true
+   :show-email?  false
    :email        nil
    :username     username
    :password     (hash/sha256 password)
@@ -21,7 +22,7 @@
    :website      nil
    :github       nil
    :twitter      nil
-   :bio          nil
+   :about          nil
    :cookie       (generate-cookie username)})
 
 (defn entry
