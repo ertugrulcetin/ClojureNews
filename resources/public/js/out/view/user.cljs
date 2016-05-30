@@ -1,5 +1,7 @@
 (ns view.user)
 
+(enable-console-print!)
+
 (defn component
   [user]
   [:table
@@ -76,8 +78,8 @@
        [:td "show email:"]
        [:td
         [:select {:id "selectShowEmailId"}
-         [:option "yes"]
-         [:option "no"]]]])
+         [:option (if (:show-email? user) {:selected "selected"}) "yes"]
+         [:option (if-not (:show-email? user) {:selected "selected"}) "no"]]]])
 
     (if (:auth? user)
       [:tr

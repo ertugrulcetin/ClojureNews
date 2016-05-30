@@ -24,7 +24,7 @@
                            (throw (RuntimeException. "Not valid username")))
 
                          (if-let [user (user-dao/find-by-username username)]
-                            (if (itself? ctx user)
+                           (if (itself? ctx user)
                              (merge {:auth? true} (get-auth-user user))
                              (if (:show-email? user)
                                (merge {:auth? false} (get-auth-user user))
@@ -50,11 +50,12 @@
 
 (defn get-auth-user
   [user]
-  {:username (:username user)
-   :created  (number-of-days (:created-date user) (Date.))
-   :karma    (:karma user)
-   :about    (:about user)
-   :email    (:email user)
-   :website  (:website user)
-   :github   (:github user)
-   :twitter  (:twitter user)})
+  {:username    (:username user)
+   :created     (number-of-days (:created-date user) (Date.))
+   :karma       (:karma user)
+   :show-email? (:show-email? user)
+   :about       (:about user)
+   :email       (:email user)
+   :website     (:website user)
+   :github      (:github user)
+   :twitter     (:twitter user)})
