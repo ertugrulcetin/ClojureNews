@@ -1,7 +1,5 @@
 (ns view.user)
 
-(enable-console-print!)
-
 (defn component
   [user]
   [:table
@@ -25,7 +23,7 @@
       [:tr
        [:td {:style {:vertical-align "top"}} "about:"]
        [:td
-        [:textarea {:cols "60" :rows "6" :wrap "virtual" :name "about" :defaultValue (:about user)}]
+        [:textarea {:id "aboutId" :name "about" :cols "60" :rows "6" :wrap "virtual" :defaultValue (:about user)}]
         [:font {:size "-2"}
          [:a {:href "formatdoc" :tabindex "-1"}
           [:font {:color "#afafaf"} "help"]]] "          "]]
@@ -37,7 +35,7 @@
       [:tr
        [:td {:style {:vertical-align "top"}} "email:"]
        [:td
-        [:input {:type "text" :size "40" :defaultValue (:email user)}]]]
+        [:input {:id "emailId" :name "email" :type "text" :size "40" :defaultValue (:email user)}]]]
       [:tr
        [:td {:style {:vertical-align "top"}} "email:"]
        [:td
@@ -47,7 +45,7 @@
       [:tr
        [:td {:style {:vertical-align "top"}} "website:"]
        [:td
-        [:input {:type "text" :size "40" :defaultValue (:website user) :placeholder "ex: https://www.google.com"}]]]
+        [:input {:id "websiteId" :name "website" :type "text" :size "40" :defaultValue (:website user) :placeholder "ex: https://www.google.com"}]]]
       [:tr
        [:td {:style {:vertical-align "top"}} "website:"]
        [:td
@@ -57,7 +55,7 @@
       [:tr
        [:td {:style {:vertical-align "top"}} "github:"]
        [:td
-        [:input {:type "text" :size "40" :defaultValue (:github user) :placeholder "ex: ertugrulcetin"}]]]
+        [:input {:id "githubId" :name "github" :type "text" :size "40" :defaultValue (:github user) :placeholder "Enter username. ex: ertugrulcetin"}]]]
       [:tr
        [:td {:style {:vertical-align "top"}} "github:"]
        [:td
@@ -67,7 +65,7 @@
       [:tr
        [:td {:style {:vertical-align "top"}} "twitter:"]
        [:td
-        [:input {:type "text" :size "40" :defaultValue (:twitter user) :placeholder "ex: ertuctn"}]]]
+        [:input {:id "twitterId" :name "twitter" :type "text" :size "40" :defaultValue (:twitter user) :placeholder "Enter username. ex: ertuctn"}]]]
       [:tr
        [:td {:style {:vertical-align "top"}} "twitter:"]
        [:td
@@ -77,7 +75,7 @@
       [:tr
        [:td "show email:"]
        [:td
-        [:select {:id "selectShowEmailId"}
+        [:select {:id "showEmailId" :name "show-email?"}
          [:option (if (:show-email? user) {:selected "selected"}) "yes"]
          [:option (if-not (:show-email? user) {:selected "selected"}) "no"]]]])
 
@@ -113,4 +111,5 @@
     (if (:auth? user)
       [:tr
        [:td
-        [:input {:type "submit" :value "update"}]]])]])
+        [:input {:type "submit" :value "update" :on-click (fn [_]
+                                                            (controller.user/user-update (:username user) ["aboutId" "emailId" "websiteId" "githubId" "twitterId" "showEmailId"]))}]]])]])
