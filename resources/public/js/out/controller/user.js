@@ -13,11 +13,11 @@ return reagent.core.render_component.call(null,new cljs.core.PersistentVector(nu
 return view.user.component.call(null,response);
 })], null),util.view.main_container);
 });
-controller.user.error_handler = (function controller$user$error_handler(p__25090){
-var map__25093 = p__25090;
-var map__25093__$1 = ((((!((map__25093 == null)))?((((map__25093.cljs$lang$protocol_mask$partition0$ & (64))) || (map__25093.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__25093):map__25093);
-var m = map__25093__$1;
-var response = cljs.core.get.call(null,map__25093__$1,new cljs.core.Keyword(null,"response","response",-1068424192));
+controller.user.error_handler = (function controller$user$error_handler(p__25657){
+var map__25660 = p__25657;
+var map__25660__$1 = ((((!((map__25660 == null)))?((((map__25660.cljs$lang$protocol_mask$partition0$ & (64))) || (map__25660.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__25660):map__25660);
+var m = map__25660__$1;
+var response = cljs.core.get.call(null,map__25660__$1,new cljs.core.Keyword(null,"response","response",-1068424192));
 return util.view.render_error_message.call(null,new cljs.core.Keyword(null,"error","error",-978969032).cljs$core$IFn$_invoke$arity$1(response));
 });
 controller.user.user = (function controller$user$user(username){
@@ -44,12 +44,12 @@ if(cljs.core.not.call(null,cljc.validation.show_email_QMARK__QMARK_.call(null,ne
 return util.view.render_error_message.call(null,"Not valid show email option.");
 } else {
 return ajax.core.POST.call(null,[cljs.core.str("/user/"),cljs.core.str(username)].join(''),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"params","params",710516235),cljc.string_util.trim_map_values.call(null,data),new cljs.core.Keyword(null,"handler","handler",-195596612),((function (data){
-return (function (_){
-return null;
+return (function (response){
+return cljs.core.println.call(null,response);
 });})(data))
 ,new cljs.core.Keyword(null,"error-handler","error-handler",-484945776),((function (data){
-return (function (_){
-return null;
+return (function (response){
+return cljs.core.println.call(null,response);
 });})(data))
 ,new cljs.core.Keyword(null,"format","format",-1306924766),ajax.core.json_request_format.call(null),new cljs.core.Keyword(null,"response-format","response-format",1664465322),ajax.core.json_response_format.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"keywords?","keywords?",764949733),true], null))], null));
 

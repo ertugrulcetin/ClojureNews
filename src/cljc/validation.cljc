@@ -25,7 +25,7 @@
 
 (defn about?
   [about]
-  (or (str/blank? about) (re-matches #".{0,500}" about)))
+  (or (str/blank? about) (re-matches #".+{0,500}" about)))
 
 (defn show-email??
   [show-email-option]

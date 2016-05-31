@@ -22,8 +22,17 @@
 
 (defn find-by-email
   [^String email]
-  (mc/find-one-as-map db/clojure-news coll {:emial email}))
+  (mc/find-one-as-map db/clojure-news coll {:email email}))
 
 (defn update-cookie-by-username
   [^String username ^String cookie]
   (mc/update db/clojure-news coll {:username username} {$set {"cookie" cookie}}))
+
+(defn update-user-info-by-username
+  [username user-info]
+  (mc/update db/clojure-news coll {:username username} {$set {"about"       (:about user-info)
+                                                              "email"       (:email user-info)
+                                                              "website"     (:website user-info)
+                                                              "github"      (:github user-info)
+                                                              "twitter"     (:twitter user-info)
+                                                              "show-email?" (:show-email? user-info)}}))

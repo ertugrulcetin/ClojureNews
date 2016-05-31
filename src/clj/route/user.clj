@@ -10,4 +10,4 @@
              (controller/user username))
 
            (POST "/user/:username" [username]
-             ))
+             (controller/user-update username)))

@@ -51,7 +51,9 @@
       :else
       (POST (str "/user/" username)
             {:params          (string-util/trim-map-values data)
-             :handler         (fn [_])
-             :error-handler   (fn [_])
+             :handler         (fn [response]
+                                (println response))
+             :error-handler   (fn [response]
+                                (println response))
              :format          (ajax/json-request-format)
              :response-format (ajax/json-response-format {:keywords? true})}))))
