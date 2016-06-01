@@ -2,26 +2,25 @@
 goog.provide('controller.user');
 goog.require('cljs.core');
 goog.require('cljc.validation');
+goog.require('goog.dom');
 goog.require('ajax.core');
 goog.require('reagent.core');
 goog.require('cljc.string_util');
 goog.require('util.view');
 goog.require('view.user');
 cljs.core.enable_console_print_BANG_.call(null);
-controller.user.handler = (function controller$user$handler(response){
-return reagent.core.render_component.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [(function (){
-return view.user.component.call(null,response);
-})], null),util.view.main_container);
-});
-controller.user.error_handler = (function controller$user$error_handler(p__25657){
-var map__25660 = p__25657;
-var map__25660__$1 = ((((!((map__25660 == null)))?((((map__25660.cljs$lang$protocol_mask$partition0$ & (64))) || (map__25660.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__25660):map__25660);
-var m = map__25660__$1;
-var response = cljs.core.get.call(null,map__25660__$1,new cljs.core.Keyword(null,"response","response",-1068424192));
+controller.user.error_handler = (function controller$user$error_handler(p__25308){
+var map__25311 = p__25308;
+var map__25311__$1 = ((((!((map__25311 == null)))?((((map__25311.cljs$lang$protocol_mask$partition0$ & (64))) || (map__25311.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__25311):map__25311);
+var response = cljs.core.get.call(null,map__25311__$1,new cljs.core.Keyword(null,"response","response",-1068424192));
 return util.view.render_error_message.call(null,new cljs.core.Keyword(null,"error","error",-978969032).cljs$core$IFn$_invoke$arity$1(response));
 });
 controller.user.user = (function controller$user$user(username){
-return ajax.core.GET.call(null,[cljs.core.str("/user/"),cljs.core.str(username)].join(''),new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"handler","handler",-195596612),controller.user.handler,new cljs.core.Keyword(null,"error-handler","error-handler",-484945776),controller.user.error_handler,new cljs.core.Keyword(null,"format","format",-1306924766),ajax.core.json_request_format.call(null),new cljs.core.Keyword(null,"response-format","response-format",1664465322),ajax.core.json_response_format.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"keywords?","keywords?",764949733),true], null))], null));
+return ajax.core.GET.call(null,[cljs.core.str("/user/"),cljs.core.str(username)].join(''),new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"handler","handler",-195596612),(function (response){
+return reagent.core.render_component.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [(function (){
+return view.user.component.call(null,response);
+})], null),util.view.main_container);
+}),new cljs.core.Keyword(null,"error-handler","error-handler",-484945776),controller.user.error_handler,new cljs.core.Keyword(null,"format","format",-1306924766),ajax.core.json_request_format.call(null),new cljs.core.Keyword(null,"response-format","response-format",1664465322),ajax.core.json_response_format.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"keywords?","keywords?",764949733),true], null))], null));
 });
 controller.user.user_update = (function controller$user$user_update(username,field_ids){
 var data = util.view.create_field_val_map.call(null,field_ids);
@@ -44,14 +43,16 @@ if(cljs.core.not.call(null,cljc.validation.show_email_QMARK__QMARK_.call(null,ne
 return util.view.render_error_message.call(null,"Not valid show email option.");
 } else {
 return ajax.core.POST.call(null,[cljs.core.str("/user/"),cljs.core.str(username)].join(''),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"params","params",710516235),cljc.string_util.trim_map_values.call(null,data),new cljs.core.Keyword(null,"handler","handler",-195596612),((function (data){
-return (function (response){
-return cljs.core.println.call(null,response);
+return (function (_){
+reagent.core.render_component.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [view.user.component_update], null),util.view.error_container);
+
+return setTimeout(((function (data){
+return (function (){
+return goog.dom.getElement("errorContainerId").innerText = "";
 });})(data))
-,new cljs.core.Keyword(null,"error-handler","error-handler",-484945776),((function (data){
-return (function (response){
-return cljs.core.println.call(null,response);
+,(3000));
 });})(data))
-,new cljs.core.Keyword(null,"format","format",-1306924766),ajax.core.json_request_format.call(null),new cljs.core.Keyword(null,"response-format","response-format",1664465322),ajax.core.json_response_format.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"keywords?","keywords?",764949733),true], null))], null));
+,new cljs.core.Keyword(null,"error-handler","error-handler",-484945776),controller.user.error_handler,new cljs.core.Keyword(null,"format","format",-1306924766),ajax.core.json_request_format.call(null),new cljs.core.Keyword(null,"response-format","response-format",1664465322),ajax.core.json_response_format.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"keywords?","keywords?",764949733),true], null))], null));
 
 }
 }

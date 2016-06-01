@@ -80,7 +80,7 @@
                        (check-twitter twitter)
                        (check-show-email? show-email?)
 
-                       (check-email-exists email)
+                       (check-email-exists (-> ctx :user-obj :username) email)
 
                        (try
                          (user-dao/update-user-info-by-username username (update-in (string-util/trim-map-values data-as-map) [:show-email?] #(if (= "yes" %) true false)))
@@ -156,6 +156,7 @@
     (throw (RuntimeException. "Not valid show email option."))))
 
 (defn check-email-exists
-  [email]
-  (if (user-dao/find-by-email email)
-    (throw (RuntimeException. "This email has already been taken by another user."))))
+  [username email]
+  (if-let [user (user-dao/find-by-email email)]
+    (if-not (= (:username user) username)
+      (throw (RuntimeException. "This email has already been taken by another user.")))))

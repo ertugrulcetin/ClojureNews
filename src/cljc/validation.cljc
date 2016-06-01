@@ -25,8 +25,9 @@
 
 (defn about?
   [about]
-  (or (str/blank? about) (re-matches #".+{0,500}" about)))
+  (or (str/blank? about) (and (>= (count about) 0) (<= (count about) 500))))
 
 (defn show-email??
   [show-email-option]
   (or (= "yes" show-email-option) (= "no" show-email-option)))
+

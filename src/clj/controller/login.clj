@@ -43,6 +43,7 @@
 
                          (let [cookie (entity-util/generate-cookie username)]
                            (user-dao/update-cookie-by-username username cookie)
+                           (user-dao/update-last-login-by-username username)
 
                            {:user-obj {:cookie cookie}}))))
 

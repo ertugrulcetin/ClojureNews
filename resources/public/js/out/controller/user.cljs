@@ -2,24 +2,22 @@
   (:require [ajax.core :as ajax :refer [GET POST PUT]]
             [cljc.validation :as validation]
             [cljc.string-util :as string-util]
+            [goog.dom :as dom]
             [util.view]
             [view.user]
             [reagent.core :as r]))
 
 (enable-console-print!)
 
-(defn handler [response]
-  (r/render-component [(fn []
-                         (view.user/component response))] util.view/main-container))
-
-(defn error-handler [{:keys [response] :as m}]
+(defn error-handler [{:keys [response]}]
   (util.view/render-error-message (:error response)))
-
 
 (defn user
   [username]
   (GET (str "/user/" username)
-       {:handler         handler
+       {:handler         (fn [response]
+                           (r/render-component [(fn []
+                                                  (view.user/component response))] util.view/main-container))
         :error-handler   error-handler
         :format          (ajax/json-request-format)
         :response-format (ajax/json-response-format {:keywords? true})}))
@@ -51,9 +49,9 @@
       :else
       (POST (str "/user/" username)
             {:params          (string-util/trim-map-values data)
-             :handler         (fn [response]
-                                (println response))
-             :error-handler   (fn [response]
-                                (println response))
+             :handler         (fn [_]
+                                (r/render-component [view.user/component-update] util.view/error-container)
+                                (js/setTimeout (fn [] (set! (.-innerText (dom/getElement "errorContainerId")) "")) 3000))
+             :error-handler   error-handler
              :format          (ajax/json-request-format)
              :response-format (ajax/json-response-format {:keywords? true})}))))

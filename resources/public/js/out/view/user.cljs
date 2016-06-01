@@ -113,3 +113,7 @@
        [:td
         [:input {:type "submit" :value "update" :on-click (fn [_]
                                                             (controller.user/user-update (:username user) ["aboutId" "emailId" "websiteId" "githubId" "twitterId" "showEmailId"]))}]]])]])
+
+(defn component-update
+  []
+  [:p {:style {:color "green"}} "Your profile has been updated successfully"])

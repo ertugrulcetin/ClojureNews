@@ -3,7 +3,8 @@
             [monger.operators :refer :all]
             [clj.dao.db :as db]
             [clj.util.entity :as entity-util])
-  (:import (org.bson.types ObjectId)))
+  (:import (org.bson.types ObjectId)
+           (java.util Date)))
 
 ;; user Collection/Table
 (def coll "user")
@@ -36,3 +37,7 @@
                                                               "github"      (:github user-info)
                                                               "twitter"     (:twitter user-info)
                                                               "show-email?" (:show-email? user-info)}}))
+
+(defn update-last-login-by-username
+  [^String username]
+  (mc/update db/clojure-news coll {:username username} {$set {"last-login" (Date.)}}))
