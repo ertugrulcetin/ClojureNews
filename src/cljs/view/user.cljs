@@ -1,4 +1,5 @@
-(ns view.user)
+(ns view.user
+  [:require [clojure.string :as str]])
 
 (defn component
   [user]
@@ -29,7 +30,9 @@
           [:font {:color "#afafaf"} "help"]]] "          "]]
       [:tr
        [:td {:style {:vertical-align "top"}} "about:"]
-       [:td (:about user)]])
+       [:td [:div
+             (for [i (filter #(not (str/blank? %)) (str/split (or (:about user) "") #"\n"))]
+               [:p i])]]])
 
     (if (:auth? user)
       [:tr

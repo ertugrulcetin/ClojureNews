@@ -5,11 +5,14 @@
             [goog.dom :as dom]
             [util.view]
             [view.user]
-            [reagent.core :as r]))
+            [reagent.core :as r]
+            [clojure.string :as str]))
 
 (enable-console-print!)
 
-(defn error-handler [{:keys [response]}]
+;;TODO 401 403......!!! send to home page log in etc.
+(defn error-handler [{:keys [response] :as m}]
+  (println m)
   (util.view/render-error-message (:error response)))
 
 (defn user
@@ -48,7 +51,8 @@
 
       :else
       (POST (str "/user/" username)
-            {:params          (string-util/trim-map-values data)
+            {:params          (string-util/trim-map-values (update-in data [:about] #(apply str (interpose "\n\n" (filter (fn [x]
+                                                                                                                          (not (str/blank? x))) (str/split (or % "") #"\n"))))))
              :handler         (fn [_]
                                 (r/render-component [view.user/component-update] util.view/error-container)
                                 (js/setTimeout (fn [] (set! (.-innerText (dom/getElement "errorContainerId")) "")) 3000))

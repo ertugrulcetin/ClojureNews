@@ -60,8 +60,14 @@
                                  (if (= cookie (:cookie user))
                                    {:user-obj user})))))
 
+            :handle-unauthorized (fn [_]
+                                   (resource-util/not-auth))
+
             :allowed? (fn [ctx]
                         (= username (-> ctx :user-obj :username)))
+
+            :handle-forbidden (fn [_]
+                                (resource-util/not-allowed))
 
             :post! (fn [ctx]
 

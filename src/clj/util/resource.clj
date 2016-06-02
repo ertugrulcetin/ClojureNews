@@ -57,3 +57,11 @@
 (defn get-exception-message
   [ctx]
   {:error (.getMessage (:exception ctx))})
+
+(defn not-auth
+  []
+  {:error "You are not authenticated"})
+
+(defn not-allowed
+  []
+  {:error "You are not allowed to do that"})
