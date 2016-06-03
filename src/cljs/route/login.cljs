@@ -1,12 +1,10 @@
 (ns route.login
   (:require-macros [secretary.core :refer [defroute]])
-  (:require [reagent.core :as r]
-            [secretary.core]
-            [view.login]
-            [util.view]))
+  (:require [controller.login :as controller]
+            [secretary.core]))
 
 (defroute login "/login" []
-          (r/render-component [view.login/component] util.view/main-container))
+          (controller/log-in-page))
 
 (defroute logout "/logout" []
-          (controller.login/log-out))
+          (controller/log-out))

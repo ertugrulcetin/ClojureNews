@@ -61,7 +61,7 @@
                                                   ]]]]]]]
                                            [:tr {:style "height:10px"}]
                                            [:tr
-                                            [:td {:id "errorContainerId"}]]
+                                            [:td {:id "messageContainerId"}]]
                                            [:tr
                                             [:td {:id "mainContainerId"}]]
                                            [:tr

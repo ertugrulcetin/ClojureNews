@@ -2,27 +2,22 @@
   (:require [ajax.core :as ajax :refer [GET POST PUT]]
             [cljc.validation :as validation]
             [cljc.string-util :as string-util]
-            [goog.dom :as dom]
             [util.view]
             [view.user]
-            [reagent.core :as r]
-            [clojure.string :as str]))
+            [util.controller]
+            [reagent.core :as r]))
 
 (enable-console-print!)
 
-(defn error-handler
-  [{:keys [response] :as m}]
-  (if (or (= (:status m) 401) (= (:status m) 403))
-    (util.view/change-url "/#/login")
-    (util.view/render-error-message (:error response))))
+(declare user-update)
 
 (defn user
   [username]
   (GET (str "/user/" username)
        {:handler         (fn [response]
                            (r/render-component [(fn []
-                                                  (view.user/component response))] util.view/main-container))
-        :error-handler   error-handler
+                                                  (view.user/component response user-update))] util.view/main-container))
+        :error-handler   util.controller/error-handler
         :format          (ajax/json-request-format)
         :response-format (ajax/json-response-format {:keywords? true})}))
 
@@ -54,8 +49,7 @@
       (POST (str "/user/" username)
             {:params          (string-util/trim-map-values (update-in data [:about] #(apply str (interpose "\n" (string-util/new-line-tokens %)))))
              :handler         (fn [_]
-                                (r/render-component [view.user/component-update] util.view/error-container)
-                                (js/setTimeout (fn [] (set! (.-innerText (dom/getElement "errorContainerId")) "")) 3000))
-             :error-handler   error-handler
+                                (util.view/render-update-successfully))
+             :error-handler   util.controller/error-handler
              :format          (ajax/json-request-format)
              :response-format (ajax/json-response-format {:keywords? true})}))))

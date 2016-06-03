@@ -18,7 +18,7 @@
 (let [h (History.)]
   (goog.events/listen h EventType/NAVIGATE #(do
                                              ;;removes error message every route change
-                                             (r/render-component [(fn [])] util.view/error-container)
+                                             (r/render-component [(fn [])] util.view/message-container)
                                              (secretary/dispatch! (.-token %))))
   (doto h
     (.setEnabled true)

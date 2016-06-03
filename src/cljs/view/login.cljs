@@ -1,9 +1,8 @@
-(ns view.login
-  (:require [controller.login]))
+(ns view.login)
 
 
 (defn component
-  []
+  [log-in sign-up]
   [:table
    [:tbody
 
@@ -16,11 +15,11 @@
      [:td
       [:input {:id "loginPasswordId" :name "password" :type "password" :on-key-down (fn [e]
                                                                                       (if (= 13 (.-keyCode e))
-                                                                                        (controller.login/log-in ["loginUsernameId" "loginPasswordId"])))}]]]
+                                                                                        (log-in ["loginUsernameId" "loginPasswordId"])))}]]]
     [:tr
      [:td
       [:button {:id "loginButtonId" :on-click (fn [_]
-                                                (controller.login/log-in ["loginUsernameId" "loginPasswordId"]))} "login"]]]
+                                                (log-in ["loginUsernameId" "loginPasswordId"]))} "login"]]]
 
     [:tr
      [:td]
@@ -40,8 +39,8 @@
      [:td
       [:input {:id "signUpPasswordId" :name "password" :type "password" :on-key-down (fn [e]
                                                                                        (if (= 13 (.-keyCode e))
-                                                                                         (controller.login/sign-up ["signUpUsernameId" "signUpPasswordId"])))}]]]
+                                                                                         (sign-up ["signUpUsernameId" "signUpPasswordId"])))}]]]
     [:tr
      [:td
       [:button {:id "signUpButtonId" :on-click (fn [_]
-                                                 (controller.login/sign-up ["signUpUsernameId" "signUpPasswordId"]))} "create account"]]]]])
+                                                 (sign-up ["signUpUsernameId" "signUpPasswordId"]))} "create account"]]]]])
