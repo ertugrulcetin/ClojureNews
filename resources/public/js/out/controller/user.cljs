@@ -10,10 +10,11 @@
 
 (enable-console-print!)
 
-;;TODO 401 403......!!! send to home page log in etc.
-(defn error-handler [{:keys [response] :as m}]
-  (println m)
-  (util.view/render-error-message (:error response)))
+(defn error-handler
+  [{:keys [response] :as m}]
+  (if (or (= (:status m) 401) (= (:status m) 403))
+    (util.view/change-url "/#/login")
+    (util.view/render-error-message (:error response))))
 
 (defn user
   [username]
@@ -51,8 +52,7 @@
 
       :else
       (POST (str "/user/" username)
-            {:params          (string-util/trim-map-values (update-in data [:about] #(apply str (interpose "\n\n" (filter (fn [x]
-                                                                                                                          (not (str/blank? x))) (str/split (or % "") #"\n"))))))
+            {:params          (string-util/trim-map-values (update-in data [:about] #(apply str (interpose "\n" (string-util/new-line-tokens %)))))
              :handler         (fn [_]
                                 (r/render-component [view.user/component-update] util.view/error-container)
                                 (js/setTimeout (fn [] (set! (.-innerText (dom/getElement "errorContainerId")) "")) 3000))

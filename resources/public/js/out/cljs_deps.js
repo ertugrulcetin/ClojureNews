@@ -41,7 +41,7 @@ goog.addDependency("../controller/entry.js", ['controller.entry'], ['ajax.core',
 goog.addDependency("../view/entry.js", ['view.entry'], ['cljs.core']);
 goog.addDependency("../route/entry.js", ['route.entry'], ['controller.entry', 'reagent.core', 'cljs.core', 'view.entry', 'secretary.core']);
 goog.addDependency("../cljc/string_util.js", ['cljc.string_util'], ['cljs.core', 'clojure.string']);
-goog.addDependency("../view/user.js", ['view.user'], ['cljs.core', 'clojure.string']);
+goog.addDependency("../view/user.js", ['view.user'], ['cljs.core', 'cljc.string_util']);
 goog.addDependency("../controller/user.js", ['controller.user'], ['goog.dom', 'ajax.core', 'reagent.core', 'cljs.core', 'cljc.validation', 'cljc.string_util', 'util.view', 'view.user', 'clojure.string']);
 goog.addDependency("../route/user.js", ['route.user'], ['reagent.core', 'cljs.core', 'controller.user', 'secretary.core', 'util.view', 'view.user']);
 goog.addDependency("../view/forgot_password.js", ['view.forgot_password'], ['cljs.core']);

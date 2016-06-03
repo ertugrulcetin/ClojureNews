@@ -60,14 +60,10 @@
                                  (if (= cookie (:cookie user))
                                    {:user-obj user})))))
 
-            :handle-unauthorized (fn [_]
-                                   (resource-util/not-auth))
 
             :allowed? (fn [ctx]
                         (= username (-> ctx :user-obj :username)))
 
-            :handle-forbidden (fn [_]
-                                (resource-util/not-allowed))
 
             :post! (fn [ctx]
 
@@ -89,7 +85,9 @@
                        (check-email-exists (-> ctx :user-obj :username) email)
 
                        (try
-                         (user-dao/update-user-info-by-username username (update-in (string-util/trim-map-values data-as-map) [:show-email?] #(if (= "yes" %) true false)))
+                         (let [show-email-updated (update-in (string-util/trim-map-values data-as-map) [:show-email?] #(if (= "yes" %) true false))
+                               about-updated (update-in show-email-updated [:about] #(apply str (interpose "\n" (string-util/new-line-tokens %))))]
+                           (user-dao/update-user-info-by-username username about-updated))
                          (catch Exception e
                            (throw (RuntimeException. "Something went wrong."))))))
 
@@ -99,7 +97,7 @@
             :respond-with-entity? (fn [_]
                                     true)
 
-            :handle-ok (fn [ctx]
+            :handle-ok (fn [_]
                          {:update? true})
 
             :handle-exception (fn [ctx]

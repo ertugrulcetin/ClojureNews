@@ -1,5 +1,5 @@
 (ns view.user
-  [:require [clojure.string :as str]])
+  [:require [cljc.string-util :as string-util]])
 
 (defn component
   [user]
@@ -24,15 +24,14 @@
       [:tr
        [:td {:style {:vertical-align "top"}} "about:"]
        [:td
-        [:textarea {:id "aboutId" :name "about" :cols "60" :rows "6" :wrap "virtual" :defaultValue (:about user)}]
+        [:textarea {:id "aboutId" :name "about" :cols "60" :rows "6" :wrap "virtual" :defaultValue (apply str (interpose "\n\n" (string-util/new-line-tokens (:about user))))}]
         [:font {:size "-2"}
          [:a {:href "formatdoc" :tabindex "-1"}
           [:font {:color "#afafaf"} "help"]]] "          "]]
       [:tr
        [:td {:style {:vertical-align "top"}} "about:"]
-       [:td [:div
-             (for [i (filter #(not (str/blank? %)) (str/split (or (:about user) "") #"\n"))]
-               [:p i])]]])
+       [:td (for [i (string-util/new-line-tokens (:about user))]
+              [:p i])]])
 
     (if (:auth? user)
       [:tr

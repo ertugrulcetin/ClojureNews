@@ -14,3 +14,6 @@
   [message]
   (r/render-component [(fn [] [:p {:style {:color "red"}} message])] util.view/error-container))
 
+(defn change-url
+  [path]
+  (set! window/location (str "http://" window/location.host path)))
