@@ -4,12 +4,14 @@
             [cljc.string-util :as string-util]
             [util.view]
             [view.user]
+            [view.changepassword]
             [util.controller]
             [reagent.core :as r]))
 
 (enable-console-print!)
 
-(declare user-update)
+(declare user-update
+         change-password)
 
 (defn user
   [username]
@@ -50,6 +52,41 @@
             {:params          (string-util/trim-map-values (update-in data [:about] #(apply str (interpose "\n" (string-util/new-line-tokens %)))))
              :handler         (fn [_]
                                 (util.view/render-update-successfully))
+             :error-handler   util.controller/error-handler
+             :format          (ajax/json-request-format)
+             :response-format (ajax/json-response-format {:keywords? true})}))))
+
+(defn change-password-page
+  [username]
+  (r/render-component [(fn []
+                         (view.changepassword/component username change-password))] util.view/main-container))
+
+(defn change-password
+  [username field-ids]
+
+  (let [data (util.view/create-field-val-map field-ids)]
+
+    (cond
+      (not (validation/password? (:current-password data)))
+      (util.view/render-error-message "Passwords should be between 8 and 20 characters long. Please choose another.")
+
+      (not (validation/password? (:new-password data)))
+      (util.view/render-error-message "Passwords should be between 8 and 20 characters long. Please choose another.")
+
+      (not (validation/password? (:re-new-password data)))
+      (util.view/render-error-message "Passwords should be between 8 and 20 characters long. Please choose another.")
+
+      (not= (:new-password data) (:re-new-password data))
+      (util.view/render-error-message "New passwords don't match.")
+
+      (= (:current-password data) (:new-password data))
+      (util.view/render-error-message "New password can not be the old password.")
+
+      :else
+      (POST (str "/user/" username "/changepassword")
+            {:params          data
+             :handler         (fn [_]
+                                (util.view/change-url "/"))
              :error-handler   util.controller/error-handler
              :format          (ajax/json-request-format)
              :response-format (ajax/json-response-format {:keywords? true})}))))

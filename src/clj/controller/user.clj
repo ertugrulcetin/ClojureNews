@@ -18,7 +18,11 @@
          check-github
          check-twitter
          check-show-email?
-         check-email-exists)
+         check-email-exists
+         check-password
+         check-new-passwords-match
+         check-current-pass-not-equals-new-pass
+         check-password-match)
 
 (defn user
   [username]
@@ -103,6 +107,60 @@
             :handle-exception (fn [ctx]
                                 (resource-util/get-exception-message ctx))))
 
+(defn change-password
+  [username]
+  (resource :allowed-methods [:post]
+
+            :available-media-types resource-util/avaliable-media-types
+
+            :known-content-type? #(resource-util/check-content-type % resource-util/avaliable-media-types)
+
+            :malformed? #(resource-util/parse-json % ::data)
+
+            :authorized? (fn [ctx]
+
+                           (if-let [cookie (resource-util/get-cookie ctx)]
+                             (if-let [username (resource-util/get-username-from-cookie ctx)]
+                               (if-let [user (user-dao/find-by-username username)]
+                                 (if (= cookie (:cookie user))
+                                   {:user-obj user})))))
+
+
+            :allowed? (fn [ctx]
+                        (= username (-> ctx :user-obj :username)))
+
+
+            :post! (fn [ctx]
+
+                     (let [data-as-map (resource-util/convert-data-map (::data ctx))
+                           current-password (:current-password data-as-map)
+                           new-password (:new-password data-as-map)
+                           re-new-password (:re-new-password data-as-map)]
+
+                       (check-password current-password)
+                       (check-password new-password)
+                       (check-password re-new-password)
+
+                       (check-new-passwords-match new-password re-new-password)
+
+                       (check-current-pass-not-equals-new-pass current-password new-password)
+
+                       (check-password-match (-> ctx :user-obj) current-password)
+
+                       (user-dao/update-password-by-username (-> ctx :user-obj :username) (hash/sha256 new-password))))
+
+            :new? (fn [_]
+                    false)
+
+            :respond-with-entity? (fn [_]
+                                    true)
+
+            :handle-ok (fn [_]
+                         {:password-changed? true})
+
+            :handle-exception (fn [ctx]
+                                (resource-util/get-exception-message ctx))))
+
 (defn itself?
   [ctx user]
   (if-let [cookie (resource-util/get-cookie ctx)]
@@ -164,3 +222,23 @@
   (if-let [user (user-dao/find-by-email email)]
     (if-not (= (:username user) username)
       (throw (RuntimeException. "This email has already been taken by another user.")))))
+
+(defn check-password
+  [password]
+  (if-not (validation/password? password)
+    (throw (RuntimeException. "Passwords should be between 8 and 20 characters long. Please choose another."))))
+
+(defn check-new-passwords-match
+  [password re-password]
+  (if-not (= password re-password)
+    (throw (RuntimeException. "New passwords don't match."))))
+
+(defn check-current-pass-not-equals-new-pass
+  [current-password new-password]
+  (if (= current-password new-password)
+    (throw (RuntimeException. "New password can not be the old password."))))
+
+(defn check-password-match
+  [user password]
+  (if-not (= (:password user) (hash/sha256 password))
+    (throw (RuntimeException. "Password does not match."))))

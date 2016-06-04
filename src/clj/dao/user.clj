@@ -41,3 +41,7 @@
 (defn update-last-login-by-username
   [^String username]
   (mc/update db/clojure-news coll {:username username} {$set {"last-login" (Date.)}}))
+
+(defn update-password-by-username
+  [^String username ^String new-password]
+  (mc/update db/clojure-news coll {:username username} {$set {"password" new-password}}))

@@ -82,7 +82,7 @@
                                               [:br]]]]]]]
                                         [:script {:src "/js/clojure-news.js", :type "text/javascript"}]]]))
 
-            :handle-exception (fn [ctx]
+            :handle-exception (fn [_]
                                 "Something went wrong")))
 
 (defn entry

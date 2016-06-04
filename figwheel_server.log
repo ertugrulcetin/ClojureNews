@@ -5046,3 +5046,206 @@ WARNING: No such namespace: goog.History.EventType, could not locate goog/Histor
 WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 19 src/cljs/main.cljs
 notifying browser that file changed:  out/route/login.js
 [32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.318 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: window, could not locate window.cljs, window.cljc, or Closure namespace "" at line 26 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/util/view.cljs
+WARNING: Use of undeclared Var window/location at line 26 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/util/view.cljs
+WARNING: No such namespace: window, could not locate window.cljs, window.cljc, or Closure namespace "" at line 26 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/util/view.cljs
+WARNING: Use of undeclared Var window/location at line 26 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/util/view.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 19 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 19 src/cljs/main.cljs
+notifying browser that file changed:  resources/public/js/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  out/view/user.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.831 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  out/view/changepassword.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.336 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+notifying browser that file changed:  out/view/changepassword.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.249 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: user at line 9 is being replaced at line 12 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/route/user.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 19 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 19 src/cljs/main.cljs
+notifying browser that file changed:  out/route/user.js
+notifying browser that file changed:  out/view/changepassword.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.365 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: user at line 10 is being replaced at line 13 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/route/user.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 19 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 19 src/cljs/main.cljs
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  out/route/user.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.384 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: user at line 10 is being replaced at line 13 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/route/user.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 19 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 19 src/cljs/main.cljs
+notifying browser that file changed:  out/view/changepassword.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.385 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: user at line 10 is being replaced at line 13 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/route/user.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 19 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 19 src/cljs/main.cljs
+notifying browser that file changed:  out/view/changepassword.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.379 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: user at line 10 is being replaced at line 13 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/route/user.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 19 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 19 src/cljs/main.cljs
+notifying browser that file changed:  out/view/changepassword.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.434 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: user at line 10 is being replaced at line 13 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/route/user.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 19 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 19 src/cljs/main.cljs
+notifying browser that file changed:  out/view/changepassword.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.346 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: user at line 10 is being replaced at line 13 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/route/user.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 19 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 19 src/cljs/main.cljs
+notifying browser that file changed:  out/view/changepassword.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.292 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: user at line 10 is being replaced at line 13 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/route/user.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 19 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 19 src/cljs/main.cljs
+notifying browser that file changed:  out/view/changepassword.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.366 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: user at line 10 is being replaced at line 13 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/route/user.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 19 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 19 src/cljs/main.cljs
+notifying browser that file changed:  out/view/changepassword.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.362 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: user at line 10 is being replaced at line 13 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/route/user.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 19 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 19 src/cljs/main.cljs
+notifying browser that file changed:  out/view/changepassword.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.463 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: user at line 10 is being replaced at line 13 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/route/user.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 19 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 19 src/cljs/main.cljs
+notifying browser that file changed:  out/view/changepassword.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.316 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: user at line 10 is being replaced at line 13 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/route/user.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 19 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 19 src/cljs/main.cljs
+notifying browser that file changed:  out/view/changepassword.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.357 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: user at line 10 is being replaced at line 13 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/route/user.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 19 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 19 src/cljs/main.cljs
+notifying browser that file changed:  out/view/changepassword.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.286 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: user at line 10 is being replaced at line 13 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/route/user.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 19 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 19 src/cljs/main.cljs
+notifying browser that file changed:  out/view/changepassword.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.392 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: user at line 10 is being replaced at line 13 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/route/user.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 19 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 19 src/cljs/main.cljs
+notifying browser that file changed:  out/view/changepassword.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.342 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Use of undeclared Var controller.user/username at line 84 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/controller/user.cljs
+WARNING: user at line 10 is being replaced at line 13 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/route/user.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 19 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 19 src/cljs/main.cljs
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  out/controller/user.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.366 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Use of undeclared Var controller.user/username at line 86 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/controller/user.cljs
+WARNING: user at line 10 is being replaced at line 13 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/route/user.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 19 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 19 src/cljs/main.cljs
+notifying browser that file changed:  out/controller/user.js
+notifying browser that file changed:  out/route/user.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.487 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Use of undeclared Var controller.user/username at line 86 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/controller/user.cljs
+WARNING: user at line 10 is being replaced at line 13 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/route/user.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 19 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 19 src/cljs/main.cljs
+notifying browser that file changed:  out/controller/user.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.513 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Use of undeclared Var controller.user/username at line 86 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/controller/user.cljs
+WARNING: user at line 10 is being replaced at line 13 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/route/user.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 19 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 19 src/cljs/main.cljs
+notifying browser that file changed:  out/controller/user.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.45 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Use of undeclared Var controller.user/username at line 86 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/controller/user.cljs
+WARNING: user at line 10 is being replaced at line 13 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/route/user.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 19 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 19 src/cljs/main.cljs
+notifying browser that file changed:  out/controller/user.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.454 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Use of undeclared Var controller.user/username at line 86 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/controller/user.cljs
+WARNING: user at line 10 is being replaced at line 13 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/route/user.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 19 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 19 src/cljs/main.cljs
+notifying browser that file changed:  out/controller/user.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.348 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Use of undeclared Var controller.user/username at line 86 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/controller/user.cljs
+WARNING: user at line 10 is being replaced at line 13 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/route/user.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 19 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 19 src/cljs/main.cljs
+notifying browser that file changed:  out/controller/user.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.386 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Use of undeclared Var controller.user/username at line 86 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/controller/user.cljs
+WARNING: user at line 10 is being replaced at line 13 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/route/user.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 19 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 19 src/cljs/main.cljs
+notifying browser that file changed:  out/controller/user.js
+notifying browser that file changed:  out/route/user.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.406 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Use of undeclared Var controller.user/username at line 86 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/controller/user.cljs
+WARNING: user at line 10 is being replaced at line 13 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/route/user.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 19 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 19 src/cljs/main.cljs
+notifying browser that file changed:  out/controller/user.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.517 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Wrong number of args (0) passed to util.view/change-url at line 88 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/controller/user.cljs
+WARNING: user at line 10 is being replaced at line 13 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/route/user.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 19 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 19 src/cljs/main.cljs
+notifying browser that file changed:  out/controller/user.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.45 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Wrong number of args (0) passed to util.view/change-url at line 88 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/controller/user.cljs
+WARNING: user at line 10 is being replaced at line 13 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/route/user.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 19 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 19 src/cljs/main.cljs
+notifying browser that file changed:  out/controller/user.js
+notifying browser that file changed:  out/view/changepassword.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.45 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: user at line 10 is being replaced at line 13 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/route/user.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 19 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 19 src/cljs/main.cljs
+notifying browser that file changed:  out/controller/user.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.386 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: user at line 10 is being replaced at line 13 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/route/user.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 19 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 19 src/cljs/main.cljs
+notifying browser that file changed:  out/controller/user.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.339 seconds.[0m

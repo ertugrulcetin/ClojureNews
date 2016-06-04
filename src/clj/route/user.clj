@@ -10,4 +10,7 @@
              (controller/user username))
 
            (POST "/user/:username" [username]
-             (controller/user-update username)))
+             (controller/user-update username))
+
+           (POST "/user/:username/changepassword" [username]
+             (controller/change-password username)))

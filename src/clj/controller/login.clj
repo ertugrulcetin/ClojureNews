@@ -56,7 +56,7 @@
             :as-response (fn [d ctx]
                            (create-cookie-if-no-exception d ctx))
 
-            :handle-ok (fn [ctx]
+            :handle-ok (fn [_]
                          {:login? true})
 
             :handle-exception (fn [ctx]
@@ -86,7 +86,7 @@
             :as-response (fn [d ctx]
                            (delete-cookie-if-no-exception d ctx))
 
-            :handle-ok (fn [ctx]
+            :handle-ok (fn [_]
                          {:logout? true})
 
             :handle-exception (fn [ctx]

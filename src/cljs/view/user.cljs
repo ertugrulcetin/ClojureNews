@@ -85,7 +85,7 @@
       [:tr
        [:td]
        [:td
-        [:a {:href "/#/changepassword"}
+        [:a {:href (str "/#/user/" (:username user) "/changepassword")}
          [:u "change password"]]]])
 
     (if (:auth? user)
