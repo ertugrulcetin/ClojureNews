@@ -5,7 +5,8 @@
             [clj.dao.user :as user-dao]
             [cljc.validation :as validation]
             [clj.util.entity :as entity-util]
-            [pandect.algo.sha256 :as hash]))
+            [pandect.algo.sha256 :as hash]
+            [clojure.string :as str]))
 
 (declare check-username
          check-password
@@ -15,7 +16,8 @@
          check-auth-before
          check-not-auth
          create-cookie-if-no-exception
-         delete-cookie-if-no-exception)
+         delete-cookie-if-no-exception
+         lowercase)
 
 (defn login
   []
@@ -29,7 +31,7 @@
 
             :post! (fn [ctx]
                      (let [data-as-map (resource-util/convert-data-map (::data ctx))
-                           username (:username data-as-map)
+                           username (lowercase (:username data-as-map)) ;;ignoring case sensivity for username
                            password (:password data-as-map)]
 
                        (check-username username)
@@ -104,7 +106,7 @@
 
             :put! (fn [ctx]
                     (let [data-as-map (resource-util/convert-data-map (::data ctx))
-                          username (:username data-as-map)
+                          username (lowercase (:username data-as-map))
                           password (:password data-as-map)]
 
                       (check-username username)
@@ -175,3 +177,9 @@
     (-> (rep/as-response d ctx)
         (assoc-in [:headers "Set-Cookie"] (resource-util/delete-cookie (:old-cookie ctx))))
     (rep/as-response d ctx)))
+
+(defn lowercase
+  [x]
+  (if x
+    (str/lower-case x)
+    ""))
