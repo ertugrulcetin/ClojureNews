@@ -9,3 +9,11 @@
     [:tr
      [:td
       [:p "This is the Main Page!"]]]]])
+
+(defn loading
+  []
+  [:table
+   [:tbody
+    [:tr
+     [:td
+      [:p "Loading..."]]]]])

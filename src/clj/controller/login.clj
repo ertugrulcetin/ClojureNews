@@ -157,11 +157,11 @@
   (if-not (= (:password user) (hash/sha256 password))
     (throw (RuntimeException. "Bad Login."))))
 
-;;TODO check db cookie!
 (defn check-not-auth
   [ctx]
-  (let [cookie (resource-util/get-cookie ctx)]
-    (if-not (and cookie (resource-util/get-username-from-cookie ctx))
+  (let [cookie (resource-util/get-cookie ctx)
+        username (resource-util/get-username-from-cookie ctx)]
+    (if-not (and cookie username (= cookie (:cookie (user-dao/find-by-username username))))
       (throw (RuntimeException. "You must login first")))))
 
 (defn create-cookie-if-no-exception

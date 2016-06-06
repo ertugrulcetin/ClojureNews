@@ -63,7 +63,8 @@
                                            [:tr
                                             [:td {:id "messageContainerId"}]]
                                            [:tr
-                                            [:td {:id "mainContainerId"}]]
+                                            [:td {:id "mainContainerId"}
+                                             [:p "Loading..."]]]
                                            [:tr
                                             [:td
                                              [:img {:src "/img/s.gif", :height "10", :width "0"}]
