@@ -31,7 +31,6 @@
         (.printStackTrace e)
         {:message (format "IOException: %s" (.getMessage e))}))))
 
-
 (defn create-cookie
   [cookie]
   (str "user=" cookie "; expires=" (.toString (Date. (+ (.getTime (Date.)) (* 1000 60 60 24 365 10)))) "; path=/; HttpOnly"))
@@ -57,11 +56,3 @@
 (defn get-exception-message
   [ctx]
   {:error (.getMessage (:exception ctx))})
-
-(defn not-auth
-  []
-  {:error "You are not authenticated"})
-
-(defn not-allowed
-  []
-  {:error "You are not allowed to do that"})
