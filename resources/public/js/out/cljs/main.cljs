@@ -7,6 +7,7 @@
             [route.entry]
             [route.login]
             [route.user]
+            [route.submit]
             [route.forgot-password])
   (:import goog.History
            goog.History.EventType))
