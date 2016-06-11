@@ -42,7 +42,7 @@
 
 (defn submit-type?
   [type]
-  (contains? #{"entry" "question" "jobs" "events"} type))
+  (contains? #{"story" "ask" "jobs" "events"} type))
 
 (defn submit-title?
   [title]

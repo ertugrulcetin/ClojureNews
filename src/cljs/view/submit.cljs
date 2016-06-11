@@ -4,7 +4,7 @@
 (declare change-component
          render)
 
-(defn component-entry
+(defn component-story
   [submit]
   [:table
    [:tbody
@@ -12,9 +12,9 @@
     [:tr
      [:td "  type:"]
      [:td
-      [:select {:id "submitTypeId" :name "submit-type" :on-change #(change-component submit % "entry")}
-       [:option {:selected "selected"} "entry"]
-       [:option "question"]
+      [:select {:id "submitTypeId" :name "type" :on-change #(change-component submit % "story")}
+       [:option {:selected "selected"} "story"]
+       [:option "ask"]
        [:option "jobs"]
        [:option "events"]]]]
 
@@ -36,9 +36,9 @@
      [:td]
      [:td
       [:button {:id "submitId" :on-click (fn [_]
-                                           (submit))} "submit"]]]]])
+                                           (submit ["submitTypeId" "titleId" "urlId"]))} "submit"]]]]])
 
-(defn component-question
+(defn component-ask
   [submit]
   [:table
    [:tbody
@@ -46,9 +46,9 @@
     [:tr
      [:td "  type:"]
      [:td
-      [:select {:id "submitTypeId" :name "submit-type" :on-change #(change-component submit % "question")}
-       [:option "entry"]
-       [:option {:selected "selected"} "question"]
+      [:select {:id "submitTypeId" :name "type" :on-change #(change-component submit % "ask")}
+       [:option "story"]
+       [:option {:selected "selected"} "ask"]
        [:option "jobs"]
        [:option "events"]]]]
 
@@ -74,15 +74,15 @@
      [:td]
      [:td
       [:button {:id "submitId" :on-click (fn [_]
-                                           (submit))} "submit"]]]]])
+                                           (submit ["submitTypeId" "titleId" "textId"]))} "submit"]]]]])
 
 (defn change-component
   [submit e current-comp]
   (let [selected (-> e .-target .-value)]
     (if-not (= selected current-comp)
       (case selected
-        "entry" (render component-entry submit)
-        "question" (render component-question submit)))))
+        "story" (render component-story submit)
+        "ask" (render component-ask submit)))))
 
 (defn render
   [comp submit]

@@ -22,23 +22,34 @@
    :website      nil
    :github       nil
    :twitter      nil
-   :about          nil
+   :about        nil
    :cookie       (generate-cookie username)})
 
-(defn entry
-  [title url pure-url type content created-by-id]
+(defn story
+  [title url pure-url created-by-id]
   {:_id               (ObjectId.)
    :created-date      (Date.)
    :created-by-id     created-by-id
    :title             title
    :url               url
    :pure-url          pure-url
-   :type              type
-   :content           content
+   :type              ::story
    :upvote            1
    :number-of-comment 0})
 
-(defn comment-entry
+(defn ask
+  [title text created-by-id]
+  {:_id               (ObjectId.)
+   :created-date      (Date.)
+   :created-by-id     created-by-id
+   :title             title
+   :text              text
+   :type              ::ask
+   :upvote            1
+   :number-of-comment 0})
+
+
+(defn comments
   [entry-id parent-comment-id content type]
   {:_id               (ObjectId.)
    :created-date      (Date.)

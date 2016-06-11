@@ -2,7 +2,7 @@
   [:require [cljc.string-util :as string-util]])
 
 (defn component
-  [user user-update]
+  [user update-user]
   [:table
    [:tbody
 
@@ -114,7 +114,7 @@
       [:tr
        [:td
         [:input {:type "submit" :value "update" :on-click (fn [_]
-                                                            (user-update (:username user) ["aboutId" "emailId" "websiteId" "githubId" "twitterId" "showEmailId"]))}]]])]])
+                                                            (update-user (:username user) ["aboutId" "emailId" "websiteId" "githubId" "twitterId" "showEmailId"]))}]]])]])
 
 (defn component-update
   []

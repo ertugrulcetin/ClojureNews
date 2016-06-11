@@ -10,7 +10,7 @@
 
 (enable-console-print!)
 
-(declare user-update
+(declare update-user
          change-password)
 
 (defn user
@@ -18,12 +18,12 @@
   (GET (str "/user/" username)
        {:handler         (fn [response]
                            (r/render-component [(fn []
-                                                  (view.user/component response user-update))] util.view/main-container))
+                                                  (view.user/component response update-user))] util.view/main-container))
         :error-handler   util.controller/error-handler
         :format          (ajax/json-request-format)
         :response-format (ajax/json-response-format {:keywords? true})}))
 
-(defn user-update
+(defn update-user
   [username field-ids]
 
   (let [data (util.view/create-field-val-map field-ids)]

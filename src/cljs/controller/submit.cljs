@@ -6,13 +6,41 @@
             [util.controller]
             [view.submit]))
 
-(declare submit)
+(declare submit
+         create-story)
+
+(defonce entry-map {:story  "/entry/story"
+                    :ask    "/entry/ask"
+                    :jobs   "/entry/jobs"
+                    :events "/entry/events"})
 
 (defn submit-page
   []
   (r/render-component [(fn []
-                         (view.submit/component-entry submit))] util.view/main-container))
+                         (view.submit/component-story submit))] util.view/main-container))
 
 (defn submit
-  []
-  (.log js/console "Geldiii....!!!??##"))
+  [field-ids]
+  (let [data (util.view/create-field-val-map field-ids)
+        type (:type data)]
+
+    (cond
+      (= "story" type)
+      (create-story data))))
+
+(defn create-story
+  [data]
+  (cond
+    (not (validation/submit-title? (:title data)))
+    (util.view/render-error-message (str "Please limit title to 80 characters.This had " (count (:title data)) "."))
+
+    (not (validation/submit-url? (:url data)))
+    (util.view/render-error-message "Not valid url. Ex: https://www.google.com")
+
+    :else
+    (PUT "/entry/story"
+         {:params          data
+          :handler         (fn [_])
+          :error-handler   util.controller/error-handler
+          :format          (ajax/json-request-format)
+          :response-format (ajax/json-response-format {:keywords? true})})))

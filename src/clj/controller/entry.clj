@@ -2,9 +2,20 @@
   (:require [liberator.core :refer [resource defresource]]
             [clj.util.resource :as resource-util]
             [clj.dao.user :as user-dao]
-            [hiccup.core :as hiccup]))
+            [clj.dao.entry :as entry-dao]
+            [hiccup.core :as hiccup]
+            [cljc.validation :as validation]
+            [clojure.string :as str]
+            [monger.json]))
 
-(declare get-user)
+(declare get-user
+         create-ask
+         create-entry
+         check-story-type
+         check-submit-type
+         check-submit-title
+         check-submit-url
+         check-submit-text)
 
 (defn home-page
   []
@@ -87,7 +98,7 @@
                                 "Something went wrong")))
 
 (defn entry
-  []
+  [id]
   (resource :allowed-methods [:get]
 
             :available-media-types resource-util/avaliable-media-types
@@ -98,6 +109,53 @@
             :handle-exception (fn [ctx]
                                 (resource-util/get-exception-message ctx))))
 
+(defn create-story
+  []
+  (resource :allowed-methods [:put]
+
+            :available-media-types resource-util/avaliable-media-types
+
+            :known-content-type? #(resource-util/check-content-type % resource-util/avaliable-media-types)
+
+            :malformed? #(resource-util/parse-json % ::data)
+
+            :authorized? (fn [ctx]
+
+                           (if-let [cookie (resource-util/get-cookie ctx)]
+                             (if-let [username (resource-util/get-username-from-cookie ctx)]
+                               (if-let [user (user-dao/find-by-username username)]
+                                 (if (= cookie (:cookie user))
+                                   {:user-obj user})))))
+
+            :put! (fn [ctx]
+                    (let [data-as-map (resource-util/convert-data-map (::data ctx))
+                          type (:type data-as-map)
+                          title (:title data-as-map)
+                          url (:url data-as-map)]
+
+                      (println "My type: " type)
+                      (check-submit-type type)
+                      (check-story-type type)
+
+                      (check-submit-title title)
+                      (check-submit-url url)
+
+                      ;;TODO create pure url fn...!!!!
+                      {:cn-story (entry-dao/create-story (str/trim title) (str/trim url) "" (:_id (:user-obj ctx)))}))
+
+            :handle-created (fn [ctx]
+                              {:story-id (-> ctx :cn-story :_id)})
+
+            :handle-exception (fn [ctx]
+                                (resource-util/get-exception-message ctx))))
+
+
+
+(defn create-ask
+  [title text user]
+  (check-submit-text text)
+  (entry-dao/create-ask (str/trim title) (str/trim text) (:_id user)))
+
 (defn get-user
   [ctx]
   (if-let [cookie (resource-util/get-cookie ctx)]
@@ -105,3 +163,23 @@
       (if (= cookie (:cookie user))
         {:username (:username user)
          :karma    (:karma user)}))))
+
+(defn check-submit-type
+  [type]
+  (if-not (validation/submit-type? type)
+    (throw (RuntimeException. "Not valid type."))))
+
+(defn check-story-type
+  [type]
+  (if-not (= type "story")
+    (throw (RuntimeException. "Not valid story type."))))
+
+(defn check-submit-title
+  [title]
+  (if-not (validation/submit-title? title)
+    (throw (RuntimeException. (str "Please limit title to 80 characters.This had " (count title) ".")))))
+
+(defn check-submit-url
+  [url]
+  (if-not (validation/submit-url? url)
+    (throw (RuntimeException. "Not valid url. Ex: https://www.google.com"))))

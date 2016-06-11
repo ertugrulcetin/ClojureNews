@@ -46,7 +46,7 @@
             :handle-exception (fn [ctx]
                                 (resource-util/get-exception-message ctx))))
 
-(defn user-update
+(defn update-user
   [username]
   (resource :allowed-methods [:post]
 
