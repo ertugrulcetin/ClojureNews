@@ -6,7 +6,13 @@
             [util.controller]
             [view.submit]))
 
+(declare submit)
+
 (defn submit-page
   []
   (r/render-component [(fn []
-                         (view.submit/component))] util.view/main-container))
+                         (view.submit/component-entry submit))] util.view/main-container))
+
+(defn submit
+  []
+  (.log js/console "Geldiii....!!!??##"))

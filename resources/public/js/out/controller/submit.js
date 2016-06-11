@@ -9,8 +9,11 @@ goog.require('util.controller');
 goog.require('view.submit');
 controller.submit.submit_page = (function controller$submit$submit_page(){
 return reagent.core.render_component.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [(function (){
-return view.submit.component.call(null);
+return view.submit.component_entry.call(null,controller.submit.submit);
 })], null),util.view.main_container);
+});
+controller.submit.submit = (function controller$submit$submit(){
+return console.log("Geldiii....!!!??##");
 });
 
 //# sourceMappingURL=submit.js.map

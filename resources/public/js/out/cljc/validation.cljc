@@ -38,6 +38,24 @@
 
 (defn show-email??
   [show-email-option]
-  (or (= "yes" show-email-option)
-      (= "no" show-email-option)))
+  (contains? #{"yes" "no"} show-email-option))
+
+(defn submit-type?
+  [type]
+  (contains? #{"entry" "question" "jobs" "events"} type))
+
+(defn submit-title?
+  [title]
+  (and (not (str/blank? title))
+       (<= (count title) 80)))
+
+(defn submit-url?
+  [url]
+  (and (not (str/blank? url))
+       (re-matches #"^(https?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]" url)))
+
+(defn submit-text?
+  [text]
+  (and (not (str/blank? text))
+       (<= (count text) 2500)))
 
