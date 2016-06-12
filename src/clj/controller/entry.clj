@@ -99,13 +99,13 @@
                                 "Something went wrong")))
 
 (defn entry
-  [id]
+  []
   (resource :allowed-methods [:get]
 
             :available-media-types resource-util/avaliable-media-types
 
             :handle-ok (fn [ctx]
-                         {:entry? true})
+                         (entry-dao/get-newest-stories-and-asks))
 
             :handle-exception (fn [ctx]
                                 (resource-util/get-exception-message ctx))))
@@ -144,7 +144,7 @@
                       {:cn-story (entry-dao/create-story (str/trim title)
                                                          (str/trim url)
                                                          (resource-util/get-pure-url (str/trim url))
-                                                         (:_id (:user-obj ctx)))}))
+                                                         (:username (:user-obj ctx)))}))
 
             :handle-created (fn [ctx]
                               {:story-id (-> ctx :cn-story :_id)})
@@ -184,7 +184,7 @@
                       (check-submit-title title)
                       (check-submit-text text)
 
-                      {:cn-ask (entry-dao/create-ask (str/trim title) (str/trim text) (:_id (:user-obj ctx)))}))
+                      {:cn-ask (entry-dao/create-ask (str/trim title) (str/trim text) (:username (:user-obj ctx)))}))
 
             :handle-created (fn [ctx]
                               {:ask-id (-> ctx :cn-ask :_id)})

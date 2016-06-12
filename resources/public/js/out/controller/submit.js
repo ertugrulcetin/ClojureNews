@@ -9,10 +9,6 @@ goog.require('util.controller');
 goog.require('view.submit');
 
 
-if(typeof controller.submit.entry_map !== 'undefined'){
-} else {
-controller.submit.entry_map = new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"story","story",-1000647533),"/entry/story",new cljs.core.Keyword(null,"ask","ask",707712414),"/entry/ask",new cljs.core.Keyword(null,"jobs","jobs",-313607120),"/entry/jobs",new cljs.core.Keyword(null,"events","events",1792552201),"/entry/events"], null);
-}
 controller.submit.submit_page = (function controller$submit$submit_page(){
 return reagent.core.render_component.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [(function (){
 return view.submit.component_story.call(null,controller.submit.submit);

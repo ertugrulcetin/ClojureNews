@@ -8,9 +8,9 @@
            (GET "/" []
              (controller/home-page))
 
-           ;(GET "/entry/:id" [id]
-           ;  (controller/entry id))
-           ;
+           (GET "/entry" []
+             (controller/entry))
+
            (PUT "/entry/story" []
              (controller/create-story))
 

@@ -1,20 +1,17 @@
 (ns controller.entry
-  (:require [util.view]
-            [ajax.core :as ajax :refer [GET POST PUT]]))
+  (:require [ajax.core :as ajax :refer [GET POST PUT]]
+            [reagent.core :as r]
+            [util.view]
+            [util.controller]
+            [view.entry]))
 
-
-(enable-console-print!)
-
-(defn handler [response]
-  (fn [_]))
-
-(defn error-handler [{:keys [response] :as m}]
-  (util.view/render-error-message (:error response)))
 
 (defn home-page
   []
   (GET "/entry"
-       {:handler         handler
-        :error-handler   error-handler
+       {:handler         (fn [response]
+                           (r/render-component [(fn []
+                                                  (view.entry/component response))] util.view/main-container))
+        :error-handler   util.controller/error-handler
         :format          (ajax/json-request-format)
         :response-format (ajax/json-response-format {:keywords? true})}))

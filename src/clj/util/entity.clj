@@ -9,27 +9,29 @@
 
 (defn user
   [username password]
-  {:_id          (ObjectId.)
-   :created-date (Date.)
-   :active?      true
-   :show-email?  false
-   :email        nil
-   :username     username
-   :password     (hash/sha256 password)
-   :last-login   (Date.)
-   :role         ::user
-   :karma        1
-   :website      nil
-   :github       nil
-   :twitter      nil
-   :about        nil
-   :cookie       (generate-cookie username)})
+  {:_id            (ObjectId.)
+   :created-date   (Date.)
+   :active?        true
+   :show-email?    false
+   :email          nil
+   :username       username
+   :password       (hash/sha256 password)
+   :last-login     (Date.)
+   :role           ::user
+   :karma          1
+   :website        nil
+   :github         nil
+   :twitter        nil
+   :about          nil
+   :cookie         (generate-cookie username)
+   :saved-stories  []
+   :saved-comments []})
 
 (defn story
-  [title url pure-url created-by-id]
+  [title url pure-url created-by]
   {:_id               (ObjectId.)
    :created-date      (Date.)
-   :created-by-id     created-by-id
+   :created-by        created-by
    :title             title
    :url               url
    :pure-url          pure-url
@@ -38,10 +40,10 @@
    :number-of-comment 0})
 
 (defn ask
-  [title text created-by-id]
+  [title text created-by]
   {:_id               (ObjectId.)
    :created-date      (Date.)
-   :created-by-id     created-by-id
+   :created-by        created-by
    :title             title
    :text              text
    :type              ::ask

@@ -207,13 +207,13 @@ pre:hover {
     height: 10px;
     border: 0px;
     margin: 3px 2px 6px;
-    background: url("grayarrow.gif") no-repeat;
+    background: url("../img/grayarrow2x.gif") no-repeat;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
     .votearrow {
         background-size: 10px;
-        background-image: url("grayarrow2x.gif");
+        background-image: url("../img/grayarrow2x.gif");
     }
 }
 
@@ -399,4 +399,8 @@ and (max-width: 750px) {
         font-size: 10pt;
         width: 90%;
     }
+}
+
+.myClickableThingy {
+    cursor: pointer;
 }

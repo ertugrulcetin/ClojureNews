@@ -10,11 +10,6 @@
          create-story
          create-ask)
 
-(defonce entry-map {:story  "/entry/story"
-                    :ask    "/entry/ask"
-                    :jobs   "/entry/jobs"
-                    :events "/entry/events"})
-
 (defn submit-page
   []
   (r/render-component [(fn []
