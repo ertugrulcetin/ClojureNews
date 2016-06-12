@@ -10,6 +10,7 @@
       (for [entry entries]
 
         (list
+
           [:tr {:class "athing"}
 
            [:td {:class "title" :style {:vertical-align "top" :text-align "right"}}
@@ -22,9 +23,9 @@
 
            [:td {:class "title"}
             [:span {:class "deadmark"}]
-            [:a {:href (:url entry)} (:title entry)]
+            [:a {:href (:url entry) :target "_blank"} (:title entry)]
             [:span {:class "sitebit comhead"}
-             " (" [:a {:href (:pure-url entry) :target "_blank"}
+             " (" [:a {:href (:pure-url entry)}
                    [:span {:class "sitestr"}
                     (:pure-url entry)]] ")"]]]
           [:tr
