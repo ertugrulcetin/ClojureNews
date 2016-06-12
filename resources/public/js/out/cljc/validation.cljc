@@ -52,6 +52,7 @@
 (defn submit-url?
   [url]
   (and (not (str/blank? url))
+       (<= (count url) 500)
        (re-matches #"^(https?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]" url)))
 
 (defn submit-text?

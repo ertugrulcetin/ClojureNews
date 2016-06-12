@@ -20,5 +20,8 @@
            ;(DELETE "/entry/:id" [id]
            ;  (controller/entry-delete id))
 
+           (PUT "/entry/ask" []
+             (controller/create-ask))
+
            )
 

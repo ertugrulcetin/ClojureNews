@@ -7,7 +7,8 @@
             [view.submit]))
 
 (declare submit
-         create-story)
+         create-story
+         create-ask)
 
 (defonce entry-map {:story  "/entry/story"
                     :ask    "/entry/ask"
@@ -26,7 +27,10 @@
 
     (cond
       (= "story" type)
-      (create-story data))))
+      (create-story data)
+
+      (= "ask" type)
+      (create-ask data))))
 
 (defn create-story
   [data]
@@ -39,6 +43,23 @@
 
     :else
     (PUT "/entry/story"
+         {:params          data
+          :handler         (fn [_])
+          :error-handler   util.controller/error-handler
+          :format          (ajax/json-request-format)
+          :response-format (ajax/json-response-format {:keywords? true})})))
+
+(defn create-ask
+  [data]
+  (cond
+    (not (validation/submit-title? (:title data)))
+    (util.view/render-error-message (str "Please limit title to 80 characters.This had " (count (:title data)) "."))
+
+    (not (validation/submit-text? (:text data)))
+    (util.view/render-error-message "Please limit text to 2500 characters.")
+
+    :else
+    (PUT "/entry/ask"
          {:params          data
           :handler         (fn [_])
           :error-handler   util.controller/error-handler

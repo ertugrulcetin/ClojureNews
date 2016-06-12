@@ -12,6 +12,7 @@
          create-ask
          create-entry
          check-story-type
+         check-ask-type
          check-submit-type
          check-submit-title
          check-submit-url
@@ -133,7 +134,6 @@
                           title (:title data-as-map)
                           url (:url data-as-map)]
 
-                      (println "My type: " type)
                       (check-submit-type type)
                       (check-story-type type)
 
@@ -141,7 +141,10 @@
                       (check-submit-url url)
 
                       ;;TODO create pure url fn...!!!!
-                      {:cn-story (entry-dao/create-story (str/trim title) (str/trim url) "" (:_id (:user-obj ctx)))}))
+                      {:cn-story (entry-dao/create-story (str/trim title)
+                                                         (str/trim url)
+                                                         (resource-util/get-pure-url (str/trim url))
+                                                         (:_id (:user-obj ctx)))}))
 
             :handle-created (fn [ctx]
                               {:story-id (-> ctx :cn-story :_id)})
@@ -152,9 +155,42 @@
 
 
 (defn create-ask
-  [title text user]
-  (check-submit-text text)
-  (entry-dao/create-ask (str/trim title) (str/trim text) (:_id user)))
+  []
+  (resource :allowed-methods [:put]
+
+            :available-media-types resource-util/avaliable-media-types
+
+            :known-content-type? #(resource-util/check-content-type % resource-util/avaliable-media-types)
+
+            :malformed? #(resource-util/parse-json % ::data)
+
+            :authorized? (fn [ctx]
+
+                           (if-let [cookie (resource-util/get-cookie ctx)]
+                             (if-let [username (resource-util/get-username-from-cookie ctx)]
+                               (if-let [user (user-dao/find-by-username username)]
+                                 (if (= cookie (:cookie user))
+                                   {:user-obj user})))))
+
+            :put! (fn [ctx]
+                    (let [data-as-map (resource-util/convert-data-map (::data ctx))
+                          type (:type data-as-map)
+                          title (:title data-as-map)
+                          text (:text data-as-map)]
+
+                      (check-submit-type type)
+                      (check-ask-type type)
+
+                      (check-submit-title title)
+                      (check-submit-text text)
+
+                      {:cn-ask (entry-dao/create-ask (str/trim title) (str/trim text) (:_id (:user-obj ctx)))}))
+
+            :handle-created (fn [ctx]
+                              {:ask-id (-> ctx :cn-ask :_id)})
+
+            :handle-exception (fn [ctx]
+                                (resource-util/get-exception-message ctx))))
 
 (defn get-user
   [ctx]
@@ -174,6 +210,11 @@
   (if-not (= type "story")
     (throw (RuntimeException. "Not valid story type."))))
 
+(defn check-ask-type
+  [type]
+  (if-not (= type "ask")
+    (throw (RuntimeException. "Not valid ask type."))))
+
 (defn check-submit-title
   [title]
   (if-not (validation/submit-title? title)
@@ -183,3 +224,8 @@
   [url]
   (if-not (validation/submit-url? url)
     (throw (RuntimeException. "Not valid url. Ex: https://www.google.com"))))
+
+(defn check-submit-text
+  [text]
+  (if-not (validation/submit-text? text)
+    (throw (RuntimeException. "Please limit text to 2500 characters."))))

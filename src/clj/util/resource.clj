@@ -56,3 +56,10 @@
 (defn get-exception-message
   [ctx]
   {:error (.getMessage (:exception ctx))})
+
+(defn get-pure-url
+  [url]
+  (let [s (str/replace url #"^(https?)://(www.)?" "")]
+    (if-let [index (str/index-of s "/")]
+      (.substring s 0 index)
+      s)))

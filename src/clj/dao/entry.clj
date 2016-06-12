@@ -24,4 +24,4 @@
   [^String title
    ^String text
    ^String created-by-id]
-  mc/insert-and-return db/clojure-news coll (entity-util/ask title text created-by-id))
+  (mc/insert-and-return db/clojure-news coll (entity-util/ask title text created-by-id)))
