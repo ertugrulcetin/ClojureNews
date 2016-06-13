@@ -29,26 +29,26 @@
 
 (defn story
   [title url pure-url created-by]
-  {:_id               (ObjectId.)
-   :created-date      (Date.)
-   :created-by        created-by
-   :title             title
-   :url               url
-   :pure-url          pure-url
-   :type              ::story
-   :upvote            1
-   :number-of-comment 0})
+  {:_id                (ObjectId.)
+   :created-date       (Date.)
+   :created-by         created-by
+   :title              title
+   :url                url
+   :pure-url           pure-url
+   :type               ::story
+   :upvote             1
+   :number-of-comments 0})
 
 (defn ask
   [title text created-by]
-  {:_id               (ObjectId.)
-   :created-date      (Date.)
-   :created-by        created-by
-   :title             title
-   :text              text
-   :type              ::ask
-   :upvote            1
-   :number-of-comment 0})
+  {:_id                (ObjectId.)
+   :created-date       (Date.)
+   :created-by         created-by
+   :title              title
+   :text               text
+   :type               ::ask
+   :upvote             1
+   :number-of-comments 0})
 
 
 (defn comments

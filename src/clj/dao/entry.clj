@@ -34,4 +34,4 @@
                    (find {$or [{:type "ask"}
                                {:type "story"}]})
                    (sort {:created-date 1})
-                   (paginate :page 1 :per-page 3)))
+                   (paginate :page 1 :per-page 30)))

@@ -17,6 +17,7 @@
                  [reagent "0.6.0-alpha2"]
                  [secretary "1.2.3"]
                  [hiccup "1.0.5"]
+                 [com.andrewmcveigh/cljs-time "0.4.0"]
                  [org.clojure/tools.logging "0.3.1"]
                  [org.slf4j/slf4j-log4j12 "1.7.21"]
                  [log4j/log4j "1.2.17" :exclusions [javax.mail/mail
