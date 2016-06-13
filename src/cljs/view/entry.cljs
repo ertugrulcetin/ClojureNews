@@ -46,7 +46,9 @@
       [:span {:id "span" :class "score"}
        (generate-upvote-status (:upvote entry))
        [:a {:href (str "/#/user/" (:created-by entry))} (:created-by entry)]
-       [:span {:class "age"} " | " (generate-age-status (:created-date entry)) " | " (generate-comment-status (:number-of-comments entry))]]]]
+       [:span {:class "age"} " | "
+        [:a {:href (str "/#/story/" (:_id entry))} (generate-age-status (:created-date entry))] " | "
+        [:a {:href (str "/#/story/" (:_id entry))} (generate-comment-status (:number-of-comments entry))]]]]]
 
     [:tr {:class "spacer" :style {:height "7"}}]))
 
@@ -72,7 +74,9 @@
       [:span {:id "span" :class "score"}
        (generate-upvote-status (:upvote entry))
        [:a {:href (str "/#/user/" (:created-by entry))} (:created-by entry)]
-       [:span {:class "age"} " | " (generate-age-status (:created-date entry)) " | " (generate-comment-status (:number-of-comments entry))]]]]
+       [:span {:class "age"} " | "
+        [:a {:href (str "/#/ask/" (:_id entry))} (generate-age-status (:created-date entry))] " | "
+        [:a {:href (str "/#/ask/" (:_id entry))} (generate-comment-status (:number-of-comments entry))]]]]]
 
     [:tr {:class "spacer" :style {:height "7"}}]))
 
