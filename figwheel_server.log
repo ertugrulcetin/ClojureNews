@@ -7207,3 +7207,7 @@ WARNING: No such namespace: goog.History.EventType, could not locate goog/Histor
 WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
 notifying browser that file changed:  out/view/entry.js
 [32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.963 seconds.[0m
+sending changed CSS file: resources/public/css/news.css
+sending changed CSS file: resources/public/css/news.css
+sending changed CSS file: resources/public/css/news.css
+sending changed CSS file: resources/public/css/news.css

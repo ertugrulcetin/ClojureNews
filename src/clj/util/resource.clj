@@ -4,7 +4,7 @@
             [clojure.string :as str])
   (:import (java.util Date)))
 
-(defonce avaliable-media-types ["application/json" "application/json; charset=UTF-8"])
+(defonce avaliable-media-types ["application/json" "application/json; charset=UTF-8" "application/json; charset=utf-8"])
 
 (defn- body-as-string [ctx]
   (if-let [body (get-in ctx [:request :body])]
