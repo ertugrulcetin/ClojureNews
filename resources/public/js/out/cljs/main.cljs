@@ -22,6 +22,7 @@
                                              (r/render-component [(fn [])] util.view/message-container)
                                              (secretary/dispatch! (.-token %))))
   (doto h
-    (.setEnabled true)
+    (.setEnabled true)))
     ;(.setToken (str js/window.location.pathname js/window.location.search))
-    ))
+
+

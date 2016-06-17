@@ -7,3 +7,9 @@
 
 (defroute home-page "/" []
           (controller.entry/home-page))
+
+(defroute story "/story/:id" [id]
+          (controller.entry/story id))
+
+(defroute ask "/ask/:id" [id]
+          (controller.entry/ask id))

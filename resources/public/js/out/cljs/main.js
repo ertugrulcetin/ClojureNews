@@ -13,21 +13,21 @@ goog.require('route.user');
 goog.require('route.forgot_password');
 goog.require('route.submit');
 secretary.core.set_config_BANG_.call(null,new cljs.core.Keyword(null,"prefix","prefix",-265908465),"#");
-var h_25903 = (new goog.History());
-goog.events.listen(h_25903,goog.History.EventType.NAVIGATE,((function (h_25903){
-return (function (p1__25901_SHARP_){
-reagent.core.render_component.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [((function (h_25903){
+var h_25879 = (new goog.History());
+goog.events.listen(h_25879,goog.History.EventType.NAVIGATE,((function (h_25879){
+return (function (p1__25877_SHARP_){
+reagent.core.render_component.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [((function (h_25879){
 return (function (){
 return null;
-});})(h_25903))
+});})(h_25879))
 ], null),util.view.message_container);
 
-return secretary.core.dispatch_BANG_.call(null,p1__25901_SHARP_.token);
-});})(h_25903))
+return secretary.core.dispatch_BANG_.call(null,p1__25877_SHARP_.token);
+});})(h_25879))
 );
 
-var G__25902_25904 = h_25903;
-G__25902_25904.setEnabled(true);
+var G__25878_25880 = h_25879;
+G__25878_25880.setEnabled(true);
 
 
 //# sourceMappingURL=main.js.map

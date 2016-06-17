@@ -8,7 +8,7 @@
          generate-age-status
          genereate-min-status)
 
-(defn component
+(defn component-story-and-ask
   [entries]
   [:table {:class "itemlist" :border "0" :cellPadding "0" :cellSpacing "0"}
    [:tbody
@@ -79,6 +79,48 @@
         [:a {:href (str "/#/ask/" (:_id entry))} (generate-comment-status (:number-of-comments entry))]]]]]
 
     [:tr {:class "spacer" :style {:height "7"}}]))
+
+(defn story
+  []
+  [:table {:border "0" :class "comment-tree"}
+   [:tbody
+
+    [:tr {:class "athing"}
+
+     [:td
+
+      [:table {:border "0"}
+       [:tbody
+
+        [:tr
+
+         [:td {:class "ind"}
+          [:img {:src "/img/s.gif" :height "1" :width "0"}]]
+
+         [:td {:style {:vertical-align "top"} :class "votelinks"}
+          [:center
+           [:a {:id "id...." :href "#"}
+            [:div {:class "votearrow" :title "upvote"}]]]]
+
+         [:td {:class "default"}
+          [:div {:style {:margin-top "2px" :margin-bottom "-10px"}}
+           [:span {:class "comhead"}
+            [:a {:href "/#/user/ertu"} "ertu"]
+            [:span {:class "age"}
+             [:a {:href "/#"} " 10 hours ago"]]
+            [:span {:class "par"}]
+            [:span {:class "storyon"}]]]
+
+          [:br]
+
+          [:span {:class "comment"}
+           [:span {:class "c00"}
+            "Here is the first comment! " [:a {:href "#"} "https://clojure.news"]]
+           [:div {:class "reply"}
+            [:p
+             [:font {:size "1"}
+              [:u
+               [:a {:href "#"} "reply"]]]]]]]]]]]]]])
 
 (defn generate-comment-status
   [number-of-comments]

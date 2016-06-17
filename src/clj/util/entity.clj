@@ -52,11 +52,13 @@
 
 
 (defn comments
-  [entry-id parent-comment-id content type]
+  [entry-id created-by parent-comment-id content type level]
   {:_id               (ObjectId.)
    :created-date      (Date.)
    :entry-id          entry-id
+   :created-by        created-by
    :parent-comment-id parent-comment-id
    :upvote            1
+   :level             level
    :content           content
    :type              type})
