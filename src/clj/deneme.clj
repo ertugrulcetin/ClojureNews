@@ -44,26 +44,18 @@
           (create-comment-tree (:id comment*) grouped-comments (conj coll [comment*]))
           (create-comment-tree (:id comment*) grouped-comments (update-in coll [(dec (count coll))] conj comment*)))))))
 
-(defn group-by-parent-and-sort-by-vote
-  [comment-tree]
-  (reduce #(assoc %1 (first %2) (vec
-                                  (sort-by :vote (fn [a b]
-                                                   (compare b a)) (second %2))))
-          {}
-          (group-by :parent comment-tree)))
 
-
-(defn flatten-one-level [coll]
+(defn flat-one-level [coll]
   (mapcat #(if (vector? %) [%] %) coll))
 
 (defn flat-until-every-vector
   [coll]
   (if (every? vector? coll)
     coll
-    (recur (flatten-one-level coll))))
+    (recur (flat-one-level coll))))
 
 
-(defn create-comment-hierarchy
+(defn create-comments
   [comments-map]
   (let [grouped-comments (group-by-parent-and-sort-by-vote comments-map)
         comment-tree (create-comment-tree nil grouped-comments [])]

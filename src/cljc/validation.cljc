@@ -1,6 +1,8 @@
 (ns cljc.validation
   (:require [clojure.string :as str]))
 
+(declare get-pure-url)
+
 (defn username?
   "Usernames can only contain letters, digits and underscores, and should be between 2 and 15 characters long. Please choose another."
   [username]
@@ -16,7 +18,9 @@
 (defn url?
   [url]
   (or (str/blank? url)
-      (re-matches #"^(https?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]" url)))
+      (re-matches #"^(https?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]" url)
+      (>= (count (str/split (get-pure-url url) #"[.]")) 2)
+      (>= (count (last (str/split (get-pure-url url) #"[.]"))) 2)))
 
 (defn email?
   [email]
@@ -53,10 +57,18 @@
   [url]
   (and (not (str/blank? url))
        (<= (count url) 500)
-       (re-matches #"^(https?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]" url)))
+       (re-matches #"^(https?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]" url)
+       (>= (count (str/split (get-pure-url url) #"[.]")) 2)
+       (>= (count (last (str/split (get-pure-url url) #"[.]"))) 2)))
 
 (defn submit-text?
   [text]
   (and (not (str/blank? text))
        (<= (count text) 2500)))
 
+(defn get-pure-url
+  [url]
+  (let [s (str/replace url #"^(https?)://(www.)?" "")]
+    (if-let [index (str/index-of s "/")]
+      (.substring s 0 index)
+      s)))
