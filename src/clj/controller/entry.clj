@@ -3,6 +3,7 @@
             [clj.util.resource :as resource-util]
             [clj.dao.user :as user-dao]
             [clj.dao.entry :as entry-dao]
+            [clj.dao.comment-entry :as comment-entry-dao]
             [hiccup.core :as hiccup]
             [cljc.validation :as validation]
             [clojure.string :as str]
@@ -16,7 +17,13 @@
          check-submit-type
          check-submit-title
          check-submit-url
-         check-submit-text)
+         check-submit-text
+         check-entry-exist
+         group-by-parent-and-sort-by-vote
+         create-comment-tree
+         flat-one-level
+         flat-until-every-vector
+         create-comments)
 
 (defn home-page
   []
@@ -192,6 +199,19 @@
             :handle-exception (fn [ctx]
                                 (resource-util/get-exception-message ctx))))
 
+(defn get-story-by-id
+  [id]
+  (resource :allowed-methods [:get]
+
+            :available-media-types resource-util/avaliable-media-types
+
+            :handle-ok (fn [ctx]
+                         (check-entry-exist id)
+                         {:cn-story (create-comments (comment-entry-dao/get-comments-by-entry-id id))})
+
+            :handle-exception (fn [ctx]
+                                (resource-util/get-exception-message ctx))))
+
 (defn get-user
   [ctx]
   (if-let [cookie (resource-util/get-cookie ctx)]
@@ -199,6 +219,51 @@
       (if (= cookie (:cookie user))
         {:username (:username user)
          :karma    (:karma user)}))))
+
+
+(defn group-by-parent-and-sort-by-vote
+  [comment-map]
+  (reduce #(assoc %1 (first %2) (vec
+                                  (sort-by :upvote (fn [a b]
+                                                     (compare b a)) (second %2))))
+          {}
+          (group-by :parent-comment-id comment-map)))
+
+(defn create-comment-tree
+  [key grouped-comments coll]
+  (let [comments (get grouped-comments key)]
+    (if (nil? comments)
+      (seq coll)
+      (for [comment* (get grouped-comments key)]
+        (if (nil? (:parent-comment-id comment*))
+          (create-comment-tree (:_id comment*) grouped-comments (conj coll [comment*]))
+          (create-comment-tree (:_id comment*) grouped-comments (update-in coll [(dec (count coll))] conj comment*)))))))
+
+
+(defn flat-one-level [coll]
+  (mapcat #(if (vector? %) [%] %) coll))
+
+(defn flat-until-every-vector
+  [coll]
+  (if (every? vector? coll)
+    coll
+    (recur (flat-one-level coll))))
+
+
+(defn create-comments
+  [comments-map]
+  (let [grouped-comments (group-by-parent-and-sort-by-vote comments-map)
+        comment-tree (create-comment-tree nil grouped-comments [])]
+    (flatten
+      (reduce (fn [comment-coll comment-data]
+                (conj comment-coll (distinct
+                                     (flatten
+                                       (reduce (fn [x y]
+                                                 (conj x
+                                                       (reduce #(conj %1 (into {} %2)) [] (keep-indexed #(concat {:index %1} %2) y))))
+                                               []
+                                               (flat-until-every-vector comment-data))))))
+              [] comment-tree))))
 
 (defn check-submit-type
   [type]
@@ -229,3 +294,11 @@
   [text]
   (if-not (validation/submit-text? text)
     (throw (RuntimeException. "Please limit text to 2500 characters."))))
+
+(defn check-entry-exist
+  [id]
+  (try
+    (if-not (entry-dao/find-by-id id)
+      (throw (RuntimeException. "No such entry!")))
+    (catch Exception e
+      (throw (RuntimeException. "No such entry!")))))

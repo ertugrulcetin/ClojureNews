@@ -51,14 +51,13 @@
    :number-of-comments 0})
 
 
-(defn comments
-  [entry-id created-by parent-comment-id content type level]
+(defn comment-entry
+  [entry-id created-by parent-comment-id content type]
   {:_id               (ObjectId.)
    :created-date      (Date.)
    :entry-id          entry-id
    :created-by        created-by
    :parent-comment-id parent-comment-id
    :upvote            1
-   :level             level
    :content           content
    :type              type})

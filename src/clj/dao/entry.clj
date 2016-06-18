@@ -5,8 +5,7 @@
             [monger.query :refer :all]
             [clj.dao.db :as db]
             [clj.util.entity :as entity-util])
-  (:import (org.bson.types ObjectId)
-           (java.util Date)))
+  (:import (org.bson.types ObjectId)))
 
 ;; entry Collection/Table
 (def coll "entry")

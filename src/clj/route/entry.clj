@@ -14,8 +14,9 @@
            (PUT "/entry/story" []
              (controller/create-story))
 
-           (PUT "/entry/ask" []
-             (controller/create-ask))
+           (GET "/entry/story/:id" [id]
+             (controller/get-story-by-id id))
 
-           )
+           (PUT "/entry/ask" []
+             (controller/create-ask)))
 

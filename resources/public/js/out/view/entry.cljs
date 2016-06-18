@@ -81,46 +81,48 @@
     [:tr {:class "spacer" :style {:height "7"}}]))
 
 (defn story
-  []
+  [response]
   [:table {:border "0" :class "comment-tree"}
    [:tbody
 
-    [:tr {:class "athing"}
+    (for [commentt (:cn-story response)]
 
-     [:td
+      [:tr {:class "athing"}
 
-      [:table {:border "0"}
-       [:tbody
+       [:td
 
-        [:tr
+        [:table {:border "0"}
+         [:tbody
 
-         [:td {:class "ind"}
-          [:img {:src "/img/s.gif" :height "1" :width "0"}]]
+          [:tr
 
-         [:td {:style {:vertical-align "top"} :class "votelinks"}
-          [:center
-           [:a {:id "id...." :href "#"}
-            [:div {:class "votearrow" :title "upvote"}]]]]
+           [:td {:class "ind"}
+            [:img {:src "/img/s.gif" :height "1" :width (str (* (:index commentt) 40))}]]
 
-         [:td {:class "default"}
-          [:div {:style {:margin-top "2px" :margin-bottom "-10px"}}
-           [:span {:class "comhead"}
-            [:a {:href "/#/user/ertu"} "ertu"]
-            [:span {:class "age"}
-             [:a {:href "/#"} " 10 hours ago"]]
-            [:span {:class "par"}]
-            [:span {:class "storyon"}]]]
+           [:td {:style {:vertical-align "top"} :class "votelinks"}
+            [:center
+             [:a {:id "id...." :href "#"}
+              [:div {:class "votearrow" :title "upvote"}]]]]
 
-          [:br]
+           [:td {:class "default"}
+            [:div {:style {:margin-top "2px" :margin-bottom "-10px"}}
+             [:span {:class "comhead"}
+              [:a {:href (str "/#/user/" (:created-by commentt))} (:created-by commentt)]
+              [:span {:class "age"}
+               [:a {:href "/#"} (str " " (generate-age-status (:created-date commentt)))]]
+              [:span {:class "par"}]
+              [:span {:class "storyon"}]]]
 
-          [:span {:class "comment"}
-           [:span {:class "c00"}
-            "Here is the first comment! " [:a {:href "#"} "https://clojure.news"]]
-           [:div {:class "reply"}
-            [:p
-             [:font {:size "1"}
-              [:u
-               [:a {:href "#"} "reply"]]]]]]]]]]]]]])
+            [:br]
+
+            [:span {:class "comment"}
+             [:span {:class "c00"}
+              "Here is the first comment! " [:a {:href "#"} "https://clojure.news"]]
+             [:div {:class "reply"}
+              [:p
+               [:font {:size "1"}
+                [:u
+                 [:a {:href "#"} "reply"]]]]]]]]]]]])]])
 
 (defn generate-comment-status
   [number-of-comments]
@@ -145,7 +147,6 @@
     (cond
       (< min 60) (if (= min 1) (str min " minute ago") (str min " minutes ago"))
       (< hour 24) (if (= hour 1) (str hour " hour ago") (str hour " hours ago"))
-
       :else
       (if (= day 1) (str day " day ago") (str day " days ago")))))
 
