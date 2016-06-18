@@ -207,7 +207,13 @@
 
             :handle-ok (fn [ctx]
                          (check-entry-exist id)
-                         {:cn-story (create-comments (comment-entry-dao/get-comments-by-entry-id id))})
+
+
+                         {:cn-story (create-comments (reduce #(conj %1 (assoc %2 :str-id (str (:_id %2))
+                                                                                 :str-parent-comment-id (if (:parent-comment-id %2)
+                                                                                                          (:parent-comment-id %2)
+                                                                                                          nil)))
+                                                             [] (comment-entry-dao/get-comments-by-entry-id id)))})
 
             :handle-exception (fn [ctx]
                                 (resource-util/get-exception-message ctx))))
@@ -227,7 +233,7 @@
                                   (sort-by :upvote (fn [a b]
                                                      (compare b a)) (second %2))))
           {}
-          (group-by :parent-comment-id comment-map)))
+          (group-by :str-parent-comment-id comment-map)))
 
 (defn create-comment-tree
   [key grouped-comments coll]
@@ -235,9 +241,9 @@
     (if (nil? comments)
       (seq coll)
       (for [comment* (get grouped-comments key)]
-        (if (nil? (:parent-comment-id comment*))
-          (create-comment-tree (:_id comment*) grouped-comments (conj coll [comment*]))
-          (create-comment-tree (:_id comment*) grouped-comments (update-in coll [(dec (count coll))] conj comment*)))))))
+        (if (nil? (:str-parent-comment-id comment*))
+          (create-comment-tree (:str-id comment*) grouped-comments (conj coll [comment*]))
+          (create-comment-tree (:str-id comment*) grouped-comments (update-in coll [(dec (count coll))] conj comment*)))))))
 
 
 (defn flat-one-level [coll]
