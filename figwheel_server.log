@@ -7527,3 +7527,983 @@ WARNING: No such namespace: goog.History.EventType, could not locate goog/Histor
 WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
 notifying browser that file changed:  out/view/entry.js
 [32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.388 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  resources/public/js/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.633 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.526 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.554 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.474 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.648 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.538 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.474 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.456 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.528 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.539 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.425 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.444 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.462 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.428 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.435 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.458 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.46 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.437 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.44 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.462 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.515 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.445 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.466 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+[31mCompiling "resources/public/js/clojure-news.js" failed.
+[0mERROR: Map literal must contain an even number of forms on file /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs, line 94, column 27
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.209 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.459 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+[31mCompiling "resources/public/js/clojure-news.js" failed.
+[0mERROR: Invalid token: : on file /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs, line 97, column 17
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.236 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.456 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.43 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.465 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.411 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.435 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.481 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.448 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+[31mCompiling "resources/public/js/clojure-news.js" failed.
+[0mERROR: Invalid token: : on file /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs, line 100, column 40
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.187 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.411 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.454 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.409 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.44 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.411 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.398 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.5 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.475 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.492 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.415 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.457 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.696 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.641 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+[31mCompiling "resources/public/js/clojure-news.js" failed.
+[0mERROR: Map literal must contain an even number of forms on file /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs, line 119, column 31
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.209 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.657 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Use of undeclared Var view.entry/entry at line 112 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 115 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 115 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 112 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 115 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 115 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.706 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.618 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.605 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.64 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.644 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.663 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.606 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.611 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.605 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.603 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.736 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.714 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.645 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.646 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.658 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Use of undeclared Var view.entry/entry at line 111 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 112 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 112 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 115 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 115 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 111 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 112 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 112 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 115 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 115 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.636 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.648 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Use of undeclared Var view.entry/entry at line 112 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 115 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 115 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 112 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 115 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 115 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 112 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 115 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 115 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 112 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 115 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 115 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.82 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.647 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Use of undeclared Var view.entry/entry at line 112 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 115 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 115 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 112 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 115 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 115 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 112 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 115 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 115 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 112 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 115 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 115 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 1.004 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Use of undeclared Var view.entry/entry at line 112 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 115 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 115 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 112 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 115 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 115 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 112 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 115 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 115 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 112 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 115 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 115 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 1.086 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.468 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.497 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.538 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.741 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.75 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.903 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 113 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 114 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.753 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 116 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: Use of undeclared Var view.entry/entry at line 117 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  resources/public/js/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.826 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.586 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.611 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.606 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.504 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.656 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.559 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.588 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.485 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.572 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.536 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.622 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Use of undeclared Var view.entry/data at line 210 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/view/entry.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.465 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.635 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.536 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.602 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.561 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.506 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.482 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.549 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.49 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  out/view/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.562 seconds.[0m

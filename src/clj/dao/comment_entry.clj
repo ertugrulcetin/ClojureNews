@@ -26,7 +26,5 @@
   [entry-id]
   (mc/find-maps db/clojure-news coll {:entry-id entry-id}))
 
-(println
-  (create-comment-entry "575e7d6d452ab47eca8184f0" "batu" nil "Kop kop" ::story))
 
-(println (get-comments-by-entry-id "575e7d6d452ab47eca8184f0"))
+;(create-comment-entry "575e7d6d452ab47eca8184f0" "ertu" nil "" ::story)

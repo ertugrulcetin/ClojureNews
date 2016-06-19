@@ -6,7 +6,11 @@
          generate-comment-status
          generate-upvote-status
          generate-age-status
-         genereate-min-status)
+         genereate-min-status
+         entry-owner?
+         comment-owner?
+         create-comment-owner
+         create-comment)
 
 (defn component-story-and-ask
   [entries]
@@ -81,48 +85,141 @@
     [:tr {:class "spacer" :style {:height "7"}}]))
 
 (defn story
-  [response]
-  [:table {:border "0" :class "comment-tree"}
-   [:tbody
+  [data]
 
-    (for [commentt (:cn-story response)]
+  [:div
 
-      [:tr {:class "athing"}
+   [:table {:border "0"}
+    [:tbody
 
-       [:td
+     (list
+       [:tr {:class "athing"}
 
-        [:table {:border "0"}
-         [:tbody
+        [:td {:text-align "right" :vertical-align "top" :class "title"}
+         [:span {:class "rank"}]]
 
-          [:tr
+        [:td {:vertical-align "top" :class "votelinks"}
+         [:center
 
-           [:td {:class "ind"}
-            [:img {:src "/img/s.gif" :height "1" :width (str (* (:index commentt) 40))}]]
+          (if (entry-owner? data)
+            [:font {:color "#5fba7d"} "*"]
+            [:a {:id "aa" :href "#"}
+             [:div {:class "votearrow" :title "upvote"}]])]]
 
-           [:td {:style {:vertical-align "top"} :class "votelinks"}
-            [:center
-             [:a {:id "id...." :href "#"}
-              [:div {:class "votearrow" :title "upvote"}]]]]
+        [:td {:class "title"}
+         [:a {:href (-> data :story-entry :url) :class "storylink"} (-> data :story-entry :title)]
+         [:span {:class "sitebit comhead"}
+          " (" [:a {:href "#"}
+                [:span {:class "sitestr"}
+                 (-> data :story-entry :pure-url)]] ")"]]]
 
-           [:td {:class "default"}
-            [:div {:style {:margin-top "2px" :margin-bottom "-10px"}}
-             [:span {:class "comhead"}
-              [:a {:href (str "/#/user/" (:created-by commentt))} (:created-by commentt)]
-              [:span {:class "age"}
-               [:a {:href "/#"} (str " " (generate-age-status (:created-date commentt)))]]
-              [:span {:class "par"}]
-              [:span {:class "storyon"}]]]
+       [:tr
+        [:td {:colSpan "2"}]
+        [:td {:class "subtext"}
+         [:span {:id "span" :class "score"}
+          (generate-upvote-status (-> data :story-entry :upvote))
+          [:a {:href (str "/#/user/" (-> data :story-entry :created-by))} (-> data :story-entry :created-by)]
+          [:span {:class "age"} " | "
+           [:a {:href (str "/#/story/" (-> data :story-entry :_id))} (generate-age-status (-> data :story-entry :created-date))] " | "
+           [:a {:href (str "/#/story/" (-> data :story-entry :_id))} (generate-comment-status (-> data :story-entry :number-of-comments))]]]]]
 
-            [:br]
+       [:tr {:style {:height "10px"}}]
 
-            [:span {:class "comment"}
-             [:span {:class "c00"}
-              "Here is the first comment! " [:a {:href "#"} "https://clojure.news"]]
-             [:div {:class "reply"}
-              [:p
-               [:font {:size "1"}
-                [:u
-                 [:a {:href "#"} "reply"]]]]]]]]]]]])]])
+       [:tr
+        [:td {:colSpan "2"}]
+        [:td
+         [:textarea {:id "textId" :name "text" :cols "60" :rows "6"}]
+         [:br]
+         [:br]
+         [:button {:id "ss"} "add comment"]]])]]
+
+
+   [:table {:border "0" :class "comment-tree"}
+    [:tbody
+
+     [:tr
+      [:td
+       [:br]
+       [:br]]]
+
+
+     (for [commentt (-> data :story-comments)]
+
+       [:tr {:class "athing"}
+
+        [:td
+
+         [:table {:border "0"}
+          [:tbody
+
+           (if (comment-owner? data (:created-by commentt))
+             (create-comment-owner commentt)
+             (create-comment commentt))]]]])]]])
+
+(defn create-comment-owner
+  [commentt]
+
+  [:tr
+   [:td {:class "ind"}
+    [:img {:src "/img/s.gif" :height "1" :width (str (* (:index commentt) 40))}]]
+
+   [:td {:style {:vertical-align "top"} :class "votelinks"}
+    [:center
+     [:font {:color "#5fba7d"} "*"]]]
+
+   [:td {:class "default"}
+    [:div {:style {:margin-top "2px" :margin-bottom "-10px"}}
+     [:span {:class "comhead"}
+      [:a {:href (str "/#/user/" (:created-by commentt))} (:created-by commentt)]
+      " "
+      [:span {:class "age"}
+       [:a {:href (str "/#/comment/" (:_id commentt))} (generate-age-status (:created-date commentt))]
+       " | "
+       [:a {:href (str "/#/comment/edit/" (:_id commentt))} "edit"]
+       " | "
+       [:a {:href (str "/#/comment/delete/" (:_id commentt))} "delete"]
+       ]
+      [:span {:class "par"}]
+      [:span {:class "storyon"}]]]
+
+    [:br]
+
+    [:span {:class "comment"}
+     [:span {:class "c00"}
+      "Here is the first comment! " [:a {:href "#"} "https://clojure.news"]]]]])
+
+(defn create-comment
+  [commentt]
+  [:tr
+   [:td {:class "ind"}
+    [:img {:src "/img/s.gif" :height "1" :width (str (* (:index commentt) 40))}]]
+
+   [:td {:style {:vertical-align "top"} :class "votelinks"}
+    [:center
+     [:a {:id "id...." :href "#"}
+      [:div {:class "votearrow" :title "upvote"}]]]]
+
+   [:td {:class "default"}
+    [:div {:style {:margin-top "2px" :margin-bottom "-10px"}}
+     [:span {:class "comhead"}
+      [:a {:href (str "/#/user/" (:created-by commentt))} (:created-by commentt)]
+      " "
+      [:span {:class "age"}
+       [:a {:href "/#"} (generate-age-status (:created-date commentt))]]
+      [:span {:class "par"}]
+      [:span {:class "storyon"}]]]
+
+    [:br]
+
+    [:span {:class "comment"}
+     [:span {:class "c00"}
+      "Here is the first comment! " [:a {:href "#"} "https://clojure.news"]]
+     [:div {:class "reply"}
+      [:p
+       [:font {:size "1"}
+        [:u
+         [:a {:href (str "/#/comment/reply/" (:str-id commentt))} "reply"]]]]]
+     ]]])
 
 (defn generate-comment-status
   [number-of-comments]
@@ -149,4 +246,12 @@
       (< hour 24) (if (= hour 1) (str hour " hour ago") (str hour " hours ago"))
       :else
       (if (= day 1) (str day " day ago") (str day " days ago")))))
+
+(defn entry-owner?
+  [data]
+  (or (= (-> data :user-obj :username) (-> data :story-entry :created-by))))
+
+(defn comment-owner?
+  [data comment-created-by]
+  (or (= (-> data :user-obj :username) comment-created-by)))
 

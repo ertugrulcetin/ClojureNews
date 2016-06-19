@@ -206,14 +206,16 @@
             :available-media-types resource-util/avaliable-media-types
 
             :handle-ok (fn [ctx]
+
                          (check-entry-exist id)
 
-
-                         {:cn-story (create-comments (reduce #(conj %1 (assoc %2 :str-id (str (:_id %2))
-                                                                                 :str-parent-comment-id (if (:parent-comment-id %2)
-                                                                                                          (:parent-comment-id %2)
-                                                                                                          nil)))
-                                                             [] (comment-entry-dao/get-comments-by-entry-id id)))})
+                         {:user-obj       (dissoc (get-user ctx) :karma)
+                          :story-entry    (entry-dao/find-by-id id)
+                          :story-comments (create-comments (reduce #(conj %1 (assoc %2 :str-id (str (:_id %2))
+                                                                                       :str-parent-comment-id (if (:parent-comment-id %2)
+                                                                                                                (:parent-comment-id %2)
+                                                                                                                nil)))
+                                                                   [] (comment-entry-dao/get-comments-by-entry-id id)))})
 
             :handle-exception (fn [ctx]
                                 (resource-util/get-exception-message ctx))))
