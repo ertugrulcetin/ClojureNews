@@ -26,5 +26,6 @@
   [entry-id]
   (mc/find-maps db/clojure-news coll {:entry-id entry-id}))
 
-
-;(create-comment-entry "575e7d6d452ab47eca8184f0" "ertu" nil "" ::story)
+(defn inc-comment-upvote
+  [^String id]
+  (mc/update-by-id db/clojure-news coll (ObjectId. id) {$inc {:upvote 1}}))

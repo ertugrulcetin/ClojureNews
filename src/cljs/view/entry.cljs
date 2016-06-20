@@ -44,6 +44,7 @@
        " (" [:a {:href (:pure-url entry)}
              [:span {:class "sitestr"}
               (:pure-url entry)]] ")"]]]
+
     [:tr
      [:td {:colSpan "2"}]
      [:td {:class "subtext"}
@@ -72,6 +73,7 @@
      [:td {:class "title"}
       [:span {:class "deadmark"}]
       [:a {:href (str "/#/ask/" (:_id entry))} (str "Ask CN: " (:title entry))]]]
+
     [:tr
      [:td {:colSpan "2"}]
      [:td {:class "subtext"}
@@ -85,7 +87,7 @@
     [:tr {:class "spacer" :style {:height "7"}}]))
 
 (defn story
-  [data]
+  [data add-comment]
 
   [:div
 
@@ -131,7 +133,8 @@
          [:textarea {:id "textId" :name "text" :cols "60" :rows "6"}]
          [:br]
          [:br]
-         [:button {:id "ss"} "add comment"]]])]]
+         [:button {:id "buttonAddStoryCommentId" :on-click (fn [_]
+                                                             (add-comment (-> data :story-entry :_id) ["textId"]))} "add comment"]]])]]
 
 
    [:table {:border "0" :class "comment-tree"}

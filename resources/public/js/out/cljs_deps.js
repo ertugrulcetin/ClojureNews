@@ -43,7 +43,7 @@ goog.addDependency("../route/login.js", ['route.login'], ['cljs.core', 'controll
 goog.addDependency("../cljs_time/internal/core.js", ['cljs_time.internal.core'], ['goog.string', 'cljs.core', 'goog.string.format', 'clojure.string']);
 goog.addDependency("../cljs_time/core.js", ['cljs_time.core'], ['goog.date.UtcDateTime', 'cljs.core', 'goog.date.Interval', 'cljs_time.internal.core', 'goog.date.DateTime', 'goog.date.Date', 'clojure.string']);
 goog.addDependency("../view/entry.js", ['view.entry'], ['cljs.core', 'cljs_time.core']);
-goog.addDependency("../controller/entry.js", ['controller.entry'], ['ajax.core', 'reagent.core', 'cljs.core', 'util.controller', 'view.entry', 'util.view']);
+goog.addDependency("../controller/entry.js", ['controller.entry'], ['ajax.core', 'reagent.core', 'cljs.core', 'util.controller', 'view.entry', 'cljc.validation', 'util.view', 'clojure.string']);
 goog.addDependency("../route/entry.js", ['route.entry'], ['controller.entry', 'reagent.core', 'cljs.core', 'view.entry', 'secretary.core']);
 goog.addDependency("../view/changepassword.js", ['view.changepassword'], ['cljs.core']);
 goog.addDependency("../controller/user.js", ['controller.user'], ['ajax.core', 'reagent.core', 'cljs.core', 'util.controller', 'view.changepassword', 'cljc.validation', 'cljc.string_util', 'util.view', 'view.user']);

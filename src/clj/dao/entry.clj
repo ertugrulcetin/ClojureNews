@@ -34,3 +34,11 @@
                                {:type "story"}]})
                    (sort {:created-date 1})
                    (paginate :page 1 :per-page 30)))
+
+(defn inc-entry-comment-count
+  [^String id]
+  (mc/update-by-id db/clojure-news coll (ObjectId. id) {$inc {:number-of-comments 1}}))
+
+(defn dec-entry-comment-count
+  [^String id]
+  (mc/update-by-id db/clojure-news coll (ObjectId. id) {$inc {:number-of-comments -1}}))
