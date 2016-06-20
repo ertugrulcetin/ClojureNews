@@ -8,6 +8,7 @@ goog.require('util.controller');
 goog.require('view.entry');
 goog.require('util.view');
 goog.require('clojure.string');
+
 controller.entry.home_page = (function controller$entry$home_page(){
 return ajax.core.GET.call(null,"/entry",new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"handler","handler",-195596612),(function (response){
 return reagent.core.render_component.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [(function (){
@@ -36,7 +37,9 @@ return util.view.render_error_message.call(null,"Please limit text to 2500 chara
 } else {
 return ajax.core.PUT.call(null,"/comment",new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"params","params",710516235),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"story-id","story-id",274982147),story_id,new cljs.core.Keyword(null,"text","text",-1790561697),text], null),new cljs.core.Keyword(null,"handler","handler",-195596612),((function (data,text){
 return (function (_){
-return location.reload();
+controller.entry.story.call(null,story_id);
+
+return window.scrollTo((0),document.body.scrollHeight);
 });})(data,text))
 ,new cljs.core.Keyword(null,"error-handler","error-handler",-484945776),util.controller.error_handler,new cljs.core.Keyword(null,"format","format",-1306924766),ajax.core.json_request_format.call(null),new cljs.core.Keyword(null,"response-format","response-format",1664465322),ajax.core.json_response_format.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"keywords?","keywords?",764949733),true], null))], null));
 

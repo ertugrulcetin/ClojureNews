@@ -18,9 +18,10 @@
 (defn url?
   [url]
   (or (str/blank? url)
-      (re-matches #"^(https?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]" url)
-      (>= (count (str/split (get-pure-url url) #"[.]")) 2)
-      (>= (count (last (str/split (get-pure-url url) #"[.]"))) 2)))
+      (and
+        (re-matches #"^(https?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]" url)
+        (>= (count (str/split (get-pure-url url) #"[.]")) 2)
+        (>= (count (last (str/split (get-pure-url url) #"[.]"))) 2))))
 
 (defn email?
   [email]

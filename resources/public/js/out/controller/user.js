@@ -30,6 +30,8 @@ if(cljs.core.not.call(null,cljc.validation.url_QMARK_.call(null,new cljs.core.Ke
 return util.view.render_error_message.call(null,"Not valid url. Ex: https://www.google.com");
 } else {
 if(cljs.core.not.call(null,cljc.validation.github_or_twitter_QMARK_.call(null,new cljs.core.Keyword(null,"github","github",567794498).cljs$core$IFn$_invoke$arity$1(data)))){
+cljs.core.println.call(null,"Ertu: ",new cljs.core.Keyword(null,"github","github",567794498).cljs$core$IFn$_invoke$arity$1(data));
+
 return util.view.render_error_message.call(null,"Not valid GitHub Username. Ex: ertugrulcetin");
 } else {
 if(cljs.core.not.call(null,cljc.validation.github_or_twitter_QMARK_.call(null,new cljs.core.Keyword(null,"twitter","twitter",-589267671).cljs$core$IFn$_invoke$arity$1(data)))){
@@ -39,8 +41,8 @@ if(cljs.core.not.call(null,cljc.validation.show_email_QMARK__QMARK_.call(null,ne
 return util.view.render_error_message.call(null,"Not valid show email option.");
 } else {
 return ajax.core.POST.call(null,[cljs.core.str("/user/"),cljs.core.str(username)].join(''),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"params","params",710516235),cljc.string_util.trim_map_values.call(null,cljs.core.update_in.call(null,data,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"about","about",1423892543)], null),((function (data){
-return (function (p1__25272_SHARP_){
-return cljs.core.apply.call(null,cljs.core.str,cljs.core.interpose.call(null,"\n",cljc.string_util.new_line_tokens.call(null,p1__25272_SHARP_)));
+return (function (p1__26056_SHARP_){
+return cljs.core.apply.call(null,cljs.core.str,cljs.core.interpose.call(null,"\n",cljc.string_util.new_line_tokens.call(null,p1__26056_SHARP_)));
 });})(data))
 )),new cljs.core.Keyword(null,"handler","handler",-195596612),((function (data){
 return (function (_){

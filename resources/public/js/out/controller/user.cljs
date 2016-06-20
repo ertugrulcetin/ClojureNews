@@ -39,7 +39,9 @@
       (util.view/render-error-message "Not valid url. Ex: https://www.google.com")
 
       (not (validation/github-or-twitter? (:github data)))
-      (util.view/render-error-message "Not valid GitHub Username. Ex: ertugrulcetin")
+      (do
+        (println "Ertu: " (:github data))
+        (util.view/render-error-message "Not valid GitHub Username. Ex: ertugrulcetin"))
 
       (not (validation/github-or-twitter? (:twitter data)))
       (util.view/render-error-message "Not valid Twitter Username. Ex: ertuctn")

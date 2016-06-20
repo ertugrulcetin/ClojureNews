@@ -7,7 +7,8 @@
             [cljc.validation :as validation]
             [clojure.string :as str]))
 
-(declare add-story-comment)
+(declare add-story-comment
+         story)
 
 (defn home-page
   []
@@ -49,7 +50,8 @@
       (PUT "/comment"
            {:params          {:story-id story-id :text text}
             :handler         (fn [_]
-                               (.reload js/location))
+                               (story story-id)
+                               (.scrollTo js/window 0 (.-scrollHeight (.-body js/document))))
             :error-handler   util.controller/error-handler
             :format          (ajax/json-request-format)
             :response-format (ajax/json-response-format {:keywords? true})}))))
