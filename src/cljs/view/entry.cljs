@@ -137,7 +137,7 @@
                                                              (add-comment (-> data :story-entry :_id) ["textId"]))} "add comment"]]])]]
 
 
-   [:table {:border "0" :class "comment-tree"}
+    [:table {:border "0" :class "comment-tree"}
     [:tbody
 
      [:tr
@@ -221,7 +221,7 @@
       [:p
        [:font {:size "1"}
         [:u
-         [:a {:href (str "/#/comment/reply/" (:str-id commentt))} "reply"]]]]]
+         [:a {:href (str "/#/comment/" (:str-id commentt))} "reply"]]]]]
      ]]])
 
 (defn generate-comment-status

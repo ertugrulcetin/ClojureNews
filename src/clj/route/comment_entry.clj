@@ -8,9 +8,12 @@
            (PUT "/comment" []
              (controller/create-story-comment))
 
-           ;(GET "/comment/reply/:id" [id]
-           ;  (controller/reply-story-comment id))
-           ;
+           (PUT "/comment/reply" []
+             (controller/reply-story-comment))
+
+           (GET "/comment/:id" [id]
+             (controller/get-story-comment-by-id id))
+
            ;(PUT "/comment/reply/:id" [id]
            ;  (controller/reply-story-comment id))
            )

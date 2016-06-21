@@ -5,6 +5,7 @@
             [secretary.core :as secretary]
             [reagent.core :as r]
             [route.entry]
+            [route.comment-entry]
             [route.login]
             [route.user]
             [route.submit]

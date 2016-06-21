@@ -46,14 +46,6 @@
             :handle-exception (fn [ctx]
                                 (resource-util/get-exception-message ctx))))
 
-(defmacro if-let-multi
-  ([bindings then]
-   `(if-let-multi ~bindings ~then nil))
-  ([bindings then else]
-   `(let* ~(destructure bindings) (if (and ~@((fn [bin] (map #(second %) (partition 2 bin))) bindings))
-                                    ~then
-                                    ~else))))
-
 (defn update-user
   [username]
   (resource :allowed-methods [:post]

@@ -8690,3 +8690,495 @@ WARNING: No such namespace: goog.History.EventType, could not locate goog/Histor
 WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
 notifying browser that file changed:  out/cljc/validation.js
 [32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.867 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+[31mCompiling "resources/public/js/clojure-news.js" failed.
+[0mjava.lang.AssertionError: Assert failed: Circular dependency detected, route.comment-entry -> controller.comment-entry -> controller.comment-entry
+(not (some #{ns-name} seen))
+ at cljs.js_deps$dependency_order_visit.invokeStatic (js_deps.cljc:148)
+    cljs.js_deps$dependency_order_visit.invoke (js_deps.cljc:144)
+    cljs.js_deps$dependency_order_visit$fn__334.invoke (js_deps.cljc:156)
+    clojure.core.protocols$iter_reduce.invokeStatic (protocols.clj:49)
+    clojure.core.protocols$fn__6742.invokeStatic (protocols.clj:75)
+    clojure.core.protocols/fn (protocols.clj:75)
+    clojure.core.protocols$fn__6684$G__6679__6697.invoke (protocols.clj:13)
+    clojure.core$reduce.invokeStatic (core.clj:6545)
+    clojure.core$reduce.invoke (core.clj:6527)
+    cljs.js_deps$dependency_order_visit.invokeStatic (js_deps.cljc:156)
+    cljs.js_deps$dependency_order_visit.invoke (js_deps.cljc:144)
+    cljs.js_deps$dependency_order_visit$fn__334.invoke (js_deps.cljc:156)
+    clojure.core.protocols$iter_reduce.invokeStatic (protocols.clj:49)
+    clojure.core.protocols$fn__6742.invokeStatic (protocols.clj:75)
+    clojure.core.protocols/fn (protocols.clj:75)
+    clojure.core.protocols$fn__6684$G__6679__6697.invoke (protocols.clj:13)
+    clojure.core$reduce.invokeStatic (core.clj:6545)
+    clojure.core$reduce.invoke (core.clj:6527)
+    cljs.js_deps$dependency_order_visit.invokeStatic (js_deps.cljc:156)
+    cljs.js_deps$dependency_order_visit.invoke (js_deps.cljc:144)
+    cljs.js_deps$dependency_order_visit.invokeStatic (js_deps.cljc:146)
+    cljs.js_deps$dependency_order_visit.invoke (js_deps.cljc:144)
+    clojure.core.protocols$iter_reduce.invokeStatic (protocols.clj:49)
+    clojure.core.protocols$fn__6744.invokeStatic (protocols.clj:75)
+    clojure.core.protocols/fn (protocols.clj:75)
+    clojure.core.protocols$fn__6684$G__6679__6697.invoke (protocols.clj:13)
+    clojure.core$reduce.invokeStatic (core.clj:6545)
+    clojure.core$reduce.invoke (core.clj:6527)
+    cljs.js_deps$dependency_order.invokeStatic (js_deps.cljc:176)
+    cljs.js_deps$dependency_order.invoke (js_deps.cljc:170)
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.125 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+[31mCompiling "resources/public/js/clojure-news.js" failed.
+[0mjava.lang.AssertionError: Assert failed: Circular dependency detected, route.comment-entry -> controller.comment-entry -> controller.comment-entry
+(not (some #{ns-name} seen))
+ at cljs.js_deps$dependency_order_visit.invokeStatic (js_deps.cljc:148)
+    cljs.js_deps$dependency_order_visit.invoke (js_deps.cljc:144)
+    cljs.js_deps$dependency_order_visit$fn__334.invoke (js_deps.cljc:156)
+    clojure.core.protocols$iter_reduce.invokeStatic (protocols.clj:49)
+    clojure.core.protocols$fn__6742.invokeStatic (protocols.clj:75)
+    clojure.core.protocols/fn (protocols.clj:75)
+    clojure.core.protocols$fn__6684$G__6679__6697.invoke (protocols.clj:13)
+    clojure.core$reduce.invokeStatic (core.clj:6545)
+    clojure.core$reduce.invoke (core.clj:6527)
+    cljs.js_deps$dependency_order_visit.invokeStatic (js_deps.cljc:156)
+    cljs.js_deps$dependency_order_visit.invoke (js_deps.cljc:144)
+    cljs.js_deps$dependency_order_visit$fn__334.invoke (js_deps.cljc:156)
+    clojure.core.protocols$iter_reduce.invokeStatic (protocols.clj:49)
+    clojure.core.protocols$fn__6742.invokeStatic (protocols.clj:75)
+    clojure.core.protocols/fn (protocols.clj:75)
+    clojure.core.protocols$fn__6684$G__6679__6697.invoke (protocols.clj:13)
+    clojure.core$reduce.invokeStatic (core.clj:6545)
+    clojure.core$reduce.invoke (core.clj:6527)
+    cljs.js_deps$dependency_order_visit.invokeStatic (js_deps.cljc:156)
+    cljs.js_deps$dependency_order_visit.invoke (js_deps.cljc:144)
+    cljs.js_deps$dependency_order_visit.invokeStatic (js_deps.cljc:146)
+    cljs.js_deps$dependency_order_visit.invoke (js_deps.cljc:144)
+    clojure.core.protocols$iter_reduce.invokeStatic (protocols.clj:49)
+    clojure.core.protocols$fn__6744.invokeStatic (protocols.clj:75)
+    clojure.core.protocols/fn (protocols.clj:75)
+    clojure.core.protocols$fn__6684$G__6679__6697.invoke (protocols.clj:13)
+    clojure.core$reduce.invokeStatic (core.clj:6545)
+    clojure.core$reduce.invoke (core.clj:6527)
+    cljs.js_deps$dependency_order.invokeStatic (js_deps.cljc:176)
+    cljs.js_deps$dependency_order.invoke (js_deps.cljc:170)
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.16 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+[31mCompiling "resources/public/js/clojure-news.js" failed.
+[0mjava.lang.AssertionError: Assert failed: Circular dependency detected, route.comment-entry -> controller.comment-entry -> controller.comment-entry
+(not (some #{ns-name} seen))
+ at cljs.js_deps$dependency_order_visit.invokeStatic (js_deps.cljc:148)
+    cljs.js_deps$dependency_order_visit.invoke (js_deps.cljc:144)
+    cljs.js_deps$dependency_order_visit$fn__334.invoke (js_deps.cljc:156)
+    clojure.core.protocols$iter_reduce.invokeStatic (protocols.clj:49)
+    clojure.core.protocols$fn__6742.invokeStatic (protocols.clj:75)
+    clojure.core.protocols/fn (protocols.clj:75)
+    clojure.core.protocols$fn__6684$G__6679__6697.invoke (protocols.clj:13)
+    clojure.core$reduce.invokeStatic (core.clj:6545)
+    clojure.core$reduce.invoke (core.clj:6527)
+    cljs.js_deps$dependency_order_visit.invokeStatic (js_deps.cljc:156)
+    cljs.js_deps$dependency_order_visit.invoke (js_deps.cljc:144)
+    cljs.js_deps$dependency_order_visit$fn__334.invoke (js_deps.cljc:156)
+    clojure.core.protocols$iter_reduce.invokeStatic (protocols.clj:49)
+    clojure.core.protocols$fn__6742.invokeStatic (protocols.clj:75)
+    clojure.core.protocols/fn (protocols.clj:75)
+    clojure.core.protocols$fn__6684$G__6679__6697.invoke (protocols.clj:13)
+    clojure.core$reduce.invokeStatic (core.clj:6545)
+    clojure.core$reduce.invoke (core.clj:6527)
+    cljs.js_deps$dependency_order_visit.invokeStatic (js_deps.cljc:156)
+    cljs.js_deps$dependency_order_visit.invoke (js_deps.cljc:144)
+    cljs.js_deps$dependency_order_visit.invokeStatic (js_deps.cljc:146)
+    cljs.js_deps$dependency_order_visit.invoke (js_deps.cljc:144)
+    clojure.core.protocols$iter_reduce.invokeStatic (protocols.clj:49)
+    clojure.core.protocols$fn__6744.invokeStatic (protocols.clj:75)
+    clojure.core.protocols/fn (protocols.clj:75)
+    clojure.core.protocols$fn__6684$G__6679__6697.invoke (protocols.clj:13)
+    clojure.core$reduce.invokeStatic (core.clj:6545)
+    clojure.core$reduce.invoke (core.clj:6527)
+    cljs.js_deps$dependency_order.invokeStatic (js_deps.cljc:176)
+    cljs.js_deps$dependency_order.invoke (js_deps.cljc:170)
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.091 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+[31mCompiling "resources/public/js/clojure-news.js" failed.
+[0mjava.lang.AssertionError: Assert failed: Circular dependency detected, route.comment-entry -> controller.comment-entry -> controller.comment-entry
+(not (some #{ns-name} seen))
+ at cljs.js_deps$dependency_order_visit.invokeStatic (js_deps.cljc:148)
+    cljs.js_deps$dependency_order_visit.invoke (js_deps.cljc:144)
+    cljs.js_deps$dependency_order_visit$fn__334.invoke (js_deps.cljc:156)
+    clojure.core.protocols$iter_reduce.invokeStatic (protocols.clj:49)
+    clojure.core.protocols$fn__6742.invokeStatic (protocols.clj:75)
+    clojure.core.protocols/fn (protocols.clj:75)
+    clojure.core.protocols$fn__6684$G__6679__6697.invoke (protocols.clj:13)
+    clojure.core$reduce.invokeStatic (core.clj:6545)
+    clojure.core$reduce.invoke (core.clj:6527)
+    cljs.js_deps$dependency_order_visit.invokeStatic (js_deps.cljc:156)
+    cljs.js_deps$dependency_order_visit.invoke (js_deps.cljc:144)
+    cljs.js_deps$dependency_order_visit$fn__334.invoke (js_deps.cljc:156)
+    clojure.core.protocols$iter_reduce.invokeStatic (protocols.clj:49)
+    clojure.core.protocols$fn__6742.invokeStatic (protocols.clj:75)
+    clojure.core.protocols/fn (protocols.clj:75)
+    clojure.core.protocols$fn__6684$G__6679__6697.invoke (protocols.clj:13)
+    clojure.core$reduce.invokeStatic (core.clj:6545)
+    clojure.core$reduce.invoke (core.clj:6527)
+    cljs.js_deps$dependency_order_visit.invokeStatic (js_deps.cljc:156)
+    cljs.js_deps$dependency_order_visit.invoke (js_deps.cljc:144)
+    cljs.js_deps$dependency_order_visit.invokeStatic (js_deps.cljc:146)
+    cljs.js_deps$dependency_order_visit.invoke (js_deps.cljc:144)
+    clojure.core.protocols$iter_reduce.invokeStatic (protocols.clj:49)
+    clojure.core.protocols$fn__6744.invokeStatic (protocols.clj:75)
+    clojure.core.protocols/fn (protocols.clj:75)
+    clojure.core.protocols$fn__6684$G__6679__6697.invoke (protocols.clj:13)
+    clojure.core$reduce.invokeStatic (core.clj:6545)
+    clojure.core$reduce.invoke (core.clj:6527)
+    cljs.js_deps$dependency_order.invokeStatic (js_deps.cljc:176)
+    cljs.js_deps$dependency_order.invoke (js_deps.cljc:170)
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.097 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+[31mCompiling "resources/public/js/clojure-news.js" failed.
+[0mjava.lang.AssertionError: Assert failed: Circular dependency detected, route.comment-entry -> controller.comment-entry -> controller.comment-entry
+(not (some #{ns-name} seen))
+ at cljs.js_deps$dependency_order_visit.invokeStatic (js_deps.cljc:148)
+    cljs.js_deps$dependency_order_visit.invoke (js_deps.cljc:144)
+    cljs.js_deps$dependency_order_visit$fn__334.invoke (js_deps.cljc:156)
+    clojure.core.protocols$iter_reduce.invokeStatic (protocols.clj:49)
+    clojure.core.protocols$fn__6742.invokeStatic (protocols.clj:75)
+    clojure.core.protocols/fn (protocols.clj:75)
+    clojure.core.protocols$fn__6684$G__6679__6697.invoke (protocols.clj:13)
+    clojure.core$reduce.invokeStatic (core.clj:6545)
+    clojure.core$reduce.invoke (core.clj:6527)
+    cljs.js_deps$dependency_order_visit.invokeStatic (js_deps.cljc:156)
+    cljs.js_deps$dependency_order_visit.invoke (js_deps.cljc:144)
+    cljs.js_deps$dependency_order_visit$fn__334.invoke (js_deps.cljc:156)
+    clojure.core.protocols$iter_reduce.invokeStatic (protocols.clj:49)
+    clojure.core.protocols$fn__6742.invokeStatic (protocols.clj:75)
+    clojure.core.protocols/fn (protocols.clj:75)
+    clojure.core.protocols$fn__6684$G__6679__6697.invoke (protocols.clj:13)
+    clojure.core$reduce.invokeStatic (core.clj:6545)
+    clojure.core$reduce.invoke (core.clj:6527)
+    cljs.js_deps$dependency_order_visit.invokeStatic (js_deps.cljc:156)
+    cljs.js_deps$dependency_order_visit.invoke (js_deps.cljc:144)
+    cljs.js_deps$dependency_order_visit.invokeStatic (js_deps.cljc:146)
+    cljs.js_deps$dependency_order_visit.invoke (js_deps.cljc:144)
+    clojure.core.protocols$iter_reduce.invokeStatic (protocols.clj:49)
+    clojure.core.protocols$fn__6744.invokeStatic (protocols.clj:75)
+    clojure.core.protocols/fn (protocols.clj:75)
+    clojure.core.protocols$fn__6684$G__6679__6697.invoke (protocols.clj:13)
+    clojure.core$reduce.invokeStatic (core.clj:6545)
+    clojure.core$reduce.invoke (core.clj:6527)
+    cljs.js_deps$dependency_order.invokeStatic (js_deps.cljc:176)
+    cljs.js_deps$dependency_order.invoke (js_deps.cljc:170)
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.12 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+[31mCompiling "resources/public/js/clojure-news.js" failed.
+[0mjava.lang.AssertionError: Assert failed: Circular dependency detected, route.comment-entry -> controller.comment-entry -> controller.comment-entry
+(not (some #{ns-name} seen))
+ at cljs.js_deps$dependency_order_visit.invokeStatic (js_deps.cljc:148)
+    cljs.js_deps$dependency_order_visit.invoke (js_deps.cljc:144)
+    cljs.js_deps$dependency_order_visit$fn__334.invoke (js_deps.cljc:156)
+    clojure.core.protocols$iter_reduce.invokeStatic (protocols.clj:49)
+    clojure.core.protocols$fn__6742.invokeStatic (protocols.clj:75)
+    clojure.core.protocols/fn (protocols.clj:75)
+    clojure.core.protocols$fn__6684$G__6679__6697.invoke (protocols.clj:13)
+    clojure.core$reduce.invokeStatic (core.clj:6545)
+    clojure.core$reduce.invoke (core.clj:6527)
+    cljs.js_deps$dependency_order_visit.invokeStatic (js_deps.cljc:156)
+    cljs.js_deps$dependency_order_visit.invoke (js_deps.cljc:144)
+    cljs.js_deps$dependency_order_visit$fn__334.invoke (js_deps.cljc:156)
+    clojure.core.protocols$iter_reduce.invokeStatic (protocols.clj:49)
+    clojure.core.protocols$fn__6742.invokeStatic (protocols.clj:75)
+    clojure.core.protocols/fn (protocols.clj:75)
+    clojure.core.protocols$fn__6684$G__6679__6697.invoke (protocols.clj:13)
+    clojure.core$reduce.invokeStatic (core.clj:6545)
+    clojure.core$reduce.invoke (core.clj:6527)
+    cljs.js_deps$dependency_order_visit.invokeStatic (js_deps.cljc:156)
+    cljs.js_deps$dependency_order_visit.invoke (js_deps.cljc:144)
+    cljs.js_deps$dependency_order_visit.invokeStatic (js_deps.cljc:146)
+    cljs.js_deps$dependency_order_visit.invoke (js_deps.cljc:144)
+    clojure.core.protocols$iter_reduce.invokeStatic (protocols.clj:49)
+    clojure.core.protocols$fn__6744.invokeStatic (protocols.clj:75)
+    clojure.core.protocols/fn (protocols.clj:75)
+    clojure.core.protocols$fn__6684$G__6679__6697.invoke (protocols.clj:13)
+    clojure.core$reduce.invokeStatic (core.clj:6545)
+    clojure.core$reduce.invoke (core.clj:6527)
+    cljs.js_deps$dependency_order.invokeStatic (js_deps.cljc:176)
+    cljs.js_deps$dependency_order.invoke (js_deps.cljc:170)
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.103 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+[31mCompiling "resources/public/js/clojure-news.js" failed.
+[0mjava.lang.AssertionError: Assert failed: Circular dependency detected, route.comment-entry -> controller.comment-entry -> controller.comment-entry
+(not (some #{ns-name} seen))
+ at cljs.js_deps$dependency_order_visit.invokeStatic (js_deps.cljc:148)
+    cljs.js_deps$dependency_order_visit.invoke (js_deps.cljc:144)
+    cljs.js_deps$dependency_order_visit$fn__334.invoke (js_deps.cljc:156)
+    clojure.core.protocols$iter_reduce.invokeStatic (protocols.clj:49)
+    clojure.core.protocols$fn__6742.invokeStatic (protocols.clj:75)
+    clojure.core.protocols/fn (protocols.clj:75)
+    clojure.core.protocols$fn__6684$G__6679__6697.invoke (protocols.clj:13)
+    clojure.core$reduce.invokeStatic (core.clj:6545)
+    clojure.core$reduce.invoke (core.clj:6527)
+    cljs.js_deps$dependency_order_visit.invokeStatic (js_deps.cljc:156)
+    cljs.js_deps$dependency_order_visit.invoke (js_deps.cljc:144)
+    cljs.js_deps$dependency_order_visit$fn__334.invoke (js_deps.cljc:156)
+    clojure.core.protocols$iter_reduce.invokeStatic (protocols.clj:49)
+    clojure.core.protocols$fn__6742.invokeStatic (protocols.clj:75)
+    clojure.core.protocols/fn (protocols.clj:75)
+    clojure.core.protocols$fn__6684$G__6679__6697.invoke (protocols.clj:13)
+    clojure.core$reduce.invokeStatic (core.clj:6545)
+    clojure.core$reduce.invoke (core.clj:6527)
+    cljs.js_deps$dependency_order_visit.invokeStatic (js_deps.cljc:156)
+    cljs.js_deps$dependency_order_visit.invoke (js_deps.cljc:144)
+    cljs.js_deps$dependency_order_visit.invokeStatic (js_deps.cljc:146)
+    cljs.js_deps$dependency_order_visit.invoke (js_deps.cljc:144)
+    clojure.core.protocols$iter_reduce.invokeStatic (protocols.clj:49)
+    clojure.core.protocols$fn__6744.invokeStatic (protocols.clj:75)
+    clojure.core.protocols/fn (protocols.clj:75)
+    clojure.core.protocols$fn__6684$G__6679__6697.invoke (protocols.clj:13)
+    clojure.core$reduce.invokeStatic (core.clj:6545)
+    clojure.core$reduce.invoke (core.clj:6527)
+    cljs.js_deps$dependency_order.invokeStatic (js_deps.cljc:176)
+    cljs.js_deps$dependency_order.invoke (js_deps.cljc:170)
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.113 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+[31mCompiling "resources/public/js/clojure-news.js" failed.
+[0mjava.lang.AssertionError: Assert failed: Circular dependency detected, route.comment-entry -> controller.comment-entry -> controller.comment-entry
+(not (some #{ns-name} seen))
+ at cljs.js_deps$dependency_order_visit.invokeStatic (js_deps.cljc:148)
+    cljs.js_deps$dependency_order_visit.invoke (js_deps.cljc:144)
+    cljs.js_deps$dependency_order_visit$fn__334.invoke (js_deps.cljc:156)
+    clojure.core.protocols$iter_reduce.invokeStatic (protocols.clj:49)
+    clojure.core.protocols$fn__6742.invokeStatic (protocols.clj:75)
+    clojure.core.protocols/fn (protocols.clj:75)
+    clojure.core.protocols$fn__6684$G__6679__6697.invoke (protocols.clj:13)
+    clojure.core$reduce.invokeStatic (core.clj:6545)
+    clojure.core$reduce.invoke (core.clj:6527)
+    cljs.js_deps$dependency_order_visit.invokeStatic (js_deps.cljc:156)
+    cljs.js_deps$dependency_order_visit.invoke (js_deps.cljc:144)
+    cljs.js_deps$dependency_order_visit$fn__334.invoke (js_deps.cljc:156)
+    clojure.core.protocols$iter_reduce.invokeStatic (protocols.clj:49)
+    clojure.core.protocols$fn__6742.invokeStatic (protocols.clj:75)
+    clojure.core.protocols/fn (protocols.clj:75)
+    clojure.core.protocols$fn__6684$G__6679__6697.invoke (protocols.clj:13)
+    clojure.core$reduce.invokeStatic (core.clj:6545)
+    clojure.core$reduce.invoke (core.clj:6527)
+    cljs.js_deps$dependency_order_visit.invokeStatic (js_deps.cljc:156)
+    cljs.js_deps$dependency_order_visit.invoke (js_deps.cljc:144)
+    cljs.js_deps$dependency_order_visit.invokeStatic (js_deps.cljc:146)
+    cljs.js_deps$dependency_order_visit.invoke (js_deps.cljc:144)
+    clojure.core.protocols$iter_reduce.invokeStatic (protocols.clj:49)
+    clojure.core.protocols$fn__6744.invokeStatic (protocols.clj:75)
+    clojure.core.protocols/fn (protocols.clj:75)
+    clojure.core.protocols$fn__6684$G__6679__6697.invoke (protocols.clj:13)
+    clojure.core$reduce.invokeStatic (core.clj:6545)
+    clojure.core$reduce.invoke (core.clj:6527)
+    cljs.js_deps$dependency_order.invokeStatic (js_deps.cljc:176)
+    cljs.js_deps$dependency_order.invoke (js_deps.cljc:170)
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.086 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+[31mCompiling "resources/public/js/clojure-news.js" failed.
+[0mjava.lang.AssertionError: Assert failed: Circular dependency detected, route.comment-entry -> controller.comment-entry -> controller.comment-entry
+(not (some #{ns-name} seen))
+ at cljs.js_deps$dependency_order_visit.invokeStatic (js_deps.cljc:148)
+    cljs.js_deps$dependency_order_visit.invoke (js_deps.cljc:144)
+    cljs.js_deps$dependency_order_visit$fn__334.invoke (js_deps.cljc:156)
+    clojure.core.protocols$iter_reduce.invokeStatic (protocols.clj:49)
+    clojure.core.protocols$fn__6742.invokeStatic (protocols.clj:75)
+    clojure.core.protocols/fn (protocols.clj:75)
+    clojure.core.protocols$fn__6684$G__6679__6697.invoke (protocols.clj:13)
+    clojure.core$reduce.invokeStatic (core.clj:6545)
+    clojure.core$reduce.invoke (core.clj:6527)
+    cljs.js_deps$dependency_order_visit.invokeStatic (js_deps.cljc:156)
+    cljs.js_deps$dependency_order_visit.invoke (js_deps.cljc:144)
+    cljs.js_deps$dependency_order_visit$fn__334.invoke (js_deps.cljc:156)
+    clojure.core.protocols$iter_reduce.invokeStatic (protocols.clj:49)
+    clojure.core.protocols$fn__6742.invokeStatic (protocols.clj:75)
+    clojure.core.protocols/fn (protocols.clj:75)
+    clojure.core.protocols$fn__6684$G__6679__6697.invoke (protocols.clj:13)
+    clojure.core$reduce.invokeStatic (core.clj:6545)
+    clojure.core$reduce.invoke (core.clj:6527)
+    cljs.js_deps$dependency_order_visit.invokeStatic (js_deps.cljc:156)
+    cljs.js_deps$dependency_order_visit.invoke (js_deps.cljc:144)
+    cljs.js_deps$dependency_order_visit.invokeStatic (js_deps.cljc:146)
+    cljs.js_deps$dependency_order_visit.invoke (js_deps.cljc:144)
+    clojure.core.protocols$iter_reduce.invokeStatic (protocols.clj:49)
+    clojure.core.protocols$fn__6744.invokeStatic (protocols.clj:75)
+    clojure.core.protocols/fn (protocols.clj:75)
+    clojure.core.protocols$fn__6684$G__6679__6697.invoke (protocols.clj:13)
+    clojure.core$reduce.invokeStatic (core.clj:6545)
+    clojure.core$reduce.invoke (core.clj:6527)
+    cljs.js_deps$dependency_order.invokeStatic (js_deps.cljc:176)
+    cljs.js_deps$dependency_order.invoke (js_deps.cljc:170)
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.121 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: user at line 10 is being replaced at line 13 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/route/user.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var view.comment-entry/generate-age-status at line 32 src/cljs/view/comment_entry.cljs
+WARNING: Use of undeclared Var view.comment-entry/generate-age-status at line 32 src/cljs/view/comment_entry.cljs
+WARNING: Use of undeclared Var view.comment-entry/add-comment at line 57 src/cljs/view/comment_entry.cljs
+WARNING: Use of undeclared Var view.comment-entry/data at line 57 src/cljs/view/comment_entry.cljs
+WARNING: Use of undeclared Var view.comment-entry/add-comment at line 57 src/cljs/view/comment_entry.cljs
+WARNING: Use of undeclared Var view.comment-entry/data at line 57 src/cljs/view/comment_entry.cljs
+notifying browser that file changed:  resources/public/js/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  out/view/comment_entry.js
+notifying browser that file changed:  out/controller/comment_entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 1.91 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 20 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 20 src/cljs/main.cljs
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  out/route/entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.328 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  out/controller/comment_entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.462 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Use of undeclared Var view.comment-entry/component-story-comment at line 15 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/controller/comment_entry.cljs
+notifying browser that file changed:  resources/public/js/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  out/route/comment_entry.js
+notifying browser that file changed:  out/controller/comment_entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.642 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  out/cljs/main.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.421 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+notifying browser that file changed:  resources/public/js/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  out/view/comment_entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.529 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+notifying browser that file changed:  out/view/comment_entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.274 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  out/controller/comment_entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.41 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  out/view/comment_entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.371 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  out/view/comment_entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.421 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: Can't take value of macro cljs.core/comment at line 29 src/cljs/view/comment_entry.cljs
+WARNING: Can't take value of macro cljs.core/comment at line 29 src/cljs/view/comment_entry.cljs
+WARNING: Can't take value of macro cljs.core/comment at line 29 src/cljs/view/comment_entry.cljs
+WARNING: Can't take value of macro cljs.core/comment at line 29 src/cljs/view/comment_entry.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  out/view/comment_entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.45 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  out/view/comment_entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.32 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  out/view/comment_entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.338 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  out/view/comment_entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.342 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  out/view/comment_entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.321 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  out/view/comment_entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.353 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  out/view/comment_entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.373 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  out/view/comment_entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.315 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  out/view/comment_entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.332 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  out/view/comment_entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.329 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  out/view/comment_entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.328 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  out/view/comment_entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.351 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  out/view/comment_entry.js
+notifying browser that file changed:  out/controller/comment_entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.338 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  out/controller/comment_entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.321 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  resources/public/js/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  out/controller/comment_entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.478 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  out/controller/comment_entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.325 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  resources/public/js/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  out/view/comment_entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.739 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  out/controller/comment_entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.347 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  out/controller/comment_entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.456 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  out/controller/comment_entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.379 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  out/controller/comment_entry.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.324 seconds.[0m

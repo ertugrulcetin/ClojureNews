@@ -147,7 +147,6 @@
                       (check-submit-title title)
                       (check-submit-url url)
 
-                      ;;TODO create pure url fn...!!!!
                       {:cn-story (entry-dao/create-story (str/trim title)
                                                          (str/trim url)
                                                          (resource-util/get-pure-url (str/trim url))
