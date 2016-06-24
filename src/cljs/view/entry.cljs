@@ -87,7 +87,7 @@
     [:tr {:class "spacer" :style {:height "7"}}]))
 
 (defn story
-  [data add-comment]
+  [data add-comment upvote]
 
   [:div
 
@@ -137,7 +137,7 @@
                                                              (add-comment (-> data :story-entry :_id) ["textId"]))} "add comment"]]])]]
 
 
-    [:table {:border "0" :class "comment-tree"}
+   [:table {:border "0" :class "comment-tree"}
     [:tbody
 
      [:tr
@@ -157,7 +157,7 @@
 
            (if (comment-owner? data (:created-by commentt))
              (create-comment-owner commentt)
-             (create-comment commentt))]]]])]]])
+             (create-comment commentt upvote))]]]])]]])
 
 (defn create-comment-owner
   [commentt]
@@ -192,14 +192,18 @@
       "Here is the first comment! " [:a {:href "#"} "https://clojure.news"]]]]])
 
 (defn create-comment
-  [commentt]
+  [commentt upvote]
   [:tr
    [:td {:class "ind"}
     [:img {:src "/img/s.gif" :height "1" :width (str (* (:index commentt) 40))}]]
 
    [:td {:style {:vertical-align "top"} :class "votelinks"}
     [:center
-     [:a {:id "id...." :href "#"}
+     [:a {:id       (str "id-upvote-" (:_id commentt))
+          :class    "myClickableThingy"
+          :style    {:visiblity "none"}
+          :on-click (fn [_]
+                      (upvote (:_id commentt)))}
       [:div {:class "votearrow" :title "upvote"}]]]]
 
    [:td {:class "default"}

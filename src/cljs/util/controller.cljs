@@ -2,7 +2,7 @@
   [:require [util.view]])
 
 (defn error-handler
-  [{:keys [response] :as m}]
-  (if (or (= (:status m) 401) (= (:status m) 403))
+  [{:keys [status response]}]
+  (if (or (= status 401) (= status 403))
     (util.view/change-url "/#/login")
     (util.view/render-error-message (:error response))))

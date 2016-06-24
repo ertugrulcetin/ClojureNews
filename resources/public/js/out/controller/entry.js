@@ -9,6 +9,7 @@ goog.require('view.entry');
 goog.require('util.view');
 goog.require('clojure.string');
 
+
 controller.entry.home_page = (function controller$entry$home_page(){
 return ajax.core.GET.call(null,"/entry",new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"handler","handler",-195596612),(function (response){
 return reagent.core.render_component.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [(function (){
@@ -19,7 +20,7 @@ return view.entry.component_story_and_ask.call(null,response);
 controller.entry.story = (function controller$entry$story(id){
 return ajax.core.GET.call(null,[cljs.core.str("/entry/story/"),cljs.core.str(id)].join(''),new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"handler","handler",-195596612),(function (response){
 return reagent.core.render_component.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [(function (){
-return view.entry.story.call(null,response,controller.entry.add_story_comment);
+return view.entry.story.call(null,response,controller.entry.add_story_comment,controller.entry.upvote_story_comment);
 })], null),util.view.main_container);
 }),new cljs.core.Keyword(null,"error-handler","error-handler",-484945776),util.controller.error_handler,new cljs.core.Keyword(null,"format","format",-1306924766),ajax.core.json_request_format.call(null),new cljs.core.Keyword(null,"response-format","response-format",1664465322),ajax.core.json_response_format.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"keywords?","keywords?",764949733),true], null))], null));
 });
@@ -45,6 +46,24 @@ return window.scrollTo((0),document.body.scrollHeight);
 
 }
 }
+});
+controller.entry.upvote_story_comment = (function controller$entry$upvote_story_comment(comment_id){
+return ajax.core.PUT.call(null,[cljs.core.str("/upvote/story/comment/"),cljs.core.str(comment_id)].join(''),new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"handler","handler",-195596612),(function (response){
+return null;
+}),new cljs.core.Keyword(null,"error-handler","error-handler",-484945776),(function (p__27018){
+var map__27019 = p__27018;
+var map__27019__$1 = ((((!((map__27019 == null)))?((((map__27019.cljs$lang$protocol_mask$partition0$ & (64))) || (map__27019.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__27019):map__27019);
+var status = cljs.core.get.call(null,map__27019__$1,new cljs.core.Keyword(null,"status","status",-1997798413));
+var response = cljs.core.get.call(null,map__27019__$1,new cljs.core.Keyword(null,"response","response",-1068424192));
+cljs.core.println.call(null,"Status: ",status);
+
+cljs.core.println.call(null,"Response: ",new cljs.core.Keyword(null,"error","error",-978969032).cljs$core$IFn$_invoke$arity$1(response));
+
+var e = document.getElementById([cljs.core.str("id-upvote-"),cljs.core.str(comment_id)].join(''));
+e.style.visibility = "hidden";
+
+return e.className = "";
+}),new cljs.core.Keyword(null,"format","format",-1306924766),ajax.core.json_request_format.call(null),new cljs.core.Keyword(null,"response-format","response-format",1664465322),ajax.core.json_response_format.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"keywords?","keywords?",764949733),true], null))], null));
 });
 
 //# sourceMappingURL=entry.js.map
