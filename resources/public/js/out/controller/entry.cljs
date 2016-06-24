@@ -62,13 +62,12 @@
   (PUT (str "/upvote/story/comment/" comment-id)
        {:handler         (fn [response]
                            ;(r/render-component [(fn []
-                           ;                       (view.entry/story response add-story-comment))] util.view/main-container)
-                           )
-        :error-handler   (fn [{:keys [status response]}]
-                           (println "Status: " status)
-                           (println "Response: " (:error response))
+                           ;
+                           ;                      (view.entry/story response add-story-comment))] util.view/main-container)
                            (let [e (.getElementById js/document (str "id-upvote-" comment-id))]
                              (set! (.-visibility (.-style e)) "hidden")
-                             (set! (.-className e) "")))
+                             (set! (.-className e) ""))
+                           )
+        :error-handler   util.controller/error-handler
         :format          (ajax/json-request-format)
         :response-format (ajax/json-response-format {:keywords? true})}))

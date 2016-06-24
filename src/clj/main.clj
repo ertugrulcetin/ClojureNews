@@ -9,6 +9,7 @@
             [clj.route.login :as route-login]
             [clj.route.entry :as route-entry]
             [clj.route.comment-entry :as route-comment-entry]
+            [clj.route.upvote :as route-upvote]
             )
   (:gen-class))
 
@@ -22,7 +23,8 @@
               #'route-user/route
               #'route-login/route
               #'route-entry/route
-              #'route-comment-entry/route))
+              #'route-comment-entry/route
+              #'route-upvote/route))
 
 (def handler (-> routes
                  log-middleware

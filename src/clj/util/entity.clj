@@ -63,9 +63,9 @@
    :type              type})
 
 (defn upvote
-  [created-by type linked-id]
+  [created-by linked-id type]
   {:_id          (ObjectId.)
    :created-date (Date.)
    :created-by   created-by
-   :type         type
-   :linked-id    linked-id})
+   :linked-id    linked-id
+   :type         type})
