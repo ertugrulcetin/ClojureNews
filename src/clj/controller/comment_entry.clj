@@ -38,7 +38,7 @@
                       (check-story-exists story-id)
                       (check-text text)
 
-                      (let [commentt (comment-entry-dao/create-comment-entry story-id (-> ctx :user-obj :username) nil (str/trim text) ::story)]
+                      (let [commentt (comment-entry-dao/create-comment-entry story-id (-> ctx :user-obj :username) nil text ::story)]
                         (entry-dao/inc-entry-comment-count story-id)
                         {:cn-story-comment commentt})))
 

@@ -1,5 +1,6 @@
 (ns view.entry
-  (:require [cljs-time.core :as cljs-time]))
+  (:require [cljs-time.core :as cljs-time]
+            [util.view]))
 
 (declare create-story
          create-ask
@@ -10,6 +11,7 @@
          entry-owner?
          comment-owner?
          create-comment-owner
+         create-upvoted-comment
          create-comment)
 
 (defn component-story-and-ask
@@ -157,7 +159,10 @@
 
            (if (comment-owner? data (:created-by commentt))
              (create-comment-owner commentt)
-             (create-comment commentt upvote))]]]])]]])
+             (if (util.view/in? (:_id commentt) (-> data :story-upvoted-comments))
+               (create-upvoted-comment commentt upvote)
+               (create-comment commentt upvote))
+             )]]]])]]])
 
 (defn create-comment-owner
   [commentt]
@@ -189,7 +194,7 @@
 
     [:span {:class "comment"}
      [:span {:class "c00"}
-      "Here is the first comment! " [:a {:href "#"} "https://clojure.news"]]]]])
+      (util.view/parse-comment (:content commentt))]]]])
 
 (defn create-comment
   [commentt upvote]
@@ -204,7 +209,8 @@
           :style    {:visiblity "none"}
           :on-click (fn [_]
                       (upvote (:_id commentt)))}
-      [:div {:class "votearrow" :title "upvote"}]]]]
+      [:div {:class "votearrow" :title "upvote"}]]
+     ]]
 
    [:td {:class "default"}
     [:div {:style {:margin-top "2px" :margin-bottom "-10px"}}
@@ -220,7 +226,40 @@
 
     [:span {:class "comment"}
      [:span {:class "c00"}
-      "Here is the first comment! " [:a {:href "#"} "https://clojure.news"]]
+      [:pre [:code "def 1"][:br ][:code "def 2 3"] ]
+      ]
+     [:div {:class "reply"}
+      [:p
+       [:font {:size "1"}
+        [:u
+         [:a {:href (str "/#/comment/" (:str-id commentt))} "reply"]]]]]
+     ]]])
+
+(defn create-upvoted-comment
+  [commentt upvote]
+  [:tr
+   [:td {:class "ind"}
+    [:img {:src "/img/s.gif" :height "1" :width (str (* (:index commentt) 40))}]]
+
+   [:td {:style {:vertical-align "top"} :class "votelinks"}
+    [:center
+     ]]
+
+   [:td {:class "default"}
+    [:div {:style {:margin-top "2px" :margin-bottom "-10px"}}
+     [:span {:class "comhead"}
+      [:a {:href (str "/#/user/" (:created-by commentt))} (:created-by commentt)]
+      " "
+      [:span {:class "age"}
+       [:a {:href "/#"} (generate-age-status (:created-date commentt))]]
+      [:span {:class "par"}]
+      [:span {:class "storyon"}]]]
+
+    [:br]
+
+    [:span {:class "comment"}
+     [:span {:class "c00"}
+      (util.view/parse-comment (:content commentt))]
      [:div {:class "reply"}
       [:p
        [:font {:size "1"}

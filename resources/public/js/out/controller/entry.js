@@ -48,7 +48,7 @@ return window.scrollTo((0),document.body.scrollHeight);
 }
 });
 controller.entry.upvote_story_comment = (function controller$entry$upvote_story_comment(comment_id){
-return ajax.core.PUT.call(null,[cljs.core.str("/upvote/story/comment/"),cljs.core.str(comment_id)].join(''),new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"handler","handler",-195596612),(function (response){
+return ajax.core.PUT.call(null,[cljs.core.str("/upvote/story/comment/"),cljs.core.str(comment_id)].join(''),new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"handler","handler",-195596612),(function (_){
 var e = document.getElementById([cljs.core.str("id-upvote-"),cljs.core.str(comment_id)].join(''));
 e.style.visibility = "hidden";
 

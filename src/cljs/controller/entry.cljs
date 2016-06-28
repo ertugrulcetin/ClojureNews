@@ -60,7 +60,7 @@
 (defn upvote-story-comment
   [comment-id]
   (PUT (str "/upvote/story/comment/" comment-id)
-       {:handler         (fn [response]
+       {:handler         (fn [_]
                            ;(r/render-component [(fn []
                            ;
                            ;                      (view.entry/story response add-story-comment))] util.view/main-container)

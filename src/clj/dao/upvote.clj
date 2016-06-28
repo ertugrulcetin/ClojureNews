@@ -12,12 +12,19 @@
 
 (defn create-upvote
   [^String created-by
-   ^String linked-id
-   type]
-  (mc/insert-and-return db/clojure-news coll (entity-util/upvote created-by linked-id type)))
+   ^String type
+   ^String entry-id
+   ^String comment-id]
+  (mc/insert-and-return db/clojure-news coll (entity-util/upvote created-by type entry-id comment-id)))
 
-(defn find-by-created-by-and-linked-id
+(defn find-by-created-by-and-comment-id
   [^String created-by
-   ^String linked-id]
+   ^String comment-id]
   (mc/find-one-as-map db/clojure-news coll {$and [{:created-by created-by}
-                                                  {:linked-id linked-id}]}))
+                                                  {:comment-id comment-id}]}))
+
+(defn find-by-type-and-entry-id
+  [^String type
+   ^String entry-id]
+  (mc/find-maps db/clojure-news coll {:type     type
+                                      :entry-id entry-id}))

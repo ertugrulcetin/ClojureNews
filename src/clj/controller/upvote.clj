@@ -33,7 +33,7 @@
                     (let [commentt (check-comment-exists comment-id)]
                       (check-not-comment-owner commentt ctx)
                       (check-not-duplicate-vote (-> ctx :user-obj :username) comment-id)
-                      (upvote-dao/create-upvote (-> ctx :user-obj :username) comment-id ::story-comment)))
+                      (upvote-dao/create-upvote (-> ctx :user-obj :username) "story-comment" (:entry-id commentt) comment-id)))
 
             :handle-created (fn [_]
                               {:upvoted? true})
@@ -56,6 +56,6 @@
     (throw (RuntimeException. "You can not vote your own comment."))))
 
 (defn check-not-duplicate-vote
-  [created-by linked-id]
-  (when (upvote-dao/find-by-created-by-and-linked-id created-by linked-id)
+  [created-by comment-id]
+  (when (upvote-dao/find-by-created-by-and-comment-id created-by comment-id)
     (throw (RuntimeException. "You can not vote twice."))))
