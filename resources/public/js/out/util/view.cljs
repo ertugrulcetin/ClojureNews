@@ -32,27 +32,46 @@
   [element coll]
   (some #(= element %) coll))
 
+(defn get-italic-token
+  [token]
+  (str/trim (apply str (drop-last (drop 1 token)))))
+
+(defn create-code-token
+  [line]
+  [:code (apply str (cons (first (re-seq #"\s+" line)) (interpose " " (reduce conj [] (str/split line #"\s+")))))])
+
+(defn create-tokens
+  [line]
+  (let [tokens (reduce (fn [coll-t token]
+                         (cond
+                           (validation/submit-url? token) (conj coll-t [:a {:href token :target "_blank"} token])
+                           (some? (re-seq #"[*].+[*]" token)) (conj coll-t [:i (get-italic-token token)])
+                           :else (conj coll-t token))) [] (str/split line #"\s+"))
+        added-whitespace (interpose " " tokens)]
+    added-whitespace))
+
+(defn split-into-lines
+  [paragraph]
+  (reduce (fn [coll-l line]
+            (if (str/starts-with? line "  ")
+              (conj coll-l (create-code-token line))
+              (conj coll-l (create-tokens line)))) [] (str/split paragraph #"\n")))
+
+(defn group-code-tokens
+  [lines]
+  (reduce #(if (= :code (first %2))
+            (if (= :pre (first (last %1)))
+              (conj (vec (drop-last %1)) (conj (conj (last %1) [:br]) %2))
+              (conj %1 [:pre %2]))
+            (conj %1 %2)) [] lines))
+
+(defn split-into-paragraphs
+  [commentt]
+  (reduce (fn [coll-p paragraph]
+            (conj coll-p (reverse (into (list) (group-code-tokens (split-into-lines paragraph))))))
+          []
+          (reduce conj [] (filter #(not (str/blank? %)) (str/split commentt #"\n{2,}")))))
+
 (defn parse-comment
   [commentt]
-  (interpose '([:p]) (reduce (fn [coll-p paragraph]
-                                      (conj coll-p (reverse (into (list) (let [r (reduce (fn [coll-l line]
-                                                                                           (if (str/starts-with? line "  ")
-                                                                                             (conj coll-l [:code (apply str (cons (first (re-seq #"\s+" line)) (interpose " " (reduce (fn [coll-t token]
-                                                                                                                                                                                        (conj coll-t token)) [] (str/split line #"\s+")))))])
-                                                                                             (conj coll-l (let [tokens (reduce (fn [coll-t token]
-                                                                                                                                 (cond
-                                                                                                                                   (validation/submit-url? token) (conj coll-t [:a {:href token} token])
-                                                                                                                                   (some? (re-seq #"[*].+[*]" token)) (conj coll-t [:i token])
-                                                                                                                                   :else (conj coll-t token))) [] (str/split line #"\s+"))
-                                                                                                                added-whitespace (interpose " " tokens)]
-                                                                                                            added-whitespace)
-                                                                                                   )))
-                                                                                         [] (str/split paragraph #"\n"))
-                                                                               ]
-                                                                           (println "Here is the R: " r)
-                                                                           (reduce #(if (= :code (first %2))
-                                                                                     (if (= :pre (first (last %1)))
-                                                                                       (conj (vec (drop-last %1)) (conj (conj (last %1) [:br]) %2))
-                                                                                       (conj %1 [:pre %2]))
-                                                                                     (conj %1 %2)) [] r))))))
-                                    [] (reduce conj [] (str/split commentt #"\n{2,}")))))
+  (interpose '([:p]) (split-into-paragraphs commentt)))
