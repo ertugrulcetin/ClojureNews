@@ -63,3 +63,10 @@
     (if-let [index (str/index-of s "/")]
       (.substring s 0 index)
       s)))
+
+(defmacro safe-fn
+  [form message]
+  `(try
+     ~form
+     (catch Throwable ~'_
+       (throw (RuntimeException. message)))))
