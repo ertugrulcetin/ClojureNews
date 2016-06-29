@@ -10,7 +10,8 @@
 
 (declare check-story-exists
          check-comment-exists
-         check-text)
+         check-text
+         check-real-owner)
 
 (defn create-story-comment
   []
@@ -77,7 +78,7 @@
                             commentt (comment-entry-dao/create-comment-entry (:entry-id parent-comment)
                                                                              (-> ctx :user-obj :username)
                                                                              (str (:_id parent-comment))
-                                                                             (str/trim text)
+                                                                             text
                                                                              ::story)]
                         (entry-dao/inc-entry-comment-count (:entry-id parent-comment))
                         {:cn-story {:entry-id (:entry-id commentt)}})))
@@ -104,6 +105,41 @@
             :handle-exception (fn [ctx]
                                 (resource-util/get-exception-message ctx))))
 
+(defn edit-story-comment-by-id
+  [id]
+  (resource :allowed-methods [:post]
+
+            :available-media-types resource-util/avaliable-media-types
+
+            :known-content-type? #(resource-util/check-content-type % resource-util/avaliable-media-types)
+
+            :malformed? #(resource-util/parse-json % ::data)
+
+            :authorized? (fn [ctx]
+
+                           (if-let [cookie (resource-util/get-cookie ctx)]
+                             (if-let [username (resource-util/get-username-from-cookie ctx)]
+                               (if-let [user (user-dao/find-by-username username)]
+                                 (if (= cookie (:cookie user))
+                                   {:user-obj user})))))
+
+
+            :post! (fn [ctx]
+
+                     (let [commentt (check-comment-exists id)]
+                       (check-real-owner commentt ctx))
+
+                     (let [data-as-map (resource-util/convert-data-map (::data ctx))
+                           text (:text data-as-map)]
+
+                       (check-text text)
+                       (comment-entry-dao/edit-comment-by-id id text)))
+
+            :handle-created (fn [_]
+                              {:edit? true})
+
+            :handle-exception (fn [ctx]
+                                (resource-util/get-exception-message ctx))))
 
 (defn check-story-exists
   [id]
@@ -126,3 +162,8 @@
   [text]
   (if-not (validation/submit-text? text)
     (throw (RuntimeException. "Please limit text to 2500 characters."))))
+
+(defn check-real-owner
+  [commentt ctx]
+  (when-not (= (:created-by commentt) (-> ctx :user-obj :username))
+    (throw (RuntimeException. "You are not the entry owner."))))

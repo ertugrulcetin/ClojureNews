@@ -5,3 +5,6 @@
 
 (defroute get-story-comment-by-id "/comment/:id" [id]
           (controller/get-story-comment-by-id id))
+
+(defroute edit-story-comment-by-id "/comment/edit/:id" [id]
+          (controller/edit-story-comment-by-id id))

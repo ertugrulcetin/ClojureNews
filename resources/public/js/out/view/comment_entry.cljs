@@ -1,5 +1,6 @@
 (ns view.comment-entry
-  (:require [cljs-time.core :as cljs-time]))
+  (:require [cljs-time.core :as cljs-time]
+            [util.view]))
 
 (declare comment-owner?
          generate-age-status)
@@ -37,7 +38,7 @@
 
         [:span {:class "comment"}
          [:span {:class "c00"}
-          "Here is the first comment! " [:a {:href "#"} "https://clojure.news"]]]]
+          (util.view/parse-comment (-> commentt :cn-story-comment :content))]]]
        ]
 
       [:tr {:style {:height "10px"}}]
@@ -50,6 +51,54 @@
         [:br]
         [:button {:id "buttonReplyStoryCommentId" :on-click (fn [_]
                                                               (reply (-> commentt :cn-story-comment :_id) ["textId"]))} "reply"]]]
+
+      )]])
+
+(defn component-edit
+  [commentt edit]
+  [:table {:border "0"}
+   [:tbody
+
+    (list
+
+      [:tr {:class "athing"}
+
+       [:td {:class "ind"}]
+
+       [:td {:class "votelinks" :style {:vertical-align "top"}}
+        [:center
+
+         (if (comment-owner? commentt)
+           [:font {:color "#5fba7d"} "*"]
+           [:a {:id "aa" :href "#"}
+            [:div {:class "votearrow" :title "upvote"}]])]]
+
+       [:td {:class "default"}
+        [:div {:style {:margin-top "2px" :margin-bottom "-10px"}}
+         [:span {:class "comhead"}
+          [:a {:href (str "/#/user/" (-> commentt :cn-story-comment :created-by))} (-> commentt :cn-story-comment :created-by)]
+          " | "
+          [:a {:href (str "/#/story/" (-> commentt :cn-story-comment :entry-id))} (generate-age-status (-> commentt :cn-story-comment :created-date))]
+          [:span {:class "par"}]
+          [:span {:class "storyon"}]]]
+
+        [:br]
+
+        [:span {:class "comment"}
+         [:span {:class "c00"}
+          (util.view/parse-comment (-> commentt :cn-story-comment :content))]]]
+       ]
+
+      [:tr {:style {:height "10px"}}]
+
+      [:tr
+       [:td {:colSpan "2"}]
+       [:td
+        [:textarea {:id "textId" :name "text" :cols "60" :rows "6" :defaultValue (-> commentt :cn-story-comment :content)}]
+        [:br]
+        [:br]
+        [:button {:id "buttonReplyStoryCommentId" :on-click (fn [_]
+                                                              (edit (-> commentt :cn-story-comment :_id) ["textId"]))} "update"]]]
 
       )]])
 

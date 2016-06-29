@@ -7,7 +7,8 @@
             [cljc.validation :as validation]
             [clojure.string :as str]))
 
-(declare reply-story-comment)
+(declare reply-story-comment
+         edit-story)
 
 (defn get-story-comment-by-id
   [id]
@@ -37,3 +38,32 @@
             :error-handler   util.controller/error-handler
             :format          (ajax/json-request-format)
             :response-format (ajax/json-response-format {:keywords? true})}))))
+
+(defn edit-story-comment-by-id
+  [id]
+  (GET (str "/comment/" id)
+       {:handler         (fn [response]
+                           (r/render-component [(fn []
+                                                  (view.comment-entry/component-edit response edit-story))] util.view/main-container))
+        :error-handler   util.controller/error-handler
+        :format          (ajax/json-request-format)
+        :response-format (ajax/json-response-format {:keywords? true})}))
+
+(defn edit-story
+  [id field-ids]
+  (let [data (util.view/create-field-val-map field-ids)
+        text (:text data)]
+
+    (cond
+      (not (validation/submit-text? text))
+      (util.view/render-error-message "Please limit text to 2500 characters.")
+
+      :else
+      (POST (str "/comment/" id)
+            {:params          data
+             :handler         (fn [response]
+                                (edit-story-comment-by-id id))
+
+             :error-handler   util.controller/error-handler
+             :format          (ajax/json-request-format)
+             :response-format (ajax/json-response-format {:keywords? true})}))))

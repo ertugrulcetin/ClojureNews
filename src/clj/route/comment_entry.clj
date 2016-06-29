@@ -14,6 +14,9 @@
            (GET "/comment/:id" [id]
              (controller/get-story-comment-by-id id))
 
+           (POST "/comment/:id" [id]
+             (controller/edit-story-comment-by-id id))
+
            ;(PUT "/comment/reply/:id" [id]
            ;  (controller/reply-story-comment id))
            )

@@ -209,8 +209,7 @@
           :style    {:visiblity "none"}
           :on-click (fn [_]
                       (upvote (:_id commentt)))}
-      [:div {:class "votearrow" :title "upvote"}]]
-     ]]
+      [:div {:class "votearrow" :title "upvote"}]]]]
 
    [:td {:class "default"}
     [:div {:style {:margin-top "2px" :margin-bottom "-10px"}}
@@ -226,8 +225,7 @@
 
     [:span {:class "comment"}
      [:span {:class "c00"}
-      [:pre [:code "def 1"][:br ][:code "def 2 3"] ]
-      ]
+      (util.view/parse-comment (:content commentt))]
      [:div {:class "reply"}
       [:p
        [:font {:size "1"}
@@ -259,7 +257,7 @@
 
     [:span {:class "comment"}
      [:span {:class "c00"}
-      (util.view/parse-comment (:content commentt))]
+       (util.view/parse-comment (:content commentt))]
      [:div {:class "reply"}
       [:p
        [:font {:size "1"}
