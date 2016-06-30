@@ -9,7 +9,8 @@ goog.require('util.controller');
 goog.require('view.entry');
 goog.require('util.view');
 goog.require('clojure.string');
-
+goog.require('controller.upvote');
+goog.require('controller.comment_entry');
 
 controller.entry.home_page = (function controller$entry$home_page(){
 return ajax.core.GET.call(null,"/entry",new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"handler","handler",-195596612),(function (response){
@@ -21,41 +22,101 @@ return view.entry.component_story_and_ask.call(null,response);
 controller.entry.story = (function controller$entry$story(id){
 return ajax.core.GET.call(null,[cljs.core.str("/entry/story/"),cljs.core.str(id)].join(''),new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"handler","handler",-195596612),(function (response){
 reagent.core.render_component.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [(function (){
-return view.entry.story.call(null,response,controller.entry.upvote_story_comment);
+return view.entry.story.call(null,response);
 })], null),util.view.main_container);
 
-return goog.dom.getElement("buttonAddStoryCommentId").addEventListener("click",(function (_){
-return controller.entry.add_story_comment.call(null,id,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, ["textId"], null));
+controller.entry.add_event_listener_to_add_comment_button.call(null,controller$entry$story,id);
+
+return controller.entry.add_event_listener_to_upvote_buttons.call(null,response);
+}),new cljs.core.Keyword(null,"error-handler","error-handler",-484945776),util.controller.error_handler,new cljs.core.Keyword(null,"format","format",-1306924766),ajax.core.json_request_format.call(null),new cljs.core.Keyword(null,"response-format","response-format",1664465322),ajax.core.json_response_format.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"keywords?","keywords?",764949733),true], null))], null));
+});
+controller.entry.add_event_listener_to_add_comment_button = (function controller$entry$add_event_listener_to_add_comment_button(entry,id){
+return goog.dom.getElement("buttonAddCommentId").addEventListener("click",(function (_){
+return controller.comment_entry.add_comment.call(null,entry,id,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, ["textId"], null));
 }));
-}),new cljs.core.Keyword(null,"error-handler","error-handler",-484945776),util.controller.error_handler,new cljs.core.Keyword(null,"format","format",-1306924766),ajax.core.json_request_format.call(null),new cljs.core.Keyword(null,"response-format","response-format",1664465322),ajax.core.json_response_format.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"keywords?","keywords?",764949733),true], null))], null));
 });
-controller.entry.add_story_comment = (function controller$entry$add_story_comment(story_id,field_ids){
-var data = util.view.create_field_val_map.call(null,field_ids);
-var text = new cljs.core.Keyword(null,"text","text",-1790561697).cljs$core$IFn$_invoke$arity$1(data);
-if(clojure.string.blank_QMARK_.call(null,story_id)){
-return util.view.render_error_message.call(null,"Could not find story");
+controller.entry.add_event_listener_to_upvote_buttons = (function controller$entry$add_event_listener_to_upvote_buttons(response){
+var seq__28980 = cljs.core.seq.call(null,new cljs.core.Keyword(null,"story-comments","story-comments",-631068375).cljs$core$IFn$_invoke$arity$1(response));
+var chunk__28981 = null;
+var count__28982 = (0);
+var i__28983 = (0);
+while(true){
+if((i__28983 < count__28982)){
+var commentt = cljs.core._nth.call(null,chunk__28981,i__28983);
+var comment_id_28984 = new cljs.core.Keyword(null,"_id","_id",-789960287).cljs$core$IFn$_invoke$arity$1(commentt);
+var upvoted_comments_28985 = new cljs.core.Keyword(null,"story-upvoted-comments","story-upvoted-comments",203538215).cljs$core$IFn$_invoke$arity$1(response);
+if(cljs.core.truth_(util.view.in_QMARK_.call(null,comment_id_28984,upvoted_comments_28985))){
 } else {
-if(cljs.core.not.call(null,cljc.validation.submit_text_QMARK_.call(null,text))){
-return util.view.render_error_message.call(null,"Please limit text to 2500 characters.");
-} else {
-return ajax.core.PUT.call(null,"/comment",new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"params","params",710516235),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"entry-id","entry-id",591934358),story_id,new cljs.core.Keyword(null,"text","text",-1790561697),text], null),new cljs.core.Keyword(null,"handler","handler",-195596612),((function (data,text){
+var temp__4657__auto___28986 = goog.dom.getElement([cljs.core.str("id-upvote-"),cljs.core.str(comment_id_28984)].join(''));
+if(cljs.core.truth_(temp__4657__auto___28986)){
+var node_28987 = temp__4657__auto___28986;
+node_28987.addEventListener("click",((function (seq__28980,chunk__28981,count__28982,i__28983,node_28987,temp__4657__auto___28986,comment_id_28984,upvoted_comments_28985,commentt){
 return (function (_){
-controller.entry.story.call(null,story_id);
-
-return window.scrollTo((0),document.body.scrollHeight);
-});})(data,text))
-,new cljs.core.Keyword(null,"error-handler","error-handler",-484945776),util.controller.error_handler,new cljs.core.Keyword(null,"format","format",-1306924766),ajax.core.json_request_format.call(null),new cljs.core.Keyword(null,"response-format","response-format",1664465322),ajax.core.json_response_format.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"keywords?","keywords?",764949733),true], null))], null));
-
+return controller.upvote.upvote_story_comment.call(null,comment_id_28984);
+});})(seq__28980,chunk__28981,count__28982,i__28983,node_28987,temp__4657__auto___28986,comment_id_28984,upvoted_comments_28985,commentt))
+);
+} else {
 }
 }
-});
-controller.entry.upvote_story_comment = (function controller$entry$upvote_story_comment(comment_id){
-return ajax.core.PUT.call(null,[cljs.core.str("/upvote/story/comment/"),cljs.core.str(comment_id)].join(''),new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"handler","handler",-195596612),(function (_){
-var e = document.getElementById([cljs.core.str("id-upvote-"),cljs.core.str(comment_id)].join(''));
-e.style.visibility = "hidden";
 
-return e.className = "";
-}),new cljs.core.Keyword(null,"error-handler","error-handler",-484945776),util.controller.error_handler,new cljs.core.Keyword(null,"format","format",-1306924766),ajax.core.json_request_format.call(null),new cljs.core.Keyword(null,"response-format","response-format",1664465322),ajax.core.json_response_format.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"keywords?","keywords?",764949733),true], null))], null));
+var G__28988 = seq__28980;
+var G__28989 = chunk__28981;
+var G__28990 = count__28982;
+var G__28991 = (i__28983 + (1));
+seq__28980 = G__28988;
+chunk__28981 = G__28989;
+count__28982 = G__28990;
+i__28983 = G__28991;
+continue;
+} else {
+var temp__4657__auto__ = cljs.core.seq.call(null,seq__28980);
+if(temp__4657__auto__){
+var seq__28980__$1 = temp__4657__auto__;
+if(cljs.core.chunked_seq_QMARK_.call(null,seq__28980__$1)){
+var c__24323__auto__ = cljs.core.chunk_first.call(null,seq__28980__$1);
+var G__28992 = cljs.core.chunk_rest.call(null,seq__28980__$1);
+var G__28993 = c__24323__auto__;
+var G__28994 = cljs.core.count.call(null,c__24323__auto__);
+var G__28995 = (0);
+seq__28980 = G__28992;
+chunk__28981 = G__28993;
+count__28982 = G__28994;
+i__28983 = G__28995;
+continue;
+} else {
+var commentt = cljs.core.first.call(null,seq__28980__$1);
+var comment_id_28996 = new cljs.core.Keyword(null,"_id","_id",-789960287).cljs$core$IFn$_invoke$arity$1(commentt);
+var upvoted_comments_28997 = new cljs.core.Keyword(null,"story-upvoted-comments","story-upvoted-comments",203538215).cljs$core$IFn$_invoke$arity$1(response);
+if(cljs.core.truth_(util.view.in_QMARK_.call(null,comment_id_28996,upvoted_comments_28997))){
+} else {
+var temp__4657__auto___28998__$1 = goog.dom.getElement([cljs.core.str("id-upvote-"),cljs.core.str(comment_id_28996)].join(''));
+if(cljs.core.truth_(temp__4657__auto___28998__$1)){
+var node_28999 = temp__4657__auto___28998__$1;
+node_28999.addEventListener("click",((function (seq__28980,chunk__28981,count__28982,i__28983,node_28999,temp__4657__auto___28998__$1,comment_id_28996,upvoted_comments_28997,commentt,seq__28980__$1,temp__4657__auto__){
+return (function (_){
+return controller.upvote.upvote_story_comment.call(null,comment_id_28996);
+});})(seq__28980,chunk__28981,count__28982,i__28983,node_28999,temp__4657__auto___28998__$1,comment_id_28996,upvoted_comments_28997,commentt,seq__28980__$1,temp__4657__auto__))
+);
+} else {
+}
+}
+
+var G__29000 = cljs.core.next.call(null,seq__28980__$1);
+var G__29001 = null;
+var G__29002 = (0);
+var G__29003 = (0);
+seq__28980 = G__29000;
+chunk__28981 = G__29001;
+count__28982 = G__29002;
+i__28983 = G__29003;
+continue;
+}
+} else {
+return null;
+}
+}
+break;
+}
 });
 
 //# sourceMappingURL=entry.js.map

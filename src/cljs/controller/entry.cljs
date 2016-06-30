@@ -5,12 +5,13 @@
             [util.controller]
             [view.entry]
             [goog.dom :as dom]
+            [controller.comment-entry]
+            [controller.upvote]
             [cljc.validation :as validation]
             [clojure.string :as str]))
 
-(declare story
-         add-story-comment
-         upvote-story-comment)
+(declare add-event-listener-to-add-comment-button
+         add-event-listener-to-upvote-buttons)
 
 (defn home-page
   []
@@ -27,48 +28,25 @@
   (GET (str "/entry/story/" id)
        {:handler         (fn [response]
                            (r/render-component [(fn []
-                                                  (view.entry/story response upvote-story-comment))] util.view/main-container)
+                                                  (view.entry/story response))] util.view/main-container)
 
-                           (.addEventListener (dom/getElement "buttonAddStoryCommentId") "click" (fn [_]
-                                                                                                   (add-story-comment id ["textId"]))))
+                           (add-event-listener-to-add-comment-button story id)
+                           (add-event-listener-to-upvote-buttons response))
         :error-handler   util.controller/error-handler
         :format          (ajax/json-request-format)
         :response-format (ajax/json-response-format {:keywords? true})}))
 
+(defn add-event-listener-to-add-comment-button
+  [entry id]
+  (.addEventListener (dom/getElement "buttonAddCommentId") "click" (fn [_]
+                                                                     (controller.comment-entry/add-comment entry id ["textId"]))))
+(defn add-event-listener-to-upvote-buttons
+  [response]
+  (doseq [commentt (-> response :story-comments)]
+    (let [comment-id (:_id commentt)
+          upvoted-comments (-> response :story-upvoted-comments)]
+      (when-not (util.view/in? comment-id upvoted-comments)
+        (when-let [node (dom/getElement (str "id-upvote-" comment-id))]
+          (.addEventListener node "click" (fn [_]
+                                            (controller.upvote/upvote-story-comment comment-id))))))))
 
-(defn add-story-comment
-  [story-id field-ids]
-  (let [data (util.view/create-field-val-map field-ids)
-        text (:text data)]
-
-    (cond
-      (str/blank? story-id)
-      (util.view/render-error-message "Could not find story")
-
-      (not (validation/submit-text? text))
-      (util.view/render-error-message "Please limit text to 2500 characters.")
-
-      :else
-      (PUT "/comment"
-           {:params          {:entry-id story-id :text text}
-            :handler         (fn [_]
-                               (story story-id)
-                               (.scrollTo js/window 0 (.-scrollHeight (.-body js/document))))
-            :error-handler   util.controller/error-handler
-            :format          (ajax/json-request-format)
-            :response-format (ajax/json-response-format {:keywords? true})}))))
-
-(defn upvote-story-comment
-  [comment-id]
-  (PUT (str "/upvote/story/comment/" comment-id)
-       {:handler         (fn [_]
-                           ;(r/render-component [(fn []
-                           ;
-                           ;                      (view.entry/story response add-story-comment))] util.view/main-container)
-                           (let [e (.getElementById js/document (str "id-upvote-" comment-id))]
-                             (set! (.-visibility (.-style e)) "hidden")
-                             (set! (.-className e) ""))
-                           )
-        :error-handler   util.controller/error-handler
-        :format          (ajax/json-request-format)
-        :response-format (ajax/json-response-format {:keywords? true})}))

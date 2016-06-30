@@ -34,6 +34,7 @@
                       (check-entry-exists entry-id)
                       (check-text text)
 
+                      ;;TODO change type story -> (:type entry)
                       (let [commentt (comment-entry-dao/create-comment-entry
                                        entry-id
                                        (resource-util/get-username ctx)

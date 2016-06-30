@@ -67,3 +67,25 @@
              :error-handler   util.controller/error-handler
              :format          (ajax/json-request-format)
              :response-format (ajax/json-response-format {:keywords? true})}))))
+
+(defn add-comment
+  [entry entry-id field-ids]
+  (let [data (util.view/create-field-val-map field-ids)
+        text (:text data)]
+
+    (cond
+      (str/blank? entry-id)
+      (util.view/render-error-message "Could not find story")
+
+      (not (validation/submit-text? text))
+      (util.view/render-error-message "Please limit text to 2500 characters.")
+
+      :else
+      (PUT "/comment"
+           {:params          {:entry-id entry-id :text text}
+            :handler         (fn [_]
+                               (entry entry-id)
+                               (.scrollTo js/window 0 (.-scrollHeight (.-body js/document))))
+            :error-handler   util.controller/error-handler
+            :format          (ajax/json-request-format)
+            :response-format (ajax/json-response-format {:keywords? true})}))))

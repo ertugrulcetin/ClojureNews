@@ -89,7 +89,7 @@
     [:tr {:class "spacer" :style {:height "7"}}]))
 
 (defn story
-  [data upvote]
+  [data]
 
   [:div
 
@@ -135,7 +135,7 @@
          [:textarea {:id "textId" :name "text" :cols "60" :rows "6"}]
          [:br]
          [:br]
-         [:button {:id "buttonAddStoryCommentId"} "add comment"]]])]]
+         [:button {:id "buttonAddCommentId"} "add comment"]]])]]
 
 
    [:table {:border "0" :class "comment-tree"}
@@ -159,8 +159,8 @@
            (if (comment-owner? data (:created-by commentt))
              (create-comment-owner commentt)
              (if (util.view/in? (:_id commentt) (-> data :story-upvoted-comments))
-               (create-upvoted-comment commentt upvote)
-               (create-comment commentt upvote))
+               (create-upvoted-comment commentt)
+               (create-comment commentt))
              )]]]])]]])
 
 (defn create-comment-owner
@@ -196,18 +196,16 @@
       (util.view/parse-comment (:content commentt))]]]])
 
 (defn create-comment
-  [commentt upvote]
+  [commentt]
   [:tr
    [:td {:class "ind"}
     [:img {:src "/img/s.gif" :height "1" :width (str (* (:index commentt) 40))}]]
 
    [:td {:style {:vertical-align "top"} :class "votelinks"}
     [:center
-     [:a {:id       (str "id-upvote-" (:_id commentt))
-          :class    "myClickableThingy"
-          :style    {:visiblity "none"}
-          :on-click (fn [_]
-                      (upvote (:_id commentt)))}
+     [:a {:id    (str "id-upvote-" (:_id commentt))
+          :class "myClickableThingy"
+          :style {:visiblity "none"}}
       [:div {:class "votearrow" :title "upvote"}]]]]
 
    [:td {:class "default"}
@@ -233,7 +231,7 @@
      ]]])
 
 (defn create-upvoted-comment
-  [commentt upvote]
+  [commentt]
   [:tr
    [:td {:class "ind"}
     [:img {:src "/img/s.gif" :height "1" :width (str (* (:index commentt) 40))}]]
