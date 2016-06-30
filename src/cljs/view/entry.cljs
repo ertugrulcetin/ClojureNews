@@ -89,7 +89,7 @@
     [:tr {:class "spacer" :style {:height "7"}}]))
 
 (defn story
-  [data add-comment upvote]
+  [data upvote]
 
   [:div
 
@@ -135,8 +135,7 @@
          [:textarea {:id "textId" :name "text" :cols "60" :rows "6"}]
          [:br]
          [:br]
-         [:button {:id "buttonAddStoryCommentId" :on-click (fn [_]
-                                                             (add-comment (-> data :story-entry :_id) ["textId"]))} "add comment"]]])]]
+         [:button {:id "buttonAddStoryCommentId"} "add comment"]]])]]
 
 
    [:table {:border "0" :class "comment-tree"}
@@ -257,7 +256,7 @@
 
     [:span {:class "comment"}
      [:span {:class "c00"}
-       (util.view/parse-comment (:content commentt))]
+      (util.view/parse-comment (:content commentt))]
      [:div {:class "reply"}
       [:p
        [:font {:size "1"}

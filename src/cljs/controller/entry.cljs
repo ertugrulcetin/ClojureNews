@@ -4,6 +4,7 @@
             [util.view]
             [util.controller]
             [view.entry]
+            [goog.dom :as dom]
             [cljc.validation :as validation]
             [clojure.string :as str]))
 
@@ -26,13 +27,13 @@
   (GET (str "/entry/story/" id)
        {:handler         (fn [response]
                            (r/render-component [(fn []
-                                                  (view.entry/story response add-story-comment upvote-story-comment))] util.view/main-container))
+                                                  (view.entry/story response upvote-story-comment))] util.view/main-container)
+
+                           (.addEventListener (dom/getElement "buttonAddStoryCommentId") "click" (fn [_]
+                                                                                                   (add-story-comment id ["textId"]))))
         :error-handler   util.controller/error-handler
         :format          (ajax/json-request-format)
         :response-format (ajax/json-response-format {:keywords? true})}))
-
-(defn ask
-  [id])
 
 
 (defn add-story-comment
@@ -49,7 +50,7 @@
 
       :else
       (PUT "/comment"
-           {:params          {:story-id story-id :text text}
+           {:params          {:entry-id story-id :text text}
             :handler         (fn [_]
                                (story story-id)
                                (.scrollTo js/window 0 (.-scrollHeight (.-body js/document))))

@@ -5,15 +5,15 @@
             [clj.dao.entry :as entry-dao]
             [clj.dao.comment-entry :as comment-entry-dao]
             [cljc.validation :as validation]
-            [clojure.string :as str]
+            [cljc.error-messages :as error-message]
             [monger.json]))
 
-(declare check-story-exists
+(declare check-entry-exists
          check-comment-exists
          check-text
          check-real-owner)
 
-(defn create-story-comment
+(defn create-comment
   []
   (resource :allowed-methods [:put]
 
@@ -23,33 +23,32 @@
 
             :malformed? #(resource-util/parse-json % ::data)
 
-            :authorized? (fn [ctx]
-
-                           (if-let [cookie (resource-util/get-cookie ctx)]
-                             (if-let [username (resource-util/get-username-from-cookie ctx)]
-                               (if-let [user (user-dao/find-by-username username)]
-                                 (if (= cookie (:cookie user))
-                                   {:user-obj user})))))
+            :authorized? #(resource-util/auth? %)
 
             :put! (fn [ctx]
                     (let [data-as-map (resource-util/convert-data-map (::data ctx))
-                          story-id (:story-id data-as-map)
+                          entry-id (:entry-id data-as-map)
                           text (:text data-as-map)]
 
-                      (check-story-exists story-id)
+                      ;;TODO change story with entry
+                      (check-entry-exists entry-id)
                       (check-text text)
 
-                      (let [commentt (comment-entry-dao/create-comment-entry story-id (-> ctx :user-obj :username) nil text ::story)]
-                        (entry-dao/inc-entry-comment-count story-id)
-                        {:cn-story-comment commentt})))
+                      (let [commentt (comment-entry-dao/create-comment-entry
+                                       entry-id
+                                       (resource-util/get-username ctx)
+                                       nil
+                                       text
+                                       "story")]
+                        (entry-dao/inc-entry-comment-count entry-id)
+                        {:comment-entry commentt})))
 
             :handle-created (fn [_]
                               {:comment-added? true})
 
-            :handle-exception (fn [ctx]
-                                (resource-util/get-exception-message ctx))))
+            :handle-exception #(resource-util/get-exception-message %)))
 
-(defn reply-story-comment
+(defn reply-comment
   []
   (resource :allowed-methods [:put]
 
@@ -59,13 +58,7 @@
 
             :malformed? #(resource-util/parse-json % ::data)
 
-            :authorized? (fn [ctx]
-
-                           (if-let [cookie (resource-util/get-cookie ctx)]
-                             (if-let [username (resource-util/get-username-from-cookie ctx)]
-                               (if-let [user (user-dao/find-by-username username)]
-                                 (if (= cookie (:cookie user))
-                                   {:user-obj user})))))
+            :authorized? #(resource-util/auth? %)
 
             :put! (fn [ctx]
                     (let [data-as-map (resource-util/convert-data-map (::data ctx))
@@ -76,20 +69,19 @@
 
                       (let [parent-comment (check-comment-exists parent-comment-id)
                             commentt (comment-entry-dao/create-comment-entry (:entry-id parent-comment)
-                                                                             (-> ctx :user-obj :username)
+                                                                             (resource-util/get-username ctx)
                                                                              (str (:_id parent-comment))
                                                                              text
-                                                                             ::story)]
+                                                                             "story")]
                         (entry-dao/inc-entry-comment-count (:entry-id parent-comment))
                         {:cn-story {:entry-id (:entry-id commentt)}})))
 
             :handle-created (fn [ctx]
                               (:cn-story ctx))
 
-            :handle-exception (fn [ctx]
-                                (resource-util/get-exception-message ctx))))
+            :handle-exception #(resource-util/get-exception-message %)))
 
-(defn get-story-comment-by-id
+(defn get-comment-by-id
   [id]
   (resource :allowed-methods [:get]
 
@@ -97,15 +89,15 @@
 
             :handle-ok (fn [ctx]
                          (let [commentt (check-comment-exists id)]
-                           {:user-obj         {:username (if-let [username (resource-util/get-username-from-cookie ctx)]
+
+                           {:user-obj      {:username (if-let [username (resource-util/get-username-from-cookie ctx)]
                                                            (if-let [user (user-dao/find-by-username username)]
                                                              (:username user)))}
-                            :cn-story-comment commentt}))
+                            :comment-entry commentt}))
 
-            :handle-exception (fn [ctx]
-                                (resource-util/get-exception-message ctx))))
+            :handle-exception #(resource-util/get-exception-message %)))
 
-(defn edit-story-comment-by-id
+(defn edit-comment-by-id
   [id]
   (resource :allowed-methods [:post]
 
@@ -115,14 +107,7 @@
 
             :malformed? #(resource-util/parse-json % ::data)
 
-            :authorized? (fn [ctx]
-
-                           (if-let [cookie (resource-util/get-cookie ctx)]
-                             (if-let [username (resource-util/get-username-from-cookie ctx)]
-                               (if-let [user (user-dao/find-by-username username)]
-                                 (if (= cookie (:cookie user))
-                                   {:user-obj user})))))
-
+            :authorized? #(resource-util/auth? %)
 
             :post! (fn [ctx]
 
@@ -138,32 +123,31 @@
             :handle-created (fn [_]
                               {:edit? true})
 
-            :handle-exception (fn [ctx]
-                                (resource-util/get-exception-message ctx))))
+            :handle-exception #(resource-util/get-exception-message %)))
 
-(defn check-story-exists
+(defn check-entry-exists
   [id]
   (try
-    (if-not (entry-dao/find-by-id id)
-      (throw (RuntimeException. "No such story")))
+    (when-not (entry-dao/find-by-id id)
+      (throw (RuntimeException. error-message/no-entry)))
     (catch Exception e
-      (throw (RuntimeException. "No such story")))))
+      (throw (RuntimeException. error-message/no-entry)))))
 
 (defn check-comment-exists
   [id]
   (try
-    (if-let [parent-comment (comment-entry-dao/find-by-id id)]
-      parent-comment
-      (throw (RuntimeException. "No such comment")))
+    (if-let [comment (comment-entry-dao/find-by-id id)]
+      comment
+      (throw (RuntimeException. error-message/no-comment)))
     (catch Exception e
-      (throw (RuntimeException. "No such comment")))))
+      (throw (RuntimeException. error-message/no-comment)))))
 
 (defn check-text
   [text]
-  (if-not (validation/submit-text? text)
-    (throw (RuntimeException. "Please limit text to 2500 characters."))))
+  (when-not (validation/submit-text? text)
+    (throw (RuntimeException. error-message/text))))
 
 (defn check-real-owner
   [commentt ctx]
-  (when-not (= (:created-by commentt) (-> ctx :user-obj :username))
-    (throw (RuntimeException. "You are not the entry owner."))))
+  (when-not (= (:created-by commentt) (resource-util/get-username ctx))
+    (throw (RuntimeException. error-message/comment-owner))))

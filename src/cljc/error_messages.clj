@@ -1,9 +1,11 @@
-(ns error-messages)
+(ns cljc.error-messages)
 
-(defonce text "Please limit text to 2500 characters.")
+(def text "Please limit text to 2500 characters.")
 
-(defonce no-story "No such story")
+(def no-story "No such story")
 
-(defonce no-comment "No such comment.")
+(def no-comment "No such comment.")
 
-(defonce entry-owner "You are not the entry owner.")
+(def no-entry "No such entry.")
+
+(def comment-owner "You are not the comment owner.")

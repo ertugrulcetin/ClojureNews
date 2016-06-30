@@ -2,6 +2,7 @@
 goog.provide('controller.entry');
 goog.require('cljs.core');
 goog.require('cljc.validation');
+goog.require('goog.dom');
 goog.require('ajax.core');
 goog.require('reagent.core');
 goog.require('util.controller');
@@ -19,13 +20,14 @@ return view.entry.component_story_and_ask.call(null,response);
 });
 controller.entry.story = (function controller$entry$story(id){
 return ajax.core.GET.call(null,[cljs.core.str("/entry/story/"),cljs.core.str(id)].join(''),new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"handler","handler",-195596612),(function (response){
-return reagent.core.render_component.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [(function (){
-return view.entry.story.call(null,response,controller.entry.add_story_comment,controller.entry.upvote_story_comment);
+reagent.core.render_component.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [(function (){
+return view.entry.story.call(null,response,controller.entry.upvote_story_comment);
 })], null),util.view.main_container);
+
+return goog.dom.getElement("buttonAddStoryCommentId").addEventListener("click",(function (_){
+return controller.entry.add_story_comment.call(null,id,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, ["textId"], null));
+}));
 }),new cljs.core.Keyword(null,"error-handler","error-handler",-484945776),util.controller.error_handler,new cljs.core.Keyword(null,"format","format",-1306924766),ajax.core.json_request_format.call(null),new cljs.core.Keyword(null,"response-format","response-format",1664465322),ajax.core.json_response_format.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"keywords?","keywords?",764949733),true], null))], null));
-});
-controller.entry.ask = (function controller$entry$ask(id){
-return null;
 });
 controller.entry.add_story_comment = (function controller$entry$add_story_comment(story_id,field_ids){
 var data = util.view.create_field_val_map.call(null,field_ids);
@@ -36,7 +38,7 @@ return util.view.render_error_message.call(null,"Could not find story");
 if(cljs.core.not.call(null,cljc.validation.submit_text_QMARK_.call(null,text))){
 return util.view.render_error_message.call(null,"Please limit text to 2500 characters.");
 } else {
-return ajax.core.PUT.call(null,"/comment",new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"params","params",710516235),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"story-id","story-id",274982147),story_id,new cljs.core.Keyword(null,"text","text",-1790561697),text], null),new cljs.core.Keyword(null,"handler","handler",-195596612),((function (data,text){
+return ajax.core.PUT.call(null,"/comment",new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"params","params",710516235),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"entry-id","entry-id",591934358),story_id,new cljs.core.Keyword(null,"text","text",-1790561697),text], null),new cljs.core.Keyword(null,"handler","handler",-195596612),((function (data,text){
 return (function (_){
 controller.entry.story.call(null,story_id);
 

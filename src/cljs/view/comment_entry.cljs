@@ -28,9 +28,9 @@
        [:td {:class "default"}
         [:div {:style {:margin-top "2px" :margin-bottom "-10px"}}
          [:span {:class "comhead"}
-          [:a {:href (str "/#/user/" (-> commentt :cn-story-comment :created-by))} (-> commentt :cn-story-comment :created-by)]
+          [:a {:href (str "/#/user/" (-> commentt :comment-entry :created-by))} (-> commentt :comment-entry :created-by)]
           " | "
-          [:a {:href (str "/#/story/" (-> commentt :cn-story-comment :entry-id))} (generate-age-status (-> commentt :cn-story-comment :created-date))]
+          [:a {:href (str "/#/story/" (-> commentt :comment-entry :entry-id))} (generate-age-status (-> commentt :comment-entry :created-date))]
           [:span {:class "par"}]
           [:span {:class "storyon"}]]]
 
@@ -38,7 +38,7 @@
 
         [:span {:class "comment"}
          [:span {:class "c00"}
-          (util.view/parse-comment (-> commentt :cn-story-comment :content))]]]
+          (util.view/parse-comment (-> commentt :comment-entry :content))]]]
        ]
 
       [:tr {:style {:height "10px"}}]
@@ -50,7 +50,7 @@
         [:br]
         [:br]
         [:button {:id "buttonReplyStoryCommentId" :on-click (fn [_]
-                                                              (reply (-> commentt :cn-story-comment :_id) ["textId"]))} "reply"]]]
+                                                              (reply (-> commentt :comment-entry :_id) ["textId"]))} "reply"]]]
 
       )]])
 
@@ -76,9 +76,9 @@
        [:td {:class "default"}
         [:div {:style {:margin-top "2px" :margin-bottom "-10px"}}
          [:span {:class "comhead"}
-          [:a {:href (str "/#/user/" (-> commentt :cn-story-comment :created-by))} (-> commentt :cn-story-comment :created-by)]
+          [:a {:href (str "/#/user/" (-> commentt :comment-entry :created-by))} (-> commentt :comment-entry :created-by)]
           " | "
-          [:a {:href (str "/#/story/" (-> commentt :cn-story-comment :entry-id))} (generate-age-status (-> commentt :cn-story-comment :created-date))]
+          [:a {:href (str "/#/story/" (-> commentt :comment-entry :entry-id))} (generate-age-status (-> commentt :comment-entry :created-date))]
           [:span {:class "par"}]
           [:span {:class "storyon"}]]]
 
@@ -86,7 +86,7 @@
 
         [:span {:class "comment"}
          [:span {:class "c00"}
-          (util.view/parse-comment (-> commentt :cn-story-comment :content))]]]
+          (util.view/parse-comment (-> commentt :comment-entry :content))]]]
        ]
 
       [:tr {:style {:height "10px"}}]
@@ -94,18 +94,18 @@
       [:tr
        [:td {:colSpan "2"}]
        [:td
-        [:textarea {:id "textId" :name "text" :cols "60" :rows "6" :defaultValue (-> commentt :cn-story-comment :content)}]
+        [:textarea {:id "textId" :name "text" :cols "60" :rows "6" :defaultValue (-> commentt :comment-entry :content)}]
         [:br]
         [:br]
         [:button {:id "buttonReplyStoryCommentId" :on-click (fn [_]
-                                                              (edit (-> commentt :cn-story-comment :_id) ["textId"]))} "update"]]]
+                                                              (edit (-> commentt :comment-entry :_id) ["textId"]))} "update"]]]
 
       )]])
 
 
 (defn comment-owner?
   [commentt]
-  (or (= (-> commentt :user-obj :username) (-> commentt :cn-story-comment :created-by))))
+  (or (= (-> commentt :user-obj :username) (-> commentt :comment-entry :created-by))))
 
 (defn generate-age-status
   [created-date]

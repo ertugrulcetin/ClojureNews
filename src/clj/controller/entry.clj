@@ -154,7 +154,7 @@
                                                          (:username (:user-obj ctx)))}))
 
             :handle-created (fn [ctx]
-                              {:story-id (-> ctx :cn-story :_id)})
+                              {:entry-id (-> ctx :cn-story :_id)})
 
             :handle-exception (fn [ctx]
                                 (resource-util/get-exception-message ctx))))

@@ -1,18 +1,21 @@
 (ns clj.util.resource
   (:require [clojure.data.json :as json]
             [clojure.java.io :as io]
-            [clojure.string :as str])
+            [clojure.string :as str]
+            [clj.dao.user :as user-dao])
   (:import (java.util Date)))
 
 (defonce avaliable-media-types ["application/json" "application/json; charset=UTF-8" "application/json; charset=utf-8"])
 
-(defn- body-as-string [ctx]
+(defn- body-as-string
+  [ctx]
   (if-let [body (get-in ctx [:request :body])]
     (condp instance? body
       String body
       (slurp (io/reader body)))))
 
-(defn check-content-type [ctx content-types]
+(defn check-content-type
+  [ctx content-types]
   (if (#{:put :post} (get-in ctx [:request :request-method]))
     (or
       (some #{(get-in ctx [:request :headers "content-type"])}
@@ -63,6 +66,18 @@
     (if-let [index (str/index-of s "/")]
       (.substring s 0 index)
       s)))
+
+(defn auth?
+  [ctx]
+  (if-let [cookie (get-cookie ctx)]
+    (if-let [username (get-username-from-cookie ctx)]
+      (if-let [user (user-dao/find-by-username username)]
+        (if (= cookie (:cookie user))
+          {:user-obj user})))))
+
+(defn get-username
+  [ctx]
+  (-> ctx :user-obj :username))
 
 (defmacro safe-fn
   [form message]
