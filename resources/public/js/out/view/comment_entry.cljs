@@ -5,8 +5,8 @@
 (declare comment-owner?
          generate-age-status)
 
-(defn component-story-comment
-  [commentt reply]
+(defn component-reply
+  [commentt]
 
   [:table {:border "0"}
    [:tbody
@@ -49,13 +49,10 @@
         [:textarea {:id "textId" :name "text" :cols "60" :rows "6"}]
         [:br]
         [:br]
-        [:button {:id "buttonReplyStoryCommentId" :on-click (fn [_]
-                                                              (reply (-> commentt :comment-entry :_id) ["textId"]))} "reply"]]]
-
-      )]])
+        [:button {:id "buttonReplyCommentId"} "reply"]]])]])
 
 (defn component-edit
-  [commentt edit]
+  [commentt]
   [:table {:border "0"}
    [:tbody
 
@@ -97,10 +94,7 @@
         [:textarea {:id "textId" :name "text" :cols "60" :rows "6" :defaultValue (-> commentt :comment-entry :content)}]
         [:br]
         [:br]
-        [:button {:id "buttonReplyStoryCommentId" :on-click (fn [_]
-                                                              (edit (-> commentt :comment-entry :_id) ["textId"]))} "update"]]]
-
-      )]])
+        [:button {:id "buttonEditCommentId"} "update"]]])]])
 
 
 (defn comment-owner?

@@ -28,19 +28,17 @@
             :put! (fn [ctx]
                     (let [data-as-map (resource-util/convert-data-map (::data ctx))
                           entry-id (:entry-id data-as-map)
-                          text (:text data-as-map)]
+                          text (:text data-as-map)
+                          entry (check-entry-exists entry-id)]
 
-                      ;;TODO change story with entry
-                      (check-entry-exists entry-id)
                       (check-text text)
 
-                      ;;TODO change type story -> (:type entry)
                       (let [commentt (comment-entry-dao/create-comment-entry
                                        entry-id
                                        (resource-util/get-username ctx)
                                        nil
                                        text
-                                       "story")]
+                                       (:type entry))]
                         (entry-dao/inc-entry-comment-count entry-id)
                         {:comment-entry commentt})))
 
@@ -73,12 +71,13 @@
                                                                              (resource-util/get-username ctx)
                                                                              (str (:_id parent-comment))
                                                                              text
-                                                                             "story")]
+                                                                             (:type parent-comment))]
                         (entry-dao/inc-entry-comment-count (:entry-id parent-comment))
-                        {:cn-story {:entry-id (:entry-id commentt)}})))
+                        {:cn-entry {:entry-id (:entry-id commentt)
+                                    :type     (:type commentt)}})))
 
             :handle-created (fn [ctx]
-                              (:cn-story ctx))
+                              (:cn-entry ctx))
 
             :handle-exception #(resource-util/get-exception-message %)))
 
@@ -92,8 +91,8 @@
                          (let [commentt (check-comment-exists id)]
 
                            {:user-obj      {:username (if-let [username (resource-util/get-username-from-cookie ctx)]
-                                                           (if-let [user (user-dao/find-by-username username)]
-                                                             (:username user)))}
+                                                        (if-let [user (user-dao/find-by-username username)]
+                                                          (:username user)))}
                             :comment-entry commentt}))
 
             :handle-exception #(resource-util/get-exception-message %)))
@@ -129,7 +128,8 @@
 (defn check-entry-exists
   [id]
   (try
-    (when-not (entry-dao/find-by-id id)
+    (if-let [entry (entry-dao/find-by-id id)]
+      entry
       (throw (RuntimeException. error-message/no-entry)))
     (catch Exception e
       (throw (RuntimeException. error-message/no-entry)))))

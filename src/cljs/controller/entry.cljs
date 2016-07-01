@@ -1,14 +1,12 @@
 (ns controller.entry
   (:require [ajax.core :as ajax :refer [GET POST PUT]]
             [reagent.core :as r]
+            [goog.dom :as dom]
             [util.view]
             [util.controller]
             [view.entry]
-            [goog.dom :as dom]
-            [controller.comment-entry]
             [controller.upvote]
-            [cljc.validation :as validation]
-            [clojure.string :as str]))
+            [controller.comment-entry]))
 
 (declare add-event-listener-to-add-comment-button
          add-event-listener-to-upvote-buttons)

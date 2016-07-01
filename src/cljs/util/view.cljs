@@ -75,3 +75,7 @@
 (defn parse-comment
   [commentt]
   (interpose '([:p]) (split-into-paragraphs commentt)))
+
+(defn scroll-to-top
+  []
+  (.scrollTo js/window 0 (.-scrollHeight (.-body js/document))))

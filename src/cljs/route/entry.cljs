@@ -10,5 +10,5 @@
 (defroute story "/story/:id" [id]
           (controller.entry/story id))
 
-(defroute ask "/ask/:id" [id]
-          (controller.entry/ask id))
+;(defroute ask "/ask/:id" [id]
+;          (controller.entry/ask id))
