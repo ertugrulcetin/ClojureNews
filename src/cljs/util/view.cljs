@@ -4,7 +4,7 @@
             [clojure.string :as str]
             [cljc.validation :as validation]
             [view.user]
-            ))
+            [cljs-time.core :as cljs-time]))
 
 (defonce main-container (dom/getElement "mainContainerId"))
 
@@ -79,3 +79,29 @@
 (defn scroll-to-top
   []
   (.scrollTo js/window 0 (.-scrollHeight (.-body js/document))))
+
+(defn generate-comment-status
+  [number-of-comments]
+  (case number-of-comments
+    0 "discuss"
+    1 "1 comment"
+    (str number-of-comments " comments")))
+
+(defn generate-upvote-status
+  [number-of-upvotes]
+  (if (> number-of-upvotes 1)
+    (str number-of-upvotes " points by ")
+    (str number-of-upvotes " point by ")))
+
+(defn generate-age-status
+  [created-date]
+  (let [current-date (js/Date.)
+        created-date-as-js (js/Date. created-date)
+        min (cljs-time/in-minutes (cljs-time/interval created-date-as-js current-date))
+        hour (cljs-time/in-hours (cljs-time/interval created-date-as-js current-date))
+        day (cljs-time/in-days (cljs-time/interval created-date-as-js current-date))]
+    (cond
+      (< min 60) (if (= min 1) (str min " minute ago") (str min " minutes ago"))
+      (< hour 24) (if (= hour 1) (str hour " hour ago") (str hour " hours ago"))
+      :else
+      (if (= day 1) (str day " day ago") (str day " days ago")))))

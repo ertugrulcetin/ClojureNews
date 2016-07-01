@@ -1,5 +1,5 @@
 (ns controller.comment-entry
-  (:require [ajax.core :as ajax :refer [GET POST PUT]]
+  (:require [ajax.core :as ajax :refer [GET POST PUT DELETE]]
             [reagent.core :as r]
             [util.view]
             [util.controller]
@@ -10,8 +10,12 @@
 
 (declare reply-comment
          edit-comment
+         delete-comment
+         dont-delete-comment
          add-event-listener-to-reply-button
-         add-event-listener-to-edit-button)
+         add-event-listener-to-edit-button
+         add-event-listener-to-delete-yes-button
+         add-event-listener-to-delete-no-button)
 
 (defn add-comment
   [entry entry-id field-ids]
@@ -94,6 +98,31 @@
              :format          (ajax/json-request-format)
              :response-format (ajax/json-response-format {:keywords? true})}))))
 
+(defn delete-comment-by-id
+  [id]
+  (GET (str "/comment/" id)
+       {:handler         (fn [response]
+                           (r/render-component [(fn []
+                                                  (view.comment-entry/component-delete response))] util.view/main-container)
+                           (add-event-listener-to-delete-yes-button id)
+                           (add-event-listener-to-delete-no-button (:type response) (:entry-id response)))
+        :error-handler   util.controller/error-handler
+        :format          (ajax/json-request-format)
+        :response-format (ajax/json-response-format {:keywords? true})}))
+
+(defn delete-comment
+  [id]
+  (DELETE (str "/comment/delete/" id)
+          {:handler         (fn [response]
+                              (util.view/change-url (str "/#/" (:type response) "/" (:entry-id response))))
+           :error-handler   util.controller/error-handler
+           :format          (ajax/json-request-format)
+           :response-format (ajax/json-response-format {:keywords? true})}))
+
+(defn dont-delete-comment
+  [type entry-id]
+  (util.view/change-url (str "/#/" type "/" entry-id)))
+
 (defn add-event-listener-to-reply-button
   [id]
   (.addEventListener (dom/getElement "buttonReplyCommentId") "click" (fn [_]
@@ -103,3 +132,13 @@
   [id]
   (.addEventListener (dom/getElement "buttonEditCommentId") "click" (fn [_]
                                                                       (edit-comment id ["textId"]))))
+
+(defn add-event-listener-to-delete-yes-button
+  [id]
+  (.addEventListener (dom/getElement "buttonDeleteYesCommentId") "click" (fn [_]
+                                                                           (delete-comment id))))
+
+(defn add-event-listener-to-delete-no-button
+  [type entry-id]
+  (.addEventListener (dom/getElement "buttonDeleteNoCommentId") "click" (fn [_]
+                                                                          (dont-delete-comment type entry-id))))

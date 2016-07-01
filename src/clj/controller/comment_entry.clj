@@ -47,6 +47,7 @@
 
             :handle-exception #(resource-util/get-exception-message %)))
 
+;;TODO check business logic cant reply own comment etc.
 (defn reply-comment
   []
   (resource :allowed-methods [:put]
@@ -122,6 +123,38 @@
 
             :handle-created (fn [_]
                               {:edit? true})
+
+            :handle-exception #(resource-util/get-exception-message %)))
+
+;;TODO check business logic
+(defn delete-comment-by-id
+  [id]
+  (resource :allowed-methods [:delete]
+
+            :available-media-types resource-util/avaliable-media-types
+
+            :known-content-type? #(resource-util/check-content-type % resource-util/avaliable-media-types)
+
+            :malformed? #(resource-util/parse-json % ::data)
+
+            :authorized? #(resource-util/auth? %)
+
+            :new? (fn [_]
+                    false)
+
+            :respond-with-entity? (fn [_]
+                                    true)
+
+            :delete! (fn [ctx]
+
+                       (let [commentt (check-comment-exists id)]
+                         (check-real-owner commentt ctx)
+                         (comment-entry-dao/delete-comment-by-id id)
+                         {:cn-entry {:entry-id (:entry-id commentt)
+                                     :type     (:type commentt)}}))
+
+            :handle-ok (fn [ctx]
+                         (:cn-entry ctx))
 
             :handle-exception #(resource-util/get-exception-message %)))
 
