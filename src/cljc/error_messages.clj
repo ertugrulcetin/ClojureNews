@@ -25,3 +25,7 @@
 (def twitter "Not valid Twitter Username. Ex: ertuctn")
 
 (def about "About should be between 0 and 500 characters long.")
+
+(def own-comment "You can not reply your own comment.")
+
+(def comment-has-replies "You can not delete, the comment has been replied.")

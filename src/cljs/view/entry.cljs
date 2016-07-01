@@ -169,7 +169,9 @@
 
    [:td {:style {:vertical-align "top"} :class "votelinks"}
     [:center
-     [:font {:color "#5fba7d"} "*"]]]
+     [:font {:color "#5fba7d"} "*"]
+     [:br]
+     [:img {:src "/img/s.gif", :height "1", :width "14"}]]]
 
    [:td {:class "default"}
     [:div {:style {:margin-top "2px" :margin-bottom "-10px"}}
@@ -235,7 +237,8 @@
 
    [:td {:style {:vertical-align "top"} :class "votelinks"}
     [:center
-     ]]
+     [:a {:style {:visibility "hidden"}}
+      [:div {:class "votearrow" :title "upvote"}]]]]
 
    [:td {:class "default"}
     [:div {:style {:margin-top "2px" :margin-bottom "-10px"}}

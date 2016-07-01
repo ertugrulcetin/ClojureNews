@@ -26,6 +26,10 @@
   [^String entry-id]
   (mc/find-maps db/clojure-news coll {:entry-id entry-id}))
 
+(defn get-comments-by-parent-comment-id
+  [^String parent-comment-id]
+  (mc/find-maps db/clojure-news coll {:parent-comment-id parent-comment-id}))
+
 (defn inc-comment-upvote
   [^String id]
   (mc/update-by-id db/clojure-news coll (ObjectId. id) {$inc {:upvote 1}}))

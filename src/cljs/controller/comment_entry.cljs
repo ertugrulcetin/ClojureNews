@@ -105,7 +105,7 @@
                            (r/render-component [(fn []
                                                   (view.comment-entry/component-delete response))] util.view/main-container)
                            (add-event-listener-to-delete-yes-button id)
-                           (add-event-listener-to-delete-no-button (:type response) (:entry-id response)))
+                           (add-event-listener-to-delete-no-button (-> response :comment-entry :type) (-> response :comment-entry :entry-id)))
         :error-handler   util.controller/error-handler
         :format          (ajax/json-request-format)
         :response-format (ajax/json-response-format {:keywords? true})}))

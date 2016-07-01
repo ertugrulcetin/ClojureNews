@@ -90,7 +90,7 @@ return view.comment_entry.component_delete.call(null,response);
 
 controller.comment_entry.add_event_listener_to_delete_yes_button.call(null,id);
 
-return controller.comment_entry.add_event_listener_to_delete_no_button.call(null,new cljs.core.Keyword(null,"type","type",1174270348).cljs$core$IFn$_invoke$arity$1(response),new cljs.core.Keyword(null,"entry-id","entry-id",591934358).cljs$core$IFn$_invoke$arity$1(response));
+return controller.comment_entry.add_event_listener_to_delete_no_button.call(null,new cljs.core.Keyword(null,"type","type",1174270348).cljs$core$IFn$_invoke$arity$1(new cljs.core.Keyword(null,"comment-entry","comment-entry",136408923).cljs$core$IFn$_invoke$arity$1(response)),new cljs.core.Keyword(null,"entry-id","entry-id",591934358).cljs$core$IFn$_invoke$arity$1(new cljs.core.Keyword(null,"comment-entry","comment-entry",136408923).cljs$core$IFn$_invoke$arity$1(response)));
 }),new cljs.core.Keyword(null,"error-handler","error-handler",-484945776),util.controller.error_handler,new cljs.core.Keyword(null,"format","format",-1306924766),ajax.core.json_request_format.call(null),new cljs.core.Keyword(null,"response-format","response-format",1664465322),ajax.core.json_response_format.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"keywords?","keywords?",764949733),true], null))], null));
 });
 controller.comment_entry.delete_comment = (function controller$comment_entry$delete_comment(id){

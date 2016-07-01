@@ -11,7 +11,9 @@
 (declare check-entry-exists
          check-comment-exists
          check-text
-         check-real-owner)
+         check-real-owner
+         check-own-comment-on-reply
+         check-has-no-chil-comment)
 
 (defn create-comment
   []
@@ -47,7 +49,6 @@
 
             :handle-exception #(resource-util/get-exception-message %)))
 
-;;TODO check business logic cant reply own comment etc.
 (defn reply-comment
   []
   (resource :allowed-methods [:put]
@@ -67,15 +68,19 @@
 
                       (check-text text)
 
-                      (let [parent-comment (check-comment-exists parent-comment-id)
-                            commentt (comment-entry-dao/create-comment-entry (:entry-id parent-comment)
-                                                                             (resource-util/get-username ctx)
-                                                                             (str (:_id parent-comment))
-                                                                             text
-                                                                             (:type parent-comment))]
+                      (let [parent-comment (check-comment-exists parent-comment-id)]
+
+                        (check-own-comment-on-reply parent-comment ctx)
+
+                        (comment-entry-dao/create-comment-entry (:entry-id parent-comment)
+                                                                (resource-util/get-username ctx)
+                                                                (str (:_id parent-comment))
+                                                                text
+                                                                (:type parent-comment))
+
                         (entry-dao/inc-entry-comment-count (:entry-id parent-comment))
-                        {:cn-entry {:entry-id (:entry-id commentt)
-                                    :type     (:type commentt)}})))
+                        {:cn-entry {:entry-id (:entry-id parent-comment)
+                                    :type     (:type parent-comment)}})))
 
             :handle-created (fn [ctx]
                               (:cn-entry ctx))
@@ -149,6 +154,7 @@
 
                        (let [commentt (check-comment-exists id)]
                          (check-real-owner commentt ctx)
+                         (check-has-no-chil-comment id)
                          (comment-entry-dao/delete-comment-by-id id)
                          {:cn-entry {:entry-id (:entry-id commentt)
                                      :type     (:type commentt)}}))
@@ -185,3 +191,13 @@
   [commentt ctx]
   (when-not (= (:created-by commentt) (resource-util/get-username ctx))
     (throw (RuntimeException. error-message/comment-owner))))
+
+(defn check-own-comment-on-reply
+  [commentt ctx]
+  (when (= (:created-by commentt) (-> ctx :user-obj :username))
+    (throw (RuntimeException. error-message/own-comment))))
+
+(defn check-has-no-chil-comment
+  [id]
+  (when (> (count (comment-entry-dao/get-comments-by-parent-comment-id id)) 0)
+    (throw (RuntimeException. error-message/comment-has-replies))))
