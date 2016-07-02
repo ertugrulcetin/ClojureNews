@@ -131,7 +131,6 @@
 
             :handle-exception #(resource-util/get-exception-message %)))
 
-;;TODO check business logic
 (defn delete-comment-by-id
   [id]
   (resource :allowed-methods [:delete]
@@ -156,6 +155,7 @@
                          (check-real-owner commentt ctx)
                          (check-has-no-chil-comment id)
                          (comment-entry-dao/delete-comment-by-id id)
+                         (entry-dao/dec-entry-comment-count (:entry-id commentt))
                          {:cn-entry {:entry-id (:entry-id commentt)
                                      :type     (:type commentt)}}))
 
