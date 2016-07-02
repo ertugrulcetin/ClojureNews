@@ -237,7 +237,7 @@
           [:span {:class "age"} " | "
            [:a {:href (str "/#/story/" (-> story :story-entry :_id))} (util.view/generate-age-status (-> story :story-entry :created-date))] " | "
            [:a {:href (str "/#/story/" (-> story :story-entry :_id))} (util.view/generate-comment-status (-> story :story-entry :number-of-comments))]
-           (when (story-owner? story)
+           (when (-> story :owner?)
              (list " | "
                    [:a {:href (str "/#/story/edit/" (-> story :story-entry :_id))} "edit"]
                    " | "
@@ -304,7 +304,7 @@
           [:span {:class "age"} " | "
            [:a {:href (str "/#/story/" (-> story :story-entry :_id))} (util.view/generate-age-status (-> story :story-entry :created-date))] " | "
            [:a {:href (str "/#/story/" (-> story :story-entry :_id))} (util.view/generate-comment-status (-> story :story-entry :number-of-comments))]
-           (when (story-owner? story)
+           (when (-> story :owner?)
              (list " | "
                    [:a {:href (str "/#/story/edit/" (-> story :story-entry :_id))} "edit"]
                    " | "

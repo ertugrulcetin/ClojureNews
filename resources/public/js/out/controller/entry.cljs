@@ -84,14 +84,14 @@
   [id]
   (DELETE (str "/entry/story/delete/" id)
           {:handler         (fn []
-                              (util.view/change-url "/"))
+                              (util.view/change-url "/#/"))
            :error-handler   util.controller/error-handler
            :format          (ajax/json-request-format)
            :response-format (ajax/json-response-format {:keywords? true})}))
 
 (defn dont-delete-story
   []
-  (util.view/change-url "/"))
+  (util.view/change-url "/#/"))
 
 (defn add-event-listener-to-add-comment-button
   [entry id]
