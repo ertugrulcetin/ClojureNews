@@ -20,6 +20,7 @@
          check-submit-url
          check-submit-text
          check-entry-exist
+         check-story-owner
          group-by-parent-and-sort-by-vote
          create-comment-tree
          flat-one-level
@@ -117,6 +118,8 @@
             :handle-exception (fn [ctx]
                                 (resource-util/get-exception-message ctx))))
 
+
+;;Story
 (defn create-story
   []
   (resource :allowed-methods [:put]
@@ -127,13 +130,7 @@
 
             :malformed? #(resource-util/parse-json % ::data)
 
-            :authorized? (fn [ctx]
-
-                           (if-let [cookie (resource-util/get-cookie ctx)]
-                             (if-let [username (resource-util/get-username-from-cookie ctx)]
-                               (if-let [user (user-dao/find-by-username username)]
-                                 (if (= cookie (:cookie user))
-                                   {:user-obj user})))))
+            :authorized? #(resource-util/auth? %)
 
             :put! (fn [ctx]
                     (let [data-as-map (resource-util/convert-data-map (::data ctx))
@@ -155,10 +152,73 @@
             :handle-created (fn [ctx]
                               {:entry-id (-> ctx :cn-story :_id)})
 
-            :handle-exception (fn [ctx]
-                                (resource-util/get-exception-message ctx))))
+            :handle-exception #(resource-util/get-exception-message %)))
 
+(defn get-story-by-id
+  [id]
+  (resource :allowed-methods [:get]
 
+            :available-media-types resource-util/avaliable-media-types
+
+            :handle-ok (fn [ctx]
+
+                         (check-entry-exist id)
+
+                         (let [user (get-user ctx)
+                               response {:user-obj       user
+                                         :story-entry    (entry-dao/find-by-id id)
+                                         :story-comments (create-comments (reduce #(conj %1 (assoc %2 :str-id (str (:_id %2))
+                                                                                                      :str-parent-comment-id (if (:parent-comment-id %2)
+                                                                                                                               (:parent-comment-id %2)
+                                                                                                                               nil)))
+                                                                                  [] (comment-entry-dao/get-comments-by-entry-id id)))}]
+                           (if user
+                             (assoc response :story-upvoted-comments (reduce #(conj %1 (:comment-id %2)) [] (upvote-dao/find-by-type-and-entry-id "story-comment" id)))
+                             response)))
+
+            :handle-exception #(resource-util/get-exception-message %)))
+
+(defn get-story-litte-info-by-id
+  [id]
+  (resource :allowed-methods [:get]
+
+            :available-media-types resource-util/avaliable-media-types
+
+            :handle-ok (fn [ctx]
+                         (let [story (check-entry-exist id)]
+                           {:story-entry story
+                            :owner?      (= (:created-by story) (-> ctx get-user :username))}))
+
+            :handle-exception #(resource-util/get-exception-message %)))
+
+(defn edit-story-by-id
+  [id]
+  (resource :allowed-methods [:post]
+
+            :available-media-types resource-util/avaliable-media-types
+
+            :known-content-type? #(resource-util/check-content-type % resource-util/avaliable-media-types)
+
+            :malformed? #(resource-util/parse-json % ::data)
+
+            :authorized? #(resource-util/auth? %)
+
+            :post! (fn [ctx]
+
+                     (let [story (check-entry-exist id)]
+                       (check-story-owner story ctx)
+
+                       (let [data-as-map (resource-util/convert-data-map (::data ctx))
+                             title (:title data-as-map)]
+
+                         (check-submit-title title)
+                         (entry-dao/edit-story-by-id id (str/trim title))
+                         {:cn-story id})))
+
+            :handle-created (fn [ctx]
+                              {:entry-id (-> ctx :cn-story)})
+
+            :handle-exception #(resource-util/get-exception-message %)))
 
 (defn create-ask
   []
@@ -193,35 +253,12 @@
                       {:cn-ask (entry-dao/create-ask (str/trim title) (str/trim text) (:username (:user-obj ctx)))}))
 
             :handle-created (fn [ctx]
-                              {:ask-id (-> ctx :cn-ask :_id)})
+                              {:entry-id (-> ctx :cn-ask :_id)})
 
             :handle-exception (fn [ctx]
                                 (resource-util/get-exception-message ctx))))
 
-(defn get-story-by-id
-  [id]
-  (resource :allowed-methods [:get]
 
-            :available-media-types resource-util/avaliable-media-types
-
-            :handle-ok (fn [ctx]
-
-                         (check-entry-exist id)
-
-                         (let [user (get-user ctx)
-                               response {:user-obj       user
-                                         :story-entry    (entry-dao/find-by-id id)
-                                         :story-comments (create-comments (reduce #(conj %1 (assoc %2 :str-id (str (:_id %2))
-                                                                                                      :str-parent-comment-id (if (:parent-comment-id %2)
-                                                                                                                               (:parent-comment-id %2)
-                                                                                                                               nil)))
-                                                                                  [] (comment-entry-dao/get-comments-by-entry-id id)))}]
-                           (if user
-                             (assoc response :story-upvoted-comments (reduce #(conj %1 (:comment-id %2)) [] (upvote-dao/find-by-type-and-entry-id "story-comment" id)))
-                             response)))
-
-            :handle-exception (fn [ctx]
-                                (resource-util/get-exception-message ctx))))
 
 (defn get-user
   [ctx]
@@ -309,7 +346,13 @@
 (defn check-entry-exist
   [id]
   (try
-    (if-not (entry-dao/find-by-id id)
+    (if-let [entry (entry-dao/find-by-id id)]
+      entry
       (throw (RuntimeException. "No such entry!")))
     (catch Exception e
       (throw (RuntimeException. "No such entry!")))))
+
+(defn check-story-owner
+  [story ctx]
+  (when-not (= (:created-by story) (resource-util/get-username ctx))
+    (throw (RuntimeException. "You are not the owner."))))

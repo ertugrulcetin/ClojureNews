@@ -26,7 +26,7 @@
        [:td
         [:textarea {:id "aboutId" :name "about" :cols "60" :rows "6" :wrap "virtual" :defaultValue (apply str (interpose "\n\n" (string-util/new-line-tokens (:about user))))}]
         [:font {:size "-2"}
-         [:a {:href "formatdoc" :tabindex "-1"}
+         [:a {:href "/#/help" :tabindex "-1"}
           [:font {:color "#afafaf"} "help"]]] "          "]]
       [:tr
        [:td {:style {:vertical-align "top"}} "about:"]
@@ -88,16 +88,6 @@
         [:a {:href (str "/#/user/" (:username user) "/changepassword")}
          [:u "change password"]]]])
 
-    (if (:auth? user)
-      [:tr
-       [:td]
-       [:td
-        [:a {:href "/#/savedstories"}
-         [:u "saved stories"]]
-        (str ", ")
-        [:a {:href "/#/savedcomments"}
-         [:u "saved comments"]]]])
-
     [:tr
      [:td]
      [:td
@@ -109,6 +99,32 @@
      [:td
       [:a {:href (str "/#/user/" (:username user) "/comments")}
        [:u "comments"]]]]
+
+
+    (if (:auth? user)
+      [:tr
+       [:td]
+       [:td
+        [:a {:href (str "/#/user/" (:username user) "/jobs")}
+         [:u "jobs"]]
+        (str ", ")
+        [:a {:href (str "/#/user/" (:username user) "/events")}
+         [:u "events"]]]])
+
+    [:tr
+     [:td
+      [:br]]]
+
+
+    (if (:auth? user)
+      [:tr
+       [:td]
+       [:td
+        [:a {:href "/#/upvotedentries"}
+         [:u "upvoted entries"]]
+        (str ", ")
+        [:a {:href "/#/upvotedcomments"}
+         [:u "upvoted comments"]]]])
 
     (if (:auth? user)
       [:tr

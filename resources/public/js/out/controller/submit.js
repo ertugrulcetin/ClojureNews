@@ -34,8 +34,8 @@ return util.view.render_error_message.call(null,[cljs.core.str("Please limit tit
 if(cljs.core.not.call(null,cljc.validation.submit_url_QMARK_.call(null,new cljs.core.Keyword(null,"url","url",276297046).cljs$core$IFn$_invoke$arity$1(data)))){
 return util.view.render_error_message.call(null,"Not valid url. Ex: https://www.google.com");
 } else {
-return ajax.core.PUT.call(null,"/entry/story",new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"params","params",710516235),data,new cljs.core.Keyword(null,"handler","handler",-195596612),(function (_){
-return null;
+return ajax.core.PUT.call(null,"/entry/story",new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"params","params",710516235),data,new cljs.core.Keyword(null,"handler","handler",-195596612),(function (response){
+return util.view.change_url.call(null,[cljs.core.str("/#/story/"),cljs.core.str(new cljs.core.Keyword(null,"entry-id","entry-id",591934358).cljs$core$IFn$_invoke$arity$1(response))].join(''));
 }),new cljs.core.Keyword(null,"error-handler","error-handler",-484945776),util.controller.error_handler,new cljs.core.Keyword(null,"format","format",-1306924766),ajax.core.json_request_format.call(null),new cljs.core.Keyword(null,"response-format","response-format",1664465322),ajax.core.json_response_format.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"keywords?","keywords?",764949733),true], null))], null));
 
 }
@@ -48,8 +48,8 @@ return util.view.render_error_message.call(null,[cljs.core.str("Please limit tit
 if(cljs.core.not.call(null,cljc.validation.submit_text_QMARK_.call(null,new cljs.core.Keyword(null,"text","text",-1790561697).cljs$core$IFn$_invoke$arity$1(data)))){
 return util.view.render_error_message.call(null,"Please limit text to 2500 characters.");
 } else {
-return ajax.core.PUT.call(null,"/entry/ask",new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"params","params",710516235),data,new cljs.core.Keyword(null,"handler","handler",-195596612),(function (_){
-return null;
+return ajax.core.PUT.call(null,"/entry/ask",new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"params","params",710516235),data,new cljs.core.Keyword(null,"handler","handler",-195596612),(function (response){
+return util.view.change_url.call(null,[cljs.core.str("/#/ask/"),cljs.core.str(new cljs.core.Keyword(null,"entry-id","entry-id",591934358).cljs$core$IFn$_invoke$arity$1(response))].join(''));
 }),new cljs.core.Keyword(null,"error-handler","error-handler",-484945776),util.controller.error_handler,new cljs.core.Keyword(null,"format","format",-1306924766),ajax.core.json_request_format.call(null),new cljs.core.Keyword(null,"response-format","response-format",1664465322),ajax.core.json_response_format.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"keywords?","keywords?",764949733),true], null))], null));
 
 }

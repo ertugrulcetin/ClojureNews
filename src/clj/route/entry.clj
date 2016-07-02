@@ -17,6 +17,12 @@
            (GET "/entry/story/:id" [id]
              (controller/get-story-by-id id))
 
+           (POST "/entry/story/edit/:id" [id]
+             (controller/edit-story-by-id id))
+
+           (GET "/entry/story/info/:id" [id]
+             (controller/get-story-litte-info-by-id id))
+
            (PUT "/entry/ask" []
              (controller/create-ask)))
 

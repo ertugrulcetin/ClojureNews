@@ -43,10 +43,11 @@ goog.addDependency("../controller/login.js", ['controller.login'], ['ajax.core',
 goog.addDependency("../secretary/core.js", ['secretary.core'], ['cljs.core', 'clojure.string', 'clojure.walk']);
 goog.addDependency("../route/login.js", ['route.login'], ['cljs.core', 'controller.login', 'secretary.core']);
 goog.addDependency("../view/entry.js", ['view.entry'], ['cljs.core', 'util.view']);
+goog.addDependency("../view/story_entry.js", ['view.story_entry'], ['cljs.core', 'util.view']);
 goog.addDependency("../controller/upvote.js", ['controller.upvote'], ['ajax.core', 'cljs.core']);
 goog.addDependency("../view/comment_entry.js", ['view.comment_entry'], ['cljs.core', 'util.view']);
 goog.addDependency("../controller/comment_entry.js", ['controller.comment_entry'], ['goog.dom', 'ajax.core', 'reagent.core', 'cljs.core', 'util.controller', 'view.comment_entry', 'cljc.validation', 'util.view', 'clojure.string']);
-goog.addDependency("../controller/entry.js", ['controller.entry'], ['goog.dom', 'ajax.core', 'reagent.core', 'cljs.core', 'util.controller', 'view.entry', 'util.view', 'controller.upvote', 'controller.comment_entry']);
+goog.addDependency("../controller/entry.js", ['controller.entry'], ['goog.dom', 'ajax.core', 'reagent.core', 'cljs.core', 'util.controller', 'view.entry', 'cljc.validation', 'util.view', 'view.story_entry', 'controller.upvote', 'controller.comment_entry']);
 goog.addDependency("../route/entry.js", ['route.entry'], ['controller.entry', 'cljs.core', 'view.entry', 'secretary.core']);
 goog.addDependency("../view/changepassword.js", ['view.changepassword'], ['cljs.core']);
 goog.addDependency("../controller/user.js", ['controller.user'], ['ajax.core', 'reagent.core', 'cljs.core', 'util.controller', 'view.changepassword', 'cljc.validation', 'cljc.string_util', 'util.view', 'view.user']);

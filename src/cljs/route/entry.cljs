@@ -7,8 +7,11 @@
 (defroute home-page "/" []
           (controller.entry/home-page))
 
-(defroute story "/story/:id" [id]
-          (controller.entry/story id))
+(defroute get-story-by-id "/story/:id" [id]
+          (controller.entry/get-story-by-id id))
+
+(defroute edit-story-by-id "/story/edit/:id" [id]
+          (controller.entry/edit-story-by-id id))
 
 ;(defroute ask "/ask/:id" [id]
 ;          (controller.entry/ask id))

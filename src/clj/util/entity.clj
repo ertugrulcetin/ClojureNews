@@ -9,23 +9,23 @@
 
 (defn user
   [username password]
-  {:_id            (ObjectId.)
-   :created-date   (Date.)
-   :active?        true
-   :show-email?    false
-   :email          nil
-   :username       username
-   :password       (hash/sha256 password)
-   :last-login     (Date.)
-   :role           ::user
-   :karma          1
-   :website        nil
-   :github         nil
-   :twitter        nil
-   :about          nil
-   :cookie         (generate-cookie username)
-   :saved-stories  []
-   :saved-comments []})
+  {:_id              (ObjectId.)
+   :created-date     (Date.)
+   :active?          true
+   :show-email?      false
+   :email            nil
+   :username         username
+   :password         (hash/sha256 password)
+   :last-login       (Date.)
+   :role             ::user
+   :karma            1
+   :website          nil
+   :github           nil
+   :twitter          nil
+   :about            nil
+   :cookie           (generate-cookie username)
+   :upvoted-entries  []
+   :upvoted-comments []})
 
 (defn story
   [title url pure-url created-by]

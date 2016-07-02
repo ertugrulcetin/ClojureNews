@@ -21,6 +21,11 @@
    ^String created-by]
   (mc/insert-and-return db/clojure-news coll (entity-util/story title url pure-url created-by)))
 
+(defn edit-story-by-id
+  [^String id
+   ^String title]
+  (mc/update-by-id db/clojure-news coll (ObjectId. id) {$set {"title" title}}))
+
 (defn create-ask
   [^String title
    ^String text
