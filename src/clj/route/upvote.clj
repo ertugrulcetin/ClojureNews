@@ -5,7 +5,7 @@
 
 (defroutes route
 
-           (PUT "/upvote/story/comment/:id" [id]
-             (controller/create-story-comment-upvote id))
+           (PUT "/upvote/comment/:id" [id]
+             (controller/create-comment-upvote id))
 
            )

@@ -2,9 +2,9 @@
   (:require [ajax.core :as ajax :refer [GET POST PUT]]
             [ajax.core :as ajax]))
 
-(defn upvote-story-comment
+(defn upvote-comment
   [comment-id]
-  (PUT (str "/upvote/story/comment/" comment-id)
+  (PUT (str "/upvote/comment/" comment-id)
        {:handler         (fn [_]
                            (let [e (.getElementById js/document (str "id-upvote-" comment-id))]
                              (set! (.-visibility (.-style e)) "hidden")

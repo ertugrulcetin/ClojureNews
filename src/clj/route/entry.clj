@@ -11,6 +11,7 @@
            (GET "/entry" []
              (controller/entry))
 
+           ;;Story
            (PUT "/entry/story" []
              (controller/create-story))
 
@@ -26,6 +27,19 @@
            (GET "/entry/story/info/:id" [id]
              (controller/get-story-litte-info-by-id id))
 
+           ;;Ask
            (PUT "/entry/ask" []
-             (controller/create-ask)))
+             (controller/create-ask))
+
+           (GET "/entry/ask/:id" [id]
+             (controller/get-ask-by-id id))
+
+           (GET "/entry/ask/info/:id" [id]
+             (controller/get-ask-litte-info-by-id id))
+
+           (POST "/entry/ask/edit/:id" [id]
+             (controller/edit-ask-by-id id))
+
+           (DELETE "/entry/ask/delete/:id" [id]
+             (controller/delete-ask-by-id id)))
 

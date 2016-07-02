@@ -1,7 +1,6 @@
 (ns route.entry
   (:require-macros [secretary.core :refer [defroute]])
   (:require [secretary.core]
-            [view.entry]
             [controller.entry]))
 
 (defroute home-page "/" []
@@ -15,6 +14,15 @@
 
 (defroute delete-story-by-id "/story/delete/:id" [id]
           (controller.entry/delete-story-by-id id))
+
+(defroute get-ask-by-id "/ask/:id" [id]
+          (controller.entry/get-ask-by-id id))
+
+(defroute edit-ask-by-id "/ask/edit/:id" [id]
+          (controller.entry/edit-ask-by-id id))
+
+(defroute delete-ask-by-id "/ask/delete/:id" [id]
+          (controller.entry/delete-ask-by-id id))
 
 ;(defroute ask "/ask/:id" [id]
 ;          (controller.entry/ask id))

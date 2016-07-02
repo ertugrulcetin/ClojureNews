@@ -1,4 +1,4 @@
-(ns view.entry
+(ns view.list.entry
   (:require [util.view]))
 
 (declare create-story

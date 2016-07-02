@@ -20,7 +20,7 @@
          check-submit-url
          check-submit-text
          check-entry-exist
-         check-story-owner
+         check-entry-owner
          group-by-parent-and-sort-by-vote
          create-comment-tree
          flat-one-level
@@ -80,6 +80,14 @@
                                                     [:a {:class "pagetopwhite", :id "loginId", :href "/#/login"} "login"])
                                                   ]]]]]]]
                                            [:tr {:style "height:10px"}]
+                                           [:tr
+                                            [:td
+                                             [:center
+                                              [:p
+                                               "Clojure News is in " [:b "beta"] ". Please don't hesitate to report bugs to "
+                                               [:a {:href "mailto:info@clojure.news"}
+                                                [:u
+                                                 "info@clojure.news"]]]]]]
                                            [:tr
                                             [:td {:id "messageContainerId"}]]
                                            [:tr
@@ -208,7 +216,7 @@
             :post! (fn [ctx]
 
                      (let [story (check-entry-exist id)]
-                       (check-story-owner story ctx)
+                       (check-entry-owner story ctx)
 
                        (let [data-as-map (resource-util/convert-data-map (::data ctx))
                              title (:title data-as-map)]
@@ -240,13 +248,12 @@
             :respond-with-entity? (fn [_]
                                     true)
 
-            ;;TODO check karma logic...
             :delete! (fn [ctx]
 
                        (let [story (check-entry-exist id)]
-                         (check-story-owner story ctx)
+                         (check-entry-owner story ctx)
 
-                         (entry-dao/delete-story-by-id id)
+                         (entry-dao/delete-entry-by-id id)
                          (comment-entry-dao/delete-comments-by-entry-id id)
                          (upvote-dao/delete-upvotes-by-entry-id id)
                          (user-dao/dec-user-karma-by-username (:created-by story))))
@@ -256,6 +263,7 @@
 
             :handle-exception #(resource-util/get-exception-message %)))
 
+;;Ask
 (defn create-ask
   []
   (resource :allowed-methods [:put]
@@ -294,7 +302,107 @@
             :handle-exception (fn [ctx]
                                 (resource-util/get-exception-message ctx))))
 
+(defn get-ask-by-id
+  [id]
+  (resource :allowed-methods [:get]
 
+            :available-media-types resource-util/avaliable-media-types
+
+            :handle-ok (fn [ctx]
+
+                         (check-entry-exist id)
+
+                         (let [user (get-user ctx)
+                               response {:user-obj     user
+                                         :ask-entry    (entry-dao/find-by-id id)
+                                         :ask-comments (create-comments (reduce #(conj %1 (assoc %2 :str-id (str (:_id %2))
+                                                                                                    :str-parent-comment-id (if (:parent-comment-id %2)
+                                                                                                                             (:parent-comment-id %2)
+                                                                                                                             nil)))
+                                                                                [] (comment-entry-dao/get-comments-by-entry-id id)))}]
+                           (if user
+                             (assoc response :ask-upvoted-comments (reduce #(conj %1 (:comment-id %2)) [] (upvote-dao/find-by-type-and-entry-id "ask-comment" id)))
+                             response)))
+
+            :handle-exception #(resource-util/get-exception-message %)))
+
+(defn get-ask-litte-info-by-id
+  [id]
+  (resource :allowed-methods [:get]
+
+            :available-media-types resource-util/avaliable-media-types
+
+            :handle-ok (fn [ctx]
+                         (let [ask (check-entry-exist id)]
+                           {:ask-entry ask
+                            :owner?    (= (:created-by ask) (-> ctx get-user :username))}))
+
+            :handle-exception #(resource-util/get-exception-message %)))
+
+(defn edit-ask-by-id
+  [id]
+  (resource :allowed-methods [:post]
+
+            :available-media-types resource-util/avaliable-media-types
+
+            :known-content-type? #(resource-util/check-content-type % resource-util/avaliable-media-types)
+
+            :malformed? #(resource-util/parse-json % ::data)
+
+            :authorized? #(resource-util/auth? %)
+
+            :post! (fn [ctx]
+
+                     (let [ask (check-entry-exist id)]
+                       (check-entry-owner ask ctx)
+
+                       (let [data-as-map (resource-util/convert-data-map (::data ctx))
+                             title (:title data-as-map)
+                             text (:text data-as-map)]
+
+                         (check-submit-title title)
+                         (check-submit-text text)
+
+                         (entry-dao/edit-ask-by-id id (str/trim title) text)
+                         {:cn-story id})))
+
+            :handle-created (fn [ctx]
+                              {:entry-id (-> ctx :cn-story)})
+
+            :handle-exception #(resource-util/get-exception-message %)))
+
+(defn delete-ask-by-id
+  [id]
+  (resource :allowed-methods [:delete]
+
+            :available-media-types resource-util/avaliable-media-types
+
+            :known-content-type? #(resource-util/check-content-type % resource-util/avaliable-media-types)
+
+            :malformed? #(resource-util/parse-json % ::data)
+
+            :authorized? #(resource-util/auth? %)
+
+            :new? (fn [_]
+                    false)
+
+            :respond-with-entity? (fn [_]
+                                    true)
+
+            :delete! (fn [ctx]
+
+                       (let [ask (check-entry-exist id)]
+                         (check-entry-owner ask ctx)
+
+                         (entry-dao/delete-entry-by-id id)
+                         (comment-entry-dao/delete-comments-by-entry-id id)
+                         (upvote-dao/delete-upvotes-by-entry-id id)
+                         (user-dao/dec-user-karma-by-username (:created-by ask))))
+
+            :handle-ok (fn [_]
+                         {:deleted? true})
+
+            :handle-exception #(resource-util/get-exception-message %)))
 
 (defn get-user
   [ctx]
@@ -303,7 +411,6 @@
       (if (= cookie (:cookie user))
         {:username (:username user)
          :karma    (:karma user)}))))
-
 
 (defn group-by-parent-and-sort-by-vote
   [comment-map]
@@ -388,7 +495,7 @@
     (catch Exception e
       (throw (RuntimeException. "No such entry!")))))
 
-(defn check-story-owner
-  [story ctx]
-  (when-not (= (:created-by story) (resource-util/get-username ctx))
+(defn check-entry-owner
+  [entry ctx]
+  (when-not (= (:created-by entry) (resource-util/get-username ctx))
     (throw (RuntimeException. "You are not the owner."))))

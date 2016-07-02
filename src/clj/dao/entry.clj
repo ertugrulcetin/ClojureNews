@@ -26,15 +26,17 @@
    ^String title]
   (mc/update-by-id db/clojure-news coll (ObjectId. id) {$set {"title" title}}))
 
-(defn delete-story-by-id
-  [^String id]
-  (mc/remove-by-id db/clojure-news coll (ObjectId. id)))
-
 (defn create-ask
   [^String title
    ^String text
    ^String created-by]
   (mc/insert-and-return db/clojure-news coll (entity-util/ask title text created-by)))
+
+(defn edit-ask-by-id
+  [^String id
+   ^String title
+   ^String text]
+  (mc/update-by-id db/clojure-news coll (ObjectId. id) {$set {"title" title "text" text}}))
 
 (defn get-newest-stories-and-asks
   []
@@ -43,6 +45,10 @@
                                {:type "story"}]})
                    (sort {:created-date 1})
                    (paginate :page 1 :per-page 30)))
+
+(defn delete-entry-by-id
+  [^String id]
+  (mc/remove-by-id db/clojure-news coll (ObjectId. id)))
 
 (defn inc-entry-comment-count
   [^String id]

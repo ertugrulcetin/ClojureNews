@@ -44,7 +44,7 @@
   [line]
   (let [tokens (reduce (fn [coll-t token]
                          (cond
-                           (validation/submit-url? token) (conj coll-t [:a {:href token :target "_blank"} token])
+                           (validation/submit-url? token) (conj coll-t [:a {:href token :target "_blank"} [:u token]])
                            (some? (re-seq #"[*].+[*]" token)) (conj coll-t [:i (get-italic-token token)])
                            :else (conj coll-t token))) [] (str/split line #"\s+"))
         added-whitespace (interpose " " tokens)]

@@ -16,8 +16,8 @@ if(typeof util.view.message_container !== 'undefined'){
 util.view.message_container = goog.dom.getElement("messageContainerId");
 }
 util.view.create_field_val_map = (function util$view$create_field_val_map(field_ids){
-return cljs.core.reduce.call(null,(function (p1__26676_SHARP_,p2__26677_SHARP_){
-return cljs.core.assoc.call(null,p1__26676_SHARP_,cljs.core.keyword.call(null,goog.dom.getElement(p2__26677_SHARP_).name),goog.dom.getElement(p2__26677_SHARP_).value);
+return cljs.core.reduce.call(null,(function (p1__27345_SHARP_,p2__27346_SHARP_){
+return cljs.core.assoc.call(null,p1__27345_SHARP_,cljs.core.keyword.call(null,goog.dom.getElement(p2__27346_SHARP_).name),goog.dom.getElement(p2__27346_SHARP_).value);
 }),cljs.core.PersistentArrayMap.EMPTY,field_ids);
 });
 util.view.render_error_message = (function util$view$render_error_message(message){
@@ -36,8 +36,8 @@ util.view.change_url = (function util$view$change_url(path){
 return window.location = [cljs.core.str("http://"),cljs.core.str(window.location.host),cljs.core.str(path)].join('');
 });
 util.view.in_QMARK_ = (function util$view$in_QMARK_(element,coll){
-return cljs.core.some.call(null,(function (p1__26678_SHARP_){
-return cljs.core._EQ_.call(null,element,p1__26678_SHARP_);
+return cljs.core.some.call(null,(function (p1__27347_SHARP_){
+return cljs.core._EQ_.call(null,element,p1__27347_SHARP_);
 }),coll);
 });
 util.view.get_italic_token = (function util$view$get_italic_token(token){
@@ -49,7 +49,7 @@ return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMP
 util.view.create_tokens = (function util$view$create_tokens(line){
 var tokens = cljs.core.reduce.call(null,(function (coll_t,token){
 if(cljs.core.truth_(cljc.validation.submit_url_QMARK_.call(null,token))){
-return cljs.core.conj.call(null,coll_t,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"a","a",-2123407586),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"href","href",-793805698),token,new cljs.core.Keyword(null,"target","target",253001721),"_blank"], null),token], null));
+return cljs.core.conj.call(null,coll_t,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"a","a",-2123407586),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"href","href",-793805698),token,new cljs.core.Keyword(null,"target","target",253001721),"_blank"], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"u","u",-1156634785),token], null)], null));
 } else {
 if(cljs.core.some_QMARK_.call(null,cljs.core.re_seq.call(null,/[*].+[*]/,token))){
 return cljs.core.conj.call(null,coll_t,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"i","i",-1386841315),util.view.get_italic_token.call(null,token)], null));
@@ -72,23 +72,23 @@ return cljs.core.conj.call(null,coll_l,util.view.create_tokens.call(null,line));
 }),cljs.core.PersistentVector.EMPTY,clojure.string.split.call(null,paragraph,/\n/));
 });
 util.view.group_code_tokens = (function util$view$group_code_tokens(lines){
-return cljs.core.reduce.call(null,(function (p1__26680_SHARP_,p2__26679_SHARP_){
-if(cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"code","code",1586293142),cljs.core.first.call(null,p2__26679_SHARP_))){
-if(cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"pre","pre",2118456869),cljs.core.first.call(null,cljs.core.last.call(null,p1__26680_SHARP_)))){
-return cljs.core.conj.call(null,cljs.core.vec.call(null,cljs.core.drop_last.call(null,p1__26680_SHARP_)),cljs.core.conj.call(null,cljs.core.conj.call(null,cljs.core.last.call(null,p1__26680_SHARP_),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"br","br",934104792)], null)),p2__26679_SHARP_));
+return cljs.core.reduce.call(null,(function (p1__27349_SHARP_,p2__27348_SHARP_){
+if(cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"code","code",1586293142),cljs.core.first.call(null,p2__27348_SHARP_))){
+if(cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"pre","pre",2118456869),cljs.core.first.call(null,cljs.core.last.call(null,p1__27349_SHARP_)))){
+return cljs.core.conj.call(null,cljs.core.vec.call(null,cljs.core.drop_last.call(null,p1__27349_SHARP_)),cljs.core.conj.call(null,cljs.core.conj.call(null,cljs.core.last.call(null,p1__27349_SHARP_),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"br","br",934104792)], null)),p2__27348_SHARP_));
 } else {
-return cljs.core.conj.call(null,p1__26680_SHARP_,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"pre","pre",2118456869),p2__26679_SHARP_], null));
+return cljs.core.conj.call(null,p1__27349_SHARP_,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"pre","pre",2118456869),p2__27348_SHARP_], null));
 }
 } else {
-return cljs.core.conj.call(null,p1__26680_SHARP_,p2__26679_SHARP_);
+return cljs.core.conj.call(null,p1__27349_SHARP_,p2__27348_SHARP_);
 }
 }),cljs.core.PersistentVector.EMPTY,lines);
 });
 util.view.split_into_paragraphs = (function util$view$split_into_paragraphs(commentt){
 return cljs.core.reduce.call(null,(function (coll_p,paragraph){
 return cljs.core.conj.call(null,coll_p,cljs.core.reverse.call(null,cljs.core.into.call(null,cljs.core.List.EMPTY,util.view.group_code_tokens.call(null,util.view.split_into_lines.call(null,paragraph)))));
-}),cljs.core.PersistentVector.EMPTY,cljs.core.reduce.call(null,cljs.core.conj,cljs.core.PersistentVector.EMPTY,cljs.core.filter.call(null,(function (p1__26681_SHARP_){
-return !(clojure.string.blank_QMARK_.call(null,p1__26681_SHARP_));
+}),cljs.core.PersistentVector.EMPTY,cljs.core.reduce.call(null,cljs.core.conj,cljs.core.PersistentVector.EMPTY,cljs.core.filter.call(null,(function (p1__27350_SHARP_){
+return !(clojure.string.blank_QMARK_.call(null,p1__27350_SHARP_));
 }),clojure.string.split.call(null,commentt,/\n{2,}/))));
 });
 util.view.parse_comment = (function util$view$parse_comment(commentt){
@@ -98,8 +98,8 @@ util.view.scroll_to_top = (function util$view$scroll_to_top(){
 return window.scrollTo((0),document.body.scrollHeight);
 });
 util.view.generate_comment_status = (function util$view$generate_comment_status(number_of_comments){
-var G__26683 = number_of_comments;
-switch (G__26683) {
+var G__27352 = number_of_comments;
+switch (G__27352) {
 case (0):
 return "discuss";
 

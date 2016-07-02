@@ -1,4 +1,4 @@
-(ns view.story-entry
+(ns view.entry.story-entry
   (:require [util.view]))
 
 (declare generate-comment-status

@@ -10,7 +10,7 @@
          check-not-comment-owner
          check-not-duplicate-vote)
 
-(defn create-story-comment-upvote
+(defn create-comment-upvote
   [comment-id]
   (resource :allowed-methods [:put]
 
@@ -20,26 +20,23 @@
 
             :malformed? #(resource-util/parse-json % ::data)
 
-            :authorized? (fn [ctx]
-
-                           (if-let [cookie (resource-util/get-cookie ctx)]
-                             (if-let [username (resource-util/get-username-from-cookie ctx)]
-                               (if-let [user (user-dao/find-by-username username)]
-                                 (if (= cookie (:cookie user))
-                                   {:user-obj user})))))
+            :authorized? #(resource-util/auth? %)
 
             :put! (fn [ctx]
 
                     (let [commentt (check-comment-exists comment-id)]
                       (check-not-comment-owner commentt ctx)
                       (check-not-duplicate-vote (-> ctx :user-obj :username) comment-id)
-                      (upvote-dao/create-upvote (-> ctx :user-obj :username) "story-comment" (:entry-id commentt) comment-id)))
+                      (println "Here is the type: "(:type commentt))
+                      (upvote-dao/create-upvote (-> ctx :user-obj :username)
+                                                (if (= (:type commentt) "story") "story-comment" "ask-comment")
+                                                (:entry-id commentt)
+                                                comment-id)))
 
             :handle-created (fn [_]
                               {:upvoted? true})
 
-            :handle-exception (fn [ctx]
-                                (resource-util/get-exception-message ctx))))
+            :handle-exception #(resource-util/get-exception-message %)))
 
 (defn check-comment-exists
   [comment-id]

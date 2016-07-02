@@ -1,0 +1,2 @@
+;; Analyzed by ClojureScript 1.8.51
+{:name view.entry.de, :doc nil, :excludes #{}, :use-macros nil, :require-macros nil, :uses nil, :requires nil, :imports nil}

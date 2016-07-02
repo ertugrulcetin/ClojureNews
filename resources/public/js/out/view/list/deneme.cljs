@@ -1,0 +1,1 @@
+(ns view.list.deneme)
