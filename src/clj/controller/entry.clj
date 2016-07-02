@@ -220,6 +220,40 @@
 
             :handle-exception #(resource-util/get-exception-message %)))
 
+(defn delete-story-by-id
+  [id]
+  (resource :allowed-methods [:delete]
+
+            :available-media-types resource-util/avaliable-media-types
+
+            :known-content-type? #(resource-util/check-content-type % resource-util/avaliable-media-types)
+
+            :malformed? #(resource-util/parse-json % ::data)
+
+            :authorized? #(resource-util/auth? %)
+
+            :new? (fn [_]
+                    false)
+
+            :respond-with-entity? (fn [_]
+                                    true)
+
+            ;;TODO check karma logic...
+            :delete! (fn [ctx]
+
+                       (let [story (check-entry-exist id)]
+                         (check-story-owner story ctx)
+
+                         (entry-dao/delete-story-by-id id)
+                         (comment-entry-dao/delete-comments-by-entry-id id)
+                         (upvote-dao/delete-upvotes-by-entry-id id)
+                         (user-dao/dec-user-karma-by-username (:created-by story))))
+
+            :handle-ok (fn [_]
+                         {:deleted? true})
+
+            :handle-exception #(resource-util/get-exception-message %)))
+
 (defn create-ask
   []
   (resource :allowed-methods [:put]

@@ -28,3 +28,7 @@
    ^String entry-id]
   (mc/find-maps db/clojure-news coll {:type     type
                                       :entry-id entry-id}))
+
+(defn delete-upvotes-by-entry-id
+  [^String entry-id]
+  (mc/remove db/clojure-news coll {:entry-id entry-id}))

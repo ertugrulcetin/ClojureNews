@@ -1,5 +1,5 @@
 (ns controller.entry
-  (:require [ajax.core :as ajax :refer [GET POST PUT]]
+  (:require [ajax.core :as ajax :refer [GET POST PUT DELETE]]
             [reagent.core :as r]
             [goog.dom :as dom]
             [util.view]
@@ -12,7 +12,9 @@
 
 (declare add-event-listener-to-add-comment-button
          add-event-listener-to-upvote-buttons
-         add-event-listener-to-edit-story-button)
+         add-event-listener-to-edit-story-button
+         add-event-listener-to-story-button-yes
+         add-event-listener-to-story-button-no)
 
 (defn home-page
   []
@@ -66,6 +68,31 @@
              :format          (ajax/json-request-format)
              :response-format (ajax/json-response-format {:keywords? true})}))))
 
+(defn delete-story-by-id
+  [id]
+  (GET (str "/entry/story/info/" id)
+       {:handler         (fn [response]
+                           (r/render-component [(fn []
+                                                  (view.story-entry/component-delete response))] util.view/main-container)
+                           (add-event-listener-to-story-button-yes id)
+                           (add-event-listener-to-story-button-no))
+        :error-handler   util.controller/error-handler
+        :format          (ajax/json-request-format)
+        :response-format (ajax/json-response-format {:keywords? true})}))
+
+(defn delete-story
+  [id]
+  (DELETE (str "/entry/story/delete/" id)
+          {:handler         (fn []
+                              (util.view/change-url "/"))
+           :error-handler   util.controller/error-handler
+           :format          (ajax/json-request-format)
+           :response-format (ajax/json-response-format {:keywords? true})}))
+
+(defn dont-delete-story
+  []
+  (util.view/change-url "/"))
+
 (defn add-event-listener-to-add-comment-button
   [entry id]
   (.addEventListener (dom/getElement "buttonAddCommentId") "click" (fn [_]
@@ -84,4 +111,14 @@
   [id]
   (.addEventListener (dom/getElement "buttonStoryEditId") "click" (fn [_]
                                                                     (edit-story id ["titleId"]))))
+
+(defn add-event-listener-to-story-button-yes
+  [id]
+  (.addEventListener (dom/getElement "buttonDeleteStoryYesId") "click" (fn [_]
+                                                                         (delete-story id))))
+
+(defn add-event-listener-to-story-button-no
+  []
+  (.addEventListener (dom/getElement "buttonDeleteStoryNoId") "click" (fn [_]
+                                                                        (dont-delete-story))))
 

@@ -45,3 +45,11 @@
 (defn update-password-by-username
   [^String username ^String new-password]
   (mc/update db/clojure-news coll {:username username} {$set {"password" new-password}}))
+
+(defn inc-user-karma-by-username
+  [^String username]
+  (mc/update db/clojure-news coll {:username username} {$inc {:number-of-comments 1}}))
+
+(defn dec-user-karma-by-username
+  [^String username]
+  (mc/update db/clojure-news coll {:username username} {$inc {:number-of-comments -1}}))

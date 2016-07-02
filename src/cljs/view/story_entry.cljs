@@ -265,3 +265,59 @@
     [:tr
      [:td
       [:button {:id "buttonStoryEditId"} "update"]]]]])
+
+
+(defn component-delete
+  [story]
+  [:div
+
+   [:table {:border "0"}
+    [:tbody
+
+     (list
+       [:tr {:class "athing"}
+
+        [:td {:text-align "right" :vertical-align "top" :class "title"}
+         [:span {:class "rank"}]]
+
+        [:td {:vertical-align "top" :class "votelinks"}
+         [:center
+
+          (if (-> story :owner?)
+            [:font {:color "#5fba7d"} "*"]
+            [:a {:id "aa" :href "#"}
+             [:div {:class "votearrow" :title "upvote"}]])]]
+
+        [:td {:class "title"}
+         [:a {:href (-> story :story-entry :url) :class "storylink"} (-> story :story-entry :title)]
+         [:span {:class "sitebit comhead"}
+          " (" [:a {:href "#"}
+                [:span {:class "sitestr"}
+                 (-> story :story-entry :pure-url)]] ")"]]]
+
+       [:tr
+        [:td {:colSpan "2"}]
+        [:td {:class "subtext"}
+         [:span {:id "span" :class "score"}
+          (util.view/generate-upvote-status (-> story :story-entry :upvote))
+          [:a {:href (str "/#/user/" (-> story :story-entry :created-by))} (-> story :story-entry :created-by)]
+          [:span {:class "age"} " | "
+           [:a {:href (str "/#/story/" (-> story :story-entry :_id))} (util.view/generate-age-status (-> story :story-entry :created-date))] " | "
+           [:a {:href (str "/#/story/" (-> story :story-entry :_id))} (util.view/generate-comment-status (-> story :story-entry :number-of-comments))]
+           (when (story-owner? story)
+             (list " | "
+                   [:a {:href (str "/#/story/edit/" (-> story :story-entry :_id))} "edit"]
+                   " | "
+                   [:a {:href (str "/#/story/delete/" (-> story :story-entry :_id))} "delete"]))]]]]
+
+       [:tr {:style {:height "10px"}}]
+
+       [:tr
+        [:td {:colSpan "2"}]
+        [:td
+         "Do you want this to be deleted?"
+         [:br]
+         [:br]
+         [:button {:id "buttonDeleteStoryYesId"} "yes"]
+         "  "
+         [:button {:id "buttonDeleteStoryNoId"} "no"]]])]]])

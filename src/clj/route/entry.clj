@@ -20,6 +20,9 @@
            (POST "/entry/story/edit/:id" [id]
              (controller/edit-story-by-id id))
 
+           (DELETE "/entry/story/delete/:id" [id]
+             (controller/delete-story-by-id id))
+
            (GET "/entry/story/info/:id" [id]
              (controller/get-story-litte-info-by-id id))
 

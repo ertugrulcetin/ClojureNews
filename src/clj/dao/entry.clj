@@ -26,6 +26,10 @@
    ^String title]
   (mc/update-by-id db/clojure-news coll (ObjectId. id) {$set {"title" title}}))
 
+(defn delete-story-by-id
+  [^String id]
+  (mc/remove-by-id db/clojure-news coll (ObjectId. id)))
+
 (defn create-ask
   [^String title
    ^String text

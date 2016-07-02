@@ -13,5 +13,8 @@
 (defroute edit-story-by-id "/story/edit/:id" [id]
           (controller.entry/edit-story-by-id id))
 
+(defroute delete-story-by-id "/story/delete/:id" [id]
+          (controller.entry/delete-story-by-id id))
+
 ;(defroute ask "/ask/:id" [id]
 ;          (controller.entry/ask id))

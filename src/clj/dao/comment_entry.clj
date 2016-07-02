@@ -43,6 +43,10 @@
   [^String id]
   (mc/remove-by-id db/clojure-news coll (ObjectId. id)))
 
+(defn delete-comments-by-entry-id
+  [^String entry-id]
+  (mc/remove db/clojure-news coll {:entry-id entry-id}))
+
 
 ;(create-comment-entry "575e7d6d452ab47eca8184f0" "keriman" "57694297487ebf28874a396a" "Fuck me in the ass" ::story)
 
