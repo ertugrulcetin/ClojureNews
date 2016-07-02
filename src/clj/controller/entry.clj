@@ -144,10 +144,12 @@
                       (check-submit-title title)
                       (check-submit-url url)
 
-                      {:cn-story (entry-dao/create-story (str/trim title)
-                                                         (str/trim url)
-                                                         (resource-util/get-pure-url (str/trim url))
-                                                         (:username (:user-obj ctx)))}))
+                      (let [story (entry-dao/create-story (str/trim title)
+                                                          (str/trim url)
+                                                          (resource-util/get-pure-url (str/trim url))
+                                                          (resource-util/get-username ctx))]
+                        (user-dao/inc-user-karma-by-username (resource-util/get-username ctx))
+                        {:cn-story story})))
 
             :handle-created (fn [ctx]
                               {:entry-id (-> ctx :cn-story :_id)})

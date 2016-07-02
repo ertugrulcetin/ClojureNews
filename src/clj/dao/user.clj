@@ -48,8 +48,8 @@
 
 (defn inc-user-karma-by-username
   [^String username]
-  (mc/update db/clojure-news coll {:username username} {$inc {:number-of-comments 1}}))
+  (mc/update db/clojure-news coll {:username username} {$inc {:karma 1}}))
 
 (defn dec-user-karma-by-username
   [^String username]
-  (mc/update db/clojure-news coll {:username username} {$inc {:number-of-comments -1}}))
+  (mc/update db/clojure-news coll {:username username} {$inc {:karma -1}}))
