@@ -7,6 +7,7 @@
             [view.entry.story-entry]
             [view.entry.ask-entry]
             [view.list.entry]
+            [view.list.story]
             [controller.upvote]
             [controller.comment-entry]
             [cljc.validation :as validation]))
@@ -35,7 +36,7 @@
   (GET (str "/entry/story/p/" page)
        {:handler         (fn [response]
                            (r/render-component [(fn []
-                                                  (view.list.entry/component-story-and-ask response))] util.view/main-container))
+                                                  (view.list.story/component-list-story response page))] util.view/main-container))
         :error-handler   util.controller/error-handler
         :format          (ajax/json-request-format)
         :response-format (ajax/json-response-format {:keywords? true})}))

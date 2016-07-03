@@ -6,6 +6,9 @@
 (defroute home-page "/" []
           (controller.entry/home-page))
 
+(defroute get-stories-by-page "/story/p/:page" [page]
+          (controller.entry/get-stories-by-page page))
+
 (defroute get-story-by-id "/story/:id" [id]
           (controller.entry/get-story-by-id id))
 

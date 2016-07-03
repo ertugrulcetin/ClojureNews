@@ -136,11 +136,11 @@
 
             :handle-ok (fn [ctx]
 
-                         (let [stories (get-entry-by-page "story" page 3 7)]
+                         (let [stories (get-entry-by-page "story" (Integer/parseInt page) 3 7)]
                            (if-let [user (get-user ctx)]
                              {:story-entry            stories
                               :story-own-entries      (get-own-entries (:username user) "story" stories)
-                              :story-upvoted-comments (get-upvoted-entries (:username user) "story" stories)}
+                              :story-upvoted-entries (get-upvoted-entries (:username user) "story" stories)}
                              {:story-entry stories})))
 
             :handle-exception #(resource-util/get-exception-message %)))

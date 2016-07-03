@@ -38,4 +38,3 @@
   (mc/find-maps db/clojure-news coll {$and [{:created-by username}
                                             {:type type}
                                             {:entry-id {$in entries}}]}))
-
