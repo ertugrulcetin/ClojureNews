@@ -7,6 +7,10 @@
 
 (defonce avaliable-media-types ["application/json" "application/json; charset=UTF-8" "application/json; charset=utf-8"])
 
+(defonce data-per-page 30)
+
+(defonce last-n-days 30)
+
 (defn- body-as-string
   [ctx]
   (if-let [body (get-in ctx [:request :body])]

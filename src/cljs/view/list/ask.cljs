@@ -1,11 +1,11 @@
-(ns view.list.story
+(ns view.list.ask
   (:require [util.view]))
 
-(declare story-owner?
+(declare ask-owner?
          upvoted?)
 
-(defn component-list-story
-  [stories page]
+(defn component-list-ask
+  [asks page]
 
   [:table {:class "itemlist" :border "0" :cellPadding "0" :cellSpacing "0"}
    [:tbody
@@ -13,7 +13,7 @@
     (let [counter (atom (-> (.parseInt js/window page)
                             (- 1)
                             (* 30)))]
-      (for [story (-> stories :story-entry)]
+      (for [ask (-> asks :ask-entry)]
         (list
 
           [:tr {:class "athing"}
@@ -23,54 +23,49 @@
 
            [:td {:class "votelinks" :style {:vertical-align "top"}}
             (cond
-              (story-owner? story stories)
+              (ask-owner? ask asks)
               [:center
                [:font {:color "#5fba7d"} "*"]
                [:br]
                [:img {:src "/img/s.gif", :height "1", :width "14"}]]
 
-              (upvoted? story stories)
+              (upvoted? ask asks)
               [:center
                [:a {:style {:visibility "hidden"}}
                 [:div {:class "votearrow" :title "upvote"}]]]
 
               :else
               [:center
-               [:a {:id    (str "id-upvote-" (:_id story))
+               [:a {:id    (str "id-upvote-" (:_id ask))
                     :class "myClickableThingy"
                     :style {:visiblity "none"}}
                 [:div {:class "votearrow" :title "upvote"}]]])]
 
            [:td {:class "title"}
             [:span {:class "deadmark"}]
-            [:a {:href (:url story) :target "_blank"} (:title story)]
-            [:span {:class "sitebit comhead"}
-             " (" [:span {:class "sitestr"}
-                   (:pure-url story)] ")"]]]
+            [:a {:href (:url ask) :target "_blank"} (str "Ask CN: " (:title ask))]]]
 
           [:tr
            [:td {:colSpan "2"}]
            [:td {:class "subtext"}
             [:span {:id "span" :class "score"}
-             (util.view/generate-upvote-status (:upvote story))
-             [:a {:href (str "/#/user/" (:created-by story))} (:created-by story)]
+             (util.view/generate-upvote-status (:upvote ask))
+             [:a {:href (str "/#/user/" (:created-by ask))} (:created-by ask)]
              [:span {:class "age"} " | "
-              [:a {:href (str "/#/story/" (:_id story))} (util.view/generate-age-status (:created-date story))] " | "
-              [:a {:href (str "/#/story/" (:_id story))} (util.view/generate-comment-status (:number-of-comments story))]
-              (when (util.view/in? (:_id story) (-> stories :story-own-entries))
+              [:a {:href (str "/#/ask/" (:_id ask))} (util.view/generate-age-status (:created-date ask))] " | "
+              [:a {:href (str "/#/ask/" (:_id ask))} (util.view/generate-comment-status (:number-of-comments ask))]
+              (when (util.view/in? (:_id ask) (-> asks :ask-own-entries))
                 (list " | "
-                      [:a {:href (str "/#/story/edit/" (:_id story))} "edit"]
+                      [:a {:href (str "/#/ask/edit/" (:_id ask))} "edit"]
                       " | "
-                      [:a {:href (str "/#/story/delete/" (:_id story))} "delete"]))]]]]
+                      [:a {:href (str "/#/ask/delete/" (:_id ask))} "delete"]))]]]]
 
           [:tr {:class "spacer" :style {:height "7"}}])))]])
 
-(defn story-owner?
-  [story stories]
-  (util.view/in? (:_id story) (-> stories :story-own-entries)))
+(defn ask-owner?
+  [ask asks]
+  (util.view/in? (:_id ask) (-> asks :ask-own-entries)))
 
 (defn upvoted?
-  [story stories]
-  (util.view/in? (:_id story) (-> stories :story-upvoted-entries)))
-
-
+  [ask asks]
+  (util.view/in? (:_id ask) (-> asks :ask-upvoted-entries)))

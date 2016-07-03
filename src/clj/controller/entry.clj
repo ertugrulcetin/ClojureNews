@@ -21,6 +21,7 @@
          check-submit-text
          check-entry-exist
          check-entry-owner
+         check-page-data-format
          group-by-parent-and-sort-by-vote
          create-comment-tree
          flat-one-level
@@ -128,23 +129,6 @@
 
             :handle-exception #(resource-util/get-exception-message %)))
 
-(defn get-stories-by-page
-  [page]
-  (resource :allowed-methods [:get]
-
-            :available-media-types resource-util/avaliable-media-types
-
-            :handle-ok (fn [ctx]
-
-                         (let [stories (get-entry-by-page "story" (Integer/parseInt page) 3 7)]
-                           (if-let [user (get-user ctx)]
-                             {:story-entry            stories
-                              :story-own-entries      (get-own-entries (:username user) "story" stories)
-                              :story-upvoted-entries (get-upvoted-entries (:username user) "story" stories)}
-                             {:story-entry stories})))
-
-            :handle-exception #(resource-util/get-exception-message %)))
-
 ;;Story
 (defn create-story
   []
@@ -170,7 +154,7 @@
                       (check-submit-title title)
                       (check-submit-url url)
 
-                      (let [story (entry-dao/create-story (str/trim title)
+                      (let [story (entry-dao/create-story (str/capitalize (str/trim title))
                                                           (str/trim url)
                                                           (resource-util/get-pure-url (str/trim url))
                                                           (resource-util/get-username ctx))]
@@ -179,6 +163,23 @@
 
             :handle-created (fn [ctx]
                               {:entry-id (-> ctx :cn-story :_id)})
+
+            :handle-exception #(resource-util/get-exception-message %)))
+
+(defn get-stories-by-page
+  [page]
+  (resource :allowed-methods [:get]
+
+            :available-media-types resource-util/avaliable-media-types
+
+            :handle-ok (fn [ctx]
+
+                         (let [stories (get-entry-by-page "story" (check-page-data-format page) resource-util/data-per-page resource-util/last-n-days)]
+                           (if-let [user (get-user ctx)]
+                             {:story-entry           stories
+                              :story-own-entries     (get-own-entries (:username user) "story" stories)
+                              :story-upvoted-entries (get-upvoted-entries (:username user) "story" stories)}
+                             {:story-entry stories})))
 
             :handle-exception #(resource-util/get-exception-message %)))
 
@@ -312,13 +313,32 @@
                       (check-submit-title title)
                       (check-submit-text text)
 
-                      {:cn-ask (entry-dao/create-ask (str/trim title) (str/trim text) (:username (:user-obj ctx)))}))
+                      {:cn-ask (entry-dao/create-ask (str/capitalize (str/trim title))
+                                                     (str/trim text)
+                                                     (:username (:user-obj ctx)))}))
 
             :handle-created (fn [ctx]
                               {:entry-id (-> ctx :cn-ask :_id)})
 
             :handle-exception (fn [ctx]
                                 (resource-util/get-exception-message ctx))))
+
+(defn get-ask-by-page
+  [page]
+  (resource :allowed-methods [:get]
+
+            :available-media-types resource-util/avaliable-media-types
+
+            :handle-ok (fn [ctx]
+
+                         (let [stories (get-entry-by-page "ask" (check-page-data-format page) resource-util/data-per-page resource-util/last-n-days)]
+                           (if-let [user (get-user ctx)]
+                             {:ask-entry           stories
+                              :ask-own-entries     (get-own-entries (:username user) "ask" stories)
+                              :ask-upvoted-entries (get-upvoted-entries (:username user) "ask" stories)}
+                             {:ask-entry stories})))
+
+            :handle-exception #(resource-util/get-exception-message %)))
 
 (defn get-ask-by-id
   [id]
@@ -536,3 +556,13 @@
   [entry ctx]
   (when-not (= (:created-by entry) (resource-util/get-username ctx))
     (throw (RuntimeException. "You are not the owner."))))
+
+(defn check-page-data-format
+  [page]
+  (try
+    (let [p-int (Integer/parseInt page)]
+      (when (<= p-int 0)
+        (throw (RuntimeException. "Not valid page number.")))
+      p-int)
+    (catch Exception e
+      (throw (RuntimeException. "Not valid page number.")))))

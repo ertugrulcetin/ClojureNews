@@ -8,6 +8,7 @@
             [view.entry.ask-entry]
             [view.list.entry]
             [view.list.story]
+            [view.list.ask]
             [controller.upvote]
             [controller.comment-entry]
             [cljc.validation :as validation]))
@@ -113,6 +114,16 @@
                                                   (view.entry.ask-entry/component-ask response))] util.view/main-container)
                            (add-event-listener-to-add-comment-button get-ask-by-id id)
                            (add-event-listener-to-upvote-buttons response :ask))
+        :error-handler   util.controller/error-handler
+        :format          (ajax/json-request-format)
+        :response-format (ajax/json-response-format {:keywords? true})}))
+
+(defn get-ask-by-page
+  [page]
+  (GET (str "/entry/ask/p/" page)
+       {:handler         (fn [response]
+                           (r/render-component [(fn []
+                                                  (view.list.ask/component-list-ask response page))] util.view/main-container))
         :error-handler   util.controller/error-handler
         :format          (ajax/json-request-format)
         :response-format (ajax/json-response-format {:keywords? true})}))

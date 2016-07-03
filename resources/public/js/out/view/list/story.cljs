@@ -1,6 +1,9 @@
 (ns view.list.story
   (:require [util.view]))
 
+(declare story-owner?
+         upvoted?)
+
 (defn component-list-story
   [stories page]
 
@@ -20,13 +23,13 @@
 
            [:td {:class "votelinks" :style {:vertical-align "top"}}
             (cond
-              (util.view/in? (:_id story) (-> stories :story-own-entries))
+              (story-owner? story stories)
               [:center
                [:font {:color "#5fba7d"} "*"]
                [:br]
                [:img {:src "/img/s.gif", :height "1", :width "14"}]]
 
-              (util.view/in? (:_id story) (-> stories :story-upvoted-entries))
+              (upvoted? story stories)
               [:center
                [:a {:style {:visibility "hidden"}}
                 [:div {:class "votearrow" :title "upvote"}]]]
@@ -40,11 +43,10 @@
 
            [:td {:class "title"}
             [:span {:class "deadmark"}]
-            [:a {:href (:url entry) :target "_blank"} (:title story)]
+            [:a {:href (:url story) :target "_blank"} (:title story)]
             [:span {:class "sitebit comhead"}
-             " (" [:a {:href (:pure-url story)}
-                   [:span {:class "sitestr"}
-                    (:pure-url story)]] ")"]]]
+             " (" [:span {:class "sitestr"}
+                   (:pure-url story)] ")"]]]
 
           [:tr
            [:td {:colSpan "2"}]
@@ -62,5 +64,13 @@
                       [:a {:href (str "/#/story/delete/" (:_id story))} "delete"]))]]]]
 
           [:tr {:class "spacer" :style {:height "7"}}])))]])
+
+(defn story-owner?
+  [story stories]
+  (util.view/in? (:_id story) (-> stories :story-own-entries)))
+
+(defn upvoted?
+  [story stories]
+  (util.view/in? (:_id story) (-> stories :story-upvoted-entries)))
 
 

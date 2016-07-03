@@ -37,6 +37,9 @@
            (GET "/entry/ask/:id" [id]
              (controller/get-ask-by-id id))
 
+           (GET "/entry/ask/p/:page" [page]
+             (controller/get-ask-by-page page))
+
            (GET "/entry/ask/info/:id" [id]
              (controller/get-ask-litte-info-by-id id))
 
