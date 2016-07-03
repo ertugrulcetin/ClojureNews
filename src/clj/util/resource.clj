@@ -79,9 +79,20 @@
   [ctx]
   (-> ctx :user-obj :username))
 
-(defmacro safe-fn
-  [form message]
-  `(try
-     ~form
-     (catch Throwable ~'_
-       (throw (RuntimeException. message)))))
+(defn create-rank
+  [number-of-votes hour]
+  (/ (- number-of-votes 1) (Math/pow (+ hour 2) 1.8)))
+
+(defn create-ranked-links
+  [links]
+  (sort-by :rank #(compare %2 %1) (reduce (fn [coll link]
+                                            (conj coll
+                                                  (assoc link :rank (create-rank (:upvote link)
+                                                                                 (-> (- (.getTime (Date.)) (.getTime (:created-date link)))
+                                                                                     (quot 1000)
+                                                                                     (quot 60)
+                                                                                     (quot 60)))))) [] links)))
+
+(defn get-links
+  [page data-per-page links]
+  (take data-per-page (drop (* (- data-per-page 1) (- page 1)) links)))

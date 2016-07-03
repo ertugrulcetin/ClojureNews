@@ -18,6 +18,9 @@
            (GET "/entry/story/:id" [id]
              (controller/get-story-by-id id))
 
+           (GET "/entry/story/p/:page" [page]
+             (controller/get-stories-by-page page))
+
            (POST "/entry/story/edit/:id" [id]
              (controller/edit-story-by-id id))
 

@@ -25,7 +25,10 @@
          create-comment-tree
          flat-one-level
          flat-until-every-vector
-         create-comments)
+         create-comments
+         get-entry-by-page
+         get-own-entries
+         get-upvoted-entries)
 
 (defn home-page
   []
@@ -123,9 +126,24 @@
             :handle-ok (fn [ctx]
                          (entry-dao/get-newest-stories-and-asks))
 
-            :handle-exception (fn [ctx]
-                                (resource-util/get-exception-message ctx))))
+            :handle-exception #(resource-util/get-exception-message %)))
 
+(defn get-stories-by-page
+  [page]
+  (resource :allowed-methods [:get]
+
+            :available-media-types resource-util/avaliable-media-types
+
+            :handle-ok (fn [ctx]
+
+                         (let [stories (get-entry-by-page "story" page 3 7)]
+                           (if-let [user (get-user ctx)]
+                             {:story-entry            stories
+                              :story-own-entries      (get-own-entries (:username user) "story" stories)
+                              :story-upvoted-comments (get-upvoted-entries (:username user) "story" stories)}
+                             {:story-entry stories})))
+
+            :handle-exception #(resource-util/get-exception-message %)))
 
 ;;Story
 (defn create-story
@@ -403,6 +421,25 @@
                          {:deleted? true})
 
             :handle-exception #(resource-util/get-exception-message %)))
+
+(defn get-own-entries
+  [username type entries]
+  (let [object-ids (reduce #(conj %1 (:_id %2)) [] entries)
+        own-entries (entry-dao/get-entries-by-username-and-entries-in-it username type object-ids)]
+    (reduce #(conj %1 (str (:_id %2))) [] own-entries)))
+
+(defn get-upvoted-entries
+  [username type entries]
+  (let [ids (reduce #(conj %1 (str (:_id %2))) [] entries)
+        upvoted-entries (upvote-dao/get-upvotes-by-username-and-upvotes-in-it username type ids)]
+    (reduce #(conj %1 (:entry-id %2)) [] upvoted-entries)))
+
+(defn get-entry-by-page
+  [entry-type page data-per-page last-n-days]
+
+  (let [entries (entry-dao/get-last-n-days-entries entry-type last-n-days)
+        ranked-entries (resource-util/create-ranked-links entries)]
+    (resource-util/get-links page data-per-page ranked-entries)))
 
 (defn get-user
   [ctx]

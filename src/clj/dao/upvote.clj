@@ -32,3 +32,10 @@
 (defn delete-upvotes-by-entry-id
   [^String entry-id]
   (mc/remove db/clojure-news coll {:entry-id entry-id}))
+
+(defn get-upvotes-by-username-and-upvotes-in-it
+  [username type entries]
+  (mc/find-maps db/clojure-news coll {$and [{:created-by username}
+                                            {:type type}
+                                            {:entry-id {$in entries}}]}))
+

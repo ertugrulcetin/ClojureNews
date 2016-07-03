@@ -5,7 +5,8 @@
             [monger.query :refer :all]
             [clj.dao.db :as db]
             [clj.util.entity :as entity-util])
-  (:import (org.bson.types ObjectId)))
+  (:import (org.bson.types ObjectId)
+           (java.util Date)))
 
 ;; entry Collection/Table
 (def coll "entry")
@@ -57,3 +58,18 @@
 (defn dec-entry-comment-count
   [^String id]
   (mc/update-by-id db/clojure-news coll (ObjectId. id) {$inc {:number-of-comments -1}}))
+
+(defn get-last-n-days-entries
+  [type day]
+  (mc/find-maps db/clojure-news coll {$and [{:type type}
+                                            {:created-date {$gte (Date. (- (.getTime (Date.)) (-> (* 1000)
+                                                                                                  (* 60)
+                                                                                                  (* 60)
+                                                                                                  (* 24)
+                                                                                                  (* (+ day 1)))))}}]}))
+
+(defn get-entries-by-username-and-entries-in-it
+  [username type entries]
+  (mc/find-maps db/clojure-news coll {$and [{:created-by username}
+                                            {:type type}
+                                            {:_id {$in entries}}]}))
