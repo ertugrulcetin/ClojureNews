@@ -174,11 +174,14 @@
 
             :handle-ok (fn [ctx]
 
-                         (let [stories (get-entry-by-page "story" (check-page-data-format page) resource-util/data-per-page resource-util/last-n-days)]
+                         (let [data-per-page-inc (+ resource-util/data-per-page 1)
+                               stories (get-entry-by-page "story" (check-page-data-format page) data-per-page-inc resource-util/last-n-days)
+                               real-stories (if (= (count stories) data-per-page-inc) (butlast stories) stories)]
                            (if-let [user (get-user ctx)]
-                             {:story-entry           stories
+                             {:story-entry           real-stories
                               :story-own-entries     (get-own-entries (:username user) "story" stories)
-                              :story-upvoted-entries (get-upvoted-entries (:username user) "story" stories)}
+                              :story-upvoted-entries (get-upvoted-entries (:username user) "story" stories)
+                              :more?                 (= data-per-page-inc (count stories))}
                              {:story-entry stories})))
 
             :handle-exception #(resource-util/get-exception-message %)))
@@ -331,12 +334,15 @@
 
             :handle-ok (fn [ctx]
 
-                         (let [stories (get-entry-by-page "ask" (check-page-data-format page) resource-util/data-per-page resource-util/last-n-days)]
+                         (let [data-per-page-inc (+ resource-util/data-per-page 1)
+                               asks (get-entry-by-page "ask" (check-page-data-format page) data-per-page-inc resource-util/last-n-days)
+                               real-asks (if (= (count asks) data-per-page-inc) (butlast asks) asks)]
                            (if-let [user (get-user ctx)]
-                             {:ask-entry           stories
-                              :ask-own-entries     (get-own-entries (:username user) "ask" stories)
-                              :ask-upvoted-entries (get-upvoted-entries (:username user) "ask" stories)}
-                             {:ask-entry stories})))
+                             {:ask-entry           real-asks
+                              :ask-own-entries     (get-own-entries (:username user) "ask" asks)
+                              :ask-upvoted-entries (get-upvoted-entries (:username user) "ask" asks)
+                              :more?               (= data-per-page-inc (count asks))}
+                             {:story-entry asks})))
 
             :handle-exception #(resource-util/get-exception-message %)))
 

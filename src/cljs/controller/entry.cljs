@@ -6,7 +6,6 @@
             [util.controller]
             [view.entry.story-entry]
             [view.entry.ask-entry]
-            [view.list.entry]
             [view.list.story]
             [view.list.ask]
             [controller.upvote]
@@ -21,16 +20,6 @@
          add-event-listener-to-story-button-no
          add-event-listener-to-ask-button-yes
          add-event-listener-to-ask-button-no)
-
-(defn home-page
-  []
-  (GET "/entry"
-       {:handler         (fn [response]
-                           (r/render-component [(fn []
-                                                  (view.list.entry/component-story-and-ask response))] util.view/main-container))
-        :error-handler   util.controller/error-handler
-        :format          (ajax/json-request-format)
-        :response-format (ajax/json-response-format {:keywords? true})}))
 
 (defn get-stories-by-page
   [page]

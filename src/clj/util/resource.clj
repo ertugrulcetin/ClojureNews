@@ -7,7 +7,7 @@
 
 (defonce avaliable-media-types ["application/json" "application/json; charset=UTF-8" "application/json; charset=utf-8"])
 
-(defonce data-per-page 30)
+(defonce data-per-page 5)
 
 (defonce last-n-days 30)
 

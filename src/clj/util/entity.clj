@@ -11,6 +11,7 @@
   [username password]
   {:_id              (ObjectId.)
    :created-date     (Date.)
+   :last-updated     nil
    :active?          true
    :show-email?      false
    :email            nil
@@ -32,10 +33,11 @@
   {:_id                (ObjectId.)
    :created-date       (Date.)
    :created-by         created-by
+   :last-updated       nil
    :title              title
    :url                url
    :pure-url           pure-url
-   :type               ::story
+   :type               "story"
    :upvote             1
    :number-of-comments 0})
 
@@ -44,12 +46,38 @@
   {:_id                (ObjectId.)
    :created-date       (Date.)
    :created-by         created-by
+   :last-updated       nil
    :title              title
    :text               text
-   :type               ::ask
+   :type               "ask"
    :upvote             1
    :number-of-comments 0})
 
+(defn job
+  [title url city country remote? created-by]
+  {:_id          (ObjectId.)
+   :created-date (Date.)
+   :created-by   created-by
+   :last-updated nil
+   :title        title
+   :url          url
+   :type         "job"
+   :city         city
+   :country      country
+   :remote?      remote?})
+
+(defn event
+  [title url starting-date city country created-by]
+  {:_id           (ObjectId.)
+   :created-date  (Date.)
+   :created-by    created-by
+   :last-updated  nil
+   :title         title
+   :url           url
+   :starting-date starting-date
+   :type          "event"
+   :city          city
+   :country       country})
 
 (defn comment-entry
   [entry-id created-by parent-comment-id content type]
@@ -57,6 +85,7 @@
    :created-date      (Date.)
    :entry-id          entry-id
    :created-by        created-by
+   :last-updated      nil
    :parent-comment-id parent-comment-id
    :upvote            1
    :content           content
