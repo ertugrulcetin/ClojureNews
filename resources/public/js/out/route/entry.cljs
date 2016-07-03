@@ -4,7 +4,10 @@
             [controller.entry]))
 
 (defroute home-page "/" []
-          (controller.entry/home-page))
+          (controller.entry/get-stories-by-page "1"))
+
+(defroute get-stories "/story" []
+          (controller.entry/get-stories-by-page "1"))
 
 (defroute get-story-by-id "/story/:id" [id]
           (controller.entry/get-story-by-id id))
@@ -17,6 +20,9 @@
 
 (defroute delete-story-by-id "/story/delete/:id" [id]
           (controller.entry/delete-story-by-id id))
+
+(defroute get-asks "/ask" []
+          (controller.entry/get-ask-by-page "1"))
 
 (defroute get-ask-by-id "/ask/:id" [id]
           (controller.entry/get-ask-by-id id))
