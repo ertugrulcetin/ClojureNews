@@ -1,8 +1,9 @@
 (ns view.submit
   (:require [reagent.core :as r]))
 
-(declare change-component
-         render)
+(declare render
+         change-component
+         number-input-checker)
 
 (defn component-story
   [submit]
@@ -166,9 +167,9 @@
     [:tr
      [:td "starting date:"]
      [:td
-      [:input {:id "startingDateDayId" :name "starting-date-day" :type "text" :placeholder "dd" :size "2"}]
-      [:input {:id "startingDateMonthId" :name "starting-date-month" :type "text" :placeholder "mm" :size "2"}]
-      [:input {:id "startingDateYearId" :name "starting-date-year" :type "text" :placeholder "yyyy" :size "4"}]]]
+      [:input {:id "startingDateDayId" :name "starting-date-day" :type "text" :placeholder "dd" :size "2" :on-key-down #(number-input-checker % 2)}]
+      [:input {:id "startingDateMonthId" :name "starting-date-month" :type "text" :placeholder "mm" :size "2" :on-key-down #(number-input-checker % 2)}]
+      [:input {:id "startingDateYearId" :name "starting-date-year" :type "text" :placeholder "yyyy" :size "4" :on-key-down #(number-input-checker % 4)}]]]
 
     [:tr
      [:td]
@@ -190,3 +191,13 @@
   [comp submit]
   (r/render-component [(fn []
                          (comp submit))] util.view/main-container))
+
+(defn number-input-checker
+  [e max-len]
+  (println (.-keyCode e))
+  (if (util.view/in? (.-keyCode e) [8 9 37 39])
+    e
+    (when-not (and (>= (.-keyCode e) 48)
+                   (<= (.-keyCode e) 57)
+                   (< (count (-> e .-target .-value)) max-len))
+      (.preventDefault e))))

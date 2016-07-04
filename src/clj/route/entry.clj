@@ -8,9 +8,6 @@
            (GET "/" []
              (controller/home-page))
 
-           (GET "/entry" []
-             (controller/entry))
-
            ;;Story
            (PUT "/entry/story" []
              (controller/create-story))

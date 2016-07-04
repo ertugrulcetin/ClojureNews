@@ -182,7 +182,8 @@
                               :story-own-entries     (get-own-entries (:username user) "story" stories)
                               :story-upvoted-entries (get-upvoted-entries (:username user) "story" stories)
                               :more?                 (= data-per-page-inc (count stories))}
-                             {:story-entry stories})))
+                             {:story-entry stories
+                              :more?       (= data-per-page-inc (count stories))})))
 
             :handle-exception #(resource-util/get-exception-message %)))
 
@@ -342,7 +343,8 @@
                               :ask-own-entries     (get-own-entries (:username user) "ask" asks)
                               :ask-upvoted-entries (get-upvoted-entries (:username user) "ask" asks)
                               :more?               (= data-per-page-inc (count asks))}
-                             {:story-entry asks})))
+                             {:ask-entry asks
+                              :more?     (= data-per-page-inc (count asks))})))
 
             :handle-exception #(resource-util/get-exception-message %)))
 
