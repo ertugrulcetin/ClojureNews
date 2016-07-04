@@ -50,5 +50,15 @@
            (PUT "/entry/job" []
              (controller/create-job))
 
-           )
+           (GET "/entry/job/p/:page" [page]
+             (controller/get-jobs-by-page page))
+
+           (GET "/entry/job/info/:id" [id]
+             (controller/get-job-litte-info-by-id id))
+
+           (POST "/entry/job/edit/:id" [id]
+             (controller/edit-job-by-id id))
+
+           (DELETE "/entry/job/delete/:id" [id]
+             (controller/delete-job-by-id id)))
 

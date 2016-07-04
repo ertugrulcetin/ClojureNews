@@ -3,6 +3,7 @@
   (:require [secretary.core]
             [controller.entry]))
 
+;Story
 (defroute home-page "/" []
           (controller.entry/get-stories-by-page "1"))
 
@@ -21,6 +22,7 @@
 (defroute delete-story-by-id "/story/delete/:id" [id]
           (controller.entry/delete-story-by-id id))
 
+;;Ask
 (defroute get-asks "/ask" []
           (controller.entry/get-ask-by-page "1"))
 
@@ -35,6 +37,19 @@
 
 (defroute delete-ask-by-id "/ask/delete/:id" [id]
           (controller.entry/delete-ask-by-id id))
+
+;;Job
+(defroute get-jobs "/jobs" []
+          (controller.entry/get-jobs-by-page "1"))
+
+(defroute get-jobs-by-page "/jobs/p/:page" [page]
+          (controller.entry/get-jobs-by-page page))
+
+(defroute edit-job-by-id "/jobs/edit/:id" [id]
+          (controller.entry/edit-job-by-id id))
+
+(defroute delete-job-by-id "/jobs/delete/:id" [id]
+          (controller.entry/delete-job-by-id id))
 
 ;(defroute ask "/ask/:id" [id]
 ;          (controller.entry/ask id))

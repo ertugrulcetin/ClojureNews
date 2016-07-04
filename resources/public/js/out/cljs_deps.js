@@ -45,12 +45,14 @@ goog.addDependency("../route/login.js", ['route.login'], ['cljs.core', 'controll
 goog.addDependency("../view/entry/story_entry.js", ['view.entry.story_entry'], ['cljs.core', 'util.view']);
 goog.addDependency("../view/entry/ask_entry.js", ['view.entry.ask_entry'], ['cljs.core', 'util.view']);
 goog.addDependency("../cljc/error_messages.js", ['cljc.error_messages'], ['cljs.core']);
+goog.addDependency("../view/list/job.js", ['view.list.job'], ['cljs.core', 'util.view']);
+goog.addDependency("../view/entry/job.js", ['view.entry.job'], ['cljs.core']);
 goog.addDependency("../view/list/story.js", ['view.list.story'], ['cljs.core', 'util.view']);
 goog.addDependency("../controller/upvote.js", ['controller.upvote'], ['ajax.core', 'cljs.core']);
 goog.addDependency("../view/comment_entry.js", ['view.comment_entry'], ['cljs.core', 'util.view']);
 goog.addDependency("../controller/comment_entry.js", ['controller.comment_entry'], ['goog.dom', 'ajax.core', 'reagent.core', 'cljs.core', 'util.controller', 'view.comment_entry', 'cljc.validation', 'util.view', 'clojure.string']);
 goog.addDependency("../view/list/ask.js", ['view.list.ask'], ['cljs.core', 'util.view']);
-goog.addDependency("../controller/entry.js", ['controller.entry'], ['goog.dom', 'view.entry.story_entry', 'ajax.core', 'view.entry.ask_entry', 'reagent.core', 'cljc.error_messages', 'cljs.core', 'util.controller', 'cljc.validation', 'util.view', 'view.list.story', 'controller.upvote', 'controller.comment_entry', 'view.list.ask']);
+goog.addDependency("../controller/entry.js", ['controller.entry'], ['goog.dom', 'view.entry.story_entry', 'ajax.core', 'view.entry.ask_entry', 'reagent.core', 'cljc.error_messages', 'cljs.core', 'view.list.job', 'view.entry.job', 'util.controller', 'cljc.validation', 'util.view', 'view.list.story', 'controller.upvote', 'controller.comment_entry', 'view.list.ask']);
 goog.addDependency("../route/entry.js", ['route.entry'], ['controller.entry', 'cljs.core', 'secretary.core']);
 goog.addDependency("../view/changepassword.js", ['view.changepassword'], ['cljs.core']);
 goog.addDependency("../controller/user.js", ['controller.user'], ['ajax.core', 'reagent.core', 'cljs.core', 'util.controller', 'view.changepassword', 'cljc.validation', 'cljc.string_util', 'util.view', 'view.user']);

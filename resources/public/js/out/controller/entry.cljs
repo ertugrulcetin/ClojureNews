@@ -8,8 +8,10 @@
             [util.controller]
             [view.entry.story-entry]
             [view.entry.ask-entry]
+            [view.entry.job]
             [view.list.story]
             [view.list.ask]
+            [view.list.job]
             [controller.upvote]
             [controller.comment-entry]))
 
@@ -20,7 +22,10 @@
          add-event-listener-to-story-button-yes
          add-event-listener-to-story-button-no
          add-event-listener-to-ask-button-yes
-         add-event-listener-to-ask-button-no)
+         add-event-listener-to-ask-button-no
+         add-event-listener-to-edit-job-button
+         add-event-listener-to-delete-job-button-yes
+         add-event-listener-to-delete-job-button-no)
 
 (defn get-stories-by-page
   [page]
@@ -172,11 +177,89 @@
            :format          (ajax/json-request-format)
            :response-format (ajax/json-response-format {:keywords? true})}))
 
+(defn get-jobs-by-page
+  [page]
+  (GET (str "/entry/job/p/" page)
+       {:handler         (fn [response]
+                           (r/render-component [(fn []
+                                                  (view.list.job/component-job response page))] util.view/main-container))
+        :error-handler   util.controller/error-handler
+        :format          (ajax/json-request-format)
+        :response-format (ajax/json-response-format {:keywords? true})}))
+
+(defn edit-job-by-id
+  [id]
+  (GET (str "/entry/job/info/" id)
+       {:handler         (fn [response]
+                           (r/render-component [(fn []
+                                                  (view.entry.job/component-edit response))] util.view/main-container)
+                           (add-event-listener-to-edit-job-button id))
+        :error-handler   util.controller/error-handler
+        :format          (ajax/json-request-format)
+        :response-format (ajax/json-response-format {:keywords? true})}))
+
+(defn edit-job
+  [id field-ids]
+
+  (let [data (util.view/create-field-val-map field-ids)
+        title (:title data)
+        url (:url data)
+        country (:country data)
+        city (:city data)]
+
+    (cond
+      (not (validation/submit-title? title))
+      (util.view/render-error-message error-message/title)
+
+      (not (validation/submit-url? url))
+      (util.view/render-error-message error-message/url)
+
+      (not (validation/submit-country? country))
+      (util.view/render-error-message error-message/country)
+
+      (not (validation/submit-city? city))
+      (util.view/render-error-message error-message/city)
+
+      :else
+      (POST (str "/entry/job/edit/" id)
+            {:params          (assoc data :remote? (.-checked (dom/getElement "remoteId")))
+             :handler         (fn [_]
+                                (util.view/change-url "/"))
+             :error-handler   util.controller/error-handler
+             :format          (ajax/json-request-format)
+             :response-format (ajax/json-response-format {:keywords? true})}))))
+
+(defn delete-job-by-id
+  [id]
+  (GET (str "/entry/job/info/" id)
+       {:handler         (fn [response]
+                           (r/render-component [(fn []
+                                                  (view.entry.job/component-delete response))] util.view/main-container)
+
+                           (add-event-listener-to-delete-job-button-yes id)
+                           (add-event-listener-to-delete-job-button-no))
+        :error-handler   util.controller/error-handler
+        :format          (ajax/json-request-format)
+        :response-format (ajax/json-response-format {:keywords? true})}))
+
+(defn delete-job
+  [id]
+  (DELETE (str "/entry/job/delete/" id)
+          {:handler         (fn []
+                              (util.view/change-url "/#/"))
+           :error-handler   util.controller/error-handler
+           :format          (ajax/json-request-format)
+           :response-format (ajax/json-response-format {:keywords? true})}))
+
 (defn dont-delete-story
   []
   (util.view/change-url "/#/"))
 
 (defn dont-delete-ask
+  []
+  (util.view/change-url "/#/"))
+
+(defn dont-delete-job
   []
   (util.view/change-url "/#/"))
 
@@ -221,11 +304,24 @@
 (defn add-event-listener-to-ask-button-yes
   [id]
   (.addEventListener (dom/getElement "buttonDeleteAskYesId") "click" (fn [_]
-                                                                       (delete-story id))))
+                                                                       (delete-ask id))))
 
 (defn add-event-listener-to-ask-button-no
   []
   (.addEventListener (dom/getElement "buttonDeleteAskNoId") "click" (fn [_]
                                                                       (dont-delete-ask))))
 
+(defn add-event-listener-to-edit-job-button
+  [id]
+  (.addEventListener (dom/getElement "jobEditButtonId") "click" (fn [_]
+                                                                  (edit-job id ["titleId" "urlId" "countryId" "cityId" "remoteId"]))))
 
+(defn add-event-listener-to-delete-job-button-yes
+  [id]
+  (.addEventListener (dom/getElement "buttonDeleteJobYesId") "click" (fn [_]
+                                                                      (delete-job id))))
+
+(defn add-event-listener-to-delete-job-button-no
+  []
+  (.addEventListener (dom/getElement "buttonDeleteJobNoId") "click" (fn [_]
+                                                                      (dont-delete-job))))

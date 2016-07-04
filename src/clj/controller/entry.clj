@@ -24,6 +24,7 @@
          check-submit-city
          check-submit-country
          check-entry-exist
+         check-job-exist
          check-entry-owner
          check-page-data-format
          group-by-parent-and-sort-by-vote
@@ -32,6 +33,7 @@
          flat-until-every-vector
          create-comments
          get-entry-by-page
+         get-job-by-page
          get-own-entries
          get-upvoted-entries)
 
@@ -487,14 +489,113 @@
                       (let [username (resource-util/get-username ctx)]
                         (job-dao/create-job (str/capitalize (str/trim title))
                                             (str/trim url)
-                                            (str/trim city)
-                                            (str/trim country)
+                                            (str/capitalize (str/trim city))
+                                            (str/capitalize (str/trim country))
                                             remote?
                                             username)
                         (user-dao/inc-user-karma-by-username username))))
 
             :handle-created (fn [_]
-                              {:job? true})
+                              {:created? true})
+
+            :handle-exception #(resource-util/get-exception-message %)))
+
+(defn get-jobs-by-page
+  [page]
+  (resource :allowed-methods [:get]
+
+            :available-media-types resource-util/avaliable-media-types
+
+            :handle-ok (fn [_]
+
+                         (let [data-per-page-inc (+ resource-util/data-per-page 1)
+                               more-jobs (job-dao/get-last-n-days-jobs (check-page-data-format page) data-per-page-inc)
+                               real-jobs (job-dao/get-last-n-days-jobs (check-page-data-format page) resource-util/data-per-page)]
+                           {:job-entry real-jobs
+                            :more?     (= data-per-page-inc (count more-jobs))}))
+
+            :handle-exception #(resource-util/get-exception-message %)))
+
+(defn get-job-litte-info-by-id
+  [id]
+  (resource :allowed-methods [:get]
+
+            :available-media-types resource-util/avaliable-media-types
+
+            :handle-ok (fn [ctx]
+                         (let [job (check-job-exist id)]
+                           {:job-entry job
+                            :owner?    (= (:created-by job) (-> ctx get-user :username))}))
+
+            :handle-exception #(resource-util/get-exception-message %)))
+
+(defn edit-job-by-id
+  [id]
+  (resource :allowed-methods [:post]
+
+            :available-media-types resource-util/avaliable-media-types
+
+            :known-content-type? #(resource-util/check-content-type % resource-util/avaliable-media-types)
+
+            :malformed? #(resource-util/parse-json % ::data)
+
+            :authorized? #(resource-util/auth? %)
+
+            :post! (fn [ctx]
+                     (let [data-as-map (resource-util/convert-data-map (::data ctx))
+                           title (:title data-as-map)
+                           url (:url data-as-map)
+                           city (:city data-as-map)
+                           country (:country data-as-map)
+                           remote? (:remote? data-as-map)]
+
+
+                       (let [job (check-job-exist id)]
+                         (check-entry-owner job ctx)
+                         (check-submit-title title)
+                         (check-submit-url url)
+                         (check-submit-city city)
+                         (check-submit-country country)
+
+                         (job-dao/edit-job-by-id id
+                                                 (str/capitalize (str/trim title))
+                                                 (str/trim url)
+                                                 (str/capitalize (str/trim city))
+                                                 (str/capitalize (str/trim country))
+                                                 remote?))))
+
+            :handle-created (fn [_]
+                              {:updated? true})
+
+            :handle-exception #(resource-util/get-exception-message %)))
+
+(defn delete-job-by-id
+  [id]
+  (resource :allowed-methods [:delete]
+
+            :available-media-types resource-util/avaliable-media-types
+
+            :known-content-type? #(resource-util/check-content-type % resource-util/avaliable-media-types)
+
+            :malformed? #(resource-util/parse-json % ::data)
+
+            :authorized? #(resource-util/auth? %)
+
+            :new? (fn [_]
+                    false)
+
+            :respond-with-entity? (fn [_]
+                                    true)
+
+            :delete! (fn [ctx]
+
+                       (let [job (check-job-exist id)]
+                         (check-entry-owner job ctx)
+                         (job-dao/delete-job-by-id id)
+                         (user-dao/dec-user-karma-by-username (:created-by job))))
+
+            :handle-ok (fn [_]
+                         {:deleted? true})
 
             :handle-exception #(resource-util/get-exception-message %)))
 
@@ -614,6 +715,15 @@
   (try
     (if-let [entry (entry-dao/find-by-id id)]
       entry
+      (throw (RuntimeException. "No such entry!")))
+    (catch Exception e
+      (throw (RuntimeException. "No such entry!")))))
+
+(defn check-job-exist
+  [id]
+  (try
+    (if-let [job (job-dao/find-by-id id)]
+      job
       (throw (RuntimeException. "No such entry!")))
     (catch Exception e
       (throw (RuntimeException. "No such entry!")))))
