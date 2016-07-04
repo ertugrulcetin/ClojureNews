@@ -1,6 +1,7 @@
 // Compiled by ClojureScript 1.8.51 {}
 goog.provide('controller.entry');
 goog.require('cljs.core');
+goog.require('cljc.error_messages');
 goog.require('cljc.validation');
 goog.require('goog.dom');
 goog.require('view.entry.story_entry');
@@ -153,79 +154,79 @@ return controller.comment_entry.add_comment.call(null,entry,id,new cljs.core.Per
 controller.entry.add_event_listener_to_upvote_buttons = (function controller$entry$add_event_listener_to_upvote_buttons(response,type){
 var comments = ((cljs.core._EQ_.call(null,type,new cljs.core.Keyword(null,"story","story",-1000647533)))?new cljs.core.Keyword(null,"story-comments","story-comments",-631068375):new cljs.core.Keyword(null,"ask-comments","ask-comments",-767991465));
 var upvoted_comments = ((cljs.core._EQ_.call(null,type,new cljs.core.Keyword(null,"story","story",-1000647533)))?new cljs.core.Keyword(null,"story-upvoted-comments","story-upvoted-comments",203538215):new cljs.core.Keyword(null,"ask-upvoted-comments","ask-upvoted-comments",241263239));
-var seq__26697 = cljs.core.seq.call(null,comments.call(null,response));
-var chunk__26698 = null;
-var count__26699 = (0);
-var i__26700 = (0);
+var seq__26705 = cljs.core.seq.call(null,comments.call(null,response));
+var chunk__26706 = null;
+var count__26707 = (0);
+var i__26708 = (0);
 while(true){
-if((i__26700 < count__26699)){
-var commentt = cljs.core._nth.call(null,chunk__26698,i__26700);
-var comment_id_26701 = new cljs.core.Keyword(null,"_id","_id",-789960287).cljs$core$IFn$_invoke$arity$1(commentt);
-var upvoted_comments_26702__$1 = upvoted_comments.call(null,response);
-if(cljs.core.truth_(util.view.in_QMARK_.call(null,comment_id_26701,upvoted_comments_26702__$1))){
+if((i__26708 < count__26707)){
+var commentt = cljs.core._nth.call(null,chunk__26706,i__26708);
+var comment_id_26709 = new cljs.core.Keyword(null,"_id","_id",-789960287).cljs$core$IFn$_invoke$arity$1(commentt);
+var upvoted_comments_26710__$1 = upvoted_comments.call(null,response);
+if(cljs.core.truth_(util.view.in_QMARK_.call(null,comment_id_26709,upvoted_comments_26710__$1))){
 } else {
-var temp__4657__auto___26703 = goog.dom.getElement([cljs.core.str("id-upvote-"),cljs.core.str(comment_id_26701)].join(''));
-if(cljs.core.truth_(temp__4657__auto___26703)){
-var node_26704 = temp__4657__auto___26703;
-node_26704.addEventListener("click",((function (seq__26697,chunk__26698,count__26699,i__26700,node_26704,temp__4657__auto___26703,comment_id_26701,upvoted_comments_26702__$1,commentt,comments,upvoted_comments){
+var temp__4657__auto___26711 = goog.dom.getElement([cljs.core.str("id-upvote-"),cljs.core.str(comment_id_26709)].join(''));
+if(cljs.core.truth_(temp__4657__auto___26711)){
+var node_26712 = temp__4657__auto___26711;
+node_26712.addEventListener("click",((function (seq__26705,chunk__26706,count__26707,i__26708,node_26712,temp__4657__auto___26711,comment_id_26709,upvoted_comments_26710__$1,commentt,comments,upvoted_comments){
 return (function (_){
-return controller.upvote.upvote_comment.call(null,comment_id_26701);
-});})(seq__26697,chunk__26698,count__26699,i__26700,node_26704,temp__4657__auto___26703,comment_id_26701,upvoted_comments_26702__$1,commentt,comments,upvoted_comments))
+return controller.upvote.upvote_comment.call(null,comment_id_26709);
+});})(seq__26705,chunk__26706,count__26707,i__26708,node_26712,temp__4657__auto___26711,comment_id_26709,upvoted_comments_26710__$1,commentt,comments,upvoted_comments))
 );
 } else {
 }
 }
 
-var G__26705 = seq__26697;
-var G__26706 = chunk__26698;
-var G__26707 = count__26699;
-var G__26708 = (i__26700 + (1));
-seq__26697 = G__26705;
-chunk__26698 = G__26706;
-count__26699 = G__26707;
-i__26700 = G__26708;
+var G__26713 = seq__26705;
+var G__26714 = chunk__26706;
+var G__26715 = count__26707;
+var G__26716 = (i__26708 + (1));
+seq__26705 = G__26713;
+chunk__26706 = G__26714;
+count__26707 = G__26715;
+i__26708 = G__26716;
 continue;
 } else {
-var temp__4657__auto__ = cljs.core.seq.call(null,seq__26697);
+var temp__4657__auto__ = cljs.core.seq.call(null,seq__26705);
 if(temp__4657__auto__){
-var seq__26697__$1 = temp__4657__auto__;
-if(cljs.core.chunked_seq_QMARK_.call(null,seq__26697__$1)){
-var c__24530__auto__ = cljs.core.chunk_first.call(null,seq__26697__$1);
-var G__26709 = cljs.core.chunk_rest.call(null,seq__26697__$1);
-var G__26710 = c__24530__auto__;
-var G__26711 = cljs.core.count.call(null,c__24530__auto__);
-var G__26712 = (0);
-seq__26697 = G__26709;
-chunk__26698 = G__26710;
-count__26699 = G__26711;
-i__26700 = G__26712;
+var seq__26705__$1 = temp__4657__auto__;
+if(cljs.core.chunked_seq_QMARK_.call(null,seq__26705__$1)){
+var c__24532__auto__ = cljs.core.chunk_first.call(null,seq__26705__$1);
+var G__26717 = cljs.core.chunk_rest.call(null,seq__26705__$1);
+var G__26718 = c__24532__auto__;
+var G__26719 = cljs.core.count.call(null,c__24532__auto__);
+var G__26720 = (0);
+seq__26705 = G__26717;
+chunk__26706 = G__26718;
+count__26707 = G__26719;
+i__26708 = G__26720;
 continue;
 } else {
-var commentt = cljs.core.first.call(null,seq__26697__$1);
-var comment_id_26713 = new cljs.core.Keyword(null,"_id","_id",-789960287).cljs$core$IFn$_invoke$arity$1(commentt);
-var upvoted_comments_26714__$1 = upvoted_comments.call(null,response);
-if(cljs.core.truth_(util.view.in_QMARK_.call(null,comment_id_26713,upvoted_comments_26714__$1))){
+var commentt = cljs.core.first.call(null,seq__26705__$1);
+var comment_id_26721 = new cljs.core.Keyword(null,"_id","_id",-789960287).cljs$core$IFn$_invoke$arity$1(commentt);
+var upvoted_comments_26722__$1 = upvoted_comments.call(null,response);
+if(cljs.core.truth_(util.view.in_QMARK_.call(null,comment_id_26721,upvoted_comments_26722__$1))){
 } else {
-var temp__4657__auto___26715__$1 = goog.dom.getElement([cljs.core.str("id-upvote-"),cljs.core.str(comment_id_26713)].join(''));
-if(cljs.core.truth_(temp__4657__auto___26715__$1)){
-var node_26716 = temp__4657__auto___26715__$1;
-node_26716.addEventListener("click",((function (seq__26697,chunk__26698,count__26699,i__26700,node_26716,temp__4657__auto___26715__$1,comment_id_26713,upvoted_comments_26714__$1,commentt,seq__26697__$1,temp__4657__auto__,comments,upvoted_comments){
+var temp__4657__auto___26723__$1 = goog.dom.getElement([cljs.core.str("id-upvote-"),cljs.core.str(comment_id_26721)].join(''));
+if(cljs.core.truth_(temp__4657__auto___26723__$1)){
+var node_26724 = temp__4657__auto___26723__$1;
+node_26724.addEventListener("click",((function (seq__26705,chunk__26706,count__26707,i__26708,node_26724,temp__4657__auto___26723__$1,comment_id_26721,upvoted_comments_26722__$1,commentt,seq__26705__$1,temp__4657__auto__,comments,upvoted_comments){
 return (function (_){
-return controller.upvote.upvote_comment.call(null,comment_id_26713);
-});})(seq__26697,chunk__26698,count__26699,i__26700,node_26716,temp__4657__auto___26715__$1,comment_id_26713,upvoted_comments_26714__$1,commentt,seq__26697__$1,temp__4657__auto__,comments,upvoted_comments))
+return controller.upvote.upvote_comment.call(null,comment_id_26721);
+});})(seq__26705,chunk__26706,count__26707,i__26708,node_26724,temp__4657__auto___26723__$1,comment_id_26721,upvoted_comments_26722__$1,commentt,seq__26705__$1,temp__4657__auto__,comments,upvoted_comments))
 );
 } else {
 }
 }
 
-var G__26717 = cljs.core.next.call(null,seq__26697__$1);
-var G__26718 = null;
-var G__26719 = (0);
-var G__26720 = (0);
-seq__26697 = G__26717;
-chunk__26698 = G__26718;
-count__26699 = G__26719;
-i__26700 = G__26720;
+var G__26725 = cljs.core.next.call(null,seq__26705__$1);
+var G__26726 = null;
+var G__26727 = (0);
+var G__26728 = (0);
+seq__26705 = G__26725;
+chunk__26706 = G__26726;
+count__26707 = G__26727;
+i__26708 = G__26728;
 continue;
 }
 } else {

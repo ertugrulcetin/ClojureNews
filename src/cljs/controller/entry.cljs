@@ -1,5 +1,7 @@
 (ns controller.entry
   (:require [ajax.core :as ajax :refer [GET POST PUT DELETE]]
+            [cljc.validation :as validation]
+            [cljc.error-messages :as error-message]
             [reagent.core :as r]
             [goog.dom :as dom]
             [util.view]
@@ -9,8 +11,7 @@
             [view.list.story]
             [view.list.ask]
             [controller.upvote]
-            [controller.comment-entry]
-            [cljc.validation :as validation]))
+            [controller.comment-entry]))
 
 (declare add-event-listener-to-add-comment-button
          add-event-listener-to-upvote-buttons

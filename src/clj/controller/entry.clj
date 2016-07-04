@@ -88,7 +88,7 @@
                                             [:td
                                              [:center
                                               [:p
-                                               "Clojure News is in " [:b "beta"] ". Please don't hesitate to report bugs to "
+                                               "Clojure News is in beta. Please don't hesitate to report bugs to "
                                                [:a {:href "mailto:info@clojure.news"}
                                                 [:u
                                                  "info@clojure.news"]]]]]]
