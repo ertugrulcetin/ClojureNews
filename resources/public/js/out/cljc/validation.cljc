@@ -47,7 +47,7 @@
 
 (defn submit-type?
   [type]
-  (contains? #{"story" "ask" "jobs" "events"} type))
+  (contains? #{"story" "ask" "job" "event"} type))
 
 (defn submit-title?
   [title]
@@ -66,6 +66,37 @@
   [text]
   (and (not (str/blank? text))
        (<= (count text) 2500)))
+
+(defn submit-day?
+  [day]
+  #?(:clj  (and (>= (Integer/parseInt day) 1)
+                (<= (Integer/parseInt day) 31))
+     :cljs (and (>= (js/parseInt day) 1)
+                (<= (js/parseInt day) 31))))
+
+(defn submit-month?
+  [day]
+  #?(:clj  (and (>= (Integer/parseInt day) 1)
+                (<= (Integer/parseInt day) 12))
+     :cljs (and (>= (js/parseInt day) 1)
+                (<= (js/parseInt day) 12))))
+
+(defn submit-year?
+  [day]
+  #?(:clj  (and (>= (Integer/parseInt day) 2016)
+                (<= (Integer/parseInt day) 2056))
+     :cljs (and (>= (js/parseInt day) 2016)
+                (<= (js/parseInt day) 2056))))
+
+(defn submit-city?
+  [city]
+  (and (not (str/blank? city))
+       (<= (count city) 40)))
+
+(defn submit-country?
+  [city]
+  (and (not (str/blank? city))
+       (<= (count city) 40)))
 
 (defn get-pure-url
   [url]

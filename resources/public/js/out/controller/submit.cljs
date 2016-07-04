@@ -1,14 +1,18 @@
 (ns controller.submit
   (:require [ajax.core :as ajax :refer [GET POST PUT]]
             [cljc.validation :as validation]
+            [cljc.error-messages :as error-message]
             [reagent.core :as r]
+            [goog.dom :as dom]
             [util.view]
             [util.controller]
             [view.submit]))
 
 (declare submit
          create-story
-         create-ask)
+         create-ask
+         create-job
+         create-event)
 
 (defn submit-page
   []
@@ -25,16 +29,22 @@
       (create-story data)
 
       (= "ask" type)
-      (create-ask data))))
+      (create-ask data)
+
+      (= "job" type)
+      (create-job data)
+
+      (= "event" type)
+      (create-event data))))
 
 (defn create-story
   [data]
   (cond
     (not (validation/submit-title? (:title data)))
-    (util.view/render-error-message (str "Please limit title to 80 characters.This had " (count (:title data)) "."))
+    (util.view/render-error-message error-message/title)
 
     (not (validation/submit-url? (:url data)))
-    (util.view/render-error-message "Not valid url. Ex: https://www.google.com")
+    (util.view/render-error-message error-message/url)
 
     :else
     (PUT "/entry/story"
@@ -49,10 +59,67 @@
   [data]
   (cond
     (not (validation/submit-title? (:title data)))
-    (util.view/render-error-message (str "Please limit title to 80 characters.This had " (count (:title data)) "."))
+    (util.view/render-error-message error-message/title)
 
     (not (validation/submit-text? (:text data)))
-    (util.view/render-error-message "Please limit text to 2500 characters.")
+    (util.view/render-error-message error-message/text)
+
+    :else
+    (PUT "/entry/ask"
+         {:params          data
+          :handler         (fn [response]
+                             (util.view/change-url (str "/#/ask/" (:entry-id response))))
+          :error-handler   util.controller/error-handler
+          :format          (ajax/json-request-format)
+          :response-format (ajax/json-response-format {:keywords? true})})))
+
+(defn create-job
+  [data]
+  (cond
+    (not (validation/submit-title? (:title data)))
+    (util.view/render-error-message error-message/title)
+
+    (not (validation/submit-url? (:url data)))
+    (util.view/render-error-message error-message/url)
+
+    (not (validation/submit-country? (:country data)))
+    (util.view/render-error-message error-message/country)
+
+    (not (validation/submit-city? (:city data)))
+    (util.view/render-error-message error-message/city)
+
+    :else
+    (PUT "/entry/job"
+         {:params          (assoc data :remote? (.-checked (dom/getElement "remoteId")))
+          :handler         (fn [_]
+                             (util.view/change-url "/"))
+          :error-handler   util.controller/error-handler
+          :format          (ajax/json-request-format)
+          :response-format (ajax/json-response-format {:keywords? true})})))
+
+(defn create-event
+  [data]
+  (cond
+    (not (validation/submit-title? (:title data)))
+    (util.view/render-error-message error-message/title)
+
+    (not (validation/submit-url? (:url data)))
+    (util.view/render-error-message error-message/url)
+
+    (not (validation/submit-country? (:country data)))
+    (util.view/render-error-message error-message/country)
+
+    (not (validation/submit-city? (:city data)))
+    (util.view/render-error-message error-message/city)
+
+    (not (validation/submit-day? (:starting-date-day data)))
+    (util.view/render-error-message error-message/day)
+
+    (not (validation/submit-month? (:starting-date-month data)))
+    (util.view/render-error-message error-message/month)
+
+    (not (validation/submit-year? (:starting-date-year data)))
+    (util.view/render-error-message error-message/year)
 
     :else
     (PUT "/entry/ask"

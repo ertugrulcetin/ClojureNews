@@ -12811,3 +12811,243 @@ WARNING: No such namespace: goog.History.EventType, could not locate goog/Histor
 WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
 notifying browser that file changed:  out/view/submit.js
 [32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.482 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: window, could not locate window.cljs, window.cljc, or Closure namespace "" at line 29 src/cljs/util/view.cljs
+WARNING: Use of undeclared Var window/location at line 29 src/cljs/util/view.cljs
+WARNING: No such namespace: window, could not locate window.cljs, window.cljc, or Closure namespace "" at line 29 src/cljs/util/view.cljs
+WARNING: Use of undeclared Var window/location at line 29 src/cljs/util/view.cljs
+WARNING: user at line 10 is being replaced at line 13 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/route/user.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  out/cljc/validation.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 2.311 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: Integer, could not locate Integer.cljs, Integer.cljc, or Closure namespace "" at line 72 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: Use of undeclared Var Integer/parseInt at line 72 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: No such namespace: Integer, could not locate Integer.cljs, Integer.cljc, or Closure namespace "" at line 73 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: Use of undeclared Var Integer/parseInt at line 73 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: No such namespace: Integer, could not locate Integer.cljs, Integer.cljc, or Closure namespace "" at line 72 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: Use of undeclared Var Integer/parseInt at line 72 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: No such namespace: Integer, could not locate Integer.cljs, Integer.cljc, or Closure namespace "" at line 73 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: Use of undeclared Var Integer/parseInt at line 73 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: No such namespace: Integer, could not locate Integer.cljs, Integer.cljc, or Closure namespace "" at line 77 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: Use of undeclared Var Integer/parseInt at line 77 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: No such namespace: Integer, could not locate Integer.cljs, Integer.cljc, or Closure namespace "" at line 78 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: Use of undeclared Var Integer/parseInt at line 78 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: No such namespace: Integer, could not locate Integer.cljs, Integer.cljc, or Closure namespace "" at line 77 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: Use of undeclared Var Integer/parseInt at line 77 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: No such namespace: Integer, could not locate Integer.cljs, Integer.cljc, or Closure namespace "" at line 78 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: Use of undeclared Var Integer/parseInt at line 78 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: No such namespace: Integer, could not locate Integer.cljs, Integer.cljc, or Closure namespace "" at line 82 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: Use of undeclared Var Integer/parseInt at line 82 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: No such namespace: Integer, could not locate Integer.cljs, Integer.cljc, or Closure namespace "" at line 83 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: Use of undeclared Var Integer/parseInt at line 83 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: No such namespace: Integer, could not locate Integer.cljs, Integer.cljc, or Closure namespace "" at line 82 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: Use of undeclared Var Integer/parseInt at line 82 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: No such namespace: Integer, could not locate Integer.cljs, Integer.cljc, or Closure namespace "" at line 83 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: Use of undeclared Var Integer/parseInt at line 83 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: No such namespace: window, could not locate window.cljs, window.cljc, or Closure namespace "" at line 29 src/cljs/util/view.cljs
+WARNING: Use of undeclared Var window/location at line 29 src/cljs/util/view.cljs
+WARNING: No such namespace: window, could not locate window.cljs, window.cljc, or Closure namespace "" at line 29 src/cljs/util/view.cljs
+WARNING: Use of undeclared Var window/location at line 29 src/cljs/util/view.cljs
+WARNING: user at line 10 is being replaced at line 13 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/route/user.cljs
+WARNING: create-ask at line 48 is being replaced at line 66 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/controller/submit.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  out/controller/submit.js
+notifying browser that file changed:  out/cljc/validation.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 2.205 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: Integer, could not locate Integer.cljs, Integer.cljc, or Closure namespace "" at line 72 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: Use of undeclared Var Integer/parseInt at line 72 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: No such namespace: Integer, could not locate Integer.cljs, Integer.cljc, or Closure namespace "" at line 73 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: Use of undeclared Var Integer/parseInt at line 73 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: No such namespace: Integer, could not locate Integer.cljs, Integer.cljc, or Closure namespace "" at line 72 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: Use of undeclared Var Integer/parseInt at line 72 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: No such namespace: Integer, could not locate Integer.cljs, Integer.cljc, or Closure namespace "" at line 73 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: Use of undeclared Var Integer/parseInt at line 73 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: No such namespace: Integer, could not locate Integer.cljs, Integer.cljc, or Closure namespace "" at line 77 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: Use of undeclared Var Integer/parseInt at line 77 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: No such namespace: Integer, could not locate Integer.cljs, Integer.cljc, or Closure namespace "" at line 78 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: Use of undeclared Var Integer/parseInt at line 78 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: No such namespace: Integer, could not locate Integer.cljs, Integer.cljc, or Closure namespace "" at line 77 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: Use of undeclared Var Integer/parseInt at line 77 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: No such namespace: Integer, could not locate Integer.cljs, Integer.cljc, or Closure namespace "" at line 78 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: Use of undeclared Var Integer/parseInt at line 78 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: No such namespace: Integer, could not locate Integer.cljs, Integer.cljc, or Closure namespace "" at line 82 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: Use of undeclared Var Integer/parseInt at line 82 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: No such namespace: Integer, could not locate Integer.cljs, Integer.cljc, or Closure namespace "" at line 83 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: Use of undeclared Var Integer/parseInt at line 83 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: No such namespace: Integer, could not locate Integer.cljs, Integer.cljc, or Closure namespace "" at line 82 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: Use of undeclared Var Integer/parseInt at line 82 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: No such namespace: Integer, could not locate Integer.cljs, Integer.cljc, or Closure namespace "" at line 83 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: Use of undeclared Var Integer/parseInt at line 83 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: No such namespace: window, could not locate window.cljs, window.cljc, or Closure namespace "" at line 29 src/cljs/util/view.cljs
+WARNING: Use of undeclared Var window/location at line 29 src/cljs/util/view.cljs
+WARNING: No such namespace: window, could not locate window.cljs, window.cljc, or Closure namespace "" at line 29 src/cljs/util/view.cljs
+WARNING: Use of undeclared Var window/location at line 29 src/cljs/util/view.cljs
+WARNING: user at line 10 is being replaced at line 13 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/route/user.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  out/controller/submit.js
+notifying browser that file changed:  out/cljc/validation.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 2.261 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: Integer, could not locate Integer.cljs, Integer.cljc, or Closure namespace "" at line 72 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: Use of undeclared Var Integer/parseInt at line 72 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: No such namespace: Integer, could not locate Integer.cljs, Integer.cljc, or Closure namespace "" at line 73 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: Use of undeclared Var Integer/parseInt at line 73 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: No such namespace: Integer, could not locate Integer.cljs, Integer.cljc, or Closure namespace "" at line 72 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: Use of undeclared Var Integer/parseInt at line 72 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: No such namespace: Integer, could not locate Integer.cljs, Integer.cljc, or Closure namespace "" at line 73 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: Use of undeclared Var Integer/parseInt at line 73 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: No such namespace: Integer, could not locate Integer.cljs, Integer.cljc, or Closure namespace "" at line 77 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: Use of undeclared Var Integer/parseInt at line 77 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: No such namespace: Integer, could not locate Integer.cljs, Integer.cljc, or Closure namespace "" at line 78 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: Use of undeclared Var Integer/parseInt at line 78 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: No such namespace: Integer, could not locate Integer.cljs, Integer.cljc, or Closure namespace "" at line 77 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: Use of undeclared Var Integer/parseInt at line 77 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: No such namespace: Integer, could not locate Integer.cljs, Integer.cljc, or Closure namespace "" at line 78 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: Use of undeclared Var Integer/parseInt at line 78 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: No such namespace: Integer, could not locate Integer.cljs, Integer.cljc, or Closure namespace "" at line 82 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: Use of undeclared Var Integer/parseInt at line 82 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: No such namespace: Integer, could not locate Integer.cljs, Integer.cljc, or Closure namespace "" at line 83 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: Use of undeclared Var Integer/parseInt at line 83 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: No such namespace: Integer, could not locate Integer.cljs, Integer.cljc, or Closure namespace "" at line 82 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: Use of undeclared Var Integer/parseInt at line 82 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: No such namespace: Integer, could not locate Integer.cljs, Integer.cljc, or Closure namespace "" at line 83 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: Use of undeclared Var Integer/parseInt at line 83 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: No such namespace: window, could not locate window.cljs, window.cljc, or Closure namespace "" at line 29 src/cljs/util/view.cljs
+WARNING: Use of undeclared Var window/location at line 29 src/cljs/util/view.cljs
+WARNING: No such namespace: window, could not locate window.cljs, window.cljc, or Closure namespace "" at line 29 src/cljs/util/view.cljs
+WARNING: Use of undeclared Var window/location at line 29 src/cljs/util/view.cljs
+WARNING: user at line 10 is being replaced at line 13 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/route/user.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  out/cljc/error_messages.js
+notifying browser that file changed:  out/controller/submit.js
+notifying browser that file changed:  out/cljc/validation.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 2.373 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  out/controller/submit.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.317 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  out/controller/submit.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.405 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  out/controller/submit.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.339 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  out/controller/submit.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.487 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: Integer, could not locate Integer.cljs, Integer.cljc, or Closure namespace "" at line 79 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: Use of undeclared Var Integer/parseInt at line 79 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: No such namespace: Integer, could not locate Integer.cljs, Integer.cljc, or Closure namespace "" at line 80 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: Use of undeclared Var Integer/parseInt at line 80 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: No such namespace: Integer, could not locate Integer.cljs, Integer.cljc, or Closure namespace "" at line 79 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: Use of undeclared Var Integer/parseInt at line 79 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: No such namespace: Integer, could not locate Integer.cljs, Integer.cljc, or Closure namespace "" at line 80 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: Use of undeclared Var Integer/parseInt at line 80 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: No such namespace: Integer, could not locate Integer.cljs, Integer.cljc, or Closure namespace "" at line 84 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: Use of undeclared Var Integer/parseInt at line 84 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: No such namespace: Integer, could not locate Integer.cljs, Integer.cljc, or Closure namespace "" at line 85 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: Use of undeclared Var Integer/parseInt at line 85 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: No such namespace: Integer, could not locate Integer.cljs, Integer.cljc, or Closure namespace "" at line 84 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: Use of undeclared Var Integer/parseInt at line 84 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: No such namespace: Integer, could not locate Integer.cljs, Integer.cljc, or Closure namespace "" at line 85 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: Use of undeclared Var Integer/parseInt at line 85 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljc/validation.cljc
+WARNING: No such namespace: window, could not locate window.cljs, window.cljc, or Closure namespace "" at line 29 src/cljs/util/view.cljs
+WARNING: Use of undeclared Var window/location at line 29 src/cljs/util/view.cljs
+WARNING: No such namespace: window, could not locate window.cljs, window.cljc, or Closure namespace "" at line 29 src/cljs/util/view.cljs
+WARNING: Use of undeclared Var window/location at line 29 src/cljs/util/view.cljs
+WARNING: user at line 10 is being replaced at line 13 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/route/user.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  out/cljc/validation.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 2.298 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  out/controller/submit.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.363 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: window, could not locate window.cljs, window.cljc, or Closure namespace "" at line 29 src/cljs/util/view.cljs
+WARNING: Use of undeclared Var window/location at line 29 src/cljs/util/view.cljs
+WARNING: No such namespace: window, could not locate window.cljs, window.cljc, or Closure namespace "" at line 29 src/cljs/util/view.cljs
+WARNING: Use of undeclared Var window/location at line 29 src/cljs/util/view.cljs
+WARNING: user at line 10 is being replaced at line 13 /Users/ertugrulcetin/IdeaProjects/clojure-news/src/cljs/route/user.cljs
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  resources/public/js/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  out/cljc/validation.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 2.852 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  out/controller/submit.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.467 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  out/view/submit.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.635 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+[31mCompiling "resources/public/js/clojure-news.js" failed.
+[0mANALYSIS ERROR: cond requires an even number of forms at line 81 src/cljs/controller/submit.cljs on file src/cljs/controller/submit.cljs, line 81, column 3
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.416 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+[31mCompiling "resources/public/js/clojure-news.js" failed.
+[0mANALYSIS ERROR: cond requires an even number of forms at line 81 src/cljs/controller/submit.cljs on file src/cljs/controller/submit.cljs, line 81, column 3
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.439 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  out/controller/submit.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.671 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  out/controller/submit.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.463 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  out/controller/submit.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.375 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  out/controller/submit.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.447 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  out/controller/submit.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.394 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  out/controller/submit.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.327 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  out/controller/submit.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.499 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 21 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 21 src/cljs/main.cljs
+notifying browser that file changed:  out/controller/submit.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.351 seconds.[0m

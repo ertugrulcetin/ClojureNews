@@ -15,6 +15,7 @@
   [^String id]
   (mc/find-map-by-id db/clojure-news coll (ObjectId. id)))
 
+;;Story
 (defn create-story
   [^String title
    ^String url
@@ -27,7 +28,7 @@
    ^String title]
   (mc/update-by-id db/clojure-news coll (ObjectId. id) {$set {"title"        title
                                                               "last-updated" (Date.)}}))
-
+;;Ask
 (defn create-ask
   [^String title
    ^String text

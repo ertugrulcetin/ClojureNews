@@ -3,10 +3,12 @@
             [clj.util.resource :as resource-util]
             [clj.dao.user :as user-dao]
             [clj.dao.entry :as entry-dao]
+            [clj.dao.entry-job :as job-dao]
             [clj.dao.comment-entry :as comment-entry-dao]
             [clj.dao.upvote :as upvote-dao]
             [hiccup.core :as hiccup]
             [cljc.validation :as validation]
+            [cljc.error-messages :as error-message]
             [clojure.string :as str]
             [monger.json]))
 
@@ -19,6 +21,8 @@
          check-submit-title
          check-submit-url
          check-submit-text
+         check-submit-city
+         check-submit-country
          check-entry-exist
          check-entry-owner
          check-page-data-format
@@ -450,6 +454,50 @@
 
             :handle-exception #(resource-util/get-exception-message %)))
 
+;;Job
+(defn create-job
+  []
+  (resource :allowed-methods [:put]
+
+            :available-media-types resource-util/avaliable-media-types
+
+            :known-content-type? #(resource-util/check-content-type % resource-util/avaliable-media-types)
+
+            :malformed? #(resource-util/parse-json % ::data)
+
+            :authorized? #(resource-util/auth? %)
+
+            :put! (fn [ctx]
+                    (let [data-as-map (resource-util/convert-data-map (::data ctx))
+                          type (:type data-as-map)
+                          title (:title data-as-map)
+                          url (:url data-as-map)
+                          city (:city data-as-map)
+                          country (:country data-as-map)
+                          remote? (:remote? data-as-map)]
+
+                      (check-submit-type type)
+
+                      (check-submit-title title)
+                      (check-submit-url url)
+                      (check-submit-city city)
+                      (check-submit-country country)
+
+
+                      (let [username (resource-util/get-username ctx)]
+                        (job-dao/create-job (str/capitalize (str/trim title))
+                                            (str/trim url)
+                                            (str/trim city)
+                                            (str/trim country)
+                                            remote?
+                                            username)
+                        (user-dao/inc-user-karma-by-username username))))
+
+            :handle-created (fn [_]
+                              {:job? true})
+
+            :handle-exception #(resource-util/get-exception-message %)))
+
 (defn get-own-entries
   [username type entries]
   (let [object-ids (reduce #(conj %1 (:_id %2)) [] entries)
@@ -523,33 +571,43 @@
 
 (defn check-submit-type
   [type]
-  (if-not (validation/submit-type? type)
+  (when-not (validation/submit-type? type)
     (throw (RuntimeException. "Not valid type."))))
 
 (defn check-story-type
   [type]
-  (if-not (= type "story")
+  (when-not (= type "story")
     (throw (RuntimeException. "Not valid story type."))))
 
 (defn check-ask-type
   [type]
-  (if-not (= type "ask")
+  (when-not (= type "ask")
     (throw (RuntimeException. "Not valid ask type."))))
 
 (defn check-submit-title
   [title]
-  (if-not (validation/submit-title? title)
+  (when-not (validation/submit-title? title)
     (throw (RuntimeException. (str "Please limit title to 80 characters.This had " (count title) ".")))))
 
 (defn check-submit-url
   [url]
-  (if-not (validation/submit-url? url)
+  (when-not (validation/submit-url? url)
     (throw (RuntimeException. "Not valid url. Ex: https://www.google.com"))))
 
 (defn check-submit-text
   [text]
-  (if-not (validation/submit-text? text)
+  (when-not (validation/submit-text? text)
     (throw (RuntimeException. "Please limit text to 2500 characters."))))
+
+(defn check-submit-city
+  [city]
+  (when-not (validation/submit-city? city)
+    (throw (RuntimeException. error-message/city))))
+
+(defn check-submit-country
+  [country]
+  (when-not (validation/submit-city? country)
+    (throw (RuntimeException. error-message/country))))
 
 (defn check-entry-exist
   [id]

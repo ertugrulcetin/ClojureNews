@@ -44,5 +44,11 @@
              (controller/edit-ask-by-id id))
 
            (DELETE "/entry/ask/delete/:id" [id]
-             (controller/delete-ask-by-id id)))
+             (controller/delete-ask-by-id id))
+
+           ;;Job
+           (PUT "/entry/job" []
+             (controller/create-job))
+
+           )
 

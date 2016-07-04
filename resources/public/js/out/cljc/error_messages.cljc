@@ -29,3 +29,13 @@
 (def own-comment "You can not reply your own comment.")
 
 (def comment-has-replies "You can not delete, the comment has been replied.")
+
+(def country "Country should be between 1 and 40 characters long.")
+
+(def city "City should be between 1 and 40 characters long.")
+
+(def day "Day should be between 1 and 31.")
+
+(def month "Month should be between 1 and 12.")
+
+(def year "Year should be between 2016 and 2056.")

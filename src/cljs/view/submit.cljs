@@ -194,7 +194,6 @@
 
 (defn number-input-checker
   [e max-len]
-  (println (.-keyCode e))
   (if (util.view/in? (.-keyCode e) [8 9 37 39])
     e
     (when-not (and (>= (.-keyCode e) 48)
