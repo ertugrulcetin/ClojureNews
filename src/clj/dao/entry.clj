@@ -25,7 +25,8 @@
 (defn edit-story-by-id
   [^String id
    ^String title]
-  (mc/update-by-id db/clojure-news coll (ObjectId. id) {$set {"title" title}}))
+  (mc/update-by-id db/clojure-news coll (ObjectId. id) {$set {"title"        title
+                                                              "last-updated" (Date.)}}))
 
 (defn create-ask
   [^String title
@@ -37,7 +38,9 @@
   [^String id
    ^String title
    ^String text]
-  (mc/update-by-id db/clojure-news coll (ObjectId. id) {$set {"title" title "text" text}}))
+  (mc/update-by-id db/clojure-news coll (ObjectId. id) {$set {"title"        title
+                                                              "text"         text
+                                                              "last-updated" (Date.)}}))
 
 (defn get-newest-stories-and-asks
   []

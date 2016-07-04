@@ -5,7 +5,8 @@
             [monger.query :refer :all]
             [clj.dao.db :as db]
             [clj.util.entity :as entity-util])
-  (:import (org.bson.types ObjectId)))
+  (:import (org.bson.types ObjectId)
+           (java.util Date)))
 
 ;; comment-entry Collection/Table
 (def coll "comment-entry")
@@ -37,7 +38,8 @@
 (defn edit-comment-by-id
   [^String id
    ^String text]
-  (mc/update-by-id db/clojure-news coll (ObjectId. id) {$set {"content" text}}))
+  (mc/update-by-id db/clojure-news coll (ObjectId. id) {$set {"content"      text
+                                                              "last-updated" (Date.)}}))
 
 (defn delete-comment-by-id
   [^String id]
