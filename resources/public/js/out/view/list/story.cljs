@@ -60,7 +60,7 @@
                [:span {:class "age"} " | "
                 [:a {:href (str "/#/story/" (:_id story))} (util.view/generate-age-status (:created-date story))] " | "
                 [:a {:href (str "/#/story/" (:_id story))} (util.view/generate-comment-status (:number-of-comments story))]
-                (when (util.view/in? (:_id story) (-> stories :story-own-entries))
+                (when (story-owner? story stories)
                   (list " | "
                         [:a {:href (str "/#/story/edit/" (:_id story))} "edit"]
                         " | "

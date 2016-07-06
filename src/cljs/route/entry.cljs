@@ -47,16 +47,16 @@
           (controller.entry/get-newest-by-page page))
 
 ;;Job
-(defroute get-jobs "/jobs" []
+(defroute get-jobs "/job" []
           (controller.entry/get-jobs-by-page "1"))
 
-(defroute get-jobs-by-page "/jobs/p/:page" [page]
+(defroute get-jobs-by-page "/job/p/:page" [page]
           (controller.entry/get-jobs-by-page page))
 
-(defroute edit-job-by-id "/jobs/edit/:id" [id]
+(defroute edit-job-by-id "/job/edit/:id" [id]
           (controller.entry/edit-job-by-id id))
 
-(defroute delete-job-by-id "/jobs/delete/:id" [id]
+(defroute delete-job-by-id "/job/delete/:id" [id]
           (controller.entry/delete-job-by-id id))
 
 ;;Event
@@ -67,7 +67,7 @@
           (controller.entry/get-events-by-page page))
 
 ;(defroute edit-event-by-id "/event/edit/:id" [id]
-;          (controller.entry/ id))
+;          (controller.entry/edit-eve id))
 
 ;(defroute delete-job-by-id "/jobs/delete/:id" [id]
 ;          (controller.entry/delete-job-by-id id))

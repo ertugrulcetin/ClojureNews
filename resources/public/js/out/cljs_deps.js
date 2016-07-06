@@ -65,7 +65,7 @@ goog.addDependency("../route/comment_entry.js", ['route.comment_entry'], ['cljs.
 goog.addDependency("../view/submit.js", ['view.submit'], ['reagent.core', 'cljs.core']);
 goog.addDependency("../controller/submit.js", ['controller.submit'], ['goog.dom', 'view.submit', 'ajax.core', 'reagent.core', 'cljc.error_messages', 'cljs.core', 'util.controller', 'cljc.validation', 'util.view']);
 goog.addDependency("../route/submit.js", ['route.submit'], ['cljs.core', 'controller.submit', 'secretary.core']);
-goog.addDependency("../cljs/main.js", ['cljs.main'], ['goog.dom', 'route.login', 'goog.History.EventType', 'route.entry', 'reagent.core', 'cljs.core', 'goog.History', 'route.user', 'secretary.core', 'route.forgot_password', 'route.comment_entry', 'goog.events', 'route.submit']);
+goog.addDependency("../cljs/main.js", ['cljs.main'], ['goog.dom', 'route.login', 'goog.History.EventType', 'route.entry', 'reagent.core', 'cljs.core', 'goog.History', 'route.user', 'secretary.core', 'util.view', 'route.forgot_password', 'route.comment_entry', 'goog.events', 'route.submit']);
 goog.addDependency("../cljs/core/async/impl/protocols.js", ['cljs.core.async.impl.protocols'], ['cljs.core']);
 goog.addDependency("../cljs/core/async/impl/buffers.js", ['cljs.core.async.impl.buffers'], ['cljs.core', 'cljs.core.async.impl.protocols']);
 goog.addDependency("../cljs/core/async/impl/dispatch.js", ['cljs.core.async.impl.dispatch'], ['cljs.core', 'cljs.core.async.impl.buffers', 'goog.async.nextTick']);

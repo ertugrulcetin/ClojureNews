@@ -121,3 +121,31 @@
 (defn get-year-of-date
   [year]
   (first (parse-date year)))
+
+(defn change-color-to-default
+  []
+  (doseq [element-id ["headerNewId" "headerStoryId" "headerAskId" "headerJobId" "headerEventId" "headerSubmitId"]]
+    (set! (-> (dom/getElement element-id) .-style .-color) "#FFFFFF")))
+
+(defn change-color-to-blue
+  [element-id]
+  (do
+    (change-color-to-default)
+    (set! (-> (dom/getElement element-id) .-style .-color) "#1850C7")))
+
+(defn select-header-button
+  [token]
+  (cond
+    (.startsWith token "/new") (change-color-to-blue "headerNewId")
+    (.startsWith token "/story") (change-color-to-blue "headerStoryId")
+    (.startsWith token "/ask") (change-color-to-blue "headerAskId")
+    (.startsWith token "/job") (change-color-to-blue "headerJobId")
+    (.startsWith token "/event") (change-color-to-blue "headerEventId")
+    (= token "/submit") (change-color-to-blue "headerSubmitId")
+    (or (= token "/") (= token "")) (change-color-to-blue "headerStoryId")
+    :else
+    (change-color-to-default)))
+
+(defn change-page-title
+  [title]
+  (set! (.-title js/document) title))

@@ -42,6 +42,7 @@
          get-job-by-page
          get-own-entries
          get-upvoted-entries
+         get-own-jobs
          calendar->date)
 
 (defn home-page
@@ -80,13 +81,13 @@
                                                 [:td {:style "line-height:12pt; height:10px;"}
                                                  [:span {:class "pagetop"}
                                                   [:b {:class "brandname"}
-                                                   [:a {:class "pagetopwhite", :href "/#/"} "Clojure News"]]
-                                                  [:a {:class "pagetopwhite", :href "/#/new"} "new"] " | "
-                                                  [:a {:class "pagetopwhite", :href "/#/story"} "story"] " | "
-                                                  [:a {:class "pagetopwhite", :href "/#/ask"} "ask"] " | "
-                                                  [:a {:class "pagetopwhite", :href "/#/jobs"} "jobs"] " | "
-                                                  [:a {:class "pagetopwhite", :href "/#/event"} "events"] " | "
-                                                  [:a {:class "pagetopwhite", :href "/#/submit"} "submit"]]]
+                                                   [:a {:id "headerMainId" :class "pagetopwhite", :href "/#/"} "Clojure News"]]
+                                                  [:a {:id "headerStoryId" :class "pagetopwhite", :href "/#/story"} "story"] " | "
+                                                  [:a {:id "headerAskId" :class "pagetopwhite", :href "/#/ask"} "ask"] " | "
+                                                  [:a {:id "headerNewId" :class "pagetopwhite", :href "/#/new"} "new"] " | "
+                                                  [:a {:id "headerJobId" :class "pagetopwhite", :href "/#/job"} "jobs"] " | "
+                                                  [:a {:id "headerEventId" :class "pagetopwhite", :href "/#/event"} "events"] " | "
+                                                  [:a {:id "headerSubmitId" :class "pagetopwhite", :href "/#/submit"} "submit"]]]
                                                 [:td {:style "text-align:right;padding-right:4px;"}
                                                  [:span {:id "pageTopId", :class "pagetop"}
                                                   (if-let [user (get-user ctx)]
@@ -519,11 +520,15 @@
 
             :available-media-types resource-util/avaliable-media-types
 
-            :handle-ok (fn [_]
+            :handle-ok (fn [ctx]
 
                          (let [jobs (job-dao/get-last-n-days-jobs (check-page-data-format page) resource-util/data-per-page)]
-                           {:job-entry jobs
-                            :more?     (= resource-util/data-per-page (count jobs))}))
+                           (if-let [user (get-user ctx)]
+                             {:job-entry       jobs
+                              :job-own-entries (get-own-jobs (:username user) jobs)
+                              :more?           (= resource-util/data-per-page (count jobs))}
+                             {:job-entry jobs
+                              :more?     (= resource-util/data-per-page (count jobs))})))
 
             :handle-exception #(resource-util/get-exception-message %)))
 
@@ -790,6 +795,12 @@
   (let [entries (entry-dao/get-last-n-days-entries entry-type last-n-days)
         ranked-entries (resource-util/create-ranked-links entries)]
     (resource-util/get-links page data-per-page ranked-entries)))
+
+(defn get-own-jobs
+  [username jobs]
+  (let [object-ids (reduce #(conj %1 (:_id %2)) [] jobs)
+        own-entries (job-dao/get-entries-by-username-and-jobs-in-it username object-ids)]
+    (reduce #(conj %1 (str (:_id %2))) [] own-entries)))
 
 (defn get-user
   [ctx]

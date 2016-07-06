@@ -28,7 +28,7 @@
     [:tr
      [:td "remote?:"]
      [:td
-      [:input {:id "remoteId" :name "remote" :type "checkbox" :checked (when (-> job :job-entry :remote?) "true")}]]]
+      [:input {:id "remoteId" :name "remote" :type "checkbox" :defaultChecked (-> job :job-entry :remote?)}]]]
 
     [:tr
      [:td]

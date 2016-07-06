@@ -4,6 +4,7 @@
             [goog.dom :as dom]
             [secretary.core :as secretary]
             [reagent.core :as r]
+            [util.view]
             [route.entry]
             [route.comment-entry]
             [route.login]
@@ -16,14 +17,14 @@
 
 (secretary/set-config! :prefix "#")
 
-
 (let [h (History.)]
   (goog.events/listen h EventType/NAVIGATE #(do
-                                             ;;removes error message every route change
-                                             (r/render-component [(fn [])] util.view/message-container)
-                                             (secretary/dispatch! (.-token %))))
+                                             (let [token (.-token %)]
+
+                                               ;;removes error message every route change
+                                               (r/render-component [(fn [])] util.view/message-container)
+                                               (secretary/dispatch! token)
+                                               (util.view/select-header-button token))))
   (doto h
     (.setEnabled true)))
-    ;(.setToken (str js/window.location.pathname js/window.location.search))
-
-
+;(.setToken (str js/window.location.pathname js/window.location.search))
