@@ -10,6 +10,7 @@
             [hiccup.core :as hiccup]
             [cljc.validation :as validation]
             [cljc.error-messages :as error-message]
+            [cljc.page-util :as page-util]
             [clojure.string :as str]
             [monger.json])
   (:import (java.util Calendar Date)))
@@ -43,6 +44,7 @@
          get-own-entries
          get-upvoted-entries
          get-own-jobs
+         get-own-events
          calendar->date)
 
 (defn home-page
@@ -76,12 +78,12 @@
                                               [:tbody
                                                [:tr
                                                 [:td {:style "width:18px;padding-right:4px"}
-                                                 [:a {:href "/#/"}
+                                                 [:a {:href "/"}
                                                   [:img {:src "/img/logo.png", :width "18", :height "18", :style "border:1px white solid;"}]]]
                                                 [:td {:style "line-height:12pt; height:10px;"}
                                                  [:span {:class "pagetop"}
                                                   [:b {:class "brandname"}
-                                                   [:a {:id "headerMainId" :class "pagetopwhite", :href "/#/"} "Clojure News"]]
+                                                   [:a {:id "headerMainId" :class "pagetopwhite", :href "/"} "Clojure News"]]
                                                   [:a {:id "headerStoryId" :class "pagetopwhite", :href "/#/story"} "story"] " | "
                                                   [:a {:id "headerAskId" :class "pagetopwhite", :href "/#/ask"} "ask"] " | "
                                                   [:a {:id "headerNewId" :class "pagetopwhite", :href "/#/new"} "new"] " | "
@@ -176,8 +178,8 @@
 
             :handle-ok (fn [ctx]
 
-                         (let [data-per-page-inc (+ resource-util/data-per-page 1)
-                               stories (get-entry-by-page "story" (check-page-data-format page) data-per-page-inc resource-util/last-n-days)
+                         (let [data-per-page-inc (+ page-util/data-per-page 1)
+                               stories (get-entry-by-page "story" (check-page-data-format page) data-per-page-inc page-util/last-n-days)
                                real-stories (if (= (count stories) data-per-page-inc) (butlast stories) stories)]
                            (if-let [user (get-user ctx)]
                              {:story-entry           real-stories
@@ -336,8 +338,8 @@
 
             :handle-ok (fn [ctx]
 
-                         (let [data-per-page-inc (+ resource-util/data-per-page 1)
-                               asks (get-entry-by-page "ask" (check-page-data-format page) data-per-page-inc resource-util/last-n-days)
+                         (let [data-per-page-inc (+ page-util/data-per-page 1)
+                               asks (get-entry-by-page "ask" (check-page-data-format page) data-per-page-inc page-util/last-n-days)
                                real-asks (if (= (count asks) data-per-page-inc) (butlast asks) asks)]
                            (if-let [user (get-user ctx)]
                              {:ask-entry           real-asks
@@ -460,14 +462,14 @@
 
             :handle-ok (fn [ctx]
 
-                         (let [entries (entry-dao/get-newest-stories-and-asks (check-page-data-format page) resource-util/data-per-page)]
+                         (let [entries (entry-dao/get-newest-stories-and-asks (check-page-data-format page) page-util/data-per-page)]
                            (if-let [user (get-user ctx)]
                              {:newest-entry           entries
                               :newest-own-entries     (get-own-entries (:username user) entries)
                               :newest-upvoted-entries (get-upvoted-entries (:username user) entries)
-                              :more?                  (= resource-util/data-per-page (count entries))}
-                             {:story-entry entries
-                              :more?       (= resource-util/data-per-page (count entries))})))
+                              :more?                  (= page-util/data-per-page (count entries))}
+                             {:newest-entry entries
+                              :more?        (= page-util/data-per-page (count entries))})))
 
             :handle-exception #(resource-util/get-exception-message %)))
 
@@ -522,13 +524,13 @@
 
             :handle-ok (fn [ctx]
 
-                         (let [jobs (job-dao/get-last-n-days-jobs (check-page-data-format page) resource-util/data-per-page)]
+                         (let [jobs (job-dao/get-last-n-days-jobs (check-page-data-format page) page-util/data-per-page)]
                            (if-let [user (get-user ctx)]
                              {:job-entry       jobs
                               :job-own-entries (get-own-jobs (:username user) jobs)
-                              :more?           (= resource-util/data-per-page (count jobs))}
+                              :more?           (= page-util/data-per-page (count jobs))}
                              {:job-entry jobs
-                              :more?     (= resource-util/data-per-page (count jobs))})))
+                              :more?     (= page-util/data-per-page (count jobs))})))
 
             :handle-exception #(resource-util/get-exception-message %)))
 
@@ -639,7 +641,6 @@
                           starting-date-month (:starting-date-month data-as-map)
                           starting-date-year (:starting-date-year data-as-map)]
 
-                      (println (Integer/parseInt starting-date-year))
                       (check-submit-type type)
                       (check-submit-title title)
                       (check-submit-url url)
@@ -675,11 +676,15 @@
 
             :available-media-types resource-util/avaliable-media-types
 
-            :handle-ok (fn [_]
+            :handle-ok (fn [ctx]
 
-                         (let [events (event-dao/get-last-n-days-events (check-page-data-format page) resource-util/data-per-page)]
-                           {:event-entry events
-                            :more?       (= resource-util/data-per-page (count events))}))
+                         (let [events (event-dao/get-last-n-days-events (check-page-data-format page) page-util/data-per-page)]
+                           (if-let [user (get-user ctx)]
+                             {:event-entry       events
+                              :event-own-entries (get-own-events (:username user) events)
+                              :more?             (= page-util/data-per-page (count events))}
+                             {:event-entry events
+                              :more?       (= page-util/data-per-page (count events))})))
 
             :handle-exception #(resource-util/get-exception-message %)))
 
@@ -800,6 +805,12 @@
   [username jobs]
   (let [object-ids (reduce #(conj %1 (:_id %2)) [] jobs)
         own-entries (job-dao/get-entries-by-username-and-jobs-in-it username object-ids)]
+    (reduce #(conj %1 (str (:_id %2))) [] own-entries)))
+
+(defn get-own-events
+  [username events]
+  (let [object-ids (reduce #(conj %1 (:_id %2)) [] events)
+        own-entries (event-dao/get-entries-by-username-and-events-in-it username object-ids)]
     (reduce #(conj %1 (str (:_id %2))) [] own-entries)))
 
 (defn get-user

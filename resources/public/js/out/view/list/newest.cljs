@@ -1,5 +1,6 @@
 (ns view.list.newest
-  (:require [util.view]))
+  (:require [util.view]
+            [cljc.page-util :as page-util]))
 
 (declare owner?
          upvoted?)
@@ -13,7 +14,7 @@
     (let [page-as-int (.parseInt js/window page)
           counter (atom (-> page-as-int
                             (- 1)
-                            (* 5)))]
+                            (* page-util/data-per-page)))]
 
       (list
         (for [entry (-> entries :newest-entry)]

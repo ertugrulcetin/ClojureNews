@@ -48,3 +48,8 @@
                    (find {:starting-date {$gte (Date.)}})
                    (sort {:starting-date 1})
                    (paginate :page page :per-page per-page)))
+
+(defn get-entries-by-username-and-events-in-it
+  [username entries]
+  (mc/find-maps db/clojure-news coll {$and [{:created-by username}
+                                            {:_id {$in entries}}]}))

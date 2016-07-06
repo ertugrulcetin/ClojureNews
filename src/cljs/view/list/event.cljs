@@ -1,8 +1,8 @@
 (ns view.list.event
-  (:require [cljs-time.core :as cljs-time]
-            [util.view]))
+  (:require [util.view]))
 
-(declare get-month-name)
+(declare get-month-name
+         event-owner?)
 
 (defn component-event
   [events page]
@@ -20,8 +20,17 @@
              [:td {:class "title" :style {:vertical-align "top" :text-align "right"}}
               [:span {:class "rank"}]]
 
-             [:td
-              [:img {:src "/img/s.gif", :height "1", :width "14"}]]
+             [:td {:class "votelinks" :style {:vertical-align "top"}}
+              (cond
+                (event-owner? event events)
+                [:center
+                 [:font {:color "#5fba7d"} "*"]
+                 [:br]
+                 [:img {:src "/img/s.gif", :height "1", :width "14"}]]
+
+                :else
+                [:center
+                 [:img {:src "/img/s.gif", :height "1", :width "14"}]])]
 
              [:td {:class "title"}
               [:span {:class "deadmark"}]
@@ -43,7 +52,12 @@
              [:td {:colSpan "2"}]
              [:td {:class "subtext"}
               [:span {:class "age"}
-               (util.view/generate-age-status (:created-date event))]]]
+               (util.view/generate-age-status (:created-date event))
+               (when (event-owner? event events)
+                 (list " | "
+                       [:a {:href (str "/#/event/edit/" (:_id event))} "edit"]
+                       " | "
+                       [:a {:href (str "/#/event/delete/" (:_id event))} "delete"]))]]]
 
             [:tr {:class "spacer" :style {:height "7"}}]))
 
@@ -70,3 +84,7 @@
     10 "October"
     11 "November"
     "December"))
+
+(defn event-owner?
+  [event events]
+  (util.view/in? (:_id event) (-> events :event-own-entries)))

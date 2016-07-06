@@ -37,41 +37,49 @@
 
 (defn component-delete
   [job]
-  [:table
+  [:table {:border "0"}
    [:tbody
-    [:tr
-     [:td "title:"]
-     [:td
-      (-> job :job-entry :title)]]
 
-    [:tr
-     [:td "url:"]
-     [:td
-      (-> job :job-entry :url)]]
+    (list
+      [:tr {:class "athing"}
 
-    [:tr
-     [:td "country:"]
-     [:td
-      (-> job :job-entry :country)]]
+       [:td {:text-align "right" :vertical-align "top" :class "title"}
+        [:span {:class "rank"}]]
 
-    [:tr
-     [:td "city:"]
-     [:td
-      (-> job :job-entry :city)]]
+       [:td {:vertical-align "top" :class "votelinks"}
+        [:center
 
-    [:tr
-     [:td "remote?:"]
-     [:td
-      (if (-> job :job-entry :remote?) "true" "false")]]
+         (if (-> job :owner?)
+           [:font {:color "#5fba7d"} "*"]
+           [:a {:id "aa" :href "#"}
+            [:div {:class "votearrow" :title "upvote"}]])]]
 
-    [:tr {:style {:height "10px"}}]
+       [:td {:class "title"}
+        [:a {:href (-> job :job-entry :url) :class "storylink"} (-> job :job-entry :title)]]]
 
-    [:tr
-     [:td]
-     [:td
-      "Do you want this to be deleted?"
-      [:br]
-      [:br]
-      [:button {:id "buttonDeleteJobYesId"} "yes"]
-      "  "
-      [:button {:id "buttonDeleteJobNoId"} "no"]]]]])
+      [:tr
+       [:td {:colSpan "2"}]
+       [:td {:class "subtext"}
+        [:span {:id "span" :class "score"}
+         (util.view/generate-upvote-status (-> job :job-entry :upvote))
+         [:a {:href (str "/#/user/" (-> job :job-entry :created-by))} (-> job :job-entry :created-by)]
+         [:span {:class "age"} " | "
+          [:a {:href (str "/#/job/" (-> job :job-entry :_id))} (util.view/generate-age-status (-> job :job-entry :created-date))] " | "
+          (when (-> job :owner?)
+            (list [:a {:href (str "/#/job/edit/" (-> job :job-entry :_id))} "edit"]
+                  " | "
+                  [:a {:href (str "/#/job/delete/" (-> job :job-entry :_id))} "delete"]))]]]]
+
+      [:tr {:style {:height "10px"}}]
+
+      [:tr {:style {:height "10px"}}]
+
+      [:tr
+       [:td {:colSpan "2"}]
+       [:td
+        "Do you want this to be deleted?"
+        [:br]
+        [:br]
+        [:button {:id "buttonDeleteJobYesId"} "yes"]
+        "  "
+        [:button {:id "buttonDeleteJobNoId"} "no"]]])]])
