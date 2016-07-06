@@ -38,6 +38,14 @@
 (defroute delete-ask-by-id "/ask/delete/:id" [id]
           (controller.entry/delete-ask-by-id id))
 
+;;Newest
+
+(defroute get-newest "/new" []
+          (controller.entry/get-newest-by-page "1"))
+
+(defroute get-newest-by-page "/new/p/:page" [page]
+          (controller.entry/get-newest-by-page page))
+
 ;;Job
 (defroute get-jobs "/jobs" []
           (controller.entry/get-jobs-by-page "1"))

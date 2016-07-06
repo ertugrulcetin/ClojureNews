@@ -13,6 +13,7 @@
             [view.list.ask]
             [view.list.job]
             [view.list.event]
+            [view.list.newest]
             [controller.upvote]
             [controller.comment-entry]))
 
@@ -177,6 +178,16 @@
            :error-handler   util.controller/error-handler
            :format          (ajax/json-request-format)
            :response-format (ajax/json-response-format {:keywords? true})}))
+
+(defn get-newest-by-page
+  [page]
+  (GET (str "/entry/newest/p/" page)
+       {:handler         (fn [response]
+                           (r/render-component [(fn []
+                                                  (view.list.newest/component-list-newest response page))] util.view/main-container))
+        :error-handler   util.controller/error-handler
+        :format          (ajax/json-request-format)
+        :response-format (ajax/json-response-format {:keywords? true})}))
 
 (defn get-jobs-by-page
   [page]

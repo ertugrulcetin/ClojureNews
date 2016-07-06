@@ -46,6 +46,10 @@
            (DELETE "/entry/ask/delete/:id" [id]
              (controller/delete-ask-by-id id))
 
+           ;;Newest
+           (GET "/entry/newest/p/:page" [page]
+             (controller/get-newest-stories-and-stories-by-page page))
+
            ;;Job
            (PUT "/entry/job" []
              (controller/create-job))

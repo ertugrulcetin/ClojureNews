@@ -180,8 +180,8 @@
                                real-stories (if (= (count stories) data-per-page-inc) (butlast stories) stories)]
                            (if-let [user (get-user ctx)]
                              {:story-entry           real-stories
-                              :story-own-entries     (get-own-entries (:username user) "story" stories)
-                              :story-upvoted-entries (get-upvoted-entries (:username user) "story" stories)
+                              :story-own-entries     (get-own-entries (:username user) stories)
+                              :story-upvoted-entries (get-upvoted-entries (:username user) stories)
                               :more?                 (= data-per-page-inc (count stories))}
                              {:story-entry stories
                               :more?       (= data-per-page-inc (count stories))})))
@@ -340,8 +340,8 @@
                                real-asks (if (= (count asks) data-per-page-inc) (butlast asks) asks)]
                            (if-let [user (get-user ctx)]
                              {:ask-entry           real-asks
-                              :ask-own-entries     (get-own-entries (:username user) "ask" asks)
-                              :ask-upvoted-entries (get-upvoted-entries (:username user) "ask" asks)
+                              :ask-own-entries     (get-own-entries (:username user) asks)
+                              :ask-upvoted-entries (get-upvoted-entries (:username user) asks)
                               :more?               (= data-per-page-inc (count asks))}
                              {:ask-entry asks
                               :more?     (= data-per-page-inc (count asks))})))
@@ -450,6 +450,26 @@
 
             :handle-exception #(resource-util/get-exception-message %)))
 
+;;Newest Ask and Story
+(defn get-newest-stories-and-stories-by-page
+  [page]
+  (resource :allowed-methods [:get]
+
+            :available-media-types resource-util/avaliable-media-types
+
+            :handle-ok (fn [ctx]
+
+                         (let [entries (entry-dao/get-newest-stories-and-asks (check-page-data-format page) resource-util/data-per-page)]
+                           (if-let [user (get-user ctx)]
+                             {:newest-entry           entries
+                              :newest-own-entries     (get-own-entries (:username user) entries)
+                              :newest-upvoted-entries (get-upvoted-entries (:username user) entries)
+                              :more?                  (= resource-util/data-per-page (count entries))}
+                             {:story-entry entries
+                              :more?       (= resource-util/data-per-page (count entries))})))
+
+            :handle-exception #(resource-util/get-exception-message %)))
+
 ;;Job
 (defn create-job
   []
@@ -501,11 +521,9 @@
 
             :handle-ok (fn [_]
 
-                         (let [data-per-page-inc (+ resource-util/data-per-page 1)
-                               more-jobs (job-dao/get-last-n-days-jobs (check-page-data-format page) data-per-page-inc)
-                               real-jobs (job-dao/get-last-n-days-jobs (check-page-data-format page) resource-util/data-per-page)]
-                           {:job-entry real-jobs
-                            :more?     (= data-per-page-inc (count more-jobs))}))
+                         (let [jobs (job-dao/get-last-n-days-jobs (check-page-data-format page) resource-util/data-per-page)]
+                           {:job-entry jobs
+                            :more?     (= resource-util/data-per-page (count jobs))}))
 
             :handle-exception #(resource-util/get-exception-message %)))
 
@@ -654,11 +672,9 @@
 
             :handle-ok (fn [_]
 
-                         (let [data-per-page-inc (+ resource-util/data-per-page 1)
-                               more-events (event-dao/get-last-n-days-events (check-page-data-format page) data-per-page-inc)
-                               real-events (event-dao/get-last-n-days-events (check-page-data-format page) resource-util/data-per-page)]
-                           {:event-entry real-events
-                            :more?       (= data-per-page-inc (count more-events))}))
+                         (let [events (event-dao/get-last-n-days-events (check-page-data-format page) resource-util/data-per-page)]
+                           {:event-entry events
+                            :more?       (= resource-util/data-per-page (count events))}))
 
             :handle-exception #(resource-util/get-exception-message %)))
 
@@ -758,20 +774,19 @@
             :handle-exception #(resource-util/get-exception-message %)))
 
 (defn get-own-entries
-  [username type entries]
+  [username entries]
   (let [object-ids (reduce #(conj %1 (:_id %2)) [] entries)
-        own-entries (entry-dao/get-entries-by-username-and-entries-in-it username type object-ids)]
+        own-entries (entry-dao/get-entries-by-username-and-entries-in-it username object-ids)]
     (reduce #(conj %1 (str (:_id %2))) [] own-entries)))
 
 (defn get-upvoted-entries
-  [username type entries]
+  [username entries]
   (let [ids (reduce #(conj %1 (str (:_id %2))) [] entries)
-        upvoted-entries (upvote-dao/get-upvotes-by-username-and-upvotes-in-it username type ids)]
+        upvoted-entries (upvote-dao/get-upvotes-by-username-and-upvotes-in-it username ids)]
     (reduce #(conj %1 (:entry-id %2)) [] upvoted-entries)))
 
 (defn get-entry-by-page
   [entry-type page data-per-page last-n-days]
-
   (let [entries (entry-dao/get-last-n-days-entries entry-type last-n-days)
         ranked-entries (resource-util/create-ranked-links entries)]
     (resource-util/get-links page data-per-page ranked-entries)))

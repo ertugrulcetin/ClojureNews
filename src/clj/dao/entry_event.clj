@@ -43,8 +43,8 @@
   (mc/remove-by-id db/clojure-news coll (ObjectId. id)))
 
 (defn get-last-n-days-events
-  [page day]
+  [page per-page]
   (with-collection db/clojure-news coll
                    (find {:starting-date {$gte (Date.)}})
-                   (sort {:created-date -1})
-                   (paginate :page page :per-page day)))
+                   (sort {:starting-date 1})
+                   (paginate :page page :per-page per-page)))

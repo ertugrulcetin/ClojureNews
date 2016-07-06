@@ -43,6 +43,14 @@
                                                               "text"         text
                                                               "last-updated" (Date.)}}))
 
+(defn get-newest-stories-and-asks
+  [page per-page]
+  (with-collection db/clojure-news coll
+                   (find {$or [{:type "ask"}
+                               {:type "story"}]})
+                   (sort {:created-date -1})
+                   (paginate :page page :per-page per-page)))
+
 (defn delete-entry-by-id
   [^String id]
   (mc/remove-by-id db/clojure-news coll (ObjectId. id)))
@@ -65,7 +73,6 @@
                                                                                                   (* (+ day 1)))))}}]}))
 
 (defn get-entries-by-username-and-entries-in-it
-  [username type entries]
+  [username entries]
   (mc/find-maps db/clojure-news coll {$and [{:created-by username}
-                                            {:type type}
                                             {:_id {$in entries}}]}))

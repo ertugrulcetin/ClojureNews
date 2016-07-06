@@ -43,7 +43,7 @@
   (mc/remove-by-id db/clojure-news coll (ObjectId. id)))
 
 (defn get-last-n-days-jobs
-  [page day]
+  [page per-page]
   (with-collection db/clojure-news coll
                    (sort {:created-date -1})
-                   (paginate :page page :per-page day)))
+                   (paginate :page page :per-page per-page)))
