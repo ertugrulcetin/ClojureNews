@@ -60,5 +60,21 @@
              (controller/edit-job-by-id id))
 
            (DELETE "/entry/job/delete/:id" [id]
-             (controller/delete-job-by-id id)))
+             (controller/delete-job-by-id id))
+
+           ;;Event
+           (PUT "/entry/event" []
+             (controller/create-event))
+
+           (GET "/entry/event/p/:page" [page]
+             (controller/get-events-by-page page))
+
+           (GET "/entry/event/info/:id" [id]
+             (controller/get-event-litte-info-by-id id))
+
+           (POST "/entry/event/edit/:id" [id]
+             (controller/edit-event-by-id id))
+
+           (DELETE "/entry/event/delete/:id" [id]
+             (controller/delete-event-by-id id)))
 

@@ -9,8 +9,8 @@
             [clj.route.login :as route-login]
             [clj.route.entry :as route-entry]
             [clj.route.comment-entry :as route-comment-entry]
-            [clj.route.upvote :as route-upvote]
-            )
+            [clj.route.upvote :as route-upvote])
+
   (:gen-class))
 
 (defn log-middleware

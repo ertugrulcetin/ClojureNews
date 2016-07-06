@@ -4,12 +4,11 @@
             [monger.operators :refer :all]
             [monger.query :refer :all]
             [clj.dao.db :as db]
-            [clj.util.entity :as entity-util]
-            [clj.util.resource :as resource-util])
+            [clj.util.entity :as entity-util])
   (:import (org.bson.types ObjectId)
            (java.util Date)))
 
-;; job Collection/Table
+;; Job Collection/Table
 (def coll "job")
 
 (defn find-by-id
@@ -48,5 +47,3 @@
   (with-collection db/clojure-news coll
                    (sort {:created-date -1})
                    (paginate :page page :per-page day)))
-
-(println (count (get-last-n-days-jobs 2 5)))

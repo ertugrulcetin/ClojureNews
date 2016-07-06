@@ -51,5 +51,15 @@
 (defroute delete-job-by-id "/jobs/delete/:id" [id]
           (controller.entry/delete-job-by-id id))
 
-;(defroute ask "/ask/:id" [id]
-;          (controller.entry/ask id))
+;;Event
+(defroute get-events "/event" []
+          (controller.entry/get-events-by-page "1"))
+
+(defroute get-event-by-page "/event/p/:page" [page]
+          (controller.entry/get-events-by-page page))
+
+;(defroute edit-event-by-id "/event/edit/:id" [id]
+;          (controller.entry/ id))
+
+;(defroute delete-job-by-id "/jobs/delete/:id" [id]
+;          (controller.entry/delete-job-by-id id))

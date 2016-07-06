@@ -43,14 +43,6 @@
                                                               "text"         text
                                                               "last-updated" (Date.)}}))
 
-(defn get-newest-stories-and-asks
-  []
-  (with-collection db/clojure-news coll
-                   (find {$or [{:type "ask"}
-                               {:type "story"}]})
-                   (sort {:created-date 1})
-                   (paginate :page 1 :per-page 30)))
-
 (defn delete-entry-by-id
   [^String id]
   (mc/remove-by-id db/clojure-news coll (ObjectId. id)))

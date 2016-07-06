@@ -4,13 +4,15 @@
             [clj.dao.user :as user-dao]
             [clj.dao.entry :as entry-dao]
             [clj.dao.entry-job :as job-dao]
+            [clj.dao.entry-event :as event-dao]
             [clj.dao.comment-entry :as comment-entry-dao]
             [clj.dao.upvote :as upvote-dao]
             [hiccup.core :as hiccup]
             [cljc.validation :as validation]
             [cljc.error-messages :as error-message]
             [clojure.string :as str]
-            [monger.json]))
+            [monger.json])
+  (:import (java.util Calendar Date)))
 
 (declare get-user
          create-ask
@@ -23,10 +25,14 @@
          check-submit-text
          check-submit-city
          check-submit-country
+         check-submit-day
+         check-submit-month
+         check-submit-year
          check-entry-exist
          check-job-exist
          check-entry-owner
          check-page-data-format
+         check-event-exist
          group-by-parent-and-sort-by-vote
          create-comment-tree
          flat-one-level
@@ -35,7 +41,8 @@
          get-entry-by-page
          get-job-by-page
          get-own-entries
-         get-upvoted-entries)
+         get-upvoted-entries
+         calendar->date)
 
 (defn home-page
   []
@@ -75,10 +82,10 @@
                                                   [:b {:class "brandname"}
                                                    [:a {:class "pagetopwhite", :href "/#/"} "Clojure News"]]
                                                   [:a {:class "pagetopwhite", :href "/#/new"} "new"] " | "
-                                                  [:a {:class "pagetopwhite", :href "/#/comments"} "comments"] " | "
+                                                  [:a {:class "pagetopwhite", :href "/#/story"} "story"] " | "
                                                   [:a {:class "pagetopwhite", :href "/#/ask"} "ask"] " | "
                                                   [:a {:class "pagetopwhite", :href "/#/jobs"} "jobs"] " | "
-                                                  [:a {:class "pagetopwhite", :href "/#/events"} "events"] " | "
+                                                  [:a {:class "pagetopwhite", :href "/#/event"} "events"] " | "
                                                   [:a {:class "pagetopwhite", :href "/#/submit"} "submit"]]]
                                                 [:td {:style "text-align:right;padding-right:4px;"}
                                                  [:span {:id "pageTopId", :class "pagetop"}
@@ -95,9 +102,9 @@
                                              [:center
                                               [:p
                                                "Clojure News is in beta. Please don't hesitate to report bugs to "
-                                               [:a {:href "mailto:info@clojure.news"}
+                                               [:a {:href "https://github.com/ertugrulcetin/ClojureNews/issues" :target "_blank"}
                                                 [:u
-                                                 "info@clojure.news"]]]]]]
+                                                 "the github issues page."]]]]]]
                                            [:tr
                                             [:td {:id "messageContainerId"}]]
                                            [:tr
@@ -124,17 +131,6 @@
             :handle-exception (fn [_]
                                 "Something went wrong")))
 
-(defn entry
-  []
-  (resource :allowed-methods [:get]
-
-            :available-media-types resource-util/avaliable-media-types
-
-            :handle-ok (fn [ctx]
-                         (entry-dao/get-newest-stories-and-asks))
-
-            :handle-exception #(resource-util/get-exception-message %)))
-
 ;;Story
 (defn create-story
   []
@@ -156,7 +152,6 @@
 
                       (check-submit-type type)
                       (check-story-type type)
-
                       (check-submit-title title)
                       (check-submit-url url)
 
@@ -319,7 +314,6 @@
 
                       (check-submit-type type)
                       (check-ask-type type)
-
                       (check-submit-title title)
                       (check-submit-text text)
 
@@ -479,7 +473,6 @@
                           remote? (:remote? data-as-map)]
 
                       (check-submit-type type)
-
                       (check-submit-title title)
                       (check-submit-url url)
                       (check-submit-city city)
@@ -599,6 +592,171 @@
 
             :handle-exception #(resource-util/get-exception-message %)))
 
+;;Event
+(defn create-event
+  []
+  (resource :allowed-methods [:put]
+
+            :available-media-types resource-util/avaliable-media-types
+
+            :known-content-type? #(resource-util/check-content-type % resource-util/avaliable-media-types)
+
+            :malformed? #(resource-util/parse-json % ::data)
+
+            :authorized? #(resource-util/auth? %)
+
+            :put! (fn [ctx]
+                    (let [data-as-map (resource-util/convert-data-map (::data ctx))
+                          type (:type data-as-map)
+                          title (:title data-as-map)
+                          url (:url data-as-map)
+                          city (:city data-as-map)
+                          country (:country data-as-map)
+                          starting-date-day (:starting-date-day data-as-map)
+                          starting-date-month (:starting-date-month data-as-map)
+                          starting-date-year (:starting-date-year data-as-map)]
+
+                      (println (Integer/parseInt starting-date-year))
+                      (check-submit-type type)
+                      (check-submit-title title)
+                      (check-submit-url url)
+                      (check-submit-city city)
+                      (check-submit-country country)
+                      (check-submit-day starting-date-day)
+                      (check-submit-month starting-date-month)
+                      (check-submit-year starting-date-year)
+
+                      (let [username (resource-util/get-username ctx)
+                            starting-date (calendar->date (doto (Calendar/getInstance)
+                                                            (.set (Calendar/DAY_OF_MONTH) (Integer/parseInt starting-date-day))
+                                                            (.set (Calendar/MONTH) (- (Integer/parseInt starting-date-month) 1))
+                                                            (.set (Calendar/YEAR) (Integer/parseInt starting-date-year))))]
+
+
+                        (event-dao/create-event (str/capitalize (str/trim title))
+                                                (str/trim url)
+                                                starting-date
+                                                (str/capitalize (str/trim city))
+                                                (str/capitalize (str/trim country))
+                                                username)
+                        (user-dao/inc-user-karma-by-username username))))
+
+            :handle-created (fn [_]
+                              {:created? true})
+
+            :handle-exception #(resource-util/get-exception-message %)))
+
+(defn get-events-by-page
+  [page]
+  (resource :allowed-methods [:get]
+
+            :available-media-types resource-util/avaliable-media-types
+
+            :handle-ok (fn [_]
+
+                         (let [data-per-page-inc (+ resource-util/data-per-page 1)
+                               more-events (event-dao/get-last-n-days-events (check-page-data-format page) data-per-page-inc)
+                               real-events (event-dao/get-last-n-days-events (check-page-data-format page) resource-util/data-per-page)]
+                           {:event-entry real-events
+                            :more?       (= data-per-page-inc (count more-events))}))
+
+            :handle-exception #(resource-util/get-exception-message %)))
+
+(defn get-event-litte-info-by-id
+  [id]
+  (resource :allowed-methods [:get]
+
+            :available-media-types resource-util/avaliable-media-types
+
+            :handle-ok (fn [ctx]
+                         (let [event (check-event-exist id)]
+                           {:event-entry event
+                            :owner?      (= (:created-by event) (-> ctx get-user :username))}))
+
+            :handle-exception #(resource-util/get-exception-message %)))
+
+(defn edit-event-by-id
+  [id]
+  (resource :allowed-methods [:post]
+
+            :available-media-types resource-util/avaliable-media-types
+
+            :known-content-type? #(resource-util/check-content-type % resource-util/avaliable-media-types)
+
+            :malformed? #(resource-util/parse-json % ::data)
+
+            :authorized? #(resource-util/auth? %)
+
+            :post! (fn [ctx]
+                     (let [data-as-map (resource-util/convert-data-map (::data ctx))
+                           type (:type data-as-map)
+                           title (:title data-as-map)
+                           url (:url data-as-map)
+                           city (:city data-as-map)
+                           country (:country data-as-map)
+                           starting-date-day (:starting-date-day data-as-map)
+                           starting-date-month (:starting-date-day data-as-map)
+                           starting-date-year (:starting-date-day data-as-map)]
+
+                       (let [event (check-event-exist id)]
+                         (check-entry-owner event ctx)
+                         (check-submit-type type)
+                         (check-submit-title title)
+                         (check-submit-url url)
+                         (check-submit-city city)
+                         (check-submit-country country)
+                         (check-submit-day starting-date-day)
+                         (check-submit-month starting-date-month)
+                         (check-submit-year starting-date-year))
+
+
+                       (let [starting-date (calendar->date (doto (Calendar/getInstance)
+                                                             (.set (Calendar/DAY_OF_MONTH) (Integer/parseInt starting-date-day))
+                                                             (.set (Calendar/MONTH) (- (Integer/parseInt starting-date-month) 1))
+                                                             (.set (Calendar/YEAR) (Integer/parseInt starting-date-year))))]
+
+                         (event-dao/edit-event-by-id id
+                                                     (str/capitalize (str/trim title))
+                                                     (str/trim url)
+                                                     (str/capitalize (str/trim city))
+                                                     (str/capitalize (str/trim country))
+                                                     starting-date))))
+
+            :handle-created (fn [_]
+                              {:updated? true})
+
+            :handle-exception #(resource-util/get-exception-message %)))
+
+(defn delete-event-by-id
+  [id]
+  (resource :allowed-methods [:delete]
+
+            :available-media-types resource-util/avaliable-media-types
+
+            :known-content-type? #(resource-util/check-content-type % resource-util/avaliable-media-types)
+
+            :malformed? #(resource-util/parse-json % ::data)
+
+            :authorized? #(resource-util/auth? %)
+
+            :new? (fn [_]
+                    false)
+
+            :respond-with-entity? (fn [_]
+                                    true)
+
+            :delete! (fn [ctx]
+
+                       (let [event (check-event-exist id)]
+                         (check-entry-owner event ctx)
+                         (event-dao/delete-event-by-id id)
+                         (user-dao/dec-user-karma-by-username (:created-by event))))
+
+            :handle-ok (fn [_]
+                         {:deleted? true})
+
+            :handle-exception #(resource-util/get-exception-message %)))
+
 (defn get-own-entries
   [username type entries]
   (let [object-ids (reduce #(conj %1 (:_id %2)) [] entries)
@@ -653,7 +811,6 @@
   (if (every? vector? coll)
     coll
     (recur (flat-one-level coll))))
-
 
 (defn create-comments
   [comments-map]
@@ -710,23 +867,47 @@
   (when-not (validation/submit-city? country)
     (throw (RuntimeException. error-message/country))))
 
+(defn check-submit-day
+  [day]
+  (when-not (validation/submit-day? day)
+    (throw (RuntimeException. error-message/day))))
+
+(defn check-submit-month
+  [month]
+  (when-not (validation/submit-month? month)
+    (throw (RuntimeException. error-message/month))))
+
+(defn check-submit-year
+  [year]
+  (when-not (validation/submit-year? year)
+    (throw (RuntimeException. error-message/year))))
+
 (defn check-entry-exist
   [id]
   (try
     (if-let [entry (entry-dao/find-by-id id)]
       entry
-      (throw (RuntimeException. "No such entry!")))
+      (throw (RuntimeException. error-message/no-entry)))
     (catch Exception e
-      (throw (RuntimeException. "No such entry!")))))
+      (throw (RuntimeException. error-message/no-entry)))))
 
 (defn check-job-exist
   [id]
   (try
     (if-let [job (job-dao/find-by-id id)]
       job
-      (throw (RuntimeException. "No such entry!")))
+      (throw (RuntimeException. error-message/no-job)))
     (catch Exception e
-      (throw (RuntimeException. "No such entry!")))))
+      (throw (RuntimeException. error-message/no-job)))))
+
+(defn check-event-exist
+  [id]
+  (try
+    (if-let [event (event-dao/find-by-id id)]
+      event
+      (throw (RuntimeException. error-message/no-event)))
+    (catch Exception e
+      (throw (RuntimeException. error-message/no-event)))))
 
 (defn check-entry-owner
   [entry ctx]
@@ -742,3 +923,7 @@
       p-int)
     (catch Exception e
       (throw (RuntimeException. "Not valid page number.")))))
+
+(defn calendar->date
+  [calendar]
+  (-> calendar .getTimeInMillis Date.))

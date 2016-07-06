@@ -122,10 +122,10 @@
     (util.view/render-error-message error-message/year)
 
     :else
-    (PUT "/entry/ask"
+    (PUT "/entry/event"
          {:params          data
           :handler         (fn [response]
-                             (util.view/change-url (str "/#/ask/" (:entry-id response))))
+                             (util.view/change-url "/#/"))
           :error-handler   util.controller/error-handler
           :format          (ajax/json-request-format)
           :response-format (ajax/json-response-format {:keywords? true})})))

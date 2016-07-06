@@ -12,6 +12,7 @@
             [view.list.story]
             [view.list.ask]
             [view.list.job]
+            [view.list.event]
             [controller.upvote]
             [controller.comment-entry]))
 
@@ -69,7 +70,7 @@
 
     (cond
       (not (validation/submit-title? title))
-      (util.view/render-error-message "Please limit title to 80 characters.")
+      (util.view/render-error-message error-message/title)
 
       :else
       (POST (str "/entry/story/edit/" id)
@@ -142,10 +143,10 @@
 
     (cond
       (not (validation/submit-title? title))
-      (util.view/render-error-message "Please limit title to 80 characters.")
+      (util.view/render-error-message error-message/title)
 
       (not (validation/submit-text? text))
-      (util.view/render-error-message "Please limit text to 2500 characters.")
+      (util.view/render-error-message error-message/text)
 
       :else
       (POST (str "/entry/ask/edit/" id)
@@ -251,6 +252,17 @@
            :format          (ajax/json-request-format)
            :response-format (ajax/json-response-format {:keywords? true})}))
 
+
+(defn get-events-by-page
+  [page]
+  (GET (str "/entry/event/p/" page)
+       {:handler         (fn [response]
+                           (r/render-component [(fn []
+                                                  (view.list.event/component-event response page))] util.view/main-container))
+        :error-handler   util.controller/error-handler
+        :format          (ajax/json-request-format)
+        :response-format (ajax/json-response-format {:keywords? true})}))
+
 (defn dont-delete-story
   []
   (util.view/change-url "/#/"))
@@ -319,7 +331,7 @@
 (defn add-event-listener-to-delete-job-button-yes
   [id]
   (.addEventListener (dom/getElement "buttonDeleteJobYesId") "click" (fn [_]
-                                                                      (delete-job id))))
+                                                                       (delete-job id))))
 
 (defn add-event-listener-to-delete-job-button-no
   []

@@ -88,43 +88,44 @@
         [:a {:href (str "/#/user/" (:username user) "/changepassword")}
          [:u "change password"]]]])
 
-    [:tr
-     [:td]
-     [:td
-      [:a {:href (str "/#/user/" (:username user) "/submissions")}
-       [:u "submissions"]]]]
-
-    [:tr
-     [:td]
-     [:td
-      [:a {:href (str "/#/user/" (:username user) "/comments")}
-       [:u "comments"]]]]
-
-
-    (if (:auth? user)
-      [:tr
-       [:td]
-       [:td
-        [:a {:href (str "/#/user/" (:username user) "/jobs")}
-         [:u "jobs"]]
-        (str ", ")
-        [:a {:href (str "/#/user/" (:username user) "/events")}
-         [:u "events"]]]])
-
-    [:tr
-     [:td
-      [:br]]]
-
-
-    (if (:auth? user)
-      [:tr
-       [:td]
-       [:td
-        [:a {:href "/#/upvotedentries"}
-         [:u "upvoted entries"]]
-        (str ", ")
-        [:a {:href "/#/upvotedcomments"}
-         [:u "upvoted comments"]]]])
+    ;;TODO will be implemented for the feature release
+    ;[:tr
+    ; [:td]
+    ; [:td
+    ;  [:a {:href (str "/#/user/" (:username user) "/submissions")}
+    ;   [:u "submissions"]]]]
+    ;
+    ;[:tr
+    ; [:td]
+    ; [:td
+    ;  [:a {:href (str "/#/user/" (:username user) "/comments")}
+    ;   [:u "comments"]]]]
+    ;
+    ;
+    ;(if (:auth? user)
+    ;  [:tr
+    ;   [:td]
+    ;   [:td
+    ;    [:a {:href (str "/#/user/" (:username user) "/jobs")}
+    ;     [:u "jobs"]]
+    ;    (str ", ")
+    ;    [:a {:href (str "/#/user/" (:username user) "/events")}
+    ;     [:u "events"]]]])
+    ;
+    ;[:tr
+    ; [:td
+    ;  [:br]]]
+    ;
+    ;
+    ;(if (:auth? user)
+    ;  [:tr
+    ;   [:td]
+    ;   [:td
+    ;    [:a {:href "/#/upvotedentries"}
+    ;     [:u "upvoted entries"]]
+    ;    (str ", ")
+    ;    [:a {:href "/#/upvotedcomments"}
+    ;     [:u "upvoted comments"]]]])
 
     (if (:auth? user)
       [:tr

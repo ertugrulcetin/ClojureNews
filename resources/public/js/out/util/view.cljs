@@ -105,3 +105,19 @@
       (< hour 24) (if (= hour 1) (str hour " hour ago") (str hour " hours ago"))
       :else
       (if (= day 1) (str day " day ago") (str day " days ago")))))
+
+(defn- parse-date
+  [date]
+  (str/split (.substring date 0 10) #"-"))
+
+(defn get-day-of-date
+  [day]
+  (last (parse-date day)))
+
+(defn get-month-of-date
+  [month]
+  (second (parse-date month)))
+
+(defn get-year-of-date
+  [year]
+  (first (parse-date year)))

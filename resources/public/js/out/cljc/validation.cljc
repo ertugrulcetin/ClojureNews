@@ -19,7 +19,7 @@
   [url]
   (or (str/blank? url)
       (and
-        (re-matches #"^(https?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]" url)
+        (re-matches #"^(https?)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]" url)
         (>= (count (str/split (get-pure-url url) #"[.]")) 2)
         (>= (count (last (str/split (get-pure-url url) #"[.]"))) 2))))
 
@@ -58,7 +58,7 @@
   [url]
   (and (not (str/blank? url))
        (<= (count url) 500)
-       (re-matches #"^(https?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]" url)
+       (re-matches #"^(https?)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]" url)
        (>= (count (str/split (get-pure-url url) #"[.]")) 2)
        (>= (count (last (str/split (get-pure-url url) #"[.]"))) 2)))
 
@@ -75,18 +75,18 @@
                 (<= (js/parseInt day) 31))))
 
 (defn submit-month?
-  [day]
-  #?(:clj  (and (>= (Integer/parseInt day) 1)
-                (<= (Integer/parseInt day) 12))
-     :cljs (and (>= (js/parseInt day) 1)
-                (<= (js/parseInt day) 12))))
+  [month]
+  #?(:clj  (and (>= (Integer/parseInt month) 1)
+                (<= (Integer/parseInt month) 12))
+     :cljs (and (>= (js/parseInt month) 1)
+                (<= (js/parseInt month) 12))))
 
 (defn submit-year?
-  [day]
-  #?(:clj  (and (>= (Integer/parseInt day) 2016)
-                (<= (Integer/parseInt day) 2056))
-     :cljs (and (>= (js/parseInt day) 2016)
-                (<= (js/parseInt day) 2056))))
+  [year]
+  #?(:clj  (and (>= (Integer/parseInt year) 2016)
+                (<= (Integer/parseInt year) 2056))
+     :cljs (and (>= (js/parseInt year) 2016)
+                (<= (js/parseInt year) 2056))))
 
 (defn submit-city?
   [city]

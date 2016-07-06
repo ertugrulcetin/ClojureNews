@@ -8,6 +8,10 @@
 
 (def no-entry "No such entry.")
 
+(def no-job "No such job.")
+
+(def no-event "No such event.")
+
 (def comment-owner "You are not the comment owner.")
 
 (def username "Usernames can only contain letters, digits and underscores, and should be between 2 and 15 characters long. Please choose another.")
