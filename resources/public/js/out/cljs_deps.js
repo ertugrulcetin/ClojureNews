@@ -57,7 +57,7 @@ goog.addDependency("../view/list/ask.js", ['view.list.ask'], ['cljs.core', 'util
 goog.addDependency("../controller/entry.js", ['controller.entry'], ['goog.dom', 'view.entry.story_entry', 'ajax.core', 'view.entry.ask_entry', 'view.list.newest', 'reagent.core', 'cljc.error_messages', 'cljs.core', 'view.list.job', 'view.entry.job', 'view.list.event', 'util.controller', 'cljc.validation', 'util.view', 'view.list.story', 'controller.upvote', 'controller.comment_entry', 'view.list.ask']);
 goog.addDependency("../route/entry.js", ['route.entry'], ['controller.entry', 'cljs.core', 'secretary.core']);
 goog.addDependency("../view/changepassword.js", ['view.changepassword'], ['cljs.core']);
-goog.addDependency("../controller/user.js", ['controller.user'], ['ajax.core', 'reagent.core', 'cljs.core', 'util.controller', 'view.changepassword', 'cljc.validation', 'cljc.string_util', 'util.view', 'view.user']);
+goog.addDependency("../controller/user.js", ['controller.user'], ['goog.dom', 'ajax.core', 'reagent.core', 'cljs.core', 'util.controller', 'view.changepassword', 'cljc.validation', 'cljc.string_util', 'util.view', 'view.user', 'clojure.string']);
 goog.addDependency("../route/user.js", ['route.user'], ['reagent.core', 'cljs.core', 'controller.user', 'view.changepassword', 'secretary.core', 'util.view', 'view.user']);
 goog.addDependency("../view/forgot_password.js", ['view.forgot_password'], ['cljs.core']);
 goog.addDependency("../route/forgot_password.js", ['route.forgot_password'], ['reagent.core', 'cljs.core', 'view.forgot_password', 'secretary.core', 'util.view']);

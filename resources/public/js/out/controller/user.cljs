@@ -2,11 +2,13 @@
   (:require [ajax.core :as ajax :refer [GET POST PUT]]
             [cljc.validation :as validation]
             [cljc.string-util :as string-util]
+            [goog.dom :as dom]
             [util.view]
             [view.user]
             [view.changepassword]
             [util.controller]
-            [reagent.core :as r]))
+            [reagent.core :as r]
+            [clojure.string :as str]))
 
 (enable-console-print!)
 
@@ -39,9 +41,7 @@
       (util.view/render-error-message "Not valid url. Ex: https://www.google.com")
 
       (not (validation/github-or-twitter? (:github data)))
-      (do
-        (println "Ertu: " (:github data))
-        (util.view/render-error-message "Not valid GitHub Username. Ex: ertugrulcetin"))
+      (util.view/render-error-message "Not valid GitHub Username. Ex: ertugrulcetin")
 
       (not (validation/github-or-twitter? (:twitter data)))
       (util.view/render-error-message "Not valid Twitter Username. Ex: ertuctn")
@@ -53,7 +53,9 @@
       (POST (str "/user/" username)
             {:params          (string-util/trim-map-values (update-in data [:about] #(apply str (interpose "\n" (string-util/new-line-tokens %)))))
              :handler         (fn [_]
-                                (util.view/render-update-successfully))
+                                (util.view/render-update-successfully)
+                                (when-not (str/blank? (:email data))
+                                  (set! (.-innerText (dom/getElement "userEmailErrorMessageId")) "")))
              :error-handler   util.controller/error-handler
              :format          (ajax/json-request-format)
              :response-format (ajax/json-response-format {:keywords? true})}))))

@@ -6,6 +6,17 @@
   [:table
    [:tbody
 
+    (when (:auth? user)
+      (when-not (:email user)
+        [:tr
+         [:td]
+         [:td
+          [:br]
+          [:font {:id "userEmailErrorMessageId" :style {:color "red"}}
+           "Please put a valid address in the email field, or we won't be able to send you a new password if you forget yours. Your address is only visible to you and us.
+            Crawlers and other users can't see it."]
+          [:br]]]))
+
     [:tr
      [:td {:style {:vertical-align "top"}} "user:"]
      [:td (:username user)]]
@@ -88,7 +99,7 @@
         [:a {:href (str "/#/user/" (:username user) "/changepassword")}
          [:u "change password"]]]])
 
-    ;;TODO will be implemented for the feature release
+    ;;TODO will be implemented in the feature release
     ;[:tr
     ; [:td]
     ; [:td

@@ -18,7 +18,7 @@
             [controller.comment-entry]))
 
 (declare add-event-listener-to-add-comment-button
-         add-event-listener-to-upvote-buttons
+         add-event-listener-to-upvote-buttons-for-comments
          add-event-listener-to-edit-story-button
          add-event-listener-to-edit-ask-button
          add-event-listener-to-story-button-yes
@@ -27,14 +27,17 @@
          add-event-listener-to-ask-button-no
          add-event-listener-to-edit-job-button
          add-event-listener-to-delete-job-button-yes
-         add-event-listener-to-delete-job-button-no)
+         add-event-listener-to-delete-job-button-no
+         add-event-listener-to-upvote-buttons-for-entries
+         add-event-listener-to-upvote-buttons-for-newest-entries)
 
 (defn get-stories-by-page
   [page]
   (GET (str "/entry/story/p/" page)
        {:handler         (fn [response]
                            (r/render-component [(fn []
-                                                  (view.list.story/component-list-story response page))] util.view/main-container))
+                                                  (view.list.story/component-list-story response page))] util.view/main-container)
+                           (add-event-listener-to-upvote-buttons-for-entries response :story))
         :error-handler   util.controller/error-handler
         :format          (ajax/json-request-format)
         :response-format (ajax/json-response-format {:keywords? true})}))
@@ -47,8 +50,7 @@
                                                   (view.entry.story-entry/component-story response))] util.view/main-container)
 
                            (add-event-listener-to-add-comment-button get-story-by-id id)
-                           (add-event-listener-to-upvote-buttons response :story)
-                           )
+                           (add-event-listener-to-upvote-buttons-for-comments response :story))
         :error-handler   util.controller/error-handler
         :format          (ajax/json-request-format)
         :response-format (ajax/json-response-format {:keywords? true})}))
@@ -110,7 +112,7 @@
                            (r/render-component [(fn []
                                                   (view.entry.ask-entry/component-ask response))] util.view/main-container)
                            (add-event-listener-to-add-comment-button get-ask-by-id id)
-                           (add-event-listener-to-upvote-buttons response :ask))
+                           (add-event-listener-to-upvote-buttons-for-comments response :ask))
         :error-handler   util.controller/error-handler
         :format          (ajax/json-request-format)
         :response-format (ajax/json-response-format {:keywords? true})}))
@@ -120,7 +122,8 @@
   (GET (str "/entry/ask/p/" page)
        {:handler         (fn [response]
                            (r/render-component [(fn []
-                                                  (view.list.ask/component-list-ask response page))] util.view/main-container))
+                                                  (view.list.ask/component-list-ask response page))] util.view/main-container)
+                           (add-event-listener-to-upvote-buttons-for-entries response :ask))
         :error-handler   util.controller/error-handler
         :format          (ajax/json-request-format)
         :response-format (ajax/json-response-format {:keywords? true})}))
@@ -184,7 +187,8 @@
   (GET (str "/entry/newest/p/" page)
        {:handler         (fn [response]
                            (r/render-component [(fn []
-                                                  (view.list.newest/component-list-newest response page))] util.view/main-container))
+                                                  (view.list.newest/component-list-newest response page))] util.view/main-container)
+                           (add-event-listener-to-upvote-buttons-for-newest-entries response))
         :error-handler   util.controller/error-handler
         :format          (ajax/json-request-format)
         :response-format (ajax/json-response-format {:keywords? true})}))
@@ -290,7 +294,7 @@
   [entry id]
   (.addEventListener (dom/getElement "buttonAddCommentId") "click" (fn [_]
                                                                      (controller.comment-entry/add-comment entry id ["textId"]))))
-(defn add-event-listener-to-upvote-buttons
+(defn add-event-listener-to-upvote-buttons-for-comments
   [response type]
 
   (let [comments (if (= type :story) :story-comments :ask-comments)
@@ -303,6 +307,34 @@
           (when-let [node (dom/getElement (str "id-upvote-" comment-id))]
             (.addEventListener node "click" (fn [_]
                                               (controller.upvote/upvote-comment comment-id)))))))))
+
+(defn add-event-listener-to-upvote-buttons-for-entries
+  [response type]
+
+  (let [entries (if (= type :story) :story-entry :ask-entry)
+        upvoted-entries (if (= type :story) :story-upvoted-entries :ask-upvoted-entries)]
+
+    (doseq [entry (-> response entries)]
+      (let [entry-id (:_id entry)
+            upvoted-entries-coll (-> response upvoted-entries)]
+        (when-not (util.view/in? entry-id upvoted-entries-coll)
+          (when-let [node (dom/getElement (str "id-upvote-" entry-id))]
+            (.addEventListener node "click" (fn [_]
+                                              (controller.upvote/upvote-entry entry-id)))))))))
+
+(defn add-event-listener-to-upvote-buttons-for-newest-entries
+  [response]
+
+  (let [entries :newest-entry
+        upvoted-entries :newest-upvoted-entries]
+
+    (doseq [entry (-> response entries)]
+      (let [entry-id (:_id entry)
+            upvoted-entries-coll (-> response upvoted-entries)]
+        (when-not (util.view/in? entry-id upvoted-entries-coll)
+          (when-let [node (dom/getElement (str "id-upvote-" entry-id))]
+            (.addEventListener node "click" (fn [_]
+                                              (controller.upvote/upvote-entry entry-id)))))))))
 
 (defn add-event-listener-to-edit-story-button
   [id]

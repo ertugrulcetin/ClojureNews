@@ -8,4 +8,5 @@
            (PUT "/upvote/comment/:id" [id]
              (controller/create-comment-upvote id))
 
-           )
+           (PUT "/upvote/entry/:id" [id]
+             (controller/create-entry-upvote id)))

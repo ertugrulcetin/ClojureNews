@@ -21,7 +21,7 @@
 (defn render-update-successfully
   []
   (r/render-component [view.user/component-update] util.view/message-container)
-  (js/setTimeout (fn [] (set! (.-innerText (dom/getElement "messageContainerId")) "")) 3000))
+  (js/setTimeout (fn [] (set! (.-innerText (dom/getElement "messageContainerId")) "")) 2500))
 
 ;;TODO will be changed!!! https.....!
 (defn change-url

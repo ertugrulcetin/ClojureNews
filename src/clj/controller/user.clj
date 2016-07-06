@@ -1,12 +1,11 @@
 (ns clj.controller.user
   (:require [liberator.core :refer [resource defresource]]
-            [liberator.representation :as rep]
             [clj.util.resource :as resource-util]
             [clj.dao.user :as user-dao]
             [cljc.validation :as validation]
             [cljc.string-util :as string-util]
-            [clj.util.entity :as entity-util]
-            [pandect.algo.sha256 :as hash])
+            [pandect.algo.sha256 :as hash]
+            [clojure.string :as str])
   (:import (java.util Date)))
 
 (declare itself?
@@ -86,12 +85,14 @@
                        (check-twitter twitter)
                        (check-show-email? show-email?)
 
-                       (check-email-exists (-> ctx :user-obj :username) email)
+                       (when-not (str/blank? email)
+                         (check-email-exists (-> ctx :user-obj :username) email))
 
                        (try
-                         (let [show-email-updated (update-in (string-util/trim-map-values data-as-map) [:show-email?] #(if (= "yes" %) true false))
-                               about-updated (update-in show-email-updated [:about] #(apply str (interpose "\n" (string-util/new-line-tokens %))))]
-                           (user-dao/update-user-info-by-username username about-updated))
+                         (let [show-email-updated-user (update-in (string-util/trim-map-values data-as-map) [:show-email?] #(if (= "yes" %) true false))
+                               about-updated-user (update-in show-email-updated-user [:about] #(apply str (interpose "\n" (string-util/new-line-tokens %))))
+                               email-updated-user (update-in about-updated-user [:email] #(if (str/blank? %) nil email))]
+                           (user-dao/update-user-info-by-username username email-updated-user))
                          (catch Exception e
                            (throw (RuntimeException. "Something went wrong."))))))
 

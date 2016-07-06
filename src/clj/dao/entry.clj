@@ -55,6 +55,10 @@
   [^String id]
   (mc/remove-by-id db/clojure-news coll (ObjectId. id)))
 
+(defn inc-entry-upvote-count
+  [^String id]
+  (mc/update-by-id db/clojure-news coll (ObjectId. id) {$inc {:upvote 1}}))
+
 (defn inc-entry-comment-count
   [^String id]
   (mc/update-by-id db/clojure-news coll (ObjectId. id) {$inc {:number-of-comments 1}}))

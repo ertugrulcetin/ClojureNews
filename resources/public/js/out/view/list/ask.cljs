@@ -45,7 +45,7 @@
 
              [:td {:class "title"}
               [:span {:class "deadmark"}]
-              [:a {:href (:url ask) :target "_blank"} (str "Ask CN: " (:title ask))]]]
+              [:a {:href (str "/#/ask/" (:_id ask))} (str "Ask CN: " (:title ask))]]]
 
             [:tr
              [:td {:colSpan "2"}]
