@@ -43,6 +43,7 @@
   [id]
   (GET (str "/comment/" id)
        {:handler         (fn [response]
+                           (util.view/change-page-title "Reply Comment")
                            (r/render-component [(fn []
                                                   (view.comment-entry/component-reply response))] util.view/main-container)
                            (add-event-listener-to-reply-button id))
@@ -73,6 +74,7 @@
   [id]
   (GET (str "/comment/" id)
        {:handler         (fn [response]
+                           (util.view/change-page-title "Edit Comment")
                            (r/render-component [(fn []
                                                   (view.comment-entry/component-edit response))] util.view/main-container)
                            (add-event-listener-to-edit-button id))
@@ -102,6 +104,7 @@
   [id]
   (GET (str "/comment/" id)
        {:handler         (fn [response]
+                           (util.view/change-page-title "Delete Comment")
                            (r/render-component [(fn []
                                                   (view.comment-entry/component-delete response))] util.view/main-container)
                            (add-event-listener-to-delete-yes-button id)

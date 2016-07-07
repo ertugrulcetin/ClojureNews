@@ -63,6 +63,7 @@
 
 (defn change-password-page
   [username]
+  (util.view/change-page-title "Change Password")
   (r/render-component [(fn []
                          (view.changepassword/component username change-password))] util.view/main-container))
 

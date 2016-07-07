@@ -43,8 +43,8 @@ if(cljs.core.not.call(null,cljc.validation.show_email_QMARK__QMARK_.call(null,ne
 return util.view.render_error_message.call(null,"Not valid show email option.");
 } else {
 return ajax.core.POST.call(null,[cljs.core.str("/user/"),cljs.core.str(username)].join(''),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"params","params",710516235),cljc.string_util.trim_map_values.call(null,cljs.core.update_in.call(null,data,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"about","about",1423892543)], null),((function (data){
-return (function (p1__32077_SHARP_){
-return cljs.core.apply.call(null,cljs.core.str,cljs.core.interpose.call(null,"\n",cljc.string_util.new_line_tokens.call(null,p1__32077_SHARP_)));
+return (function (p1__32148_SHARP_){
+return cljs.core.apply.call(null,cljs.core.str,cljs.core.interpose.call(null,"\n",cljc.string_util.new_line_tokens.call(null,p1__32148_SHARP_)));
 });})(data))
 )),new cljs.core.Keyword(null,"handler","handler",-195596612),((function (data){
 return (function (_){
@@ -66,6 +66,8 @@ return goog.dom.getElement("userEmailErrorMessageId").innerText = "";
 }
 });
 controller.user.change_password_page = (function controller$user$change_password_page(username){
+util.view.change_page_title.call(null,"Change Password");
+
 return reagent.core.render_component.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [(function (){
 return view.changepassword.component.call(null,username,controller.user.change_password);
 })], null),util.view.main_container);

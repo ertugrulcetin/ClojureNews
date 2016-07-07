@@ -17,6 +17,7 @@
 
 (defn log-in-page
   []
+  (util.view/change-page-title "Login")
   (r/render-component [(fn []
                          (view.login/component log-in sign-up))] util.view/main-container))
 

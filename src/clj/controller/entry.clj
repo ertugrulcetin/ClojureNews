@@ -125,7 +125,6 @@
                                               [:span {:class "yclinks"}
                                                [:a {:class "pagebottomgray", :href "/#/guidelines"} "Guidelines"] " | "
                                                [:a {:class "pagebottomgray", :href "/#/faq"} "FAQ"] " | "
-                                               [:a {:class "pagebottomgray", :href "/#/lists"} "Lists"] " | "
                                                [:a {:class "pagebottomgray", :href "mailto:info@clojure.news"} "Contact"]]
                                               [:br]
                                               [:br]]]]]]]
@@ -208,7 +207,8 @@
                                                                                                       :str-parent-comment-id (if (:parent-comment-id %2)
                                                                                                                                (:parent-comment-id %2)
                                                                                                                                nil)))
-                                                                                  [] (comment-entry-dao/get-comments-by-entry-id id)))}]
+                                                                                  [] (comment-entry-dao/get-comments-by-entry-id id)))
+                                         :upvoted? (upvote-dao/find-story-upvote-by-created-by-and-entry-id (:username user) id)}]
                            (if user
                              (assoc response :story-upvoted-comments (reduce #(conj %1 (:comment-id %2)) [] (upvote-dao/find-by-type-and-entry-id "story-comment" id)))
                              response)))

@@ -33,7 +33,8 @@
          add-event-listener-to-upvote-buttons-for-newest-entries
          add-event-listener-to-edit-event-button
          add-event-listener-to-delete-event-button-yes
-         add-event-listener-to-delete-event-button-no)
+         add-event-listener-to-delete-event-button-no
+         add-event-listener-to-upvote-button-for-entry)
 
 (defn get-stories-by-page
   [page]
@@ -56,7 +57,8 @@
                                                   (view.entry.story-entry/component-story response))] util.view/main-container)
 
                            (add-event-listener-to-add-comment-button get-story-by-id id)
-                           (add-event-listener-to-upvote-buttons-for-comments response :story))
+                           (add-event-listener-to-upvote-buttons-for-comments response :story)
+                           (add-event-listener-to-upvote-button-for-entry id))
         :error-handler   util.controller/error-handler
         :format          (ajax/json-request-format)
         :response-format (ajax/json-response-format {:keywords? true})}))
@@ -494,3 +496,9 @@
   []
   (.addEventListener (dom/getElement "buttonDeleteEventNoId") "click" (fn [_]
                                                                         (dont-delete-event))))
+
+(defn add-event-listener-to-upvote-button-for-entry
+  [entry-id]
+  (when-let [element (dom/getElement (str "id-upvote-" entry-id))]
+    (.addEventListener element "click" (fn [_]
+                                         (controller.upvote/upvote-entry entry-id)))))

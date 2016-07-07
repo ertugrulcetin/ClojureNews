@@ -38,6 +38,8 @@ return util.view.scroll_to_top.call(null);
 });
 controller.comment_entry.reply_comment_by_id = (function controller$comment_entry$reply_comment_by_id(id){
 return ajax.core.GET.call(null,[cljs.core.str("/comment/"),cljs.core.str(id)].join(''),new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"handler","handler",-195596612),(function (response){
+util.view.change_page_title.call(null,"Reply Comment");
+
 reagent.core.render_component.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [(function (){
 return view.comment_entry.component_reply.call(null,response);
 })], null),util.view.main_container);
@@ -61,6 +63,8 @@ return util.view.change_url.call(null,[cljs.core.str("/#/"),cljs.core.str(new cl
 });
 controller.comment_entry.edit_comment_by_id = (function controller$comment_entry$edit_comment_by_id(id){
 return ajax.core.GET.call(null,[cljs.core.str("/comment/"),cljs.core.str(id)].join(''),new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"handler","handler",-195596612),(function (response){
+util.view.change_page_title.call(null,"Edit Comment");
+
 reagent.core.render_component.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [(function (){
 return view.comment_entry.component_edit.call(null,response);
 })], null),util.view.main_container);
@@ -84,6 +88,8 @@ return controller.comment_entry.edit_comment_by_id.call(null,id);
 });
 controller.comment_entry.delete_comment_by_id = (function controller$comment_entry$delete_comment_by_id(id){
 return ajax.core.GET.call(null,[cljs.core.str("/comment/"),cljs.core.str(id)].join(''),new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"handler","handler",-195596612),(function (response){
+util.view.change_page_title.call(null,"Delete Comment");
+
 reagent.core.render_component.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [(function (){
 return view.comment_entry.component_delete.call(null,response);
 })], null),util.view.main_container);

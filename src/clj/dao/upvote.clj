@@ -45,3 +45,17 @@
   [username entries]
   (mc/find-maps db/clojure-news coll {$and [{:created-by username}
                                             {:entry-id {$in entries}}]}))
+
+(defn find-story-upvote-by-created-by-and-entry-id
+  [^String created-by
+   ^String entry-id]
+  (mc/find-one-as-map db/clojure-news coll {$and [{:created-by created-by}
+                                                  {:entry-id entry-id}
+                                                  {:type "story"}]}))
+
+(defn find-ask-upvote-by-created-by-and-entry-id
+  [^String created-by
+   ^String entry-id]
+  (mc/find-one-as-map db/clojure-news coll {$and [{:created-by created-by}
+                                                  {:entry-id entry-id}
+                                                  {:type "ask"}]}))

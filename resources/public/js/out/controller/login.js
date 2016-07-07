@@ -13,6 +13,8 @@ controller.login.handler = (function controller$login$handler(_){
 return util.view.change_url.call(null,"/");
 });
 controller.login.log_in_page = (function controller$login$log_in_page(){
+util.view.change_page_title.call(null,"Login");
+
 return reagent.core.render_component.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [(function (){
 return view.login.component.call(null,controller.login.log_in,controller.login.sign_up);
 })], null),util.view.main_container);
