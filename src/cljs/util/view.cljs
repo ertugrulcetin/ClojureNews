@@ -149,3 +149,14 @@
 (defn change-page-title
   [title]
   (set! (.-title js/document) (str title " | Clojure News")))
+
+(defn change-header-links-page-titles
+  [token]
+  (case token
+    "/new" (change-page-title "Newest")
+    "/story" (change-page-title "Story")
+    "/ask" (change-page-title "Ask")
+    "/job" (change-page-title "Jobs")
+    "/event" (change-page-title "Events")
+    "/submit" (change-page-title "Submit")
+    nil))

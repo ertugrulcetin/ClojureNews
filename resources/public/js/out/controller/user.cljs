@@ -19,6 +19,7 @@
   [username]
   (GET (str "/user/" username)
        {:handler         (fn [response]
+                           (util.view/change-page-title (-> response :username))
                            (r/render-component [(fn []
                                                   (view.user/component response update-user))] util.view/main-container))
         :error-handler   util.controller/error-handler

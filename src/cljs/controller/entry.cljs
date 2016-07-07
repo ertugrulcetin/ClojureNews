@@ -39,6 +39,7 @@
   [page]
   (GET (str "/entry/story/p/" page)
        {:handler         (fn [response]
+                           (util.view/change-page-title "Story")
                            (r/render-component [(fn []
                                                   (view.list.story/component-list-story response page))] util.view/main-container)
                            (add-event-listener-to-upvote-buttons-for-entries response :story))
@@ -50,6 +51,7 @@
   [id]
   (GET (str "/entry/story/" id)
        {:handler         (fn [response]
+                           (util.view/change-page-title (-> response :story-entry :title))
                            (r/render-component [(fn []
                                                   (view.entry.story-entry/component-story response))] util.view/main-container)
 
@@ -63,6 +65,7 @@
   [id]
   (GET (str "/entry/story/info/" id)
        {:handler         (fn [response]
+                           (util.view/change-page-title (-> response :story-entry :title))
                            (r/render-component [(fn []
                                                   (view.entry.story-entry/component-edit response))] util.view/main-container)
                            (add-event-listener-to-edit-story-button id))
@@ -92,6 +95,7 @@
   [id]
   (GET (str "/entry/story/info/" id)
        {:handler         (fn [response]
+                           (util.view/change-page-title (-> response :story-entry :title))
                            (r/render-component [(fn []
                                                   (view.entry.story-entry/component-delete response))] util.view/main-container)
                            (add-event-listener-to-story-button-yes id)
@@ -113,6 +117,7 @@
   [id]
   (GET (str "/entry/ask/" id)
        {:handler         (fn [response]
+                           (util.view/change-page-title (str "Ask CN: " (-> response :ask-entry :title)))
                            (r/render-component [(fn []
                                                   (view.entry.ask-entry/component-ask response))] util.view/main-container)
                            (add-event-listener-to-add-comment-button get-ask-by-id id)
@@ -125,6 +130,7 @@
   [page]
   (GET (str "/entry/ask/p/" page)
        {:handler         (fn [response]
+                           (util.view/change-page-title "Ask")
                            (r/render-component [(fn []
                                                   (view.list.ask/component-list-ask response page))] util.view/main-container)
                            (add-event-listener-to-upvote-buttons-for-entries response :ask))
@@ -136,6 +142,7 @@
   [id]
   (GET (str "/entry/ask/info/" id)
        {:handler         (fn [response]
+                           (util.view/change-page-title (str "Ask CN: " (-> response :ask-entry :title)))
                            (r/render-component [(fn []
                                                   (view.entry.ask-entry/component-edit response))] util.view/main-container)
                            (add-event-listener-to-edit-ask-button id))
@@ -169,6 +176,7 @@
   [id]
   (GET (str "/entry/ask/info/" id)
        {:handler         (fn [response]
+                           (util.view/change-page-title (str "Ask CN: " (-> response :ask-entry :title)))
                            (r/render-component [(fn []
                                                   (view.entry.ask-entry/component-delete response))] util.view/main-container)
                            (add-event-listener-to-ask-button-yes id)
@@ -190,6 +198,7 @@
   [page]
   (GET (str "/entry/newest/p/" page)
        {:handler         (fn [response]
+                           (util.view/change-page-title "Newest")
                            (r/render-component [(fn []
                                                   (view.list.newest/component-list-newest response page))] util.view/main-container)
                            (add-event-listener-to-upvote-buttons-for-newest-entries response))
@@ -201,6 +210,7 @@
   [page]
   (GET (str "/entry/job/p/" page)
        {:handler         (fn [response]
+                           (util.view/change-page-title "Jobs")
                            (r/render-component [(fn []
                                                   (view.list.job/component-job response page))] util.view/main-container))
         :error-handler   util.controller/error-handler
@@ -211,6 +221,7 @@
   [id]
   (GET (str "/entry/job/info/" id)
        {:handler         (fn [response]
+                           (util.view/change-page-title (-> response :job-entry :title))
                            (r/render-component [(fn []
                                                   (view.entry.job/component-edit response))] util.view/main-container)
                            (add-event-listener-to-edit-job-button id))
@@ -253,6 +264,7 @@
   [id]
   (GET (str "/entry/job/info/" id)
        {:handler         (fn [response]
+                           (util.view/change-page-title (-> response :job-entry :title))
                            (r/render-component [(fn []
                                                   (view.entry.job/component-delete response))] util.view/main-container)
 
@@ -276,6 +288,7 @@
   [page]
   (GET (str "/entry/event/p/" page)
        {:handler         (fn [response]
+                           (util.view/change-page-title "Events")
                            (r/render-component [(fn []
                                                   (view.list.event/component-event response page))] util.view/main-container))
         :error-handler   util.controller/error-handler
@@ -286,10 +299,10 @@
   [id]
   (GET (str "/entry/event/info/" id)
        {:handler         (fn [response]
+                           (util.view/change-page-title (-> response :event-entry :title))
                            (r/render-component [(fn []
                                                   (view.entry.event/component-edit response))] util.view/main-container)
-                           (add-event-listener-to-edit-event-button id)
-                           )
+                           (add-event-listener-to-edit-event-button id))
         :error-handler   util.controller/error-handler
         :format          (ajax/json-request-format)
         :response-format (ajax/json-response-format {:keywords? true})}))
@@ -305,8 +318,6 @@
         day (:starting-date-day data)
         month (:starting-date-month data)
         year (:starting-date-year data)]
-
-    (println day " " month " " year)
 
     (cond
       (not (validation/submit-title? title))
@@ -343,12 +354,12 @@
   [id]
   (GET (str "/entry/event/info/" id)
        {:handler         (fn [response]
+                           (util.view/change-page-title (-> response :event-entry :title))
                            (r/render-component [(fn []
                                                   (view.entry.event/component-delete response))] util.view/main-container)
 
                            (add-event-listener-to-delete-event-button-yes id)
-                           (add-event-listener-to-delete-event-button-no)
-                           )
+                           (add-event-listener-to-delete-event-button-no))
         :error-handler   util.controller/error-handler
         :format          (ajax/json-request-format)
         :response-format (ajax/json-response-format {:keywords? true})}))

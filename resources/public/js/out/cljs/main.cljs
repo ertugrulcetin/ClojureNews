@@ -24,7 +24,8 @@
                                                ;;removes error message every route change
                                                (r/render-component [(fn [])] util.view/message-container)
                                                (secretary/dispatch! token)
-                                               (util.view/select-header-button token))))
+                                               (util.view/select-header-button token)
+                                               (util.view/change-header-links-page-titles token))))
   (doto h
     (.setEnabled true)))
 ;(.setToken (str js/window.location.pathname js/window.location.search))
