@@ -208,7 +208,7 @@
                                                                                                                                (:parent-comment-id %2)
                                                                                                                                nil)))
                                                                                   [] (comment-entry-dao/get-comments-by-entry-id id)))
-                                         :upvoted? (upvote-dao/find-story-upvote-by-created-by-and-entry-id (:username user) id)}]
+                                         :upvoted?       (upvote-dao/find-story-upvote-by-created-by-and-entry-id (:username user) id)}]
                            (if user
                              (assoc response :story-upvoted-comments (reduce #(conj %1 (:comment-id %2)) [] (upvote-dao/find-by-type-and-entry-id "story-comment" id)))
                              response)))
@@ -368,7 +368,8 @@
                                                                                                     :str-parent-comment-id (if (:parent-comment-id %2)
                                                                                                                              (:parent-comment-id %2)
                                                                                                                              nil)))
-                                                                                [] (comment-entry-dao/get-comments-by-entry-id id)))}]
+                                                                                [] (comment-entry-dao/get-comments-by-entry-id id)))
+                                         :upvoted?     (upvote-dao/find-ask-upvote-by-created-by-and-entry-id (:username user) id)}]
                            (if user
                              (assoc response :ask-upvoted-comments (reduce #(conj %1 (:comment-id %2)) [] (upvote-dao/find-by-type-and-entry-id "ask-comment" id)))
                              response)))

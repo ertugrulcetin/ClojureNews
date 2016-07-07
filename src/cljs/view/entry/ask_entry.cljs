@@ -25,12 +25,25 @@
          [:span {:class "rank"}]]
 
         [:td {:vertical-align "top" :class "votelinks"}
-         [:center
+         (cond
 
-          (if (ask-owner? ask)
+           (ask-owner? ask)
+           [:center
             [:font {:color "#5fba7d"} "*"]
-            [:a {:id "aa" :href "#"}
-             [:div {:class "votearrow" :title "upvote"}]])]]
+            [:br]
+            [:img {:src "/img/s.gif", :height "1", :width "14"}]]
+
+           (:upvoted? ask)
+           [:center
+            [:a {:style {:visibility "hidden"}}
+             [:div {:class "votearrow" :title "upvote"}]]]
+
+           :else
+           [:center
+            [:a {:id    (str "id-upvote-" (-> ask :ask-entry :_id))
+                 :class "myClickableThingy"
+                 :style {:visiblity "none"}}
+             [:div {:class "votearrow" :title "upvote"}]]])]
 
         [:td {:class "title"}
          [:a {:href (-> ask :ask-entry :url) :class "storylink"} (str "Ask CN: " (-> ask :ask-entry :title))]]]

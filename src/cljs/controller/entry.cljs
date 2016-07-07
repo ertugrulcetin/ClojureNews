@@ -123,7 +123,8 @@
                            (r/render-component [(fn []
                                                   (view.entry.ask-entry/component-ask response))] util.view/main-container)
                            (add-event-listener-to-add-comment-button get-ask-by-id id)
-                           (add-event-listener-to-upvote-buttons-for-comments response :ask))
+                           (add-event-listener-to-upvote-buttons-for-comments response :ask)
+                           (add-event-listener-to-upvote-button-for-entry id))
         :error-handler   util.controller/error-handler
         :format          (ajax/json-request-format)
         :response-format (ajax/json-response-format {:keywords? true})}))

@@ -28,7 +28,7 @@
    ^String enry-id
    ^String type]
   (mc/find-one-as-map db/clojure-news coll {$and [{:created-by created-by}
-                                                  {:comment-id enry-id}
+                                                  {:entry-id enry-id}
                                                   {:type type}]}))
 
 (defn find-by-type-and-entry-id
