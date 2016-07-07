@@ -9,6 +9,7 @@
             [view.entry.story-entry]
             [view.entry.ask-entry]
             [view.entry.job]
+            [view.entry.event]
             [view.list.story]
             [view.list.ask]
             [view.list.job]
@@ -29,7 +30,10 @@
          add-event-listener-to-delete-job-button-yes
          add-event-listener-to-delete-job-button-no
          add-event-listener-to-upvote-buttons-for-entries
-         add-event-listener-to-upvote-buttons-for-newest-entries)
+         add-event-listener-to-upvote-buttons-for-newest-entries
+         add-event-listener-to-edit-event-button
+         add-event-listener-to-delete-event-button-yes
+         add-event-listener-to-delete-event-button-no)
 
 (defn get-stories-by-page
   [page]
@@ -278,6 +282,86 @@
         :format          (ajax/json-request-format)
         :response-format (ajax/json-response-format {:keywords? true})}))
 
+(defn edit-event-by-id
+  [id]
+  (GET (str "/entry/event/info/" id)
+       {:handler         (fn [response]
+                           (r/render-component [(fn []
+                                                  (view.entry.event/component-edit response))] util.view/main-container)
+                           (add-event-listener-to-edit-event-button id)
+                           )
+        :error-handler   util.controller/error-handler
+        :format          (ajax/json-request-format)
+        :response-format (ajax/json-response-format {:keywords? true})}))
+
+(defn edit-event
+  [id field-ids]
+
+  (let [data (util.view/create-field-val-map field-ids)
+        title (:title data)
+        url (:url data)
+        country (:country data)
+        city (:city data)
+        day (:starting-date-day data)
+        month (:starting-date-month data)
+        year (:starting-date-year data)]
+
+    (println day " " month " " year)
+
+    (cond
+      (not (validation/submit-title? title))
+      (util.view/render-error-message error-message/title)
+
+      (not (validation/submit-url? url))
+      (util.view/render-error-message error-message/url)
+
+      (not (validation/submit-country? country))
+      (util.view/render-error-message error-message/country)
+
+      (not (validation/submit-city? city))
+      (util.view/render-error-message error-message/city)
+
+      (not (validation/submit-day? day))
+      (util.view/render-error-message error-message/day)
+
+      (not (validation/submit-month? month))
+      (util.view/render-error-message error-message/month)
+
+      (not (validation/submit-year? year))
+      (util.view/render-error-message error-message/year)
+
+      :else
+      (POST (str "/entry/event/edit/" id)
+            {:params          data
+             :handler         (fn [_]
+                                (util.view/change-url "/"))
+             :error-handler   util.controller/error-handler
+             :format          (ajax/json-request-format)
+             :response-format (ajax/json-response-format {:keywords? true})}))))
+
+(defn delete-event-by-id
+  [id]
+  (GET (str "/entry/event/info/" id)
+       {:handler         (fn [response]
+                           (r/render-component [(fn []
+                                                  (view.entry.event/component-delete response))] util.view/main-container)
+
+                           (add-event-listener-to-delete-event-button-yes id)
+                           (add-event-listener-to-delete-event-button-no)
+                           )
+        :error-handler   util.controller/error-handler
+        :format          (ajax/json-request-format)
+        :response-format (ajax/json-response-format {:keywords? true})}))
+
+(defn delete-event
+  [id]
+  (DELETE (str "/entry/event/delete/" id)
+          {:handler         (fn []
+                              (util.view/change-url "/#/"))
+           :error-handler   util.controller/error-handler
+           :format          (ajax/json-request-format)
+           :response-format (ajax/json-response-format {:keywords? true})}))
+
 (defn dont-delete-story
   []
   (util.view/change-url "/#/"))
@@ -287,6 +371,10 @@
   (util.view/change-url "/#/"))
 
 (defn dont-delete-job
+  []
+  (util.view/change-url "/#/"))
+
+(defn dont-delete-event
   []
   (util.view/change-url "/#/"))
 
@@ -380,3 +468,18 @@
   []
   (.addEventListener (dom/getElement "buttonDeleteJobNoId") "click" (fn [_]
                                                                       (dont-delete-job))))
+
+(defn add-event-listener-to-edit-event-button
+  [id]
+  (.addEventListener (dom/getElement "eventEditButtonId") "click" (fn [_]
+                                                                    (edit-event id ["titleId" "urlId" "countryId" "cityId" "startingDateDayId" "startingDateMonthId" "startingDateYearId"]))))
+
+(defn add-event-listener-to-delete-event-button-yes
+  [id]
+  (.addEventListener (dom/getElement "buttonDeleteEventYesId") "click" (fn [_]
+                                                                         (delete-event id))))
+
+(defn add-event-listener-to-delete-event-button-no
+  []
+  (.addEventListener (dom/getElement "buttonDeleteEventNoId") "click" (fn [_]
+                                                                        (dont-delete-event))))

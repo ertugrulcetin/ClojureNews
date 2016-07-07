@@ -66,8 +66,8 @@
 (defroute get-event-by-page "/event/p/:page" [page]
           (controller.entry/get-events-by-page page))
 
-;(defroute edit-event-by-id "/event/edit/:id" [id]
-;          (controller.entry/edit-eve id))
+(defroute edit-event-by-id "/event/edit/:id" [id]
+          (controller.entry/edit-event-by-id id))
 
-;(defroute delete-job-by-id "/jobs/delete/:id" [id]
-;          (controller.entry/delete-job-by-id id))
+(defroute delete-event-by-id "/event/delete/:id" [id]
+          (controller.entry/delete-event-by-id id))

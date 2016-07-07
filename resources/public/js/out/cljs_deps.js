@@ -44,6 +44,7 @@ goog.addDependency("../secretary/core.js", ['secretary.core'], ['cljs.core', 'cl
 goog.addDependency("../route/login.js", ['route.login'], ['cljs.core', 'controller.login', 'secretary.core']);
 goog.addDependency("../view/entry/story_entry.js", ['view.entry.story_entry'], ['cljs.core', 'util.view']);
 goog.addDependency("../view/entry/ask_entry.js", ['view.entry.ask_entry'], ['cljs.core', 'util.view']);
+goog.addDependency("../view/entry/event.js", ['view.entry.event'], ['cljs.core', 'util.view']);
 goog.addDependency("../cljc/page_util.js", ['cljc.page_util'], ['cljs.core']);
 goog.addDependency("../view/list/newest.js", ['view.list.newest'], ['cljs.core', 'cljc.page_util', 'util.view']);
 goog.addDependency("../cljc/error_messages.js", ['cljc.error_messages'], ['cljs.core']);
@@ -55,7 +56,7 @@ goog.addDependency("../controller/upvote.js", ['controller.upvote'], ['ajax.core
 goog.addDependency("../view/comment_entry.js", ['view.comment_entry'], ['cljs.core', 'util.view']);
 goog.addDependency("../controller/comment_entry.js", ['controller.comment_entry'], ['goog.dom', 'ajax.core', 'reagent.core', 'cljs.core', 'util.controller', 'view.comment_entry', 'cljc.validation', 'util.view', 'clojure.string']);
 goog.addDependency("../view/list/ask.js", ['view.list.ask'], ['cljs.core', 'cljc.page_util', 'util.view']);
-goog.addDependency("../controller/entry.js", ['controller.entry'], ['goog.dom', 'view.entry.story_entry', 'ajax.core', 'view.entry.ask_entry', 'view.list.newest', 'reagent.core', 'cljc.error_messages', 'cljs.core', 'view.list.job', 'view.entry.job', 'view.list.event', 'util.controller', 'cljc.validation', 'util.view', 'view.list.story', 'controller.upvote', 'controller.comment_entry', 'view.list.ask']);
+goog.addDependency("../controller/entry.js", ['controller.entry'], ['goog.dom', 'view.entry.story_entry', 'ajax.core', 'view.entry.ask_entry', 'view.entry.event', 'view.list.newest', 'reagent.core', 'cljc.error_messages', 'cljs.core', 'view.list.job', 'view.entry.job', 'view.list.event', 'util.controller', 'cljc.validation', 'util.view', 'view.list.story', 'controller.upvote', 'controller.comment_entry', 'view.list.ask']);
 goog.addDependency("../route/entry.js", ['route.entry'], ['controller.entry', 'cljs.core', 'secretary.core']);
 goog.addDependency("../view/changepassword.js", ['view.changepassword'], ['cljs.core']);
 goog.addDependency("../controller/user.js", ['controller.user'], ['goog.dom', 'ajax.core', 'reagent.core', 'cljs.core', 'util.controller', 'view.changepassword', 'cljc.validation', 'cljc.string_util', 'util.view', 'view.user', 'clojure.string']);
@@ -82,4 +83,3 @@ goog.addDependency("../figwheel/client/socket.js", ['figwheel.client.socket'], [
 goog.addDependency("../figwheel/client/heads_up.js", ['figwheel.client.heads_up'], ['goog.string', 'cljs.core', 'cljs.core.async', 'figwheel.client.socket', 'clojure.string']);
 goog.addDependency("../figwheel/client.js", ['figwheel.client'], ['goog.userAgent.product', 'goog.Uri', 'cljs.core', 'cljs.core.async', 'figwheel.client.file_reloading', 'figwheel.client.utils', 'cljs.repl', 'figwheel.client.heads_up', 'figwheel.client.socket', 'clojure.string']);
 goog.addDependency("../figwheel/connect.js", ['figwheel.connect'], ['cljs.core', 'cljs.main', 'figwheel.client', 'figwheel.client.utils']);
-goog.addDependency("../view/entry/event.js", ['view.entry.event'], ['cljs.core', 'cljs_time.core', 'util.view']);

@@ -148,4 +148,4 @@
 
 (defn change-page-title
   [title]
-  (set! (.-title js/document) title))
+  (set! (.-title js/document) (str title " | Clojure News")))

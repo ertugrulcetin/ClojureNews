@@ -715,18 +715,16 @@
 
             :post! (fn [ctx]
                      (let [data-as-map (resource-util/convert-data-map (::data ctx))
-                           type (:type data-as-map)
                            title (:title data-as-map)
                            url (:url data-as-map)
                            city (:city data-as-map)
                            country (:country data-as-map)
                            starting-date-day (:starting-date-day data-as-map)
-                           starting-date-month (:starting-date-day data-as-map)
-                           starting-date-year (:starting-date-day data-as-map)]
+                           starting-date-month (:starting-date-month data-as-map)
+                           starting-date-year (:starting-date-year data-as-map)]
 
                        (let [event (check-event-exist id)]
                          (check-entry-owner event ctx)
-                         (check-submit-type type)
                          (check-submit-title title)
                          (check-submit-url url)
                          (check-submit-city city)

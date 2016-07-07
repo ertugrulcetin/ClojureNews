@@ -96,3 +96,10 @@
 (defn get-links
   [page data-per-page links]
   (take data-per-page (drop (* (- data-per-page 1) (- page 1)) links)))
+
+(defn capitalize
+  [text]
+  (let [s (str/split text #"\s+")
+        first-s (first s)
+        rest-s (rest s)]
+    (apply str (interpose " " (concat (vec (str/capitalize first-s)) rest-s)))))
