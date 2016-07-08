@@ -70,6 +70,9 @@
                                        [:body {:data-gr-c-s-loaded "true" :id "bodyId"}
 
                                         [:center
+
+                                         [:noscript "Please enable JavaScript!"]
+
                                          [:table {:id "cnmain", :border "0", :cellpadding "0", :cellspacing "0", :width "85%", :bgcolor "#f6f6ef"}
                                           [:tbody
                                            [:tr
@@ -157,7 +160,7 @@
                       (check-submit-title title)
                       (check-submit-url url)
 
-                      (let [story (entry-dao/create-story (str/capitalize (str/trim title))
+                      (let [story (entry-dao/create-story (resource-util/capitalize (str/trim title))
                                                           (str/trim url)
                                                           (resource-util/get-pure-url (str/trim url))
                                                           (resource-util/get-username ctx))]
@@ -249,7 +252,7 @@
                              title (:title data-as-map)]
 
                          (check-submit-title title)
-                         (entry-dao/edit-story-by-id id (str/trim title))
+                         (entry-dao/edit-story-by-id id (resource-util/capitalize (str/trim title)))
                          {:cn-story id})))
 
             :handle-created (fn [ctx]
@@ -320,7 +323,7 @@
                       (check-submit-title title)
                       (check-submit-text text)
 
-                      {:cn-ask (entry-dao/create-ask (str/capitalize (str/trim title))
+                      {:cn-ask (entry-dao/create-ask (resource-util/capitalize (str/trim title))
                                                      (str/trim text)
                                                      (:username (:user-obj ctx)))}))
 
@@ -413,7 +416,7 @@
                          (check-submit-title title)
                          (check-submit-text text)
 
-                         (entry-dao/edit-ask-by-id id (str/trim title) text)
+                         (entry-dao/edit-ask-by-id id (resource-util/capitalize (str/trim title)) text)
                          {:cn-story id})))
 
             :handle-created (fn [ctx]
@@ -504,10 +507,10 @@
 
 
                       (let [username (resource-util/get-username ctx)]
-                        (job-dao/create-job (str/capitalize (str/trim title))
+                        (job-dao/create-job (resource-util/capitalize (str/trim title))
                                             (str/trim url)
-                                            (str/capitalize (str/trim city))
-                                            (str/capitalize (str/trim country))
+                                            (resource-util/capitalize (str/trim city))
+                                            (resource-util/capitalize (str/trim country))
                                             remote?
                                             username)
                         (user-dao/inc-user-karma-by-username username))))
@@ -577,10 +580,10 @@
                          (check-submit-country country)
 
                          (job-dao/edit-job-by-id id
-                                                 (str/capitalize (str/trim title))
+                                                 (resource-util/capitalize (str/trim title))
                                                  (str/trim url)
-                                                 (str/capitalize (str/trim city))
-                                                 (str/capitalize (str/trim country))
+                                                 (resource-util/capitalize (str/trim city))
+                                                 (resource-util/capitalize (str/trim country))
                                                  remote?))))
 
             :handle-created (fn [_]
@@ -658,11 +661,11 @@
                                                             (.set (Calendar/YEAR) (Integer/parseInt starting-date-year))))]
 
 
-                        (event-dao/create-event (str/capitalize (str/trim title))
+                        (event-dao/create-event (resource-util/capitalize (str/trim title))
                                                 (str/trim url)
                                                 starting-date
-                                                (str/capitalize (str/trim city))
-                                                (str/capitalize (str/trim country))
+                                                (resource-util/capitalize (str/trim city))
+                                                (resource-util/capitalize (str/trim country))
                                                 username)
                         (user-dao/inc-user-karma-by-username username))))
 
@@ -741,10 +744,10 @@
                                                              (.set (Calendar/YEAR) (Integer/parseInt starting-date-year))))]
 
                          (event-dao/edit-event-by-id id
-                                                     (str/capitalize (str/trim title))
+                                                     (resource-util/capitalize (str/trim title))
                                                      (str/trim url)
-                                                     (str/capitalize (str/trim city))
-                                                     (str/capitalize (str/trim country))
+                                                     (resource-util/capitalize (str/trim city))
+                                                     (resource-util/capitalize (str/trim country))
                                                      starting-date))))
 
             :handle-created (fn [_]

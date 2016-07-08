@@ -35,10 +35,7 @@
       [:tr
        [:td {:style {:vertical-align "top"}} "about:"]
        [:td
-        [:textarea {:id "aboutId" :name "about" :cols "60" :rows "6" :wrap "virtual" :defaultValue (apply str (interpose "\n\n" (string-util/new-line-tokens (:about user))))}]
-        [:font {:size "-2"}
-         [:a {:href "/#/help" :tabindex "-1"}
-          [:font {:color "#afafaf"} "help"]]] "          "]]
+        [:textarea {:id "aboutId" :name "about" :cols "60" :rows "6" :wrap "virtual" :defaultValue (apply str (interpose "\n\n" (string-util/new-line-tokens (:about user))))}] "          "]]
       [:tr
        [:td {:style {:vertical-align "top"}} "about:"]
        [:td (for [i (string-util/new-line-tokens (:about user))]
