@@ -4,11 +4,13 @@
             [clj.dao.user :as user-dao]
             [clj.dao.entry :as entry-dao]
             [clj.dao.comment-entry :as comment-entry-dao]
+            [clj.dao.upvote :as upvote-dao]
             [cljc.validation :as validation]
             [cljc.error-messages :as error-message]
             [monger.json]))
 
-(declare check-entry-exists
+(declare get-user
+         check-entry-exists
          check-comment-exists
          check-text
          check-real-owner
@@ -96,10 +98,11 @@
             :handle-ok (fn [ctx]
                          (let [commentt (check-comment-exists id)]
 
-                           {:user-obj      {:username (if-let [username (resource-util/get-username-from-cookie ctx)]
-                                                        (if-let [user (user-dao/find-by-username username)]
-                                                          (:username user)))}
-                            :comment-entry commentt}))
+                           (if-let [user (get-user ctx)]
+                             {:user-obj      user
+                              :comment-entry commentt
+                              :upvoted?      (upvote-dao/find-comment-upvote-by-created-by-entry-id-and-comment-id (:username user) (:entry-id commentt) id)}
+                             {:comment-entry commentt})))
 
             :handle-exception #(resource-util/get-exception-message %)))
 
@@ -163,6 +166,14 @@
                          (:cn-entry ctx))
 
             :handle-exception #(resource-util/get-exception-message %)))
+
+(defn get-user
+  [ctx]
+  (if-let [cookie (resource-util/get-cookie ctx)]
+    (if-let [user (user-dao/find-by-username (resource-util/get-username-from-cookie ctx))]
+      (if (= cookie (:cookie user))
+        {:username (:username user)
+         :karma    (:karma user)}))))
 
 (defn check-entry-exists
   [id]

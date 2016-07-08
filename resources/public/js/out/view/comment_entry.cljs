@@ -14,12 +14,25 @@
        [:td {:class "ind"}]
 
        [:td {:class "votelinks" :style {:vertical-align "top"}}
-        [:center
 
-         (if (comment-owner? commentt)
+        (cond
+          (comment-owner? commentt)
+          [:center
            [:font {:color "#5fba7d"} "*"]
-           [:a {:id "aa" :href "#"}
-            [:div {:class "votearrow" :title "upvote"}]])]]
+           [:br]
+           [:img {:src "/img/s.gif", :height "1", :width "14"}]]
+
+          (:upvoted? commentt)
+          [:center
+           [:a {:style {:visibility "hidden"}}
+            [:div {:class "votearrow" :title "upvote"}]]]
+
+          :else
+          [:center
+           [:a {:id    (str "id-upvote-" (-> commentt :comment-entry :_id))
+                :class "myClickableThingy"
+                :style {:visiblity "none"}}
+            [:div {:class "votearrow" :title "upvote"}]]])]
 
        [:td {:class "default"}
         [:div {:style {:margin-top "2px" :margin-bottom "-10px"}}

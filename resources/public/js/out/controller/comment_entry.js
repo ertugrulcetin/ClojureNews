@@ -9,6 +9,8 @@ goog.require('util.controller');
 goog.require('view.comment_entry');
 goog.require('util.view');
 goog.require('clojure.string');
+goog.require('controller.upvote');
+
 
 
 
@@ -44,7 +46,9 @@ reagent.core.render_component.call(null,new cljs.core.PersistentVector(null, 1, 
 return view.comment_entry.component_reply.call(null,response);
 })], null),util.view.main_container);
 
-return controller.comment_entry.add_event_listener_to_reply_button.call(null,id);
+controller.comment_entry.add_event_listener_to_reply_button.call(null,id);
+
+return controller.comment_entry.add_event_listener_to_upvote_button_for_comment.call(null,id);
 }),new cljs.core.Keyword(null,"error-handler","error-handler",-484945776),util.controller.error_handler,new cljs.core.Keyword(null,"format","format",-1306924766),ajax.core.json_request_format.call(null),new cljs.core.Keyword(null,"response-format","response-format",1664465322),ajax.core.json_response_format.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"keywords?","keywords?",764949733),true], null))], null));
 });
 controller.comment_entry.reply_comment = (function controller$comment_entry$reply_comment(parent_comment_id,field_ids){
@@ -126,6 +130,19 @@ controller.comment_entry.add_event_listener_to_delete_no_button = (function cont
 return goog.dom.getElement("buttonDeleteNoCommentId").addEventListener("click",(function (_){
 return controller.comment_entry.dont_delete_comment.call(null,type,entry_id);
 }));
+});
+controller.comment_entry.add_event_listener_to_upvote_button_for_comment = (function controller$comment_entry$add_event_listener_to_upvote_button_for_comment(comment_id){
+var temp__4657__auto__ = goog.dom.getElement([cljs.core.str("id-upvote-"),cljs.core.str(comment_id)].join(''));
+if(cljs.core.truth_(temp__4657__auto__)){
+var element = temp__4657__auto__;
+return element.addEventListener("click",((function (element,temp__4657__auto__){
+return (function (_){
+return controller.upvote.upvote_comment.call(null,comment_id);
+});})(element,temp__4657__auto__))
+);
+} else {
+return null;
+}
 });
 
 //# sourceMappingURL=comment_entry.js.map

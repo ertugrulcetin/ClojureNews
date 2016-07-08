@@ -59,3 +59,11 @@
   (mc/find-one-as-map db/clojure-news coll {$and [{:created-by created-by}
                                                   {:entry-id entry-id}
                                                   {:type "ask"}]}))
+
+(defn find-comment-upvote-by-created-by-entry-id-and-comment-id
+  [^String created-by
+   ^String entry-id
+   ^String comment-id]
+  (mc/find-one-as-map db/clojure-news coll {$and [{:created-by created-by}
+                                                  {:entry-id entry-id}
+                                                  {:comment-id comment-id}]}))

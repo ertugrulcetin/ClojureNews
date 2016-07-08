@@ -31,12 +31,13 @@
 
 (defn update-user-info-by-username
   [username user-info]
-  (mc/update db/clojure-news coll {:username username} {$set {"about"       (:about user-info)
-                                                              "email"       (:email user-info)
-                                                              "website"     (:website user-info)
-                                                              "github"      (:github user-info)
-                                                              "twitter"     (:twitter user-info)
-                                                              "show-email?" (:show-email? user-info)}}))
+  (mc/update db/clojure-news coll {:username username} {$set {"about"        (:about user-info)
+                                                              "email"        (:email user-info)
+                                                              "website"      (:website user-info)
+                                                              "github"       (:github user-info)
+                                                              "twitter"      (:twitter user-info)
+                                                              "show-email?"  (:show-email? user-info)
+                                                              "last-updated" (Date.)}}))
 
 (defn update-last-login-by-username
   [^String username]

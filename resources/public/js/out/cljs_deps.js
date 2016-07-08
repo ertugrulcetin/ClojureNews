@@ -54,7 +54,7 @@ goog.addDependency("../view/list/event.js", ['view.list.event'], ['cljs.core', '
 goog.addDependency("../view/list/story.js", ['view.list.story'], ['cljs.core', 'cljc.page_util', 'util.view']);
 goog.addDependency("../controller/upvote.js", ['controller.upvote'], ['ajax.core', 'cljs.core']);
 goog.addDependency("../view/comment_entry.js", ['view.comment_entry'], ['cljs.core', 'util.view']);
-goog.addDependency("../controller/comment_entry.js", ['controller.comment_entry'], ['goog.dom', 'ajax.core', 'reagent.core', 'cljs.core', 'util.controller', 'view.comment_entry', 'cljc.validation', 'util.view', 'clojure.string']);
+goog.addDependency("../controller/comment_entry.js", ['controller.comment_entry'], ['goog.dom', 'ajax.core', 'reagent.core', 'cljs.core', 'util.controller', 'view.comment_entry', 'cljc.validation', 'util.view', 'clojure.string', 'controller.upvote']);
 goog.addDependency("../view/list/ask.js", ['view.list.ask'], ['cljs.core', 'cljc.page_util', 'util.view']);
 goog.addDependency("../controller/entry.js", ['controller.entry'], ['goog.dom', 'view.entry.story_entry', 'ajax.core', 'view.entry.ask_entry', 'view.entry.event', 'view.list.newest', 'reagent.core', 'cljc.error_messages', 'cljs.core', 'view.list.job', 'view.entry.job', 'view.list.event', 'util.controller', 'cljc.validation', 'util.view', 'view.list.story', 'controller.upvote', 'controller.comment_entry', 'view.list.ask']);
 goog.addDependency("../route/entry.js", ['route.entry'], ['controller.entry', 'cljs.core', 'secretary.core']);

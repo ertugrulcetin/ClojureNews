@@ -4,6 +4,7 @@
             [util.view]
             [util.controller]
             [view.comment-entry]
+            [controller.upvote]
             [goog.dom :as dom]
             [cljc.validation :as validation]
             [clojure.string :as str]))
@@ -15,7 +16,8 @@
          add-event-listener-to-reply-button
          add-event-listener-to-edit-button
          add-event-listener-to-delete-yes-button
-         add-event-listener-to-delete-no-button)
+         add-event-listener-to-delete-no-button
+         add-event-listener-to-upvote-button-for-comment)
 
 (defn add-comment
   [entry entry-id field-ids]
@@ -46,7 +48,8 @@
                            (util.view/change-page-title "Reply Comment")
                            (r/render-component [(fn []
                                                   (view.comment-entry/component-reply response))] util.view/main-container)
-                           (add-event-listener-to-reply-button id))
+                           (add-event-listener-to-reply-button id)
+                           (add-event-listener-to-upvote-button-for-comment id))
         :error-handler   util.controller/error-handler
         :format          (ajax/json-request-format)
         :response-format (ajax/json-response-format {:keywords? true})}))
@@ -145,3 +148,9 @@
   [type entry-id]
   (.addEventListener (dom/getElement "buttonDeleteNoCommentId") "click" (fn [_]
                                                                           (dont-delete-comment type entry-id))))
+
+(defn add-event-listener-to-upvote-button-for-comment
+  [comment-id]
+  (when-let [element (dom/getElement (str "id-upvote-" comment-id))]
+    (.addEventListener element "click" (fn [_]
+                                         (controller.upvote/upvote-comment comment-id)))))
