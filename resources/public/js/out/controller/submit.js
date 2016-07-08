@@ -81,7 +81,7 @@ if(cljs.core.not.call(null,cljc.validation.submit_city_QMARK_.call(null,new cljs
 return util.view.render_error_message.call(null,cljc.error_messages.city);
 } else {
 return ajax.core.PUT.call(null,"/entry/job",new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"params","params",710516235),cljs.core.assoc.call(null,data,new cljs.core.Keyword(null,"remote?","remote?",-517415110),goog.dom.getElement("remoteId").checked),new cljs.core.Keyword(null,"handler","handler",-195596612),(function (_){
-return util.view.change_url.call(null,"/");
+return util.view.change_url_to_jobs.call(null);
 }),new cljs.core.Keyword(null,"error-handler","error-handler",-484945776),util.controller.error_handler,new cljs.core.Keyword(null,"format","format",-1306924766),ajax.core.json_request_format.call(null),new cljs.core.Keyword(null,"response-format","response-format",1664465322),ajax.core.json_response_format.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"keywords?","keywords?",764949733),true], null))], null));
 
 }
@@ -111,8 +111,8 @@ return util.view.render_error_message.call(null,cljc.error_messages.month);
 if(cljs.core.not.call(null,cljc.validation.submit_year_QMARK_.call(null,new cljs.core.Keyword(null,"starting-date-year","starting-date-year",-1947111290).cljs$core$IFn$_invoke$arity$1(data)))){
 return util.view.render_error_message.call(null,cljc.error_messages.year);
 } else {
-return ajax.core.PUT.call(null,"/entry/event",new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"params","params",710516235),data,new cljs.core.Keyword(null,"handler","handler",-195596612),(function (response){
-return util.view.change_url.call(null,"/#/");
+return ajax.core.PUT.call(null,"/entry/event",new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"params","params",710516235),data,new cljs.core.Keyword(null,"handler","handler",-195596612),(function (_){
+return util.view.change_url_to_events.call(null);
 }),new cljs.core.Keyword(null,"error-handler","error-handler",-484945776),util.controller.error_handler,new cljs.core.Keyword(null,"format","format",-1306924766),ajax.core.json_request_format.call(null),new cljs.core.Keyword(null,"response-format","response-format",1664465322),ajax.core.json_response_format.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"keywords?","keywords?",764949733),true], null))], null));
 
 }

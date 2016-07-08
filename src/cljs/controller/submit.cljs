@@ -92,7 +92,7 @@
     (PUT "/entry/job"
          {:params          (assoc data :remote? (.-checked (dom/getElement "remoteId")))
           :handler         (fn [_]
-                             (util.view/change-url "/"))
+                             (util.view/change-url-to-jobs))
           :error-handler   util.controller/error-handler
           :format          (ajax/json-request-format)
           :response-format (ajax/json-response-format {:keywords? true})})))
@@ -124,8 +124,8 @@
     :else
     (PUT "/entry/event"
          {:params          data
-          :handler         (fn [response]
-                             (util.view/change-url "/#/"))
+          :handler         (fn [_]
+                             (util.view/change-url-to-events))
           :error-handler   util.controller/error-handler
           :format          (ajax/json-request-format)
           :response-format (ajax/json-response-format {:keywords? true})})))

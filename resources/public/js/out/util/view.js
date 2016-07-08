@@ -35,6 +35,18 @@ return goog.dom.getElement("messageContainerId").innerText = "";
 util.view.change_url = (function util$view$change_url(path){
 return window.location = [cljs.core.str("http://"),cljs.core.str(window.location.host),cljs.core.str(path)].join('');
 });
+util.view.change_url_to_story = (function util$view$change_url_to_story(){
+return util.view.change_url.call(null,"/#/story");
+});
+util.view.change_url_to_ask = (function util$view$change_url_to_ask(){
+return util.view.change_url.call(null,"/#/ask");
+});
+util.view.change_url_to_jobs = (function util$view$change_url_to_jobs(){
+return util.view.change_url.call(null,"/#/job");
+});
+util.view.change_url_to_events = (function util$view$change_url_to_events(){
+return util.view.change_url.call(null,"/#/event");
+});
 util.view.in_QMARK_ = (function util$view$in_QMARK_(element,coll){
 return cljs.core.some.call(null,(function (p1__27036_SHARP_){
 return cljs.core._EQ_.call(null,element,p1__27036_SHARP_);
@@ -185,10 +197,10 @@ var temp__4657__auto__ = cljs.core.seq.call(null,seq__27047);
 if(temp__4657__auto__){
 var seq__27047__$1 = temp__4657__auto__;
 if(cljs.core.chunked_seq_QMARK_.call(null,seq__27047__$1)){
-var c__24807__auto__ = cljs.core.chunk_first.call(null,seq__27047__$1);
+var c__24813__auto__ = cljs.core.chunk_first.call(null,seq__27047__$1);
 var G__27055 = cljs.core.chunk_rest.call(null,seq__27047__$1);
-var G__27056 = c__24807__auto__;
-var G__27057 = cljs.core.count.call(null,c__24807__auto__);
+var G__27056 = c__24813__auto__;
+var G__27057 = cljs.core.count.call(null,c__24813__auto__);
 var G__27058 = (0);
 seq__27047 = G__27055;
 chunk__27048 = G__27056;

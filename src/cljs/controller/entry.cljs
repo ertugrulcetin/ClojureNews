@@ -110,7 +110,7 @@
   [id]
   (DELETE (str "/entry/story/delete/" id)
           {:handler         (fn []
-                              (util.view/change-url "/#/"))
+                              (util.view/change-url-to-story))
            :error-handler   util.controller/error-handler
            :format          (ajax/json-request-format)
            :response-format (ajax/json-response-format {:keywords? true})}))
@@ -192,7 +192,7 @@
   [id]
   (DELETE (str "/entry/ask/delete/" id)
           {:handler         (fn []
-                              (util.view/change-url "/#/"))
+                              (util.view/change-url-to-ask))
            :error-handler   util.controller/error-handler
            :format          (ajax/json-request-format)
            :response-format (ajax/json-response-format {:keywords? true})}))
@@ -258,7 +258,7 @@
       (POST (str "/entry/job/edit/" id)
             {:params          (assoc data :remote? (.-checked (dom/getElement "remoteId")))
              :handler         (fn [_]
-                                (util.view/change-url "/"))
+                                (util.view/change-url-to-jobs))
              :error-handler   util.controller/error-handler
              :format          (ajax/json-request-format)
              :response-format (ajax/json-response-format {:keywords? true})}))))
@@ -281,7 +281,7 @@
   [id]
   (DELETE (str "/entry/job/delete/" id)
           {:handler         (fn []
-                              (util.view/change-url "/#/"))
+                              (util.view/change-url-to-jobs))
            :error-handler   util.controller/error-handler
            :format          (ajax/json-request-format)
            :response-format (ajax/json-response-format {:keywords? true})}))
@@ -348,7 +348,7 @@
       (POST (str "/entry/event/edit/" id)
             {:params          data
              :handler         (fn [_]
-                                (util.view/change-url "/"))
+                                (util.view/change-url-to-events))
              :error-handler   util.controller/error-handler
              :format          (ajax/json-request-format)
              :response-format (ajax/json-response-format {:keywords? true})}))))
@@ -371,26 +371,10 @@
   [id]
   (DELETE (str "/entry/event/delete/" id)
           {:handler         (fn []
-                              (util.view/change-url "/#/"))
+                              (util.view/change-url-to-events))
            :error-handler   util.controller/error-handler
            :format          (ajax/json-request-format)
            :response-format (ajax/json-response-format {:keywords? true})}))
-
-(defn dont-delete-story
-  []
-  (util.view/change-url "/#/"))
-
-(defn dont-delete-ask
-  []
-  (util.view/change-url "/#/"))
-
-(defn dont-delete-job
-  []
-  (util.view/change-url "/#/"))
-
-(defn dont-delete-event
-  []
-  (util.view/change-url "/#/"))
 
 (defn add-event-listener-to-add-comment-button
   [entry id]
@@ -456,7 +440,7 @@
 (defn add-event-listener-to-story-button-no
   []
   (.addEventListener (dom/getElement "buttonDeleteStoryNoId") "click" (fn [_]
-                                                                        (dont-delete-story))))
+                                                                        (util.view/change-url-to-story))))
 
 (defn add-event-listener-to-ask-button-yes
   [id]
@@ -466,7 +450,7 @@
 (defn add-event-listener-to-ask-button-no
   []
   (.addEventListener (dom/getElement "buttonDeleteAskNoId") "click" (fn [_]
-                                                                      (dont-delete-ask))))
+                                                                      (util.view/change-url-to-ask))))
 
 (defn add-event-listener-to-edit-job-button
   [id]
@@ -481,7 +465,7 @@
 (defn add-event-listener-to-delete-job-button-no
   []
   (.addEventListener (dom/getElement "buttonDeleteJobNoId") "click" (fn [_]
-                                                                      (dont-delete-job))))
+                                                                      (util.view/change-url-to-jobs))))
 
 (defn add-event-listener-to-edit-event-button
   [id]
@@ -496,7 +480,7 @@
 (defn add-event-listener-to-delete-event-button-no
   []
   (.addEventListener (dom/getElement "buttonDeleteEventNoId") "click" (fn [_]
-                                                                        (dont-delete-event))))
+                                                                        (util.view/change-url-to-events))))
 
 (defn add-event-listener-to-upvote-button-for-entry
   [entry-id]

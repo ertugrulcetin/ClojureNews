@@ -28,6 +28,22 @@
   [path]
   (set! window/location (str "http://" window/location.host path)))
 
+(defn change-url-to-story
+  []
+  (change-url "/#/story"))
+
+(defn change-url-to-ask
+  []
+  (change-url "/#/ask"))
+
+(defn change-url-to-jobs
+  []
+  (change-url "/#/job"))
+
+(defn change-url-to-events
+  []
+  (change-url "/#/event"))
+
 (defn in?
   [element coll]
   (some #(= element %) coll))

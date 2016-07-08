@@ -304,13 +304,7 @@
 
             :malformed? #(resource-util/parse-json % ::data)
 
-            :authorized? (fn [ctx]
-
-                           (if-let [cookie (resource-util/get-cookie ctx)]
-                             (if-let [username (resource-util/get-username-from-cookie ctx)]
-                               (if-let [user (user-dao/find-by-username username)]
-                                 (if (= cookie (:cookie user))
-                                   {:user-obj user})))))
+            :authorized? #(resource-util/auth? %)
 
             :put! (fn [ctx]
                     (let [data-as-map (resource-util/convert-data-map (::data ctx))
@@ -323,15 +317,16 @@
                       (check-submit-title title)
                       (check-submit-text text)
 
-                      {:cn-ask (entry-dao/create-ask (resource-util/capitalize (str/trim title))
-                                                     (str/trim text)
-                                                     (:username (:user-obj ctx)))}))
+                      (let [ask (entry-dao/create-ask (resource-util/capitalize (str/trim title))
+                                                      (str/trim text)
+                                                      (:username (:user-obj ctx)))]
+                        (user-dao/inc-user-karma-by-username (:created-by ask))
+                        {:cn-ask ask})))
 
             :handle-created (fn [ctx]
                               {:entry-id (-> ctx :cn-ask :_id)})
 
-            :handle-exception (fn [ctx]
-                                (resource-util/get-exception-message ctx))))
+            :handle-exception #(resource-util/get-exception-message %)))
 
 (defn get-ask-by-page
   [page]

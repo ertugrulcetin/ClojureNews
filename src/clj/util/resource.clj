@@ -102,4 +102,4 @@
   (let [s (str/split text #"\s+")
         first-s (first s)
         rest-s (rest s)]
-    (apply str (interpose " " (concat (vec (str/capitalize first-s)) rest-s)))))
+    (apply str (interpose " " (concat [(str/capitalize first-s)] rest-s)))))
