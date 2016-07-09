@@ -35,7 +35,7 @@
   :cljsbuild {
               :builds [{:id           "clojure-news"
                         :source-paths ["src/cljs" "src/cljc"]
-                        :figwheel     true
+                        :figwheel     {:load-warninged-code true}
                         :compiler     {:main       "cljs.main"
                                        :asset-path "js/out"
                                        :output-dir "resources/public/js/out"

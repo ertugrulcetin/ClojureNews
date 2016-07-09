@@ -10,7 +10,8 @@
             [route.login]
             [route.user]
             [route.submit]
-            [route.forgot-password])
+            [route.forgot-password]
+            [route.footer-links])
   (:import goog.History
            goog.History.EventType))
 

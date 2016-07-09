@@ -64,10 +64,12 @@ goog.addDependency("../route/user.js", ['route.user'], ['reagent.core', 'cljs.co
 goog.addDependency("../view/forgot_password.js", ['view.forgot_password'], ['cljs.core']);
 goog.addDependency("../route/forgot_password.js", ['route.forgot_password'], ['reagent.core', 'cljs.core', 'view.forgot_password', 'secretary.core', 'util.view']);
 goog.addDependency("../route/comment_entry.js", ['route.comment_entry'], ['cljs.core', 'secretary.core', 'controller.comment_entry']);
+goog.addDependency("../view/footer_links.js", ['view.footer_links'], ['cljs.core']);
+goog.addDependency("../route/footer_links.js", ['route.footer_links'], ['reagent.core', 'cljs.core', 'view.footer_links', 'secretary.core', 'util.view']);
 goog.addDependency("../view/submit.js", ['view.submit'], ['reagent.core', 'cljs.core']);
 goog.addDependency("../controller/submit.js", ['controller.submit'], ['goog.dom', 'view.submit', 'ajax.core', 'reagent.core', 'cljc.error_messages', 'cljs.core', 'util.controller', 'cljc.validation', 'util.view']);
 goog.addDependency("../route/submit.js", ['route.submit'], ['cljs.core', 'controller.submit', 'secretary.core']);
-goog.addDependency("../cljs/main.js", ['cljs.main'], ['goog.dom', 'route.login', 'goog.History.EventType', 'route.entry', 'reagent.core', 'cljs.core', 'goog.History', 'route.user', 'secretary.core', 'util.view', 'route.forgot_password', 'route.comment_entry', 'goog.events', 'route.submit']);
+goog.addDependency("../cljs/main.js", ['cljs.main'], ['goog.dom', 'route.login', 'goog.History.EventType', 'route.entry', 'reagent.core', 'cljs.core', 'goog.History', 'route.user', 'secretary.core', 'util.view', 'route.forgot_password', 'route.comment_entry', 'route.footer_links', 'goog.events', 'route.submit']);
 goog.addDependency("../cljs/core/async/impl/protocols.js", ['cljs.core.async.impl.protocols'], ['cljs.core']);
 goog.addDependency("../cljs/core/async/impl/buffers.js", ['cljs.core.async.impl.buffers'], ['cljs.core', 'cljs.core.async.impl.protocols']);
 goog.addDependency("../cljs/core/async/impl/dispatch.js", ['cljs.core.async.impl.dispatch'], ['cljs.core', 'cljs.core.async.impl.buffers', 'goog.async.nextTick']);

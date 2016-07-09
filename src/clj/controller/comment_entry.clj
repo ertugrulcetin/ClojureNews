@@ -44,6 +44,7 @@
                                        text
                                        (:type entry))]
                         (entry-dao/inc-entry-comment-count entry-id)
+                        (user-dao/inc-user-karma-by-username (resource-util/get-username ctx))
                         {:comment-entry commentt})))
 
             :handle-created (fn [_]
@@ -81,6 +82,7 @@
                                                                 (:type parent-comment))
 
                         (entry-dao/inc-entry-comment-count (:entry-id parent-comment))
+                        (user-dao/inc-user-karma-by-username (resource-util/get-username ctx))
                         {:cn-entry {:entry-id (:entry-id parent-comment)
                                     :type     (:type parent-comment)}})))
 
@@ -159,6 +161,7 @@
                          (check-has-no-chil-comment id)
                          (comment-entry-dao/delete-comment-by-id id)
                          (entry-dao/dec-entry-comment-count (:entry-id commentt))
+                         (user-dao/dec-user-karma-by-username (resource-util/get-username ctx))
                          {:cn-entry {:entry-id (:entry-id commentt)
                                      :type     (:type commentt)}}))
 

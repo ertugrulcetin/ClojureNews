@@ -126,6 +126,7 @@
                                              [:br]
                                              [:center
                                               [:span {:class "yclinks"}
+                                               [:a {:class "pagebottomgray", :href "/#/formatting"} "Formatting"] " | "
                                                [:a {:class "pagebottomgray", :href "/#/guidelines"} "Guidelines"] " | "
                                                [:a {:class "pagebottomgray", :href "/#/faq"} "FAQ"] " | "
                                                [:a {:class "pagebottomgray", :href "mailto:info@clojure.news"} "Contact"]]
