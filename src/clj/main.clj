@@ -10,7 +10,8 @@
             [clj.route.login :as route-login]
             [clj.route.entry :as route-entry]
             [clj.route.comment-entry :as route-comment-entry]
-            [clj.route.upvote :as route-upvote])
+            [clj.route.upvote :as route-upvote]
+            [clj.route.not-found :as route-not-found])
   (:gen-class))
 
 (defn log-middleware
@@ -24,7 +25,9 @@
               #'route-login/route
               #'route-entry/route
               #'route-comment-entry/route
-              #'route-upvote/route))
+              #'route-upvote/route
+              ;;not-found has to be last route in the routing order
+              #'route-not-found/route))
 
 (def handler (-> routes
                  log-middleware
