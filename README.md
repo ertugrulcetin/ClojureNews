@@ -7,8 +7,7 @@ The http://clojure.news webapp
 
 ## Contributing
 
-Feel free to jump in if you don't mind digging around.
-Anyone interested in contributing should check out the issues page for ideas on what to work on.
+Feel free to jump in if you don't mind digging around, you can check out the issues page for ideas on what to work on.
 
 ##Requirements
 
