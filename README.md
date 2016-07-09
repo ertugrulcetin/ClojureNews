@@ -12,6 +12,7 @@ The http://clojure.news webapp
 
 [Ertuğrul Çetin](https://github.com/ertugrulcetin)
 
+
 #Licence
 ```
   Copyright 2016 Ertuğrul Çetin
