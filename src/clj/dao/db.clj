@@ -7,4 +7,4 @@
 
 (defonce conn (mg/connect-with-credentials "localhost" creds))
 
-(defonce clojure-news (mg/get-db conn "clojurenews2"))
+(defonce clojure-news (mg/get-db conn "clojurenews"))
