@@ -9,6 +9,10 @@ The http://clojure.news webapp
 * MongoDB
 
 
+## Contributors
+
+[Ertuğrul Çetin](https://github.com/ertugrulcetin)
+
 
 #Licence
 ```
