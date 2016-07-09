@@ -4,21 +4,19 @@ The http://clojure.news webapp
 
 ![Clojure News Demo](/github-img-clojure-news.png)
 
-
-## Contributing
-
-Feel free to jump in if you don't mind digging around, you can check out the [issues](https://github.com/ertugrulcetin/ClojureNews/issues)  page for ideas on what to work on.
-
 ##Requirements
 
 * JDK 1.8+
 * Leiningen
 * MongoDB
 
+## Contributing
+
+Feel free to jump in if you don't mind digging around, you can check out the [issues](https://github.com/ertugrulcetin/ClojureNews/issues)  page for ideas on what to work on.
+
 ## Contributors
 
 [Ertuğrul Çetin](https://github.com/ertugrulcetin)
-
 
 #Licence
 ```
