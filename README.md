@@ -5,6 +5,11 @@ The http://clojure.news webapp
 ![Clojure News Demo](/github-img-clojure-news.png)
 
 
+## Contributing
+
+Feel free to jump in if you don't mind digging around.
+Anyone interested in contributing should check out the issues page for ideas on what to work on.
+
 ##Requirements
 
 * JDK 1.8+
