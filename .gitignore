@@ -13,5 +13,4 @@ pom.xml.asc
 *.iml
 .DS_STORE
 
-*.js
-!clojure-news.js
+/resources/public/js/out
