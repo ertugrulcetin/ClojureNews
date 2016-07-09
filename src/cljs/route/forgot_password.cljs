@@ -6,4 +6,5 @@
             [util.view]))
 
 (defroute forgot-password "/forgotpassword" []
+          (util.view/change-page-title "Forgot Password")
           (r/render-component [view.forgot-password/component] util.view/main-container))

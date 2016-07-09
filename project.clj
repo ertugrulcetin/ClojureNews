@@ -9,6 +9,7 @@
                  [cheshire "5.6.1"]
                  [cljs-ajax "0.5.4"]
                  [ring "1.4.0"]
+                 [amalloy/ring-gzip-middleware "0.1.3"]
                  [compojure "1.5.0"]
                  [kezban "0.1.1-SNAPSHOT"]
                  [liberator "0.14.1"]
@@ -18,6 +19,7 @@
                  [secretary "1.2.3"]
                  [hiccup "1.0.5"]
                  [com.andrewmcveigh/cljs-time "0.4.0"]
+                 [com.draines/postal "2.0.0"]
                  [org.clojure/tools.logging "0.3.1"]
                  [org.slf4j/slf4j-log4j12 "1.7.21"]
                  [log4j/log4j "1.2.17" :exclusions [javax.mail/mail

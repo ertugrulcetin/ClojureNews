@@ -5,12 +5,12 @@
             [ring.middleware.params :refer [wrap-params]]
             [ring.middleware.resource :as resource]
             [ring.middleware.cookies :as cookies]
+            [ring.middleware.gzip :refer [wrap-gzip]]
             [clj.route.user :as route-user]
             [clj.route.login :as route-login]
             [clj.route.entry :as route-entry]
             [clj.route.comment-entry :as route-comment-entry]
             [clj.route.upvote :as route-upvote])
-
   (:gen-class))
 
 (defn log-middleware
@@ -30,8 +30,8 @@
                  log-middleware
                  (resource/wrap-resource "/public")
                  cookies/wrap-cookies
-                 wrap-params))
-
+                 wrap-params
+                 wrap-gzip))
 
 (defn -main
   []
