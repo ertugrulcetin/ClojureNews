@@ -1,2 +1,0 @@
-;; Analyzed by ClojureScript 1.8.51
-{:name route.unkown-route, :doc nil, :excludes #{}, :use-macros {defroute secretary.core}, :require-macros {secretary.core secretary.core}, :uses nil, :requires {secretary.core secretary.core, controller.entry controller.entry}, :imports nil}

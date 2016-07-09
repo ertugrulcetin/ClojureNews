@@ -1,1 +1,0 @@
-(ns view.entry.de)
