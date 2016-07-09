@@ -7,7 +7,7 @@ The http://clojure.news webapp
 
 ## Contributing
 
-Feel free to jump in if you don't mind digging around, you can check out the issues page for ideas on what to work on.
+Feel free to jump in if you don't mind digging around, you can check out the [issues](https://github.com/ertugrulcetin/ClojureNews/issues)  page for ideas on what to work on.
 
 ##Requirements
 
