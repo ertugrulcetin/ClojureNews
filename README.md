@@ -2,6 +2,9 @@
 
 The http://clojure.news webapp
 
+![Clojure News Demo](/github-img-clojure-news.png)
+
+
 ##Requirements
 
 * JDK 1.8+
