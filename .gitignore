@@ -12,3 +12,6 @@ pom.xml.asc
 .idea
 *.iml
 .DS_STORE
+
+*.js
+!clojure-news.js

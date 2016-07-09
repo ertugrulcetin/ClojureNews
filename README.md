@@ -8,11 +8,9 @@ The http://clojure.news webapp
 * Leiningen
 * MongoDB
 
-
 ## Contributors
 
 [Ertuğrul Çetin](https://github.com/ertugrulcetin)
-
 
 #Licence
 ```
