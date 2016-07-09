@@ -40,7 +40,8 @@
   [page]
   (GET (str "/entry/story/p/" page)
        {:handler         (fn [response]
-                           (util.view/change-page-title "Story")
+                           (when-not (= "1" page)
+                             (util.view/change-page-title "Story"))
                            (r/render-component [(fn []
                                                   (view.list.story/component-list-story response page))] util.view/main-container)
                            (add-event-listener-to-upvote-buttons-for-entries response :story))

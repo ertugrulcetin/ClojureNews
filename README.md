@@ -1,14 +1,9 @@
-# clojure-news
+# ClojureNews
 
-A Clojure library designed to ... well, that part is up to you.
+The http://clojure.news webapp
 
-## Usage
+##Requirements
 
-FIXME
-
-## License
-
-Copyright © 2016 FIXME
-
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+* JDK 1.8+
+* lein
+* MongoDB
