@@ -1,7 +1,7 @@
 (ns clj.dao.user
   (:require [monger.collection :as mc]
             [monger.operators :refer :all]
-            [clj.dao.db :as db]
+            [clj.dao.db-conf :as db]
             [clj.util.entity :as entity-util])
   (:import (org.bson.types ObjectId)
            (java.util Date)))
