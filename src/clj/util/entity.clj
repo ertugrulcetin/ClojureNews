@@ -24,9 +24,7 @@
    :github           nil
    :twitter          nil
    :about            nil
-   :cookie           (generate-cookie username)
-   :upvoted-entries  []
-   :upvoted-comments []})
+   :cookie           (generate-cookie username)})
 
 (defn story
   [title url pure-url created-by]
