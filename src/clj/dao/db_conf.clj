@@ -3,7 +3,7 @@
             [monger.credentials :as mcr]))
 
 (def username "admin")
-(def database-name "database-nameee")
+(def database-name "database-name")
 (def database-password "my-password")
 (def host "localhost")
 

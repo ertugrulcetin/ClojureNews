@@ -17,4 +17,4 @@ pom.xml.asc
 
 /src/clj/dao/db_conf.clj
 
-/src/clj/dao/db-conf.clj
+/src/clj/dao
