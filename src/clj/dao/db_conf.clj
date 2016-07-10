@@ -2,7 +2,7 @@
   (:require [monger.core :as mg]
             [monger.credentials :as mcr]))
 
-(def username "my-username")
+(def username "my-username..")
 (def database-name "my-database-name")
 (def database-password "my-password")
 (def host "localhost")
