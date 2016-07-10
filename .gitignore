@@ -14,3 +14,5 @@ pom.xml.asc
 .DS_STORE
 
 /resources/public/js/out
+
+/src/clj/dao/db-conf.clj
