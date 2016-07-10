@@ -2,9 +2,9 @@
   (:require [monger.core :as mg]
             [monger.credentials :as mcr]))
 
-(def username "username")
-(def database-name "database-name")
-(def database-password "my-password")
+(def username "admin")
+(def database-name "clojurenews")
+(def database-password "sp8c9XX!!")
 (def host "localhost")
 
 (defonce creds (mcr/create username database-name database-password))
