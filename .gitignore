@@ -16,3 +16,5 @@ pom.xml.asc
 /resources/public/js/out
 
 /src/clj/dao/db_conf.clj
+
+/src/clj/dao/db-conf.clj
