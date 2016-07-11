@@ -15370,3 +15370,22 @@ WARNING: No such namespace: goog.History.EventType, could not locate goog/Histor
 WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 22 src/cljs/main.cljs
 notifying browser that file changed:  out/controller/entry.js
 [32mSuccessfully compiled "resources/public/js/clojure-news.js" in 1.008 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+notifying browser that file changed:  resources/public/js/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  out/view/no_route.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.451 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+notifying browser that file changed:  out/view/no_route.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.331 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 27 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 27 src/cljs/main.cljs
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  out/cljs/main.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.371 seconds.[0m
+[0mCompiling "resources/public/js/clojure-news.js" from ["src/cljs" "src/cljc"]...
+WARNING: No such namespace: goog.History.EventType, could not locate goog/History/EventType.cljs, goog/History/EventType.cljc, or Closure namespace "" at line 28 src/cljs/main.cljs
+WARNING: Use of undeclared Var goog.History.EventType/NAVIGATE at line 28 src/cljs/main.cljs
+notifying browser that file changed:  out/cljs/main.js
+[32mSuccessfully compiled "resources/public/js/clojure-news.js" in 0.308 seconds.[0m

@@ -103,3 +103,10 @@
         first-s (first s)
         rest-s (rest s)]
     (apply str (interpose " " (concat [(str/capitalize first-s)] rest-s)))))
+
+(defn random-password
+  ([] (random-password 9))
+  ([n]
+   (let [chars (map char (range 35 127))
+         password (take n (repeatedly #(rand-nth chars)))]
+     (apply str password))))
