@@ -3,6 +3,7 @@
   (:require [controller.comment-entry :as controller]
             [secretary.core]))
 
+
 (defroute get-comment-by-id "/comment/:id" [id]
           (controller/reply-comment-by-id id))
 

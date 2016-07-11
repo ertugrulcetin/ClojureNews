@@ -34,17 +34,23 @@
 
   :ring {:handler clj.main/handler}
 
-  :cljsbuild {
-              :builds [{:id           "clojure-news"
-                        :source-paths ["src/cljs" "src/cljc"]
-                        :figwheel     {:load-warninged-code true}
-                        :compiler     {:main       "cljs.main"
-                                       :asset-path "js/out"
-                                       :output-dir "resources/public/js/out"
-                                       :output-to  "resources/public/js/clojure-news.js"}}]}
-  :figwheel {
-             :http-server-root "public"
-             :server-port      8080
-             ;:server-ip        "192.168.1.6"
+  :cljsbuild {:builds {:dev  {:id           "clojure-news"
+                              :source-paths ["src/cljs" "src/cljc"]
+                              :figwheel     {:load-warninged-code true}
+                              :compiler     {:main       "cljs.main"
+                                             :asset-path "js/out"
+                                             :output-dir "resources/public/js/out"
+                                             :output-to  "resources/public/js/clojure-news.js"}}
+
+                       :prod {:id           "clojure-news"
+                              :source-paths ["src/cljs" "src/cljc"]
+                              :figwheel     false
+                              :compiler     {:main          "cljs.main"
+                                             :output-to     "resources/public/js/clojure-news.js"
+                                             :optimizations :advanced
+                                             :pretty-print  false}}}}
+  :figwheel {:http-server-root "public"
+             :server-port      3000
+             :server-ip        "192.168.1.76"
              :css-dirs         ["resources/public/css"]
              :ring-handler     clj.main/handler})
