@@ -1,4 +1,4 @@
-# ClojureNews
+# Clojure News
 
 The http://clojure.news webapp
 
