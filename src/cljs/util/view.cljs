@@ -149,14 +149,19 @@
     (change-color-to-default)
     (set! (-> (dom/getElement element-id) .-style .-color) "#1850C7")))
 
+(defn starts-with
+  [token page]
+  (when token
+    (= (.indexOf token page) 0)))
+
 (defn select-header-button
   [token]
   (cond
-    (.startsWith token "/new") (change-color-to-blue "headerNewId")
-    (.startsWith token "/story") (change-color-to-blue "headerStoryId")
-    (.startsWith token "/ask") (change-color-to-blue "headerAskId")
-    (.startsWith token "/job") (change-color-to-blue "headerJobId")
-    (.startsWith token "/event") (change-color-to-blue "headerEventId")
+    (starts-with token "/new") (change-color-to-blue "headerNewId")
+    (starts-with token "/story") (change-color-to-blue "headerStoryId")
+    (starts-with token "/ask") (change-color-to-blue "headerAskId")
+    (starts-with token "/job") (change-color-to-blue "headerJobId")
+    (starts-with token "/event") (change-color-to-blue "headerEventId")
     (= token "/submit") (change-color-to-blue "headerSubmitId")
     (or (= token "/") (= token "")) (change-color-to-blue "headerStoryId")
     :else

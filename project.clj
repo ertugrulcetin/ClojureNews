@@ -51,6 +51,6 @@
                                              :pretty-print  false}}}}
   :figwheel {:http-server-root "public"
              :server-port      3000
-             :server-ip        "192.168.1.76"
+             ;:server-ip        "192.168.1.76"
              :css-dirs         ["resources/public/css"]
              :ring-handler     clj.main/handler})
