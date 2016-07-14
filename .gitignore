@@ -15,4 +15,3 @@ pom.xml.asc
 
 /resources/public/js/out
 /figwheel_server.log
-/src/clj/deneme.clj
