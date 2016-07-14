@@ -59,6 +59,7 @@
                                         [:meta {:http-equiv "Content-Type" :content "text/html; charset=UTF-8"}]
                                         [:meta {:name "referrer" :content "origin"}]
                                         [:meta {:name "viewport" :content "width=device-width, initial-scale=1.0"}]
+                                        [:meta {:name "google-site-verification" :content "u0k33b2h-hjrHVQZIxMcmdM5YYZ_0USpephsG50KPw4"}]
 
                                         [:link {:rel "stylesheet" :type "text/css" :href "/css/news.css"}]
                                         [:link {:rel "shortcut icon" :href "/img/logo.png"}]
