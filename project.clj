@@ -1,6 +1,8 @@
 (defproject clojure-news "0.1.0-SNAPSHOT"
   :description "Clojure News"
   :url "https://clojure.news"
+  :author "Ertuğrul Çetin"
+  :email "ertu.ctn@gmail.com"
   :license {:name "Apache License"
             :url  "http://www.apache.org/licenses/LICENSE-2.0"}
   :dependencies [[org.clojure/clojure "1.8.0"]
