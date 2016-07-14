@@ -1,0 +1,14 @@
+language: clojure
+lein: lein2
+branches:
+  only:
+    - master
+jdk:
+  - oraclejdk8
+notifications:
+  email:
+    - ertu.ctn@gmail.com
+
+after_success:
+- CLOVERAGE_VERSION=1.0.7-SNAPSHOT lein cloverage --codecov
+- bash <(curl -s https://codecov.io/bash) -f target/coverage/codecov.json

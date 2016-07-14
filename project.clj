@@ -30,7 +30,8 @@
                                                     com.sun.jmx/jmxri]]]
   :plugins [[lein-ring "0.9.7"]
             [lein-cljsbuild "1.1.3"]
-            [lein-figwheel "0.5.3-1"]]
+            [lein-figwheel "0.5.3-1"]
+            [lein-cloverage "1.0.7-SNAPSHOT"]]
 
   :main clj.main
 
