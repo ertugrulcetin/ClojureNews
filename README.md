@@ -9,7 +9,6 @@ The http://clojure.news webapp
 
 * JDK 1.8+
 * Leiningen
-* MongoDB
 * Heroku(Free Plan)
 * mLab(Heroku Add-on)
 
