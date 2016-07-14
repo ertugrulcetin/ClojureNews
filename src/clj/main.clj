@@ -11,7 +11,8 @@
             [clj.route.entry :as route-entry]
             [clj.route.comment-entry :as route-comment-entry]
             [clj.route.upvote :as route-upvote]
-            [clj.route.not-found :as route-not-found])
+            [clj.route.not-found :as route-not-found]
+            [clj.dao.db-conf :as db-conf])
   (:gen-class))
 
 (defn log-middleware
@@ -36,6 +37,11 @@
                  wrap-params
                  wrap-gzip))
 
-(defn -main
-  []
-  (jetty/run-jetty #'handler {:port 8080}))
+(defn start [port]
+  (jetty/run-jetty handler {:port  port
+                            :join? false}))
+
+(defn -main []
+  (let [port (Integer. (or (System/getenv "PORT") "8080"))]
+    (db-conf/init-db)
+    (start port)))

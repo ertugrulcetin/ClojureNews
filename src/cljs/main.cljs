@@ -35,4 +35,3 @@
                                                (util.view/change-header-links-page-titles token))))
   (doto h
     (.setEnabled true)))
-;(.setToken (str js/window.location.pathname js/window.location.search))

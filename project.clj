@@ -15,7 +15,7 @@
                  [liberator "0.14.1"]
                  [com.novemberain/monger "3.0.2"]
                  [pandect "0.6.0"]
-                 [reagent "0.6.0-alpha2"]
+                 [reagent "0.6.0-rc"]
                  [secretary "1.2.3"]
                  [hiccup "1.0.5"]
                  [com.andrewmcveigh/cljs-time "0.4.0"]

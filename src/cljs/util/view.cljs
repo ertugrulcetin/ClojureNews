@@ -23,10 +23,9 @@
   (r/render-component [view.user/component-update] util.view/message-container)
   (js/setTimeout (fn [] (set! (.-innerText (dom/getElement "messageContainerId")) "")) 2500))
 
-;;TODO will be changed!!! https.....!
 (defn change-url
   [path]
-  (set! window/location (str "http://" window/location.host path)))
+  (set! window/location (str "https://" window/location.host path)))
 
 (defn change-url-to-story
   []
@@ -124,7 +123,7 @@
         :else
         (if (= day 1) (str day " day ago") (str day " days ago"))))
     (catch js/Error e
-      nil)))
+      "0 minutes ago")))
 
 (defn- parse-date
   [date]
