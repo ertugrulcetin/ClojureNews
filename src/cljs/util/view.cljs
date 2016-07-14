@@ -122,6 +122,9 @@
       :else
       (if (= day 1) (str day " day ago") (str day " days ago")))))
 
+
+
+
 (defn- parse-date
   [date]
   (str/split (.substring date 0 10) #"-"))
@@ -170,6 +173,7 @@
 (defn change-page-title
   [title]
   (set! (.-title js/document) (str title " | Clojure News")))
+
 
 (defn change-header-links-page-titles
   [token]

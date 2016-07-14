@@ -132,7 +132,8 @@
                                                [:a {:class "pagebottomgray", :href "mailto:info@clojure.news"} "Contact"]]
                                               [:br]
                                               [:br]]]]]]]
-                                        [:script {:src "/js/clojure-news.js", :type "text/javascript"}]]]))
+                                        [:script {:src "/js/clojure-news.js", :type "text/javascript"}]
+                                        [:script (resource-util/create-google-analytics-code "UA-80727056-1")]]]))
 
             :handle-exception (fn [_]
                                 "Something went wrong")))
