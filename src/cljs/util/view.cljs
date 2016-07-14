@@ -103,6 +103,7 @@
     1 "1 comment"
     (str number-of-comments " comments")))
 
+
 (defn generate-upvote-status
   [number-of-upvotes]
   (if (> number-of-upvotes 1)
@@ -111,19 +112,19 @@
 
 (defn generate-age-status
   [created-date]
-  (let [current-date (js/Date.)
-        created-date-as-js (js/Date. created-date)
-        min (cljs-time/in-minutes (cljs-time/interval created-date-as-js current-date))
-        hour (cljs-time/in-hours (cljs-time/interval created-date-as-js current-date))
-        day (cljs-time/in-days (cljs-time/interval created-date-as-js current-date))]
-    (cond
-      (< min 60) (if (= min 1) (str min " minute ago") (str min " minutes ago"))
-      (< hour 24) (if (= hour 1) (str hour " hour ago") (str hour " hours ago"))
-      :else
-      (if (= day 1) (str day " day ago") (str day " days ago")))))
-
-
-
+  (try
+    (let [current-date (js/Date.)
+          created-date-as-js (js/Date. created-date)
+          min (cljs-time/in-minutes (cljs-time/interval created-date-as-js current-date))
+          hour (cljs-time/in-hours (cljs-time/interval created-date-as-js current-date))
+          day (cljs-time/in-days (cljs-time/interval created-date-as-js current-date))]
+      (cond
+        (< min 60) (if (= min 1) (str min " minute ago") (str min " minutes ago"))
+        (< hour 24) (if (= hour 1) (str hour " hour ago") (str hour " hours ago"))
+        :else
+        (if (= day 1) (str day " day ago") (str day " days ago"))))
+    (catch js/Error e
+      nil)))
 
 (defn- parse-date
   [date]

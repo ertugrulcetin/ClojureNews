@@ -10,6 +10,8 @@ The http://clojure.news webapp
 * JDK 1.8+
 * Leiningen
 * MongoDB
+* Heroku(Free Plan)
+* mLab(Heroku Add-on)
 
 ## Contributing
 
@@ -19,7 +21,7 @@ Feel free to jump in if you don't mind digging around, you can check out the [is
 
 [Ertuğrul Çetin](https://github.com/ertugrulcetin)
 
-#License
+#Licenseg
 ```
   Copyright 2016 Ertuğrul Çetin
   
