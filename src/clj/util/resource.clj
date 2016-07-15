@@ -40,7 +40,7 @@
 
 (defn delete-cookie
   [cookie]
-  (str "user=" cookie "; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; HttpOnly; Secure"))
+  (str "user=" cookie "; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; HttpOnly; secure"))
 
 (defn convert-data-map
   "Converts clojure map's string keywords to keyword functions"
