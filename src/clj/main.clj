@@ -11,6 +11,7 @@
             [clj.route.entry :as route-entry]
             [clj.route.comment-entry :as route-comment-entry]
             [clj.route.upvote :as route-upvote]
+            [clj.route.forgot-password :as route-forgot-password]
             [clj.route.not-found :as route-not-found]
             [clj.dao.db-conf :as db-conf])
   (:gen-class))
@@ -27,6 +28,7 @@
               #'route-entry/route
               #'route-comment-entry/route
               #'route-upvote/route
+              #'route-forgot-password/route
               ;;not-found has to be last route in the routing order
               #'route-not-found/route))
 
@@ -41,7 +43,7 @@
   (jetty/run-jetty handler {:port  port
                             :join? false}))
 
-(defn -main []
-  (let [port (Integer. (or (System/getenv "PORT") "8080"))]
-    (db-conf/init-db)
-    (start port)))
+;(defn -main []
+;  (let [port (Integer. (or (System/getenv "PORT") "8080"))]
+;    (db-conf/init-db)
+;    (start port)))

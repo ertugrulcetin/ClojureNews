@@ -5,12 +5,16 @@
             [cljc.validation :as validation]
             [cljc.string-util :as string-util]
             [pandect.algo.sha256 :as hash]
-            [clojure.string :as str])
+            [clojure.string :as str]
+            [postal.core :refer [send-message]])
   (:import (java.util Date)))
 
 (declare itself?
          number-of-days
          get-auth-user
+         check-username
+         check-user-exist
+         check-user-has-email
          check-about
          check-email
          check-website
@@ -162,6 +166,57 @@
             :handle-exception (fn [ctx]
                                 (resource-util/get-exception-message ctx))))
 
+(defn forgot-password
+  []
+  (resource :allowed-methods [:post]
+
+            :available-media-types resource-util/avaliable-media-types
+
+            :known-content-type? #(resource-util/check-content-type % resource-util/avaliable-media-types)
+
+            :malformed? #(resource-util/parse-json % ::data)
+
+            :post! (fn [ctx]
+
+                     (let [data-as-map (resource-util/convert-data-map (::data ctx))
+                           username (:username data-as-map)]
+
+                       (check-username username)
+
+                       (let [user (check-user-exist username)]
+                         (check-user-has-email user)
+                         (let [new-pass (resource-util/random-password)
+                               conn {:host "smtp.gmail.com"
+                                     :ssl  true
+                                     :user (System/getenv "EMAIL")
+                                     :pass (System/getenv "EMAIL_PASSWORD")}]
+                           (try
+                             (send-message conn {:from    (System/getenv "EMAIL")
+                                                 :to      (:email user)
+                                                 :subject "Password Recovery | Clojure News"
+                                                 :body    [:alternative
+                                                           {:type    "text/html"
+                                                            :content (str "<html><body><p>Some Clojurist (hopefully you) requested we reset your password at Clojure News.<br/>
+                                                            Here is your new password: "
+                                                                          (str "<b>" new-pass "</b>")
+                                                                          "</p>
+                                                                          <p>You can change your password from your profile.</p>
+                                                                          </body></html>")}]})
+
+                             (user-dao/update-password-by-username username (hash/sha256 new-pass))
+                             (catch Exception e
+                               (throw (RuntimeException. "Could not send e-mail.Please try again in a few minutes."))))))))
+
+            :new? (fn [_]
+                    false)
+
+            :respond-with-entity? (fn [_]
+                                    true)
+            :handle-ok (fn [_]
+                         {:message-sent? true})
+
+            :handle-exception #(resource-util/get-exception-message %)))
+
 (defn itself?
   [ctx user]
   (if-let [cookie (resource-util/get-cookie ctx)]
@@ -187,6 +242,22 @@
    :website     (:website user)
    :github      (:github user)
    :twitter     (:twitter user)})
+
+(defn check-username
+  [username]
+  (if-not (validation/username? username)
+    (throw (RuntimeException. "Usernames can only contain letters, digits and underscores, and should be between 2 and 15 characters long. Please choose another."))))
+
+(defn check-user-exist
+  [username]
+  (if-let [user (user-dao/find-by-username username)]
+    user
+    (throw (RuntimeException. "There is no such a user."))))
+
+(defn check-user-has-email
+  [user]
+  (when-not (:email user)
+    (throw (RuntimeException. "This user has no email.Please contact us."))))
 
 (defn check-about
   [about]

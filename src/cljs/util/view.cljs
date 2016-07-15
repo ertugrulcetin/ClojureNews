@@ -23,6 +23,10 @@
   (r/render-component [view.user/component-update] util.view/message-container)
   (js/setTimeout (fn [] (set! (.-innerText (dom/getElement "messageContainerId")) "")) 2500))
 
+(defn render-forgot-password-successfully
+  []
+  (r/render-component [view.user/component-send-forgot-email] util.view/message-container))
+
 (defn change-url
   [path]
   (set! window/location (str "https://" window/location.host path)))

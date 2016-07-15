@@ -3,8 +3,8 @@
   (:require [reagent.core :as r]
             [secretary.core]
             [view.forgot-password]
-            [util.view]))
+            [util.view]
+            [controller.forgot-password :as controller]))
 
 (defroute forgot-password "/forgotpassword" []
-          (util.view/change-page-title "Forgot Password")
-          (r/render-component [view.forgot-password/component] util.view/main-container))
+          (controller/forgot-password-page))

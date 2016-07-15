@@ -38,6 +38,7 @@
   [cookie]
   (str "user=" cookie "; expires=" (.toString (Date. (+ (.getTime (Date.)) (* 1000 60 60 24 365 10)))) "; path=/; HttpOnly"))
 
+;;TODO check secure flag
 (defn delete-cookie
   [cookie]
   (str "user=" cookie "; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; HttpOnly; secure"))

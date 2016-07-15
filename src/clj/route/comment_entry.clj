@@ -18,8 +18,4 @@
              (controller/edit-comment-by-id id))
 
            (DELETE "/comment/delete/:id" [id]
-             (controller/delete-comment-by-id id))
-
-           ;(PUT "/comment/reply/:id" [id]
-           ;  (controller/reply-story-comment id))
-           )
+             (controller/delete-comment-by-id id)))

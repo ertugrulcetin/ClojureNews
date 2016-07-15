@@ -10,8 +10,6 @@
             [reagent.core :as r]
             [clojure.string :as str]))
 
-(enable-console-print!)
-
 (declare update-user
          change-password)
 

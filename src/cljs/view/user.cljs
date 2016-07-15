@@ -144,3 +144,7 @@
 (defn component-update
   []
   [:p {:style {:color "green"}} "Your profile has been updated successfully"])
+
+(defn component-send-forgot-email
+  []
+  [:p {:style {:color "green"}} "E-mail has been sent successfully.Please check your spam/junk folder if you can't find the mail."])
