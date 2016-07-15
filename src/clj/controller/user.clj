@@ -179,7 +179,7 @@
             :post! (fn [ctx]
 
                      (let [data-as-map (resource-util/convert-data-map (::data ctx))
-                           username (:username data-as-map)]
+                           username (when (:username data-as-map) (str/lower-case (:username data-as-map)))]
 
                        (check-username username)
 
