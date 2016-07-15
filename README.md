@@ -1,4 +1,4 @@
-# Clojure News [![GitHub License](https://img.shields.io/badge/license-Apache-blue.svg)](https://raw.githubusercontent.com/ertugrulcetin/ClojureNews/master/LICENSE.md?token=AH41u-vB3sgHpWa6UrI6HlJbAY8ws3TMks5XjNzrwA%3D%3D) 
+# Clojure News [![Build Status](https://travis-ci.org/ertugrulcetin/ClojureNews.svg?branch=master)](https://travis-ci.org/ertugrulcetin/ClojureNews) [![GitHub License](https://img.shields.io/badge/license-Apache-blue.svg)](https://raw.githubusercontent.com/ertugrulcetin/ClojureNews/master/LICENSE.md?token=AH41u-vB3sgHpWa6UrI6HlJbAY8ws3TMks5XjNzrwA%3D%3D) 
 
 The http://clojure.news webapp 
 
