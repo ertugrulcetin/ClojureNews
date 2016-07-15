@@ -43,7 +43,7 @@
   (jetty/run-jetty handler {:port  port
                             :join? false}))
 
-;(defn -main []
-;  (let [port (Integer. (or (System/getenv "PORT") "8080"))]
-;    (db-conf/init-db)
-;    (start port)))
+(defn -main []
+  (let [port (Integer. (or (System/getenv "PORT") "8080"))]
+    (db-conf/init-db)
+    (start port)))
