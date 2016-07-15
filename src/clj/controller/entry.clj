@@ -134,7 +134,7 @@
                                               [:br]
                                               [:br]]]]]]]
                                         [:script {:src "/js/clojure-news.js", :type "text/javascript"}]
-                                        [:script (resource-util/create-google-analytics-code "UA-80727056-1")]]]))
+                                        [:script (resource-util/create-google-analytics-code "UA-54741200-3")]]]))
 
             :handle-exception (fn [_]
                                 "Something went wrong")))
