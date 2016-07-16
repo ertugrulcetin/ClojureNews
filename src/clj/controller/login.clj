@@ -134,7 +134,7 @@
 (defn check-password
   [password]
   (if-not (validation/password? password)
-    (throw (RuntimeException. "Passwords should be between 8 and 20 characters long. Please choose another."))))
+    (throw (RuntimeException. "Passwords should be between 8 and 128 characters long. Please choose another."))))
 
 (defn check-user-duplicate
   [username]

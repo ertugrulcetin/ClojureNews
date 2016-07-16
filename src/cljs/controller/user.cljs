@@ -72,13 +72,13 @@
 
     (cond
       (not (validation/password? (:current-password data)))
-      (util.view/render-error-message "Passwords should be between 8 and 20 characters long. Please choose another.")
+      (util.view/render-error-message "Passwords should be between 8 and 128 characters long. Please choose another.")
 
       (not (validation/password? (:new-password data)))
-      (util.view/render-error-message "Passwords should be between 8 and 20 characters long. Please choose another.")
+      (util.view/render-error-message "Passwords should be between 8 and 128 characters long. Please choose another.")
 
       (not (validation/password? (:re-new-password data)))
-      (util.view/render-error-message "Passwords should be between 8 and 20 characters long. Please choose another.")
+      (util.view/render-error-message "Passwords should be between 8 and 128 characters long. Please choose another.")
 
       (not= (:new-password data) (:re-new-password data))
       (util.view/render-error-message "New passwords don't match.")

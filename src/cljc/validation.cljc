@@ -10,7 +10,7 @@
        (re-matches #"[a-zA-Z_0-9]{2,15}" username)))
 
 (defn password?
-  "Passwords should be between 8 and 20 characters long. Please choose another."
+  "Passwords should be between 8 and 128 characters long. Please choose another."
   [password]
   (and (not (str/blank? password))
        (re-matches #".{8,128}" password)))

@@ -30,7 +30,7 @@
       (util.view/render-error-message "Usernames can only contain ltters, digits and underscores, and should be between 2 and 15 characters long. Please choose another.")
 
       (not (validation/password? password))
-      (util.view/render-error-message "Passwords should be between 8 and 20 characters long. Please choose another.")
+      (util.view/render-error-message "Passwords should be between 8 and 128 characters long. Please choose another.")
 
       :else
       (POST "/login"
@@ -59,7 +59,7 @@
       (util.view/render-error-message "Usernames can only contain letters, digits and underscores, and should be between 2 and 15 characters long. Please choose another.")
 
       (not (validation/password? password))
-      (util.view/render-error-message "Passwords should be between 8 and 20 characters long. Please choose another.")
+      (util.view/render-error-message "Passwords should be between 8 and 128 characters long. Please choose another.")
 
       :else
       (PUT "/signup"
