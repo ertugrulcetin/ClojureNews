@@ -13,7 +13,7 @@
   "Passwords should be between 8 and 20 characters long. Please choose another."
   [password]
   (and (not (str/blank? password))
-       (re-matches #".{8,20}" password)))
+       (re-matches #".{8,128}" password)))
 
 (defn url?
   [url]
