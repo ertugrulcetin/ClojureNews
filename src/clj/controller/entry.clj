@@ -155,7 +155,7 @@
                                stories (get-entry-by-page "story" 1 data-per-page-inc page-util/last-n-days)]
                            (resource-util/create-rss-feed
                              (for [story stories]
-                               (resource-util/create-rss-item (:title story)
+                               (resource-util/create-rss-item (str/escape (:title story) {\< "&lt;", \> "&gt;", \& "&amp;", \" "&quot;", \' "&apos;"})
                                                               (str/escape (:url story) {\< "&lt;", \> "&gt;", \& "&amp;", \" "&quot;", \' "&apos;"})
                                                               (:created-date story)
                                                               (str "https://clojure.news/#/story/" (:_id story)))))))
