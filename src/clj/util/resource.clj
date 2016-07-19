@@ -119,3 +119,26 @@
   a=s.createElement(o),\n  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)\n  })
   (window,document,'script','https://www.google-analytics.com/analytics.js','ga');\n\n
   ga('create', " (str "'" ga "'") ", 'auto');\n  ga('send', 'pageview');\n"))
+
+(defn create-rss-item
+  [title link pubDate comments]
+  (str "<item>"
+       "<title>" title "</title>"
+       "<link>" link "</link>"
+       "<pubDate>" pubDate "</pubDate>"
+       "<comments>" comments "</comments>"
+       "<description>"
+       (str "<![CDATA[<a href=" comments ">Comments</a>]]>")
+       "</description>"
+       "</item>"))
+
+(defn create-rss-feed
+  [items]
+  (str "<rss version=\"2.0\">"
+       "<channel>"
+       "<title>" "Clojure News" "</title>"
+       "<link>" "https://clojure.news" "</link>"
+       "<description>" "Links for the intellectually curious, ranked by Clojurists." "</description>"
+       (apply str items)
+       "</channel>"
+       "</rss>"))

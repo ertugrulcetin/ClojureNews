@@ -130,6 +130,9 @@
                                                [:a {:class "pagebottomgray", :href "/#/formatting"} "Formatting"] " | "
                                                [:a {:class "pagebottomgray", :href "/#/guidelines"} "Guidelines"] " | "
                                                [:a {:class "pagebottomgray", :href "/#/faq"} "FAQ"] " | "
+                                               [:a {:class "pagebottomgray", :href "/rss"} "RSS"] " | "
+                                               [:a {:class "pagebottomgray", :href "https://twitter.com/clojure_news"} "Twitter"] " | "
+                                               [:a {:class "pagebottomgray", :href "https://github.com/ertugrulcetin/ClojureNews"} "GitHub"] " | "
                                                [:a {:class "pagebottomgray", :href "mailto:infoclojurenews@gmail.com"} "Contact"]]
                                               [:br]
                                               [:br]]]]]]]
@@ -138,6 +141,26 @@
 
             :handle-exception (fn [_]
                                 "Something went wrong")))
+
+;;RSS feed
+(defn get-rss-feed
+  []
+  (resource :allowed-methods [:get]
+
+            :available-media-types ["application/rss+xml" "application/rdf+xml;q=0.8" "application/atom+xml;q=0.6" "application/xml;q=0.4" "text/xml;q=0.4"]
+
+            :handle-ok (fn [_]
+
+                         (let [data-per-page-inc page-util/data-per-page
+                               stories (get-entry-by-page "story" 1 data-per-page-inc page-util/last-n-days)]
+                           (resource-util/create-rss-feed
+                             (for [story stories]
+                               (resource-util/create-rss-item (:title story)
+                                                              (str/escape (:url story) {\< "&lt;", \> "&gt;", \& "&amp;", \" "&quot;", \' "&apos;"})
+                                                              (:created-date story)
+                                                              (str "https://clojure.news/#/story/" (:_id story)))))))
+
+            :handle-exception #(resource-util/get-exception-message %)))
 
 ;;Story
 (defn create-story

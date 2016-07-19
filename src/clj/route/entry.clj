@@ -8,6 +8,9 @@
            (GET "/" []
              (controller/home-page))
 
+           (GET "/rss" []
+             (controller/get-rss-feed))
+
            ;;Story
            (PUT "/entry/story" []
              (controller/create-story))
