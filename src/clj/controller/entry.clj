@@ -162,6 +162,7 @@
 
             :handle-exception #(resource-util/get-exception-message %)))
 
+;;Robots.txt
 (defn get-robots-txt
   []
   (resource :allowed-methods [:get]
@@ -169,11 +170,9 @@
             :available-media-types ["text/plain"]
 
             :handle-ok (fn [_]
-                         "User-agent: *\n
-                         Allow: /")
+                         "User-agent: *\nAllow: /")
 
             :handle-exception #(resource-util/get-exception-message %)))
-
 
 ;;Story
 (defn create-story
