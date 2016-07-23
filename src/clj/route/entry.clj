@@ -12,7 +12,7 @@
              (controller/get-rss-feed))
 
            (GET "/robots.txt" []
-             (controller/get-rss-feed))
+             (controller/get-robots-txt))
 
            ;;Story
            (PUT "/entry/story" []
