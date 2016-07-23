@@ -170,7 +170,7 @@
             :available-media-types ["text/plain"]
 
             :handle-ok (fn [_]
-                         "User-agent: *\nAllow: /")
+                         "User-agent: *\nAllows: /")
 
             :handle-exception #(resource-util/get-exception-message %)))
 
