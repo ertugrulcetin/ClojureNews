@@ -11,6 +11,9 @@
            (GET "/rss" []
              (controller/get-rss-feed))
 
+           (GET "/robots.txt" []
+             (controller/get-rss-feed))
+
            ;;Story
            (PUT "/entry/story" []
              (controller/create-story))
