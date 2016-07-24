@@ -218,7 +218,7 @@
 
             :handle-ok (fn [ctx]
 
-                         (let [data-per-page-inc page-util/data-per-page
+                         (let [data-per-page-inc (+ page-util/data-per-page 1)
                                stories (get-entry-by-page "story" (check-page-data-format page) data-per-page-inc page-util/last-n-days)
                                real-stories (if (= (count stories) data-per-page-inc) (butlast stories) stories)]
                            (if-let [user (get-user ctx)]
@@ -374,7 +374,7 @@
 
             :handle-ok (fn [ctx]
 
-                         (let [data-per-page-inc page-util/data-per-page
+                         (let [data-per-page-inc (+ page-util/data-per-page 1)
                                asks (get-entry-by-page "ask" (check-page-data-format page) data-per-page-inc page-util/last-n-days)
                                real-asks (if (= (count asks) data-per-page-inc) (butlast asks) asks)]
                            (if-let [user (get-user ctx)]
