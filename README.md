@@ -12,6 +12,10 @@ The https://clojure.news webapp
 * Heroku(Free Plan)
 * mLab(Heroku Add-on)
 
+## Installation
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
 ## Contributing
 
 Feel free to jump in if you don't mind digging around, you can check out the [issues](https://github.com/ertugrulcetin/ClojureNews/issues)  page for ideas on what to work on.
