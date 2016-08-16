@@ -24,7 +24,7 @@
     [:tr
      [:td]
      [:td
-      [:a {:href "/#/forgotpassword" :style {:font-size 12 :text-decoration "underline"}} "Forgot Your Password?"]]]
+      [:a {:href "/#!/forgotpassword" :style {:font-size 12 :text-decoration "underline"}} "Forgot Your Password?"]]]
 
     [:tr
      [:td

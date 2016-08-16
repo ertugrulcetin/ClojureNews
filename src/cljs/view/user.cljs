@@ -93,20 +93,20 @@
       [:tr
        [:td]
        [:td
-        [:a {:href (str "/#/user/" (:username user) "/changepassword")}
+        [:a {:href (str "/#!/user/" (:username user) "/changepassword")}
          [:u "change password"]]]])
 
     ;;TODO will be implemented in the feature release
     ;[:tr
     ; [:td]
     ; [:td
-    ;  [:a {:href (str "/#/user/" (:username user) "/submissions")}
+    ;  [:a {:href (str "/#!/user/" (:username user) "/submissions")}
     ;   [:u "submissions"]]]]
     ;
     ;[:tr
     ; [:td]
     ; [:td
-    ;  [:a {:href (str "/#/user/" (:username user) "/comments")}
+    ;  [:a {:href (str "/#!/user/" (:username user) "/comments")}
     ;   [:u "comments"]]]]
     ;
     ;
@@ -114,10 +114,10 @@
     ;  [:tr
     ;   [:td]
     ;   [:td
-    ;    [:a {:href (str "/#/user/" (:username user) "/jobs")}
+    ;    [:a {:href (str "/#!/user/" (:username user) "/jobs")}
     ;     [:u "jobs"]]
     ;    (str ", ")
-    ;    [:a {:href (str "/#/user/" (:username user) "/events")}
+    ;    [:a {:href (str "/#!/user/" (:username user) "/events")}
     ;     [:u "events"]]]])
     ;
     ;[:tr
@@ -129,10 +129,10 @@
     ;  [:tr
     ;   [:td]
     ;   [:td
-    ;    [:a {:href "/#/upvotedentries"}
+    ;    [:a {:href "/#!/upvotedentries"}
     ;     [:u "upvoted entries"]]
     ;    (str ", ")
-    ;    [:a {:href "/#/upvotedcomments"}
+    ;    [:a {:href "/#!/upvotedcomments"}
     ;     [:u "upvoted comments"]]]])
 
     (if (:auth? user)

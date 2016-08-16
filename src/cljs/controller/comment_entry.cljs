@@ -67,7 +67,7 @@
       (PUT (str "/comment/reply")
            {:params          {:parent-comment-id parent-comment-id :text text}
             :handler         (fn [response]
-                               (util.view/change-url (str "/#/" (-> response :type) "/" (-> response :entry-id))))
+                               (util.view/change-url (str "/#!/" (-> response :type) "/" (-> response :entry-id))))
 
             :error-handler   util.controller/error-handler
             :format          (ajax/json-request-format)
@@ -120,14 +120,14 @@
   [id]
   (DELETE (str "/comment/delete/" id)
           {:handler         (fn [response]
-                              (util.view/change-url (str "/#/" (:type response) "/" (:entry-id response))))
+                              (util.view/change-url (str "/#!/" (:type response) "/" (:entry-id response))))
            :error-handler   util.controller/error-handler
            :format          (ajax/json-request-format)
            :response-format (ajax/json-response-format {:keywords? true})}))
 
 (defn dont-delete-comment
   [type entry-id]
-  (util.view/change-url (str "/#/" type "/" entry-id)))
+  (util.view/change-url (str "/#!/" type "/" entry-id)))
 
 (defn add-event-listener-to-reply-button
   [id]

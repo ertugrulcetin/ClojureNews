@@ -37,9 +37,9 @@
        [:td {:class "default"}
         [:div {:style {:margin-top "2px" :margin-bottom "-10px"}}
          [:span {:class "comhead"}
-          [:a {:href (str "/#/user/" (-> commentt :comment-entry :created-by))} (-> commentt :comment-entry :created-by)]
+          [:a {:href (str "/#!/user/" (-> commentt :comment-entry :created-by))} (-> commentt :comment-entry :created-by)]
           " | "
-          [:a {:href (str "/#/story/" (-> commentt :comment-entry :entry-id))} (util.view/generate-age-status (-> commentt :comment-entry :created-date))]
+          [:a {:href (str "/#!/story/" (-> commentt :comment-entry :entry-id))} (util.view/generate-age-status (-> commentt :comment-entry :created-date))]
           [:span {:class "par"}]
           [:span {:class "storyon"}]]]
 

@@ -43,9 +43,9 @@
                (util.view/generate-age-status (:created-date job))]
               (when (job-owner? job jobs)
                 (list " | "
-                      [:a {:href (str "/#/job/edit/" (:_id job))} "edit"]
+                      [:a {:href (str "/#!/job/edit/" (:_id job))} "edit"]
                       " | "
-                      [:a {:href (str "/#/job/delete/" (:_id job))} "delete"]))]]
+                      [:a {:href (str "/#!/job/delete/" (:_id job))} "delete"]))]]
 
             [:tr {:class "spacer" :style {:height "7"}}]))
 
@@ -55,7 +55,7 @@
           [:tr
            [:td {:colSpan "2"}]
            [:td {:class "title"}
-            [:a {:href (str "/#/job/p/" (+ page-as-int 1)) :class "morelink" :rel "nofollow"} "More"]]])))]])
+            [:a {:href (str "/#!/job/p/" (+ page-as-int 1)) :class "morelink" :rel "nofollow"} "More"]]])))]])
 
 (defn job-owner?
   [job jobs]

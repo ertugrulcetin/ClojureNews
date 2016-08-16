@@ -49,7 +49,7 @@
               [:span {:class "deadmark"}]
               (if (= (:type entry) "story")
                 [:a {:href (:url entry) :target "_blank"} (:title entry)]
-                [:a {:href (str "/#/ask/" (:_id entry))} (str "Ask CN: " (:title entry))])
+                [:a {:href (str "/#!/ask/" (:_id entry))} (str "Ask CN: " (:title entry))])
               (when (= (:type entry) "story")
                 [:span {:class "sitebit comhead"}
                  " (" [:span {:class "sitestr"}
@@ -60,15 +60,15 @@
              [:td {:class "subtext"}
               [:span {:id "span" :class "score"}
                (util.view/generate-upvote-status (:upvote entry))
-               [:a {:href (str "/#/user/" (:created-by entry))} (:created-by entry)]
+               [:a {:href (str "/#!/user/" (:created-by entry))} (:created-by entry)]
                [:span {:class "age"} " | "
-                [:a {:href (str "/#/" (:type entry) "/" (:_id entry))} (util.view/generate-age-status (:created-date entry))] " | "
-                [:a {:href (str "/#/" (:type entry) "/" (:_id entry))} (util.view/generate-comment-status (:number-of-comments entry))]
+                [:a {:href (str "/#!/" (:type entry) "/" (:_id entry))} (util.view/generate-age-status (:created-date entry))] " | "
+                [:a {:href (str "/#!/" (:type entry) "/" (:_id entry))} (util.view/generate-comment-status (:number-of-comments entry))]
                 (when (owner? entry entries)
                   (list " | "
-                        [:a {:href (str "/#/" (:type entry) "/edit/" (:_id entry))} "edit"]
+                        [:a {:href (str "/#!/" (:type entry) "/edit/" (:_id entry))} "edit"]
                         " | "
-                        [:a {:href (str "/#/" (:type entry) "/delete/" (:_id entry))} "delete"]))]]]]
+                        [:a {:href (str "/#!/" (:type entry) "/delete/" (:_id entry))} "delete"]))]]]]
 
             [:tr {:class "spacer" :style {:height "7"}}]))
 
@@ -78,7 +78,7 @@
           [:tr
            [:td {:colSpan "2"}]
            [:td {:class "title"}
-            [:a {:href (str "/#/new/p/" (+ page-as-int 1)) :class "morelink" :rel "nofollow"} "More"]]])))]])
+            [:a {:href (str "/#!/new/p/" (+ page-as-int 1)) :class "morelink" :rel "nofollow"} "More"]]])))]])
 
 (defn owner?
   [entry entries]

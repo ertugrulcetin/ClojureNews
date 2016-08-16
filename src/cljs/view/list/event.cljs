@@ -55,9 +55,9 @@
                (util.view/generate-age-status (:created-date event))
                (when (event-owner? event events)
                  (list " | "
-                       [:a {:href (str "/#/event/edit/" (:_id event))} "edit"]
+                       [:a {:href (str "/#!/event/edit/" (:_id event))} "edit"]
                        " | "
-                       [:a {:href (str "/#/event/delete/" (:_id event))} "delete"]))]]]
+                       [:a {:href (str "/#!/event/delete/" (:_id event))} "delete"]))]]]
 
             [:tr {:class "spacer" :style {:height "7"}}]))
 
@@ -67,7 +67,7 @@
           [:tr
            [:td {:colSpan "2"}]
            [:td {:class "title"}
-            [:a {:href (str "/#/event/p/" (+ page-as-int 1)) :class "morelink" :rel "nofollow"} "More"]]])))]])
+            [:a {:href (str "/#!/event/p/" (+ page-as-int 1)) :class "morelink" :rel "nofollow"} "More"]]])))]])
 
 (defn get-month-name
   [month]

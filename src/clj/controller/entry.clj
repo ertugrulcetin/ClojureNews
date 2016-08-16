@@ -88,20 +88,20 @@
                                                  [:span {:class "pagetop"}
                                                   [:b {:class "brandname"}
                                                    [:a {:id "headerMainId" :class "pagetopwhite", :href "/"} "Clojure News"]]
-                                                  [:a {:id "headerStoryId" :class "pagetopwhite", :href "/#/story"} "story"] " | "
-                                                  [:a {:id "headerAskId" :class "pagetopwhite", :href "/#/ask"} "ask"] " | "
-                                                  [:a {:id "headerNewId" :class "pagetopwhite", :href "/#/new"} "new"] " | "
-                                                  [:a {:id "headerJobId" :class "pagetopwhite", :href "/#/job"} "jobs"] " | "
-                                                  [:a {:id "headerEventId" :class "pagetopwhite", :href "/#/event"} "events"] " | "
-                                                  [:a {:id "headerSubmitId" :class "pagetopwhite", :href "/#/submit"} "submit"]]]
+                                                  [:a {:id "headerStoryId" :class "pagetopwhite", :href "/#!/story"} "story"] " | "
+                                                  [:a {:id "headerAskId" :class "pagetopwhite", :href "/#!/ask"} "ask"] " | "
+                                                  [:a {:id "headerNewId" :class "pagetopwhite", :href "/#!/new"} "new"] " | "
+                                                  [:a {:id "headerJobId" :class "pagetopwhite", :href "/#!/job"} "jobs"] " | "
+                                                  [:a {:id "headerEventId" :class "pagetopwhite", :href "/#!/event"} "events"] " | "
+                                                  [:a {:id "headerSubmitId" :class "pagetopwhite", :href "/#!/submit"} "submit"]]]
                                                 [:td {:style "text-align:right;padding-right:4px;"}
                                                  [:span {:id "pageTopId", :class "pagetop"}
                                                   (if-let [user (get-user ctx)]
                                                     [:div
-                                                     [:a {:class "pagetopwhite", :id "loginId", :href (str "/#/user/" (:username user))} (:username user)]
+                                                     [:a {:class "pagetopwhite", :id "loginId", :href (str "/#!/user/" (:username user))} (:username user)]
                                                      (str " (" (:karma user) ") | ")
-                                                     [:a {:class "pagetopwhite", :id "loginId", :href "/#/logout"} "logout"]]
-                                                    [:a {:class "pagetopwhite", :id "loginId", :href "/#/login"} "login"])
+                                                     [:a {:class "pagetopwhite", :id "loginId", :href "/#!/logout"} "logout"]]
+                                                    [:a {:class "pagetopwhite", :id "loginId", :href "/#!/login"} "login"])
                                                   ]]]]]]]
                                            [:tr {:style "height:10px"}]
                                            [:tr
@@ -127,9 +127,9 @@
                                              [:br]
                                              [:center
                                               [:span {:class "yclinks"}
-                                               [:a {:class "pagebottomgray", :href "/#/formatting"} "Formatting"] " | "
-                                               [:a {:class "pagebottomgray", :href "/#/guidelines"} "Guidelines"] " | "
-                                               [:a {:class "pagebottomgray", :href "/#/faq"} "FAQ"] " | "
+                                               [:a {:class "pagebottomgray", :href "/#!/formatting"} "Formatting"] " | "
+                                               [:a {:class "pagebottomgray", :href "/#!/guidelines"} "Guidelines"] " | "
+                                               [:a {:class "pagebottomgray", :href "/#!/faq"} "FAQ"] " | "
                                                [:a {:class "pagebottomgray", :href "/rss"} "RSS"] " | "
                                                [:a {:class "pagebottomgray", :href "https://twitter.com/clojure_news"} "Twitter"] " | "
                                                [:a {:class "pagebottomgray", :href "https://github.com/ertugrulcetin/ClojureNews"} "GitHub"] " | "
@@ -158,7 +158,7 @@
                                (resource-util/create-rss-item (str/escape (:title story) {\< "&lt;", \> "&gt;", \& "&amp;", \" "&quot;", \' "&apos;"})
                                                               (str/escape (:url story) {\< "&lt;", \> "&gt;", \& "&amp;", \" "&quot;", \' "&apos;"})
                                                               (:created-date story)
-                                                              (str "https://clojure.news/#/story/" (:_id story)))))))
+                                                              (str "https://clojure.news/#!/story/" (:_id story)))))))
 
             :handle-exception #(resource-util/get-exception-message %)))
 

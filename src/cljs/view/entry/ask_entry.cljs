@@ -53,15 +53,15 @@
         [:td {:class "subtext"}
          [:span {:id "span" :class "score"}
           (util.view/generate-upvote-status (-> ask :ask-entry :upvote))
-          [:a {:href (str "/#/user/" (-> ask :ask-entry :created-by))} (-> ask :ask-entry :created-by)]
+          [:a {:href (str "/#!/user/" (-> ask :ask-entry :created-by))} (-> ask :ask-entry :created-by)]
           [:span {:class "age"} " | "
-           [:a {:href (str "/#/ask/" (-> ask :ask-entry :_id))} (util.view/generate-age-status (-> ask :ask-entry :created-date))] " | "
-           [:a {:href (str "/#/ask/" (-> ask :ask-entry :_id))} (util.view/generate-comment-status (-> ask :ask-entry :number-of-comments))]
+           [:a {:href (str "/#!/ask/" (-> ask :ask-entry :_id))} (util.view/generate-age-status (-> ask :ask-entry :created-date))] " | "
+           [:a {:href (str "/#!/ask/" (-> ask :ask-entry :_id))} (util.view/generate-comment-status (-> ask :ask-entry :number-of-comments))]
            (when (ask-owner? ask)
              (list " | "
-                   [:a {:href (str "/#/ask/edit/" (-> ask :ask-entry :_id))} "edit"]
+                   [:a {:href (str "/#!/ask/edit/" (-> ask :ask-entry :_id))} "edit"]
                    " | "
-                   [:a {:href (str "/#/ask/delete/" (-> ask :ask-entry :_id))} "delete"]))]]]]
+                   [:a {:href (str "/#!/ask/delete/" (-> ask :ask-entry :_id))} "delete"]))]]]]
 
        [:tr {:style {:height "10px"}}]
 
@@ -133,14 +133,14 @@
    [:td {:class "default"}
     [:div {:style {:margin-top "2px" :margin-bottom "-10px"}}
      [:span {:class "comhead"}
-      [:a {:href (str "/#/user/" (:created-by commentt))} (:created-by commentt)]
+      [:a {:href (str "/#!/user/" (:created-by commentt))} (:created-by commentt)]
       " "
       [:span {:class "age"}
-       [:a {:href (str "/#/comment/" (:_id commentt))} (util.view/generate-age-status (:created-date commentt))]
+       [:a {:href (str "/#!/comment/" (:_id commentt))} (util.view/generate-age-status (:created-date commentt))]
        " | "
-       [:a {:href (str "/#/comment/edit/" (:_id commentt))} "edit"]
+       [:a {:href (str "/#!/comment/edit/" (:_id commentt))} "edit"]
        " | "
-       [:a {:href (str "/#/comment/delete/" (:_id commentt))} "delete"]]
+       [:a {:href (str "/#!/comment/delete/" (:_id commentt))} "delete"]]
       [:span {:class "par"}]
       [:span {:class "askon"}]]]
 
@@ -166,7 +166,7 @@
    [:td {:class "default"}
     [:div {:style {:margin-top "2px" :margin-bottom "-10px"}}
      [:span {:class "comhead"}
-      [:a {:href (str "/#/user/" (:created-by commentt))} (:created-by commentt)]
+      [:a {:href (str "/#!/user/" (:created-by commentt))} (:created-by commentt)]
       " "
       [:span {:class "age"}
        [:a {:href "/#"} (util.view/generate-age-status (:created-date commentt))]]
@@ -182,7 +182,7 @@
       [:p
        [:font {:size "1"}
         [:u
-         [:a {:href (str "/#/comment/" (:str-id commentt))} "reply"]]]]]
+         [:a {:href (str "/#!/comment/" (:str-id commentt))} "reply"]]]]]
      ]]])
 
 (defn create-upvoted-comment
@@ -199,7 +199,7 @@
    [:td {:class "default"}
     [:div {:style {:margin-top "2px" :margin-bottom "-10px"}}
      [:span {:class "comhead"}
-      [:a {:href (str "/#/user/" (:created-by commentt))} (:created-by commentt)]
+      [:a {:href (str "/#!/user/" (:created-by commentt))} (:created-by commentt)]
       " "
       [:span {:class "age"}
        [:a {:href "/#"} (util.view/generate-age-status (:created-date commentt))]]
@@ -215,7 +215,7 @@
       [:p
        [:font {:size "1"}
         [:u
-         [:a {:href (str "/#/comment/" (:str-id commentt))} "reply"]]]]]]]])
+         [:a {:href (str "/#!/comment/" (:str-id commentt))} "reply"]]]]]]]])
 
 
 (defn component-edit
@@ -247,15 +247,15 @@
         [:td {:class "subtext"}
          [:span {:id "span" :class "score"}
           (util.view/generate-upvote-status (-> ask :ask-entry :upvote))
-          [:a {:href (str "/#/user/" (-> ask :ask-entry :created-by))} (-> ask :ask-entry :created-by)]
+          [:a {:href (str "/#!/user/" (-> ask :ask-entry :created-by))} (-> ask :ask-entry :created-by)]
           [:span {:class "age"} " | "
-           [:a {:href (str "/#/ask/" (-> ask :ask-entry :_id))} (util.view/generate-age-status (-> ask :ask-entry :created-date))] " | "
-           [:a {:href (str "/#/ask/" (-> ask :ask-entry :_id))} (util.view/generate-comment-status (-> ask :ask-entry :number-of-comments))]
+           [:a {:href (str "/#!/ask/" (-> ask :ask-entry :_id))} (util.view/generate-age-status (-> ask :ask-entry :created-date))] " | "
+           [:a {:href (str "/#!/ask/" (-> ask :ask-entry :_id))} (util.view/generate-comment-status (-> ask :ask-entry :number-of-comments))]
            (when (-> ask :owner?)
              (list " | "
-                   [:a {:href (str "/#/ask/edit/" (-> ask :ask-entry :_id))} "edit"]
+                   [:a {:href (str "/#!/ask/edit/" (-> ask :ask-entry :_id))} "edit"]
                    " | "
-                   [:a {:href (str "/#/ask/delete/" (-> ask :ask-entry :_id))} "delete"]))]]]]
+                   [:a {:href (str "/#!/ask/delete/" (-> ask :ask-entry :_id))} "delete"]))]]]]
 
        [:tr {:style {:height "10px"}}])]]
 
@@ -312,15 +312,15 @@
         [:td {:class "subtext"}
          [:span {:id "span" :class "score"}
           (util.view/generate-upvote-status (-> ask :ask-entry :upvote))
-          [:a {:href (str "/#/user/" (-> ask :ask-entry :created-by))} (-> ask :ask-entry :created-by)]
+          [:a {:href (str "/#!/user/" (-> ask :ask-entry :created-by))} (-> ask :ask-entry :created-by)]
           [:span {:class "age"} " | "
-           [:a {:href (str "/#/ask/" (-> ask :ask-entry :_id))} (util.view/generate-age-status (-> ask :ask-entry :created-date))] " | "
-           [:a {:href (str "/#/ask/" (-> ask :ask-entry :_id))} (util.view/generate-comment-status (-> ask :ask-entry :number-of-comments))]
+           [:a {:href (str "/#!/ask/" (-> ask :ask-entry :_id))} (util.view/generate-age-status (-> ask :ask-entry :created-date))] " | "
+           [:a {:href (str "/#!/ask/" (-> ask :ask-entry :_id))} (util.view/generate-comment-status (-> ask :ask-entry :number-of-comments))]
            (when (-> ask :owner?)
              (list " | "
-                   [:a {:href (str "/#/ask/edit/" (-> ask :ask-entry :_id))} "edit"]
+                   [:a {:href (str "/#!/ask/edit/" (-> ask :ask-entry :_id))} "edit"]
                    " | "
-                   [:a {:href (str "/#/ask/delete/" (-> ask :ask-entry :_id))} "delete"]))]]]]
+                   [:a {:href (str "/#!/ask/delete/" (-> ask :ask-entry :_id))} "delete"]))]]]]
 
        [:tr {:style {:height "10px"}}]
 

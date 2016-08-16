@@ -33,19 +33,19 @@
 
 (defn change-url-to-story
   []
-  (change-url "/#/story"))
+  (change-url "/#!/story"))
 
 (defn change-url-to-ask
   []
-  (change-url "/#/ask"))
+  (change-url "/#!/ask"))
 
 (defn change-url-to-jobs
   []
-  (change-url "/#/job"))
+  (change-url "/#!/job"))
 
 (defn change-url-to-events
   []
-  (change-url "/#/event"))
+  (change-url "/#!/event"))
 
 (defn in?
   [element coll]
@@ -178,14 +178,13 @@
   [title]
   (set! (.-title js/document) (str title " | Clojure News")))
 
-
 (defn change-header-links-page-titles
   [token]
   (case token
     "/new" (change-page-title "Newest")
     "/story" (change-page-title "Story")
     "/ask" (change-page-title "Ask")
-    "/job" (change-page-title "Jobs")
+    "/job" (change-page-title "Clojure Jobs")
     "/event" (change-page-title "Events")
     "/submit" (change-page-title "Submit")
     nil))

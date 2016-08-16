@@ -57,15 +57,15 @@
         [:td {:class "subtext"}
          [:span {:id "span" :class "score"}
           (util.view/generate-upvote-status (-> story :story-entry :upvote))
-          [:a {:href (str "/#/user/" (-> story :story-entry :created-by))} (-> story :story-entry :created-by)]
+          [:a {:href (str "/#!/user/" (-> story :story-entry :created-by))} (-> story :story-entry :created-by)]
           [:span {:class "age"} " | "
-           [:a {:href (str "/#/story/" (-> story :story-entry :_id))} (util.view/generate-age-status (-> story :story-entry :created-date))] " | "
-           [:a {:href (str "/#/story/" (-> story :story-entry :_id))} (util.view/generate-comment-status (-> story :story-entry :number-of-comments))]
+           [:a {:href (str "/#!/story/" (-> story :story-entry :_id))} (util.view/generate-age-status (-> story :story-entry :created-date))] " | "
+           [:a {:href (str "/#!/story/" (-> story :story-entry :_id))} (util.view/generate-comment-status (-> story :story-entry :number-of-comments))]
            (when (story-owner? story)
              (list " | "
-                   [:a {:href (str "/#/story/edit/" (-> story :story-entry :_id))} "edit"]
+                   [:a {:href (str "/#!/story/edit/" (-> story :story-entry :_id))} "edit"]
                    " | "
-                   [:a {:href (str "/#/story/delete/" (-> story :story-entry :_id))} "delete"]))]]]]
+                   [:a {:href (str "/#!/story/delete/" (-> story :story-entry :_id))} "delete"]))]]]]
 
        [:tr {:style {:height "10px"}}]
 
@@ -129,14 +129,14 @@
    [:td {:class "default"}
     [:div {:style {:margin-top "2px" :margin-bottom "-10px"}}
      [:span {:class "comhead"}
-      [:a {:href (str "/#/user/" (:created-by commentt))} (:created-by commentt)]
+      [:a {:href (str "/#!/user/" (:created-by commentt))} (:created-by commentt)]
       " "
       [:span {:class "age"}
-       [:a {:href (str "/#/comment/" (:_id commentt))} (util.view/generate-age-status (:created-date commentt))]
+       [:a {:href (str "/#!/comment/" (:_id commentt))} (util.view/generate-age-status (:created-date commentt))]
        " | "
-       [:a {:href (str "/#/comment/edit/" (:_id commentt))} "edit"]
+       [:a {:href (str "/#!/comment/edit/" (:_id commentt))} "edit"]
        " | "
-       [:a {:href (str "/#/comment/delete/" (:_id commentt))} "delete"]]
+       [:a {:href (str "/#!/comment/delete/" (:_id commentt))} "delete"]]
       [:span {:class "par"}]
       [:span {:class "storyon"}]]]
 
@@ -162,7 +162,7 @@
    [:td {:class "default"}
     [:div {:style {:margin-top "2px" :margin-bottom "-10px"}}
      [:span {:class "comhead"}
-      [:a {:href (str "/#/user/" (:created-by commentt))} (:created-by commentt)]
+      [:a {:href (str "/#!/user/" (:created-by commentt))} (:created-by commentt)]
       " "
       [:span {:class "age"}
        [:a {:href "/#"} (util.view/generate-age-status (:created-date commentt))]]
@@ -178,7 +178,7 @@
       [:p
        [:font {:size "1"}
         [:u
-         [:a {:href (str "/#/comment/" (:str-id commentt))} "reply"]]]]]
+         [:a {:href (str "/#!/comment/" (:str-id commentt))} "reply"]]]]]
      ]]])
 
 (defn create-upvoted-comment
@@ -195,7 +195,7 @@
    [:td {:class "default"}
     [:div {:style {:margin-top "2px" :margin-bottom "-10px"}}
      [:span {:class "comhead"}
-      [:a {:href (str "/#/user/" (:created-by commentt))} (:created-by commentt)]
+      [:a {:href (str "/#!/user/" (:created-by commentt))} (:created-by commentt)]
       " "
       [:span {:class "age"}
        [:a {:href "/#"} (util.view/generate-age-status (:created-date commentt))]]
@@ -211,7 +211,7 @@
       [:p
        [:font {:size "1"}
         [:u
-         [:a {:href (str "/#/comment/" (:str-id commentt))} "reply"]]]]]]]])
+         [:a {:href (str "/#!/comment/" (:str-id commentt))} "reply"]]]]]]]])
 
 (defn component-edit
   [story]
@@ -246,15 +246,15 @@
         [:td {:class "subtext"}
          [:span {:id "span" :class "score"}
           (util.view/generate-upvote-status (-> story :story-entry :upvote))
-          [:a {:href (str "/#/user/" (-> story :story-entry :created-by))} (-> story :story-entry :created-by)]
+          [:a {:href (str "/#!/user/" (-> story :story-entry :created-by))} (-> story :story-entry :created-by)]
           [:span {:class "age"} " | "
-           [:a {:href (str "/#/story/" (-> story :story-entry :_id))} (util.view/generate-age-status (-> story :story-entry :created-date))] " | "
-           [:a {:href (str "/#/story/" (-> story :story-entry :_id))} (util.view/generate-comment-status (-> story :story-entry :number-of-comments))]
+           [:a {:href (str "/#!/story/" (-> story :story-entry :_id))} (util.view/generate-age-status (-> story :story-entry :created-date))] " | "
+           [:a {:href (str "/#!/story/" (-> story :story-entry :_id))} (util.view/generate-comment-status (-> story :story-entry :number-of-comments))]
            (when (-> story :owner?)
              (list " | "
-                   [:a {:href (str "/#/story/edit/" (-> story :story-entry :_id))} "edit"]
+                   [:a {:href (str "/#!/story/edit/" (-> story :story-entry :_id))} "edit"]
                    " | "
-                   [:a {:href (str "/#/story/delete/" (-> story :story-entry :_id))} "delete"]))]]]]
+                   [:a {:href (str "/#!/story/delete/" (-> story :story-entry :_id))} "delete"]))]]]]
 
        [:tr {:style {:height "10px"}}])]]
 
@@ -313,15 +313,15 @@
         [:td {:class "subtext"}
          [:span {:id "span" :class "score"}
           (util.view/generate-upvote-status (-> story :story-entry :upvote))
-          [:a {:href (str "/#/user/" (-> story :story-entry :created-by))} (-> story :story-entry :created-by)]
+          [:a {:href (str "/#!/user/" (-> story :story-entry :created-by))} (-> story :story-entry :created-by)]
           [:span {:class "age"} " | "
-           [:a {:href (str "/#/story/" (-> story :story-entry :_id))} (util.view/generate-age-status (-> story :story-entry :created-date))] " | "
-           [:a {:href (str "/#/story/" (-> story :story-entry :_id))} (util.view/generate-comment-status (-> story :story-entry :number-of-comments))]
+           [:a {:href (str "/#!/story/" (-> story :story-entry :_id))} (util.view/generate-age-status (-> story :story-entry :created-date))] " | "
+           [:a {:href (str "/#!/story/" (-> story :story-entry :_id))} (util.view/generate-comment-status (-> story :story-entry :number-of-comments))]
            (when (-> story :owner?)
              (list " | "
-                   [:a {:href (str "/#/story/edit/" (-> story :story-entry :_id))} "edit"]
+                   [:a {:href (str "/#!/story/edit/" (-> story :story-entry :_id))} "edit"]
                    " | "
-                   [:a {:href (str "/#/story/delete/" (-> story :story-entry :_id))} "delete"]))]]]]
+                   [:a {:href (str "/#!/story/delete/" (-> story :story-entry :_id))} "delete"]))]]]]
 
        [:tr {:style {:height "10px"}}]
 

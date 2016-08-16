@@ -89,7 +89,7 @@
       (POST (str "/entry/story/edit/" id)
             {:params          data
              :handler         (fn [_]
-                                (util.view/change-url (str "/#/story/" id)))
+                                (util.view/change-url (str "/#!/story/" id)))
              :error-handler   util.controller/error-handler
              :format          (ajax/json-request-format)
              :response-format (ajax/json-response-format {:keywords? true})}))))
@@ -171,7 +171,7 @@
       (POST (str "/entry/ask/edit/" id)
             {:params          data
              :handler         (fn [_]
-                                (util.view/change-url (str "/#/ask/" id)))
+                                (util.view/change-url (str "/#!/ask/" id)))
              :error-handler   util.controller/error-handler
              :format          (ajax/json-request-format)
              :response-format (ajax/json-response-format {:keywords? true})}))))
@@ -214,7 +214,7 @@
   [page]
   (GET (str "/entry/job/p/" page)
        {:handler         (fn [response]
-                           (util.view/change-page-title "Jobs")
+                           (util.view/change-page-title "Clojure Jobs")
                            (r/render-component [(fn []
                                                   (view.list.job/component-job response page))] util.view/main-container))
         :error-handler   util.controller/error-handler

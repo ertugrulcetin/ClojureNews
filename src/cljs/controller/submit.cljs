@@ -50,7 +50,7 @@
     (PUT "/entry/story"
          {:params          data
           :handler         (fn [response]
-                             (util.view/change-url (str "/#/story/" (:entry-id response))))
+                             (util.view/change-url (str "/#!/story/" (:entry-id response))))
           :error-handler   util.controller/error-handler
           :format          (ajax/json-request-format)
           :response-format (ajax/json-response-format {:keywords? true})})))
@@ -68,7 +68,7 @@
     (PUT "/entry/ask"
          {:params          data
           :handler         (fn [response]
-                             (util.view/change-url (str "/#/ask/" (:entry-id response))))
+                             (util.view/change-url (str "/#!/ask/" (:entry-id response))))
           :error-handler   util.controller/error-handler
           :format          (ajax/json-request-format)
           :response-format (ajax/json-response-format {:keywords? true})})))

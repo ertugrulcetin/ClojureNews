@@ -65,13 +65,13 @@
        [:td {:class "subtext"}
         [:span {:id "span" :class "score"}
          (util.view/generate-upvote-status (-> event :event-entry :upvote))
-         [:a {:href (str "/#/user/" (-> event :event-entry :created-by))} (-> event :event-entry :created-by)]
+         [:a {:href (str "/#!/user/" (-> event :event-entry :created-by))} (-> event :event-entry :created-by)]
          [:span {:class "age"} " | "
-          [:a {:href (str "/#/event/" (-> event :event-entry :_id))} (util.view/generate-age-status (-> event :event-entry :created-date))] " | "
+          [:a {:href (str "/#!/event/" (-> event :event-entry :_id))} (util.view/generate-age-status (-> event :event-entry :created-date))] " | "
           (when (-> event :owner?)
-            (list [:a {:href (str "/#/event/edit/" (-> event :event-entry :_id))} "edit"]
+            (list [:a {:href (str "/#!/event/edit/" (-> event :event-entry :_id))} "edit"]
                   " | "
-                  [:a {:href (str "/#/event/delete/" (-> event :event-entry :_id))} "delete"]))]]]]
+                  [:a {:href (str "/#!/event/delete/" (-> event :event-entry :_id))} "delete"]))]]]]
 
       [:tr {:style {:height "10px"}}]
 

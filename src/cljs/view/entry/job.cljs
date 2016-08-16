@@ -62,13 +62,13 @@
        [:td {:class "subtext"}
         [:span {:id "span" :class "score"}
          (util.view/generate-upvote-status (-> job :job-entry :upvote))
-         [:a {:href (str "/#/user/" (-> job :job-entry :created-by))} (-> job :job-entry :created-by)]
+         [:a {:href (str "/#!/user/" (-> job :job-entry :created-by))} (-> job :job-entry :created-by)]
          [:span {:class "age"} " | "
-          [:a {:href (str "/#/job/" (-> job :job-entry :_id))} (util.view/generate-age-status (-> job :job-entry :created-date))] " | "
+          [:a {:href (str "/#!/job/" (-> job :job-entry :_id))} (util.view/generate-age-status (-> job :job-entry :created-date))] " | "
           (when (-> job :owner?)
-            (list [:a {:href (str "/#/job/edit/" (-> job :job-entry :_id))} "edit"]
+            (list [:a {:href (str "/#!/job/edit/" (-> job :job-entry :_id))} "edit"]
                   " | "
-                  [:a {:href (str "/#/job/delete/" (-> job :job-entry :_id))} "delete"]))]]]]
+                  [:a {:href (str "/#!/job/delete/" (-> job :job-entry :_id))} "delete"]))]]]]
 
       [:tr {:style {:height "10px"}}]
 

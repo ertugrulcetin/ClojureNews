@@ -75,7 +75,7 @@
        [:p
         [:b "Are there rules about submissions and comments?"]]
        [:p
-        [:a {:href "/#/guidelines"} "Here it is: "
+        [:a {:href "/#!/guidelines"} "Here it is: "
          [:u "Guidelines"]]]
 
        [:br]
@@ -102,7 +102,7 @@
        [:p
         [:b "What kind of formatting can you use in comments?"]]
        [:p
-        [:a {:href "/#/formatting"} "Here it is: "
+        [:a {:href "/#!/formatting"} "Here it is: "
          [:u "Formatting Options"]]]
 
        [:br]

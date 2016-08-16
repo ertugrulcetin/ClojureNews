@@ -26,12 +26,12 @@
 
 (let [h (History.)]
   (goog.events/listen h EventType/NAVIGATE #(do
-                                             (let [token (.-token %)]
-
+                                             (let [token (.-token %)
+                                                   trim-token (subs token 1)]
                                                ;;removes error message every route change
                                                (r/render-component [(fn [])] util.view/message-container)
-                                               (secretary/dispatch! token)
-                                               (util.view/select-header-button token)
-                                               (util.view/change-header-links-page-titles token))))
+                                               (secretary/dispatch! trim-token)
+                                               (util.view/select-header-button trim-token)
+                                               (util.view/change-header-links-page-titles trim-token))))
   (doto h
     (.setEnabled true)))

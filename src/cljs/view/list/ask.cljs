@@ -46,22 +46,22 @@
 
              [:td {:class "title"}
               [:span {:class "deadmark"}]
-              [:a {:href (str "/#/ask/" (:_id ask))} (str "Ask CN: " (:title ask))]]]
+              [:a {:href (str "/#!/ask/" (:_id ask))} (str "Ask CN: " (:title ask))]]]
 
             [:tr
              [:td {:colSpan "2"}]
              [:td {:class "subtext"}
               [:span {:id "span" :class "score"}
                (util.view/generate-upvote-status (:upvote ask))
-               [:a {:href (str "/#/user/" (:created-by ask))} (:created-by ask)]
+               [:a {:href (str "/#!/user/" (:created-by ask))} (:created-by ask)]
                [:span {:class "age"} " | "
-                [:a {:href (str "/#/ask/" (:_id ask))} (util.view/generate-age-status (:created-date ask))] " | "
-                [:a {:href (str "/#/ask/" (:_id ask))} (util.view/generate-comment-status (:number-of-comments ask))]
+                [:a {:href (str "/#!/ask/" (:_id ask))} (util.view/generate-age-status (:created-date ask))] " | "
+                [:a {:href (str "/#!/ask/" (:_id ask))} (util.view/generate-comment-status (:number-of-comments ask))]
                 (when (util.view/in? (:_id ask) (-> asks :ask-own-entries))
                   (list " | "
-                        [:a {:href (str "/#/ask/edit/" (:_id ask))} "edit"]
+                        [:a {:href (str "/#!/ask/edit/" (:_id ask))} "edit"]
                         " | "
-                        [:a {:href (str "/#/ask/delete/" (:_id ask))} "delete"]))]]]]
+                        [:a {:href (str "/#!/ask/delete/" (:_id ask))} "delete"]))]]]]
 
             [:tr {:class "spacer" :style {:height "7"}}]))
 
@@ -71,7 +71,7 @@
           [:tr
            [:td {:colSpan "2"}]
            [:td {:class "title"}
-            [:a {:href (str "/#/ask/p/" (+ page-as-int 1)) :class "morelink" :rel "nofollow"} "More"]]])))]])
+            [:a {:href (str "/#!/ask/p/" (+ page-as-int 1)) :class "morelink" :rel "nofollow"} "More"]]])))]])
 
 (defn ask-owner?
   [ask asks]

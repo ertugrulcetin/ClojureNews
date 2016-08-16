@@ -57,15 +57,15 @@
              [:td {:class "subtext"}
               [:span {:id "span" :class "score"}
                (util.view/generate-upvote-status (:upvote story))
-               [:a {:href (str "/#/user/" (:created-by story))} (:created-by story)]
+               [:a {:href (str "/#!/user/" (:created-by story))} (:created-by story)]
                [:span {:class "age"} " | "
-                [:a {:href (str "/#/story/" (:_id story))} (util.view/generate-age-status (:created-date story))] " | "
-                [:a {:href (str "/#/story/" (:_id story))} (util.view/generate-comment-status (:number-of-comments story))]
+                [:a {:href (str "/#!/story/" (:_id story))} (util.view/generate-age-status (:created-date story))] " | "
+                [:a {:href (str "/#!/story/" (:_id story))} (util.view/generate-comment-status (:number-of-comments story))]
                 (when (story-owner? story stories)
                   (list " | "
-                        [:a {:href (str "/#/story/edit/" (:_id story))} "edit"]
+                        [:a {:href (str "/#!/story/edit/" (:_id story))} "edit"]
                         " | "
-                        [:a {:href (str "/#/story/delete/" (:_id story))} "delete"]))]]]]
+                        [:a {:href (str "/#!/story/delete/" (:_id story))} "delete"]))]]]]
 
             [:tr {:class "spacer" :style {:height "7"}}]))
 
@@ -75,7 +75,7 @@
           [:tr
            [:td {:colSpan "2"}]
            [:td {:class "title"}
-            [:a {:href (str "/#/story/p/" (+ page-as-int 1)) :class "morelink" :rel "nofollow"} "More"]]])))]])
+            [:a {:href (str "/#!/story/p/" (+ page-as-int 1)) :class "morelink" :rel "nofollow"} "More"]]])))]])
 
 (defn story-owner?
   [story stories]
