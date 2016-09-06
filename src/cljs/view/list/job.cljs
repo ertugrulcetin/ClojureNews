@@ -32,7 +32,7 @@
 
              [:td {:class "title"}
               [:span {:class "deadmark"}]
-              [:a {:href (:url job) :target "_blank" :class "storylink" :rel "nofollow"} (:title job)]
+              [:a {:href (:url job) :class "storylink" :rel "nofollow"} (:title job)]
               [:span {:class "sitebit comhead"}
                (str " (" (:city job) ", " (:country job) (when (:remote? job) " || remote") ")")]]]
 

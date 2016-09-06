@@ -59,7 +59,7 @@
       [:tr
        [:td {:style {:vertical-align "top"}} "website:"]
        [:td
-        [:a {:href (:website user) :target "_blank"} (:website user)]]])
+        [:a {:href (:website user)} (:website user)]]])
 
     (if (:auth? user)
       [:tr
@@ -69,7 +69,7 @@
       [:tr
        [:td {:style {:vertical-align "top"}} "github:"]
        [:td
-        [:a {:href (str "https://github.com/" (:github user)) :target "_blank"} (:github user)]]])
+        [:a {:href (str "https://github.com/" (:github user))} (:github user)]]])
 
     (if (:auth? user)
       [:tr
@@ -79,7 +79,7 @@
       [:tr
        [:td {:style {:vertical-align "top"}} "twitter:"]
        [:td
-        [:a {:href (str "https://twitter.com/" (:twitter user)) :target "_blank"} (:twitter user)]]])
+        [:a {:href (str "https://twitter.com/" (:twitter user))} (:twitter user)]]])
 
     (if (:auth? user)
       [:tr

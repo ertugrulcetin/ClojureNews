@@ -48,7 +48,7 @@
              [:td {:class "title"}
               [:span {:class "deadmark"}]
               (if (= (:type entry) "story")
-                [:a {:href (:url entry) :target "_blank"} (:title entry)]
+                [:a {:href (:url entry) } (:title entry)]
                 [:a {:href (str "/#!/ask/" (:_id entry))} (str "Ask CN: " (:title entry))])
               (when (= (:type entry) "story")
                 [:span {:class "sitebit comhead"}

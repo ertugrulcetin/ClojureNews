@@ -34,7 +34,7 @@
 
              [:td {:class "title"}
               [:span {:class "deadmark"}]
-              [:a {:href (:url event) :target "_blank" :class "storylink" :rel "nofollow"} (:title event)]
+              [:a {:href (:url event)  :class "storylink" :rel "nofollow"} (:title event)]
               [:span {:class "sitebit comhead"}
                (str " ("
                     (:city event)

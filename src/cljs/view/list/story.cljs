@@ -47,7 +47,7 @@
 
              [:td {:class "title"}
               [:span {:class "deadmark"}]
-              [:a {:href (:url story) :target "_blank"} (:title story)]
+              [:a {:href (:url story) } (:title story)]
               [:span {:class "sitebit comhead"}
                " (" [:span {:class "sitestr"}
                      (:pure-url story)] ")"]]]
