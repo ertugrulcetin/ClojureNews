@@ -2,9 +2,13 @@
   (:require [monger.core :as mg]
             [monger.credentials :as mcr]))
 
+(def dbuser "")
+(def dbpwd "")
+(def dbname "")
+(def dbhost "")
 
 (defn- build-conn-uri []
-  (str "mongodb://" username ":" password "@" host "/" database))
+  (str "mongodb://" dbuser ":" dbpwd "@" dbhost "/" dbname))
 
 (defn- get-conn-uri []
   (let [mongodb-uri (System/getenv "MONGODB_URI")]
