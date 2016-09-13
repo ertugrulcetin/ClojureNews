@@ -2,24 +2,19 @@
   (:require [monger.core :as mg]
             [monger.credentials :as mcr]))
 
-;;For local testing
-;(def username "my-username")
-;(def password "my-password")
-;(def database "my-database-name")
-;(def host "localhost")
-;
-;(defonce creds (mcr/create username database password))
-;
-;(defonce conn (mg/connect-with-credentials host creds))
-;
-;(defonce clojure-news (mg/get-db conn database))
 
-;;For prod!!
-(def clojure-news nil)
+(defn- build-conn-uri []
+  (str "mongodb://" username ":" password "@" host "/" database))
 
+(defn- get-conn-uri []
+  (let [mongodb-uri (System/getenv "MONGODB_URI")]
+    (if (empty? mongodb-uri)
+      (build-conn-uri)
+      mongodb-uri)))
 
+;; MONGODB_URI env variable must be set for production.
 (defn init-db
   []
-  (def clojure-news (-> (System/getenv "MONGODB_URI")
+  (def clojure-news (-> (get-conn-uri)
                         (mg/connect-via-uri)
                         :db)))
