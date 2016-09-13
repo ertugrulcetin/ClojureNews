@@ -29,7 +29,7 @@
 
 (defn change-url
   [path]
-  (set! window/location (str "https://" window/location.host path)))
+  (set! window/location (str window.location.protocol "//" window/location.host path)))
 
 (defn change-url-to-story
   []
