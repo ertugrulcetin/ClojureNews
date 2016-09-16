@@ -14,7 +14,20 @@ The https://clojure.news webapp
 
 ## Installation
 
+### Installing on Heroku
+
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+### Installing locally
+
+* Install [leiningen](http://leiningen.org/)
+* Install [MongoDB](https://www.mongodb.com/download-center?jmp=nav#community)
+* Create a new MongoDB database
+* Create a new user for the new database
+
+* `git clone https://github.com/ertugrulcetin/ClojureNews.git`
+* Edit `src/clj/dao/db_conf.clj` with the new db and credentials
+* `lein run`
 
 ## Contributing
 
