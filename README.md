@@ -37,6 +37,10 @@ Feel free to jump in if you don't mind digging around, you can check out the [is
 
 [Ertuğrul Çetin](https://github.com/ertugrulcetin)
 
+[Jordan Biserkov](https://github.com/Biserkov)
+
+[Mengu Kagan](https://github.com/mengu)
+
 ## License
 
 ```
