@@ -136,7 +136,7 @@
                                                [:a {:class "pagebottomgray", :href "mailto:infoclojurenews@gmail.com"} "Contact"]]
                                               [:br]
                                               [:br]]]]]]]
-                                        [:script async {:src "/js/clojure-news.js", :type "text/javascript"}]
+                                        [:script {:src "/js/clojure-news.js", :type "text/javascript"}]
                                         [:script (resource-util/create-google-analytics-code "UA-54741200-3")]]]))
 
             :handle-exception (fn [_]
