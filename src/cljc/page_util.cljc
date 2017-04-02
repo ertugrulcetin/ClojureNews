@@ -2,4 +2,4 @@
 
 (defonce data-per-page 30)
 
-(defonce last-n-days 90)
+(defonce last-n-days 365)
