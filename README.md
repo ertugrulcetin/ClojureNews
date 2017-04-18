@@ -5,7 +5,7 @@ The https://clojure.news webapp
 
 ![Clojure News Demo](/github-img-clojure-news.png)
 
-##Requirements
+## Requirements
 
 * JDK 1.8+
 * Leiningen
