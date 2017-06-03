@@ -7,7 +7,7 @@ The https://clojure.news webapp
 
 ## Requirements
 
-* JDK 1.8+
+* JDK/Clojure 1.8+
 * Leiningen
 * Heroku(Free Plan)
 * mLab(Heroku Add-on)
